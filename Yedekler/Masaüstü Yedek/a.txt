@@ -1,0 +1,158 @@
+Toroslar Köle Pc   : 10.33.250.136
+Toroslar Mamografi : 10.33.250.142
+Toroslar Cd        : 
+
+Yeniþehir Köle Pc   : 10.33.146.159
+Yeniþehir Mamografi : 10.33.146.150
+Yeniþehir Cd	    : 10.33.146.151 
+
+Erdemli Köle Pc     : 10.33.153.5
+Erdemli Mamografi   : 10.33.153.4
+Erdemli Cd	    : 10.33.153.6
+
+Tarsus Köle Pc	    : 
+Tarsus Mamografi    : 10.33.227.98
+Tarsus Cd 	    :
+
+Akdeniz Köle Pc     : 10.33.228.75
+Akdeniz Mamografi   : 10.33.228.140
+Akdeniz Cd	    : 10.33.228.139 
+
+Mezitli Köle Pc	    : 10.33.231.75 
+Mezitli Mamografi   : 10.33.231.105 
+Mezitli Cd          : 10.33.231.188
+
+
+---------------------------------------------------
+Meclis Yoklama karþýlaþtýrma sayfa 1 ile sayfa 2 yi karþýlaþtýrma
+select * from [dbo].[Sayfa1$] s1
+where exists ( select Id from  [dbo].[Sayfa2$] s2 where s1.Id = s2.Id and s1.Uhrzeit = 'Yok' and s2.Uhrzeit= 'Var')
+and not exists (select * from [dbo].[Mazeretli$] m where m.ADI = s1.Vorname and m.SOYADI = s1.Name and m.ili = s1.Provinz )
+
+
+ select  * from [dbo].[Mazeretli$] m
+
+aþaðýdaki sorgu ile kaç tekrar eden veri var onlar görülür
+select Id from SayfaT$ group by Id having COUNT (Id)=6
+
+-----------------------------------------
+
+istanbul iþletme enstitüsü kod:
+bilimsel araþtýrma=111FF
+
+Intel Pentium G4600 Soket : 250 ile 300 tl
+msý intel h110m pro-vd h110 ddr4 2133 vga : 250 ile 300 tl
+corsair value 4gb 2133mhz : 100 ile 150 tl
+300w Kasa : 70 ile 100 Tl
+Lenovo Notebook : 1200 ile 1500 Tl
+
+
+
+doðru olsam ok gibi yabana atarlar beni
+eðri olsam yay gibi elde tutarlar beni
+
+ne doðruyu aç gördüm ne eðriyi tok
+eðri yay elde kalýr, menzil alýr doðru ok
+
+
+verende o alanda nedir senden gidecek
+telaþýný görenler can senin zannedecek
+
+
+
+
+
+
+https://zamunda.net/banan?id=350988&hit=1&t=others
+
+
+
+Selam,
+
+911 Operatörü için sizinle birkaç hile kodu paylaþmak istiyoruz. Onlarý kendi amaçlarýmýzda yarattýk (test etmek gibi), ancak bazýlarýnýz onlarý istiyor, iþte buradalar :)
+
+1) Konsolu açmak için ~ tuþuna basýn (Mac'te F1'i de kullanabilirsiniz).
+2) Þu kodlardan birini girin:
+
+unlockallmaps
+(Kariyer modunda tüm haritalarýn kilidini açýn, yalnýzca ana menüde veya kariyer menüsünde çalýþýr)
+
+reputation
+(+100 itibar ekler. sadece görev sýrasýnda veya yönetim ekranýnda çalýþýr)
+
+givemethemoney
+(+ 1000000 dolar ekler, bir görev sýrasýnda veya yönetim ekranýnda çalýþýr)
+
+baþlangýç ??çaðrýsý <ID>
+(seçilen çaðrýyý baþlatýr, <ID> yerine çaðrýnýn kimlik adýný girmeniz gerekir, yalnýzca bir görev sýrasýnda çalýþýr)
+
+3) Enter tuþuna basýn.
+
+Ýyi eðlenceler :)
+
+
+
+
+
+
+
+
+Hile Etkisi	Tuþ Kombinasyonu
+Aranma Seviyesini Arttýr	FUGITIVE
+Aranma Seviyesini Düþür	LAWYERUP
+Ölümsüzlük (5 Dakika)	PAINKILLER
+Yetenek Sayacýný Doldur	POWERUP
+Aðýr Çekim	SLOWMO
+Aðýr Çekim Niþan	DEADEYE
+Hýzlý Koþu	CATCHME
+Hýzlý Yüzme	GOTGILLS
+Süper Zýplama	HOPTOIT
+Skyfall (Gökyüzünden Aþaðý Süzülme)	SKYFALL
+Yerçekimini Azalt	FLOATER
+Kayan Araçlar	SNOWDAY
+Sarhoþ Modu	LIQUOR
+Havayý Deðiþtir	MAKEITRAIN
+Yönetmen Modu	JRTALENT
+Araçlar
+Hile Etkisi	Tuþ Kombinasyonu
+Buzzard Saldýrý Helikopteri	BUZZOFF
+Stunt Uçaðý	BARNSTORM
+Duster Uçaðý	FLYSPRAY
+Comet Arabasý	COMET
+Rapid GT Arabasý	RAPIDGT
+Limuzin (Limo)	VINEWOOD
+Çöp Kamyonu (Trashmaster)	TRASHED
+Golf Arabasý (Caddy)	HOLEIN1
+BMX Bisiklet	BANDIT
+Sanchez Motoru	OFFROAD
+PCJ-600 Motoru	ROCKET
+Silahlar, Eþyalar ve Çatýþma
+Hile Etkisi	Tuþ Kombinasyonu
+Paraþüt	SKYDIVE
+Silahlar	TOOLUP
+Can & Zýrh Doldur	TURTLE
+Bang Bang! (Patlayýcý Mermiler)	HIGHEX
+Ateþli Mermiler	INCENDIARY
+Patlayýcý Yumruklar	HOTHANDS
+Özel Hileler
+Hile Etkisi	Tuþ Kombinasyonu
+Duke O’Death Arabasý	DEATHCAR
+Denizaltý (Kraken Sub)	BUBBLES
+Deniz Uçaðý (Dodo)	EXTINCT
+
+
+
+
+https://www.youtube.com/watch?v=UJBXM9wxjlI
+
+
+https://www.youtube.com/watch?v=AOeY-nDp7hI&list=PLrydvzZ-Cz9Bw4Yt0lNKvfZOlW2Irtp-n&index=2
+
+
+78e0739c74fa8962
+
+
+10,33,16,18 - 28 - 29
+
+
+Ýyi günler araç taleplerin fazla olmasý  teslimatlarýn gün/ay olarak uzatmaktadýr. Bende firmanýzdan araç almak için bayilerinizden Kasým ayýna sýraya (eþim adýna) yazýldým.Ülke durumu ve pandemiyide ele aldýðýmýz zaman bizler ekonomik olarak zorluklar yaþamaktayýz. Baþlatmýþ olduðunuz "Tüm Binek Modellerde Saðlýk Çalýþanlarýna Özel %3 Ýndirim." kampanyanýzýn Aralýk sonuna kadar uzatýlmasýný tarafýnýzdan talep etmekteyim.  Bu konuda ülke vatandaþlarýnýza ve biz saðlýk personellerine desteðinizi esirgemeyiniz.

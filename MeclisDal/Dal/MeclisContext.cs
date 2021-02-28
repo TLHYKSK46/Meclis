@@ -11,7 +11,8 @@ namespace MeclisDal.Dal
    public  class MeclisContext:DbContext
     {
         public DbSet<Product> Products { get; set; }
-       // public DbSet<Category> Categories { get; set; }
+        public DbSet<VekilTanim> VekilTanims { get; set; }
+        // public DbSet<Category> Categories { get; set; }
 
     }
 }
