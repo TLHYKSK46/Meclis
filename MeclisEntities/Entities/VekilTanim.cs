@@ -20,6 +20,7 @@ namespace MeclisEntities.Entities
         public string Kisiselmail { get; set; }
         public string Aciklama { get; set; }
         public int Aktif { get; set; }
+        public int Pasif { get; set; }
 
     }
-}
+} 
