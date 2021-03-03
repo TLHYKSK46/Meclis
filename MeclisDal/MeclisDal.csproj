@@ -55,9 +55,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Dal\EntityRepositoryBase.cs" />
     <Compile Include="Dal\MeclisContext.cs" />
+    <Compile Include="Dal\CinsiyetTanimDal.cs" />
     <Compile Include="Dal\VekilTanimDal.cs" />
     <Compile Include="Dal\ProductDal.cs" />
     <Compile Include="IDal\IEntityRepository.cs" />
+    <Compile Include="IDal\ICinsiyetTanimDal.cs" />
     <Compile Include="IDal\IVekilTanimDal.cs" />
     <Compile Include="IDal\IProductDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
