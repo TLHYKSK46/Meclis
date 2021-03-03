@@ -10,11 +10,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MeclisDal</RootNamespace>
     <AssemblyName>MeclisDal</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,8 +55,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Dal\EntityRepositoryBase.cs" />
     <Compile Include="Dal\MeclisContext.cs" />
+    <Compile Include="Dal\VekilTanimDal.cs" />
     <Compile Include="Dal\ProductDal.cs" />
     <Compile Include="IDal\IEntityRepository.cs" />
+    <Compile Include="IDal\IVekilTanimDal.cs" />
     <Compile Include="IDal\IProductDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
