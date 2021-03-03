@@ -52,7 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CinsiyetTanim.cs" />
+    <Compile Include="Entities\VekilDanisman.cs" />
+    <Compile Include="Entities\PartiTanim.cs" />
+    <Compile Include="Entities\MeclisGorevTanim.cs" />
+    <Compile Include="Entities\MazeretTanim.cs" />
+    <Compile Include="Entities\MazeretKod.cs" />
+    <Compile Include="Entities\KomisyonTanim.cs" />
+    <Compile Include="Entities\IlTanim.cs" />
+    <Compile Include="Entities\HatirlatmaTanim.cs" />
+    <Compile Include="Entities\GrupPersonelTanim.cs" />
+    <Compile Include="Entities\GenelMerkezGorev.cs" />
+    <Compile Include="Entities\DoslukGrupTanim.cs" />
+    <Compile Include="Entities\DonemTanim.cs" />
+    <Compile Include="Entities\DilTanim.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\DanismanTanim.cs" />
     <Compile Include="Entities\VekilTanim.cs" />
     <Compile Include="IEntities\IEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
