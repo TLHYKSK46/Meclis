@@ -12,6 +12,6 @@ namespace MeclisDal.Dal
     public class CinsiyetTanimDal : EntityRepositoryBase<CinsiyetTanim, MeclisContext>, ICinsiyetTanimDal
 
     {
-
+         
     }
 }
