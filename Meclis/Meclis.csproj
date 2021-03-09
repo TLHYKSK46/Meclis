@@ -98,7 +98,7 @@
       <Name>MeclisDao</Name>
     </ProjectReference>
     <ProjectReference Include="..\MeclisEntities\MeclisEntities.csproj">
-      <Project>{8496B446-E1EE-44B1-A80B-A22A59E1414A}</Project>
+      <Project>{8496b446-e1ee-44b1-a80b-a22a59e1414a}</Project>
       <Name>MeclisEntities</Name>
     </ProjectReference>
   </ItemGroup>
