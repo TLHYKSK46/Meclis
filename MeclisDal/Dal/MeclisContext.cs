@@ -12,6 +12,8 @@ namespace MeclisDal.Dal
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<VekilTanim> VekilTanims { get; set; }
+        public DbSet<CinsiyetTanim> CinsiyetTanims { get; set; }
+        public DbSet<DilTanim> DilTanims { get; set; }
         // public DbSet<Category> Categories { get; set; }
 
     }
