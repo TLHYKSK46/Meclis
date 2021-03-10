@@ -67,7 +67,6 @@
     <Compile Include="Entities\DoslukGrupTanim.cs" />
     <Compile Include="Entities\DonemTanim.cs" />
     <Compile Include="Entities\DilTanim.cs" />
-    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\DanismanTanim.cs" />
     <Compile Include="Entities\VekilTanim.cs" />
     <Compile Include="IEntities\IEntity.cs" />

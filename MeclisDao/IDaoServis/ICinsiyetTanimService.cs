@@ -10,7 +10,7 @@ namespace MeclisDao.IDaoServis
    public interface ICinsiyetTanimService
     {
         List<CinsiyetTanim> ListeGetir();
-        List<CinsiyetTanim> KisiyeGöreGetir(int Id);
+        CinsiyetTanim Getir(int id);
         //List<CinsiyetTanim> AdGoreGetir(string productName);
         void Ekle(CinsiyetTanim cinsiyetTanim);
         void Guncelle(CinsiyetTanim cinsiyetTanim);

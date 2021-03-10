@@ -70,7 +70,6 @@
     <Compile Include="Dal\PartiTanimDal.cs" />
     <Compile Include="Dal\VekilDanismanDal.cs" />
     <Compile Include="Dal\VekilTanimDal.cs" />
-    <Compile Include="Dal\ProductDal.cs" />
     <Compile Include="IDal\IDanismanTanimDal.cs" />
     <Compile Include="IDal\IDilTanimDal.cs" />
     <Compile Include="IDal\IDonemTanimDal.cs" />
@@ -88,7 +87,6 @@
     <Compile Include="IDal\IPartiTanimDal.cs" />
     <Compile Include="IDal\IVekilDanisman.cs" />
     <Compile Include="IDal\IVekilTanimDal.cs" />
-    <Compile Include="IDal\IProductDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

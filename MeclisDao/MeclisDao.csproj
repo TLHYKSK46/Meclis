@@ -55,12 +55,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoServis\VekilDanismanService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
     <Compile Include="DaoServis\ProductServis.cs" />
+    <Compile Include="IDaoServis\IVekilDanismanService.cs" />
+    <Compile Include="IDaoServis\IPartiTanimService.cs" />
+    <Compile Include="IDaoServis\IMeclisGorevTanimService.cs" />
+    <Compile Include="IDaoServis\IMazeretTanimService.cs" />
+    <Compile Include="IDaoServis\IMazeretKodService.cs" />
+    <Compile Include="IDaoServis\IKomisyonTanimService.cs" />
+    <Compile Include="IDaoServis\IIlTanimService.cs" />
+    <Compile Include="IDaoServis\IHatirlatmaTanimService.cs" />
+    <Compile Include="IDaoServis\IGrupPersonelTanimService.cs" />
+    <Compile Include="IDaoServis\IDostlukGrupTanimService.cs" />
+    <Compile Include="IDaoServis\IDonemTanimService.cs" />
+    <Compile Include="IDaoServis\IDilTanimService.cs" />
     <Compile Include="IDaoServis\ICinsiyetTanimService.cs" />
     <Compile Include="IDaoServis\IDanismanService.cs" />
+    <Compile Include="IDaoServis\IGenelMerkezGorevService.cs" />
     <Compile Include="IDaoServis\IVekilTanimService.cs" />
-    <Compile Include="IDaoServis\IProductService.cs" />
     <Compile Include="Instances\DaoModul.cs" />
     <Compile Include="Instances\InstanceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

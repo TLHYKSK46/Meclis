@@ -47,5 +47,12 @@ namespace MeclisDao.DaoServis
         {
             return _vekilTanim.GetAll(p => p.TcKimlikNo == tcNo);
         }
+
+        VekilTanim IVekilTanimService.Getir(int id)
+        {
+            return _vekilTanim.Get(p => p.Id == id);
+        }
+
+      
     }
 }

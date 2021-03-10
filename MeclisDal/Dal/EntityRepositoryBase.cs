@@ -38,7 +38,7 @@ namespace MeclisDal.Dal
             }
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter=null)
         {
             using (TContext context = new TContext())
             {
