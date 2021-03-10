@@ -38,9 +38,9 @@ namespace MeclisDao.DaoServis
             return _vekilDanismanDal.GetAll();
         }
 
-        public void Sil(VekilDanisman vekilDanisman)
+        public void Sil(int id)
         {
-            _vekilDanismanDal.Delete(vekilDanisman);
+            _vekilDanismanDal.Delete(new VekilDanisman { Id = id });
         }
     }
 }

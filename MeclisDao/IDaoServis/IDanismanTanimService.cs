@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace MeclisDao.IDaoServis
 {
-   public interface IDanismanService
+   public interface IDanismanTanimService
     {
         List<DanismanTanim> ListeGetir();
         DanismanTanim Getir(int id);
         List<DanismanTanim> AdGoreGetir(string DanismanAdi);
         void Ekle(DanismanTanim danismanTanim);
         void Guncelle(DanismanTanim danismanTanim);
-        void Sil(DanismanTanim danismanTanim);
+        void Sil(int id);
     }
 }

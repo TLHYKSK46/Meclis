@@ -55,9 +55,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoServis\MeclisGorevTanimService.cs" />
+    <Compile Include="DaoServis\PartiTanimService.cs" />
+    <Compile Include="DaoServis\MazeretTanimService.cs" />
+    <Compile Include="DaoServis\MazeretKodService.cs" />
+    <Compile Include="DaoServis\KomisyonTanimService.cs" />
+    <Compile Include="DaoServis\IlTanimService.cs" />
+    <Compile Include="DaoServis\HatirlatmaTanimService.cs" />
+    <Compile Include="DaoServis\GrupPersonelTanimService.cs" />
+    <Compile Include="DaoServis\GenelMerkezGorevService.cs" />
+    <Compile Include="DaoServis\DostlukGrupTanimService.cs" />
+    <Compile Include="DaoServis\DonemTanimService.cs" />
+    <Compile Include="DaoServis\DilTanimService.cs" />
+    <Compile Include="DaoServis\DanismanTanimService.cs" />
+    <Compile Include="DaoServis\CinsiyetTanimService.cs" />
     <Compile Include="DaoServis\VekilDanismanService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
-    <Compile Include="DaoServis\ProductServis.cs" />
     <Compile Include="IDaoServis\IVekilDanismanService.cs" />
     <Compile Include="IDaoServis\IPartiTanimService.cs" />
     <Compile Include="IDaoServis\IMeclisGorevTanimService.cs" />
@@ -71,7 +84,7 @@
     <Compile Include="IDaoServis\IDonemTanimService.cs" />
     <Compile Include="IDaoServis\IDilTanimService.cs" />
     <Compile Include="IDaoServis\ICinsiyetTanimService.cs" />
-    <Compile Include="IDaoServis\IDanismanService.cs" />
+    <Compile Include="IDaoServis\IDanismanTanimService.cs" />
     <Compile Include="IDaoServis\IGenelMerkezGorevService.cs" />
     <Compile Include="IDaoServis\IVekilTanimService.cs" />
     <Compile Include="Instances\DaoModul.cs" />

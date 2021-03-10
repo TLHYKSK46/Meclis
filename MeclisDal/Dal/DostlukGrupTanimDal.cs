@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MeclisDal.Dal
 {
-    public class DoslukGrupTanimDal : EntityRepositoryBase<DoslukGrupTanim, MeclisContext>, IDoslukGrupTanimDal
+    public class DostlukGrupTanimDal : EntityRepositoryBase<DoslukGrupTanim, MeclisContext>, IDostlukGrupTanimDal
 
     {
          

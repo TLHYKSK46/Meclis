@@ -16,10 +16,58 @@ namespace MeclisDao.Instances
         public override void Load()
         {
             //Classların İnstance larını oluşturmak için yazmak zorundasın...
-            Bind<IProductService>().To<ProductServis>().InSingletonScope();
-            Bind<IProductDal>().To<ProductDal>().InSingletonScope();
+            //Bind<IProductService>().To<ProductServis>().InSingletonScope();
+            //Bind<IProductDal>().To<ProductDal>().InSingletonScope();
 
-           
+            Bind<ICinsiyetTanimService>().To<CinsiyetTanimService>().InSingletonScope();
+            Bind<ICinsiyetTanimDal>().To<CinsiyetTanimDal>().InSingletonScope();
+
+            Bind<IDanismanTanimService>().To<DanismanTanimService>().InSingletonScope();
+            Bind<IDanismanTanimDal>().To<DanismanTanimDal>().InSingletonScope();
+
+            Bind<IDilTanimService>().To<DilTanimService>().InSingletonScope();
+            Bind<IDilTanimDal>().To<DilTanimDal>().InSingletonScope();
+
+            Bind<IDonemTanimService>().To<DonemTanimService>().InSingletonScope();
+            Bind<IDonemTanimDal>().To<DonemTanimDal>().InSingletonScope();
+
+            Bind<IDostlukGrupTanimService>().To<DostlukGrupTanimService>().InSingletonScope();
+            Bind<IDostlukGrupTanimDal>().To<DostlukGrupTanimDal>().InSingletonScope();
+
+            Bind<IGenelMerkezGorevService>().To<GenelMerkezGorevService>().InSingletonScope();
+            Bind<IGenelMerkezGorevDal>().To<GenelMerkezGorevDal>().InSingletonScope();
+
+            Bind<IGrupPersonelTanimService>().To<GrupPersonelTanimService>().InSingletonScope();
+            Bind<IGrupPesonelTanimDal>().To<GrupPersonelTanimDal>().InSingletonScope();
+
+            Bind<IHatirlatmaTanimService>().To<HatirlatmaTanimService>().InSingletonScope();
+            Bind<IHatirlatmaTanimDal>().To<HatirlatmaTanimDal>().InSingletonScope();
+
+            Bind<IIlTanimService>().To<IlTanimService>().InSingletonScope();
+            Bind<IIlTanimDal>().To<IlTanimDal>().InSingletonScope();
+
+            Bind<IKomisyonTanimService>().To<KomisyonTanimService>().InSingletonScope();
+            Bind<IKomisyonTanimDal>().To<KomisyonTanimDal>().InSingletonScope();
+
+            Bind<IMazeretKodService>().To<MazeretKodService>().InSingletonScope();
+            Bind<IMazeretKodDal>().To<MazeretKodDal>().InSingletonScope();
+
+            Bind<IMazeretTanimService>().To<MazeretTanimService>().InSingletonScope();
+            Bind<IMazeretTanimDal>().To<MazeretTanimDal>().InSingletonScope();
+
+            Bind<IMeclisGorevTanimService>().To<MeclisGorevTanimService>().InSingletonScope();
+            Bind<IMeclisGorevTanimDal>().To<MeclisGorevTanimDal>().InSingletonScope();
+
+            Bind<IPartiTanimService>().To<PartiTanimService>().InSingletonScope();
+            Bind<IPartiTanimDal>().To<PartiTanimDal>().InSingletonScope();
+
+            Bind<IVekilTanimService>().To<VekilTanimService>().InSingletonScope();
+            Bind<IVekilTanimDal>().To<VekilTanimDal>().InSingletonScope();
+
+            Bind<IVekilDanismanService>().To<VekilDanismanService>().InSingletonScope();
+            Bind<IVekilDanismanDal>().To<VekilDanismanDal>().InSingletonScope();
+
+
         }
     }
 }

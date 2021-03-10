@@ -14,6 +14,6 @@ namespace MeclisDao.IDaoServis
         //List<CinsiyetTanim> AdGoreGetir(string productName);
         void Ekle(MazeretTanim mazeretTanim);
         void Guncelle(MazeretTanim mazeretTanim);
-        void Sil(MazeretTanim mazeretTanim);
+        void Sil(int id);
     }
 }

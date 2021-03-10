@@ -15,6 +15,6 @@ namespace MeclisDao.IDaoServis
         List<VekilTanim> AdGoreGetir(string vekilAdi);
         void Ekle(VekilTanim vekilTanim);
         void Guncelle(VekilTanim vekilTanim);
-        void Sil(VekilTanim vekilTanim);
+        void Sil(int id);
     }
 }

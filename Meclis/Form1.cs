@@ -17,10 +17,10 @@ namespace Meclis
        
         public Form1()
         {
-            _productService = InstanceFactory.GetInstance<IProductService>();
+           // _productService = InstanceFactory.GetInstance<IProductService>();
             InitializeComponent();
         }
-        private IProductService _productService;
+      //  private IProductService _productService;
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadProduct();
@@ -28,7 +28,7 @@ namespace Meclis
         }
         void LoadProduct()
         {
-            dataGridView1.DataSource = _productService.ListeGetir();
+           // dataGridView1.DataSource = _productService.ListeGetir();
         }
     }
 }

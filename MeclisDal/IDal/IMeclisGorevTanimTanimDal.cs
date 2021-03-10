@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeclisDal.IDal
 {
-    public interface IMeclisGorevTanimDal : IEntityRepository<MezlisGorevTanim>
+    public interface IMeclisGorevTanimDal : IEntityRepository<MeclisGorevTanim>
     {
 
 

@@ -14,6 +14,6 @@ namespace MeclisDao.IDaoServis
         //List<CinsiyetTanim> AdGoreGetir(string productName);
         void Ekle(CinsiyetTanim cinsiyetTanim);
         void Guncelle(CinsiyetTanim cinsiyetTanim);
-        void Sil(CinsiyetTanim cinsiyetTanim);
+        void Sil(int id);
     }
 }

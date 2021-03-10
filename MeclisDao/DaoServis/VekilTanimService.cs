@@ -38,9 +38,9 @@ namespace MeclisDao.DaoServis
           return _vekilTanim.GetAll();
         }
 
-        public void Sil(VekilTanim vekilTanim)
+        public void Sil(int id)
         {
-            _vekilTanim.Delete(vekilTanim);
+            _vekilTanim.Delete(new VekilTanim { Id = id });
         }
 
         public List<VekilTanim> TcNoyeGöreGetir(int tcNo)

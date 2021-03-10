@@ -55,7 +55,7 @@
     <Compile Include="Dal\DanismanTanimDal.cs" />
     <Compile Include="Dal\DilTanimDal.cs" />
     <Compile Include="Dal\DonemTanimDal.cs" />
-    <Compile Include="Dal\DoslukGrupTanimDal.cs" />
+    <Compile Include="Dal\DostlukGrupTanimDal.cs" />
     <Compile Include="Dal\EntityRepositoryBase.cs" />
     <Compile Include="Dal\GenelMerkezGorevDal.cs" />
     <Compile Include="Dal\GrupPersonelTanimDal.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="IDal\IDanismanTanimDal.cs" />
     <Compile Include="IDal\IDilTanimDal.cs" />
     <Compile Include="IDal\IDonemTanimDal.cs" />
-    <Compile Include="IDal\IDoslukGrupTanimDal.cs" />
+    <Compile Include="IDal\IDostlukGrupTanimDal.cs" />
     <Compile Include="IDal\IEntityRepository.cs" />
     <Compile Include="IDal\ICinsiyetTanimDal.cs" />
     <Compile Include="IDal\IGenelMerkezGorevDal.cs" />
