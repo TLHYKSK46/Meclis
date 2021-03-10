@@ -1,0 +1,19 @@
+﻿using MeclisEntities.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MeclisDao.IDaoServis
+{
+   public interface ICinsiyetTanimService
+    {
+        List<CinsiyetTanim> ListeGetir();
+        List<CinsiyetTanim> KisiyeGöreGetir(int Id);
+        //List<CinsiyetTanim> AdGoreGetir(string productName);
+        void Ekle(CinsiyetTanim cinsiyetTanim);
+        void Guncelle(CinsiyetTanim cinsiyetTanim);
+        void Sil(CinsiyetTanim cinsiyetTanim);
+    }
+}

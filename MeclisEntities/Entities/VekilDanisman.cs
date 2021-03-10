@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Entities
 {
-    public class VekilDanisman:IEntity
+    public class VekilDanisman:Base
      
     {
         public int Id { get; set; }

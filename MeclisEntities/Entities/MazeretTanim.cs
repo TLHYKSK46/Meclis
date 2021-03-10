@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Entities
 {
-    public class MazeretTanim:IEntity
+    public class MazeretTanim:Base
      
     {
         public int Id { get; set; }

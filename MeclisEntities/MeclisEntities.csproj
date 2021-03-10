@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base.cs" />
     <Compile Include="Entities\CinsiyetTanim.cs" />
     <Compile Include="Entities\VekilDanisman.cs" />
     <Compile Include="Entities\PartiTanim.cs" />

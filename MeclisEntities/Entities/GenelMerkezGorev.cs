@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Entities
 {
-    public class GenelMerkezGorev:IEntity
+    public class GenelMerkezGorev:Base
      
     {
         public int Id { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Entities
 {
-    public class HatirlatmaTanim:IEntity
+    public class HatirlatmaTanim:Base
      
     {
         public int Id { get; set; }

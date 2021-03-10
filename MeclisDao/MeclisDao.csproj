@@ -57,6 +57,8 @@
   <ItemGroup>
     <Compile Include="DaoServis\VekilTanimService.cs" />
     <Compile Include="DaoServis\ProductServis.cs" />
+    <Compile Include="IDaoServis\ICinsiyetTanimService.cs" />
+    <Compile Include="IDaoServis\IDanismanService.cs" />
     <Compile Include="IDaoServis\IVekilTanimService.cs" />
     <Compile Include="IDaoServis\IProductService.cs" />
     <Compile Include="Instances\DaoModul.cs" />
