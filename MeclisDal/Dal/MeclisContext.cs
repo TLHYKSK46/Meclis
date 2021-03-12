@@ -25,6 +25,7 @@ namespace MeclisDal.Dal
         public DbSet<MeclisGorevTanim> MeclisGorevTanims { get; set; }
         public DbSet<PartiTanim> PartiTanims { get; set; }
         public DbSet<VekilDanisman> VekilDanismans { get; set; }
+        public DbSet<VekilDetay> VekilDetays { get; set; }
         // public DbSet<Category> Categories { get; set; }
 
     }

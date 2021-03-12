@@ -70,6 +70,7 @@
     <Compile Include="DaoServis\DanismanTanimService.cs" />
     <Compile Include="DaoServis\CinsiyetTanimService.cs" />
     <Compile Include="DaoServis\VekilDanismanService.cs" />
+    <Compile Include="DaoServis\VekilDetayService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
     <Compile Include="IDaoServis\IVekilDanismanService.cs" />
     <Compile Include="IDaoServis\IPartiTanimService.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="IDaoServis\ICinsiyetTanimService.cs" />
     <Compile Include="IDaoServis\IDanismanTanimService.cs" />
     <Compile Include="IDaoServis\IGenelMerkezGorevService.cs" />
+    <Compile Include="IDaoServis\IVekilDetayService.cs" />
     <Compile Include="IDaoServis\IVekilTanimService.cs" />
     <Compile Include="Instances\DaoModul.cs" />
     <Compile Include="Instances\InstanceFactory.cs" />
