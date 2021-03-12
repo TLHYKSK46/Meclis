@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base.cs" />
+    <Compile Include="Base\EntBase.cs" />
     <Compile Include="Entities\CinsiyetTanim.cs" />
     <Compile Include="Entities\VekilDanisman.cs" />
     <Compile Include="Entities\PartiTanim.cs" />
@@ -70,11 +70,22 @@
     <Compile Include="Entities\DanismanTanim.cs" />
     <Compile Include="Entities\VekilTanim.cs" />
     <Compile Include="IEntities\IEntity.cs" />
+    <Compile Include="Base\EntBaseId.cs" />
+    <Compile Include="Mappings\BaseMap\BaseIdMap.cs" />
+    <Compile Include="Mappings\BaseMap\BaseMap.cs" />
+    <Compile Include="Mappings\DilTanimMap.cs" />
+    <Compile Include="Mappings\DanismanTanimMap.cs" />
+    <Compile Include="Mappings\VekilTanimMap.cs" />
+    <Compile Include="Mappings\CinsiyetTanimMap.cs" />
+    <Compile Include="Base\Interfaces\IEntBaseId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappings\IBase\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

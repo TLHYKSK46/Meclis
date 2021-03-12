@@ -1,13 +1,15 @@
-﻿using MeclisEntities.IEntities;
+﻿using MeclisEntities.Base;
+using MeclisEntities.IEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeclisEntities
+namespace MeclisEntities.Base
 {
-   public class Base:IEntity
+    [Serializable]
+    public class EntBase : EntBaseId, IEntity
     {
         public DateTime Silindi { get; set; }
         public DateTime SilinmeTarihi { get; set; }

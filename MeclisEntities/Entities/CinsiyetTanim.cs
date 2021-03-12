@@ -1,4 +1,5 @@
-﻿using MeclisEntities.IEntities;
+﻿using MeclisEntities.Base;
+using MeclisEntities.IEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Entities
 {
-    public class CinsiyetTanim:Base
+    public class CinsiyetTanim:EntBase
      
     {
         public int Id { get; set; }

@@ -14,10 +14,11 @@ namespace Meclis
 {
     public partial class Form1 : Form
     {
-       
+        IVekilTanimService _vekilTanimService;
         public Form1()
         {
-           // _productService = InstanceFactory.GetInstance<IProductService>();
+            // _productService = InstanceFactory.GetInstance<IProductService>();
+            _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             InitializeComponent();
         }
       //  private IProductService _productService;
@@ -28,6 +29,7 @@ namespace Meclis
         }
         void LoadProduct()
         {
+            dataGridView1.DataSource=_vekilTanimService.ListeGetir();
            // dataGridView1.DataSource = _productService.ListeGetir();
         }
     }
