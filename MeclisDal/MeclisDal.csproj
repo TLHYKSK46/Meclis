@@ -61,6 +61,7 @@
     <Compile Include="Dal\GrupPersonelTanimDal.cs" />
     <Compile Include="Dal\HatirlatmaTanimDal.cs" />
     <Compile Include="Dal\IlTanimDal.cs" />
+    <Compile Include="IDal\IVekilDetayDal.cs" />
     <Compile Include="Dal\KomisyonTanimDal.cs" />
     <Compile Include="Dal\MazeretKodDal.cs" />
     <Compile Include="Dal\MazeretTanimDal.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Dal\MeclisGorevTanimDal.cs" />
     <Compile Include="Dal\PartiTanimDal.cs" />
     <Compile Include="Dal\VekilDanismanDal.cs" />
+    <Compile Include="Dal\VekilDetayDal.cs" />
     <Compile Include="Dal\VekilTanimDal.cs" />
     <Compile Include="IDal\IDanismanTanimDal.cs" />
     <Compile Include="IDal\IDilTanimDal.cs" />

@@ -11,10 +11,12 @@ namespace MeclisEntities.Entities
     public class HatirlatmaTanim:EntBase
      
     {
-        public int Id { get; set; }
+       
         public string Baslik { get; set; }
         public string Aciklama { get; set; }
         public int VekilTanimId { get; set; }
+        public int HatirlatmaTarihi { get; set; }
+        public int OlusturmaTarihi { get; set; }
 
 
     }

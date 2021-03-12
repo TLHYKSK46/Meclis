@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class PartiTanim:EntBase
      
     {
-        public int Id { get; set; }
+   
         public string PartiAdi { get; set; }
        
 

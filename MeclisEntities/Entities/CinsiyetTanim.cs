@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class CinsiyetTanim:EntBase
      
     {
-        public int Id { get; set; }
+        
         public int Cinsiyet { get; set; }
        
 

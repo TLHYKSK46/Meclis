@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Mappings
 {
-    public class DanismanTanimMap : BaseMap<DanismanTanim>
+    public class GrupPersonelTanimMap : BaseMap<GrupPersonelTanim>
     {
-        public DanismanTanimMap() {
-            ToTable(@"danisman_tanim", @"dbo");
+        public GrupPersonelTanimMap() {
+            ToTable(@"grup_personel_tanim", @"dbo");
         
             Property(x => x.Ad).HasColumnName("ad");
             Property(x => x.Soyad).HasColumnName("soyad");
@@ -20,14 +20,13 @@ namespace MeclisEntities.Mappings
             Property(x => x.TelNo).HasColumnName("tel_no");
             Property(x => x.Mail).HasColumnName("mail");
             Property(x => x.CinsiyetTanimId).HasColumnName("cinsiyet_tanim_id");
-            Property(x => x.lTanimId).HasColumnName("il_tanim_id");
-            Property(x => x.VekilTanimId).HasColumnName("vekil_tanim_id");
+            Property(x => x.IlTanimId).HasColumnName("il_tanim_id");
+            Property(x => x.MeclisGorevId).HasColumnName("meclis_gorev_id");
+            Property(x => x.Sifre).HasColumnName("sifre");
             Property(x => x.Aktif).HasColumnName("aktif");
             
             
-            
-            
-            
+                 
             
         
 

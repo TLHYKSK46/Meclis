@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class VekilDanisman:EntBase
      
     {
-        public int Id { get; set; }
+      
         public int VekilTanimId { get; set; }
         public int DanismanTanimId { get; set; }
         public int Sira { get; set; }

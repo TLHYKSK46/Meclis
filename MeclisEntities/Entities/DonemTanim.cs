@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class DonemTanim:EntBase
      
     {
-        public int Id { get; set; }
+       
         public string DonemAdi { get; set; }
      
        

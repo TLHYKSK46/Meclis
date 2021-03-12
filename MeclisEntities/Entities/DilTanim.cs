@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class DilTanim:EntBase
      
     {
-        public int Id { get; set; }
+       
         public string DilAdi { get; set; }
         public string DilSeviye { get; set; }
        

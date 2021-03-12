@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class GenelMerkezGorev:EntBase
      
     {
-        public int Id { get; set; }
+       
         public string GenelMerkezGorevAdi { get; set; }
        
 

@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class MazeretKod:EntBase
      
     {
-        public int Id { get; set; }
+       
         public string MazeretKodu { get; set; }
        
 

@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class DoslukGrupTanim:EntBase
      
     {
-        public int Id { get; set; }
+      
         public string DoslukGrupAdi { get; set; }
        
 

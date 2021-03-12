@@ -11,7 +11,7 @@ namespace MeclisEntities.Entities
     public class DanismanTanim:EntBase
      
     {
-        public int Id { get; set; }
+       
         public int TcKimlikNo { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
@@ -19,7 +19,8 @@ namespace MeclisEntities.Entities
         public string Mail { get; set; }
         public int Aktif { get; set; }
         public int CinsiyetTanimId { get; set; }
-        public int lTanim{ get; set; }
+        public int lTanimId{ get; set; }
+        public int VekilTanimId { get; set; }
 
     }
 } 

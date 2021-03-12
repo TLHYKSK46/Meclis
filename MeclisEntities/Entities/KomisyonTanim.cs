@@ -11,9 +11,9 @@ namespace MeclisEntities.Entities
     public class KomisyonTanim:EntBase
      
     {
-        public int Id { get; set; }
+        
         public int IhtisasId { get; set; }
-        public string UluslararasıId { get; set; }
+        public string UluslararasiId { get; set; }
         
 
 

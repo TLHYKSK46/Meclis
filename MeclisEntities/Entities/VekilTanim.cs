@@ -10,7 +10,7 @@ namespace MeclisEntities.Entities
     public class VekilTanim:EntBase
      
     {
-        public int Id { get; set; }
+      
         public int TcKimlikNo { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
