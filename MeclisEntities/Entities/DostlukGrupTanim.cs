@@ -12,7 +12,7 @@ namespace MeclisEntities.Entities
      
     {
       
-        public string DoslukGrupAdi { get; set; }
+        public string DostlukGrupTanimAdi { get; set; }
        
 
     }

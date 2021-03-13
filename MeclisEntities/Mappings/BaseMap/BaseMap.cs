@@ -15,7 +15,7 @@ namespace MeclisEntities.Mappings.BaseMap
         protected BaseMap()
         {
             Property(p => p.Silindi).HasColumnName("silindi");
-            Property(p => p.EklenmeTarihi).HasColumnName("ekleme_tarihi");
+            Property(p => p.EklenmeTarihi).HasColumnName("eklenme_tarihi");
             Property(p => p.SilinmeTarihi).HasColumnName("silinme_tarihi");
             Property(p => p.GuncellemeTarihi).HasColumnName("guncelleme_tarihi");
             //Property(p => p.SysGuncelleyenOturum).HasColumnName("SYS_GUNCELLEYEN_OTURUM");
