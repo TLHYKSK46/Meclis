@@ -23,10 +23,9 @@ namespace MeclisEntities.Mappings
             Property(x => x.KurumsalMail).HasColumnName("kurumsal_mail");
             Property(x => x.Kisiselmail).HasColumnName("kisisel_mail");
             Property(x => x.Aciklama).HasColumnName("aciklama");
-            Property(x => x.IlTanimId).HasColumnName("il_tanim_id");
             Property(x => x.Ozgecmis).HasColumnName("oz_gecmis");
             Property(x => x.Aktif).HasColumnName("aktif");
-            Property(x => x.CinsiyetTanim).HasColumnName("cinsiyet_tanim");
+            
 
 
 

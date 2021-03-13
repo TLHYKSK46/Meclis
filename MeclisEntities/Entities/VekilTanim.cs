@@ -20,8 +20,6 @@ namespace MeclisEntities.Entities
         public string Kisiselmail { get; set; }
         public string Aciklama { get; set; }
         public string Ozgecmis { get; set; }
-        public int CinsiyetTanim { get; set; }
-        public int IlTanimId { get; set; }
         public int Aktif { get; set; }
 
 

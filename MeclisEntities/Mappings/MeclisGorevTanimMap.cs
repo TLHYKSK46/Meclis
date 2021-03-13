@@ -15,7 +15,7 @@ namespace MeclisEntities.Mappings
             ToTable(@"meclis_gorev_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.MeclisGorevAdi).HasColumnName("meclis_gorev_tanim");
+            Property(x => x.MeclisGorevAdi).HasColumnName("meclis_gorev_Adi");
            
 
 

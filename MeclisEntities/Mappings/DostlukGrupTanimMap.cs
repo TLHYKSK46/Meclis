@@ -15,7 +15,7 @@ namespace MeclisEntities.Mappings
             ToTable(@"dostluk_grup_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.DostlukGrupTanimAdi).HasColumnName("dostluk_grup_adi");
+            Property(x => x.DostlukGrupAdi).HasColumnName("dostluk_grup_adi");
             
 
 

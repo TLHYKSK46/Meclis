@@ -20,7 +20,7 @@ namespace MeclisEntities.Mappings
             Property(x => x.TelNo).HasColumnName("tel_no");
             Property(x => x.Mail).HasColumnName("mail");
             Property(x => x.CinsiyetTanimId).HasColumnName("cinsiyet_tanim_id");
-            Property(x => x.lTanimId).HasColumnName("il_tanim_id");
+            Property(x => x.IlTanimId ).HasColumnName("il_tanim_id");
             Property(x => x.VekilTanimId).HasColumnName("vekil_tanim_id");
             Property(x => x.Aktif).HasColumnName("aktif");
             

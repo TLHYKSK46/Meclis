@@ -16,7 +16,7 @@ namespace MeclisEntities.Mappings
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
             Property(x => x.IhtisasId).HasColumnName("ihtisas_id");
-            Property(x => x.UluslararasiId).HasColumnName("uluslararasi_adi");
+            Property(x => x.UluslararasiId).HasColumnName("uluslararasi_id");
             
        
         

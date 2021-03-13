@@ -15,7 +15,7 @@ namespace MeclisEntities.Base
         public DateTime SilinmeTarihi { get; set; }
         public DateTime EklenmeTarihi { get; set; }
         public DateTime GuncellemeTarihi { get; set; }
-
-
+        public int SilenPersonelId { get; set; }
+        public int GuncelleyenPersonelId { get; set; }
     }
 }

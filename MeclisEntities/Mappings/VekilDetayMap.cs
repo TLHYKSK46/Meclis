@@ -26,8 +26,8 @@ namespace MeclisEntities.Mappings
             Property(x => x.DilTanimId).HasColumnName("dil_tanim_id");
             Property(x => x.DonemTanimId).HasColumnName("donem_tanim_id");
             Property(x => x.HatirlatmaTanimId).HasColumnName("hatirlatma_tanim_id");
-            Property(x => x.DoslukGrupTanimId).HasColumnName("dosluk_grup_tanim_id");
-            Property(x => x.MeclisGorevTanim).HasColumnName("meclis_gorev_tanim");
+            Property(x => x.DostlukGrupTanimId).HasColumnName("dostluk_grup_tanim_id");
+            Property(x => x.MeclisGorevTanimId).HasColumnName("meclis_gorev_tanim_id");
             Property(x => x.DanismanTanimId).HasColumnName("danisman_tanim_id");
             Property(x => x.VekilDanismanId).HasColumnName("vekil_danisman_id");
             Property(x => x.GrupPersonelTanimId).HasColumnName("grup_personel_tanim_id");

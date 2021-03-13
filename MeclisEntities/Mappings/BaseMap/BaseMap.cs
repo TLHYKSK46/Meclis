@@ -18,10 +18,9 @@ namespace MeclisEntities.Mappings.BaseMap
             Property(p => p.EklenmeTarihi).HasColumnName("eklenme_tarihi");
             Property(p => p.SilinmeTarihi).HasColumnName("silinme_tarihi");
             Property(p => p.GuncellemeTarihi).HasColumnName("guncelleme_tarihi");
-            //Property(p => p.SysGuncelleyenOturum).HasColumnName("SYS_GUNCELLEYEN_OTURUM");
-            //Property(p => p.SysSilenOturum).HasColumnName("SYS_SILEN_OTURUM");
-            //Property(p => p.SysSilmeTarihi).HasColumnName("SYS_SILME_TARIHI");
-            //Property(p => p.SysVersiyon).HasColumnName("SYS_VERSIYON");
+            Property(p => p.GuncelleyenPersonelId).HasColumnName("guncelleyen_personel_id");
+            Property(p => p.SilenPersonelId).HasColumnName("silen_personel_id");
+          
         }
 
 
