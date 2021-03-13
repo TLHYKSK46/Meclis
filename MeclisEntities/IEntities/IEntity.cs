@@ -10,7 +10,7 @@ namespace MeclisEntities.IEntities
 {
   public  interface IEntity:IEntBaseId
     {
-         DateTime Silindi { get; set; }
+         int Silindi { get; set; }
          DateTime SilinmeTarihi { get; set; }
          DateTime EklenmeTarihi { get; set; }
          DateTime GuncellemeTarihi { get; set; }

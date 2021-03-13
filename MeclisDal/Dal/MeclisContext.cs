@@ -11,7 +11,14 @@ namespace MeclisDal.Dal
 {
    public  class MeclisContext:DbContext
     {
-       // public DbSet<Product> Products { get; set; }
+
+        public MeclisContext()
+        {
+            
+            Database.SetInitializer<MeclisContext>(null);//Bu satır Kodlar ile veritabanındaki tabloları oluşturulmasını engeller kapatırsan kendisi otomatik olarak tabloları oluşturur..
+        }
+
+        // public DbSet<Product> Products { get; set; }
         public DbSet<VekilTanim> VekilTanims { get; set; }
         public DbSet<CinsiyetTanim> CinsiyetTanims { get; set; }
         public DbSet<DilTanim> DilTanims { get; set; }
@@ -27,6 +34,7 @@ namespace MeclisDal.Dal
         public DbSet<PartiTanim> PartiTanims { get; set; }
         public DbSet<VekilDanisman> VekilDanismans { get; set; }
         public DbSet<VekilDetay> VekilDetays { get; set; }
+        public DbSet<IlTanim> IlTanims { get; set; }
         // public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

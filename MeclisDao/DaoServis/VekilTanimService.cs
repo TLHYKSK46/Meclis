@@ -25,12 +25,22 @@ namespace MeclisDao.DaoServis
 
         public void Ekle(VekilTanim vekilTanim)
         {
+            var data = !vekilTanim.Equals("") || !vekilTanim.Equals(null);
+
+            if (data==false)
             _vekilTanim.Add(vekilTanim);
         }
 
         public void Guncelle(VekilTanim vekilTanim)
         {
-            _vekilTanim.Update(vekilTanim);
+            var data = !vekilTanim.Equals("") || !vekilTanim.Equals(null);
+            if (data==false)
+            {
+               var IData= Getir(vekilTanim.Id);
+                if(IData!=null)
+                _vekilTanim.Update(vekilTanim);
+
+            }
         }
 
         public List<VekilTanim> ListeGetir()
@@ -48,7 +58,7 @@ namespace MeclisDao.DaoServis
             return _vekilTanim.GetAll(p => p.TcKimlikNo == tcNo);
         }
 
-        VekilTanim IVekilTanimService.Getir(int id)
+       public VekilTanim Getir(int id)
         {
             return _vekilTanim.Get(p => p.Id == id);
         }

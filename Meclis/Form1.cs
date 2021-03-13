@@ -14,7 +14,7 @@ namespace Meclis
 {
     public partial class Form1 : Form
     {
-        IVekilTanimService _vekilTanimService;
+       private IVekilTanimService _vekilTanimService;
         public Form1()
         {
             // _productService = InstanceFactory.GetInstance<IProductService>();

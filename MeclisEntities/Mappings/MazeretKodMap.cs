@@ -12,7 +12,7 @@ namespace MeclisEntities.Mappings
     public class MazeretKodMap : BaseMap<MazeretKod>
     {
         public MazeretKodMap() {
-            ToTable(@"dil_tanim", @"dbo");
+            ToTable(@"mazeret_kod", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
             Property(x => x.MazeretKodu).HasColumnName("mazeret_kodu");

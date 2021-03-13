@@ -11,11 +11,11 @@ namespace MeclisDao.DaoServis
 {
     public class IlTanimService : IIlTanimService
     {
-        private IIlTanimDal _ilTanimDal;
+        IIlTanimDal _ilTanimDal;
 
-        public IlTanimService(IlTanim ilTanimDal)
+        public IlTanimService(IIlTanimDal ilTanimDal)
         {
-            _ilTanimDal = (IIlTanimDal)ilTanimDal;
+            _ilTanimDal = ilTanimDal;
         }
 
         public void Ekle(IlTanim ilTanim)

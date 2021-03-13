@@ -17,7 +17,7 @@ namespace MeclisEntities.Mappings
           //  Property(x => x.Id).HasColumnName("Id");
             Property(x => x.IlKodu).HasColumnName("il_kodu");
             Property(x => x.IlAdi).HasColumnName("il_adi");
-            Property(x => x.IlBolgesi).HasColumnName("il_bolgesi");
+            Property(x => x.IlBolgesi).HasColumnName("il_bölgesi");
        
         
 
