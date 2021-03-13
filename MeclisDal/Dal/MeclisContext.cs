@@ -26,6 +26,7 @@ namespace MeclisDal.Dal
         public DbSet<GenelMerkezGorev> GenelMerkezGorevs { get; set; }
         public DbSet<GrupPersonelTanim> GrupPersonelTanims { get; set; }
         public DbSet<HatirlatmaTanim> HatirlatmaTanims { get; set; }
+        public DbSet<KomisyonDurum> KomisyonDurums { get; set; }
         public DbSet<KomisyonTanim> KomisyonTanims { get; set; }
         public DbSet<MazeretKod> MazeretKods { get; set; }
         public DbSet<MazeretTanim> MazeretTanims { get; set; }
@@ -47,6 +48,7 @@ namespace MeclisDal.Dal
             modelBuilder.Configurations.Add(new GenelMerkezGorevMap());
             modelBuilder.Configurations.Add(new GrupPersonelTanimMap());
             modelBuilder.Configurations.Add(new HatirlatmaTanimMap());
+            modelBuilder.Configurations.Add(new KomisyonDurumMap());
             modelBuilder.Configurations.Add(new KomisyonTanimMap());
             modelBuilder.Configurations.Add(new MazeretKodMap());
             modelBuilder.Configurations.Add(new MazeretTanimMap());
