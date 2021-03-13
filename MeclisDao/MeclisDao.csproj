@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoServis\MeslekTanimService.cs" />
     <Compile Include="DaoServis\MeclisGorevTanimService.cs" />
     <Compile Include="DaoServis\PartiTanimService.cs" />
     <Compile Include="DaoServis\MazeretTanimService.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="DaoServis\VekilDanismanService.cs" />
     <Compile Include="DaoServis\VekilDetayService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
+    <Compile Include="IDaoServis\IMeslekTanimService.cs" />
     <Compile Include="IDaoServis\IVekilDanismanService.cs" />
     <Compile Include="IDaoServis\IPartiTanimService.cs" />
     <Compile Include="IDaoServis\IMeclisGorevTanimService.cs" />
