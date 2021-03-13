@@ -12,14 +12,14 @@ namespace MeclisEntities.Entities
     {
     
         public int VekilTanimId { get; set; }
-        public string OdaNoId { get; set; }
-        public string CinsiyetTanimId { get; set; }
-        public string GorevId { get; set; }
-        public string KomisyonTanimId { get; set; }
-        public string IlTanimId { get; set; }
-        public string PartiTanimId { get; set; }
-        public string MazeretTanimId { get; set; }
-        public string DilTanimId { get; set; }
+        public int OdaNoId { get; set; }
+        public int CinsiyetTanimId { get; set; }
+        public int GorevId { get; set; }
+        public int KomisyonDurumId { get; set; }
+        public int IlTanimId { get; set; }
+        public int PartiTanimId { get; set; }
+        public int MazeretTanimId { get; set; }
+        public int DilTanimId { get; set; }
         public int DonemTanimId { get; set; }
         public int HatirlatmaTanimId { get; set; }
         public int DostlukGrupTanimId { get; set; }

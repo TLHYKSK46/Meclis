@@ -15,8 +15,8 @@ namespace MeclisEntities.Mappings
             ToTable(@"komisyon_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.IhtisasId).HasColumnName("ihtisas_id");
-            Property(x => x.UluslararasiId).HasColumnName("uluslararasi_id");
+            Property(x => x.IhtisasAdi).HasColumnName("ihtisas_adi");
+            Property(x => x.UluslararasiAdi).HasColumnName("uluslararasi_adi");
             
        
         

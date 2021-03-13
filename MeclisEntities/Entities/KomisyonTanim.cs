@@ -12,8 +12,8 @@ namespace MeclisEntities.Entities
      
     {
         
-        public int IhtisasId { get; set; }
-        public string UluslararasiId { get; set; }
+        public string IhtisasAdi { get; set; }
+        public string UluslararasiAdi { get; set; }
         
 
 

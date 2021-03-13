@@ -15,8 +15,8 @@ namespace MeclisEntities.Entities
         public int VekilTanimId { get; set; }
         public int MazeretKodId { get; set; }
         public string MazeretNedeni { get; set; }
-        public string BaslamaTarihi { get; set; }
-        public string BitisTarihi { get; set; }
+        public DateTime BaslamaTarihi { get; set; }
+        public DateTime BitisTarihi { get; set; }
 
     }
 } 

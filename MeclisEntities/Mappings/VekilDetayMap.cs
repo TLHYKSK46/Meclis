@@ -19,7 +19,7 @@ namespace MeclisEntities.Mappings
             Property(x => x.OdaNoId).HasColumnName("oda_no_id");
             Property(x => x.CinsiyetTanimId).HasColumnName("cinsiyet_tanim_id");
             Property(x => x.GorevId).HasColumnName("gorev_id");
-            Property(x => x.KomisyonTanimId).HasColumnName("komisyon_tanim_id");
+            Property(x => x.KomisyonDurumId).HasColumnName("komisyon_durum_id");
             Property(x => x.IlTanimId).HasColumnName("il_tanim_id");
             Property(x => x.PartiTanimId).HasColumnName("parti_tanim_id");
             Property(x => x.MazeretTanimId).HasColumnName("mazeret_tanim_id");
