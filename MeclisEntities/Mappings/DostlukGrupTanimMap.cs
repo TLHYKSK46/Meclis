@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace MeclisEntities.Mappings
 {
-    public class DoslukGrupTanimMap : BaseMap<DoslukGrupTanim>
+    public class DostlukGrupTanimMap : BaseMap<DostlukGrupTanim>
     {
-        public DoslukGrupTanimMap() {
-            ToTable(@"dosluk_grup_tanim", @"dbo");
+        public DostlukGrupTanimMap() {
+            ToTable(@"dostluk_grup_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.DoslukGrupAdi).HasColumnName("dosluk_grup_adi");
+            Property(x => x.DoslukGrupAdi).HasColumnName("dostluk_grup_adi");
             
 
 

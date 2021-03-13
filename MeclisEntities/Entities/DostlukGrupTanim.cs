@@ -8,7 +8,7 @@ using MeclisEntities.Base;
 
 namespace MeclisEntities.Entities
 {
-    public class DoslukGrupTanim:EntBase
+    public class DostlukGrupTanim:EntBase
      
     {
       

@@ -64,7 +64,7 @@
     <Compile Include="Entities\HatirlatmaTanim.cs" />
     <Compile Include="Entities\GrupPersonelTanim.cs" />
     <Compile Include="Entities\GenelMerkezGorev.cs" />
-    <Compile Include="Entities\DoslukGrupTanim.cs" />
+    <Compile Include="Entities\DostlukGrupTanim.cs" />
     <Compile Include="Entities\DonemTanim.cs" />
     <Compile Include="Entities\DilTanim.cs" />
     <Compile Include="Entities\DanismanTanim.cs" />
@@ -84,7 +84,7 @@
     <Compile Include="Mappings\HatirlatmaTanimMap.cs" />
     <Compile Include="Mappings\GrupPersonelTanimMap.cs" />
     <Compile Include="Mappings\GenelMerkezGorevMap.cs" />
-    <Compile Include="Mappings\DoslukGrupTanimMap.cs" />
+    <Compile Include="Mappings\DostlukGrupTanimMap.cs" />
     <Compile Include="Mappings\DonemTanimMap.cs" />
     <Compile Include="Mappings\DilTanimMap.cs" />
     <Compile Include="Mappings\DanismanTanimMap.cs" />

@@ -9,11 +9,11 @@ namespace MeclisDao.IDaoServis
 {
    public interface IDostlukGrupTanimService
     {
-        List<DoslukGrupTanim> ListeGetir();
-        DoslukGrupTanim Getir(int id);
+        List<DostlukGrupTanim> ListeGetir();
+        DostlukGrupTanim Getir(int id);
         //List<CinsiyetTanim> AdGoreGetir(string productName);
-        void Ekle(DoslukGrupTanim doslukGrupTanim);
-        void Guncelle(DoslukGrupTanim doslukGrupTanim);
+        void Ekle(DostlukGrupTanim doslukGrupTanim);
+        void Guncelle(DostlukGrupTanim doslukGrupTanim);
         void Sil(int id);
     }
 }

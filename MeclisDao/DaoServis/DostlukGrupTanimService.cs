@@ -18,29 +18,29 @@ namespace MeclisDao.DaoServis
             _DostlukGrupTanim = dostlukGrupTanim;
         }
 
-        public void Ekle(DoslukGrupTanim doslukGrupTanim)
+        public void Ekle(DostlukGrupTanim doslukGrupTanim)
         {
             _DostlukGrupTanim.Add(doslukGrupTanim);
         }
 
-        public DoslukGrupTanim Getir(int id)
+        public DostlukGrupTanim Getir(int id)
         {
             return _DostlukGrupTanim.Get(p=>p.Id==id);
         }
 
-        public void Guncelle(DoslukGrupTanim doslukGrupTanim)
+        public void Guncelle(DostlukGrupTanim doslukGrupTanim)
         {
             _DostlukGrupTanim.Update(doslukGrupTanim);
         }
 
-        public List<DoslukGrupTanim> ListeGetir()
+        public List<DostlukGrupTanim> ListeGetir()
         {
             return _DostlukGrupTanim.GetAll();
         }
 
         public void Sil(int id)
         {
-            _DostlukGrupTanim.Delete(new DoslukGrupTanim {Id=id });
+            _DostlukGrupTanim.Delete(new DostlukGrupTanim {Id=id });
         }
     }
 }
