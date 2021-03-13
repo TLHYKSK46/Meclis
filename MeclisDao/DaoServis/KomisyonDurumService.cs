@@ -25,7 +25,7 @@ namespace MeclisDao.DaoServis
 
         public KomisyonDurum Getir(int id)
         {
-            return _komisyonDurum.Get(p=>p.Id==id)
+            return _komisyonDurum.Get(p => p.Id == id);
         }
 
         public void Guncelle(KomisyonDurum komisyonDurum)
