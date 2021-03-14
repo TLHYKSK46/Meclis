@@ -37,36 +37,40 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 44);
+            this.label1.Location = new System.Drawing.Point(26, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Dönem Adı:";
             // 
             // txtDonemAdi
             // 
-            this.txtDonemAdi.Location = new System.Drawing.Point(170, 44);
+            this.txtDonemAdi.Location = new System.Drawing.Point(113, 29);
+            this.txtDonemAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDonemAdi.Name = "txtDonemAdi";
-            this.txtDonemAdi.Size = new System.Drawing.Size(185, 26);
+            this.txtDonemAdi.Size = new System.Drawing.Size(125, 20);
             this.txtDonemAdi.TabIndex = 1;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(202, 100);
+            this.btnKaydet.Location = new System.Drawing.Point(155, 65);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(153, 42);
+            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
             // 
             // FrmDonemTanim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 171);
+            this.ClientSize = new System.Drawing.Size(284, 111);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDonemAdi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FrmDonemTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -36,9 +36,10 @@ namespace Meclis.SabitTanimlar
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(252, 119);
+            this.btnKaydet.Location = new System.Drawing.Point(136, 71);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(153, 42);
+            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 12;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -46,27 +47,30 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 44);
+            this.label1.Location = new System.Drawing.Point(11, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Meclis Görev Adı:";
             // 
             // txtMeclisGorevAdi
             // 
-            this.txtMeclisGorevAdi.Location = new System.Drawing.Point(170, 38);
+            this.txtMeclisGorevAdi.Location = new System.Drawing.Point(113, 25);
+            this.txtMeclisGorevAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMeclisGorevAdi.Name = "txtMeclisGorevAdi";
-            this.txtMeclisGorevAdi.Size = new System.Drawing.Size(185, 26);
+            this.txtMeclisGorevAdi.Size = new System.Drawing.Size(125, 20);
             this.txtMeclisGorevAdi.TabIndex = 11;
             // 
             // FrmMeclisGorevTanim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 173);
+            this.ClientSize = new System.Drawing.Size(254, 109);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMeclisGorevAdi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FrmMeclisGorevTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

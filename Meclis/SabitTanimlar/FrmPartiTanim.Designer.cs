@@ -36,9 +36,10 @@ namespace Meclis.SabitTanimlar
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(248, 97);
+            this.btnKaydet.Location = new System.Drawing.Point(161, 60);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(153, 42);
+            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 18;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -46,27 +47,30 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 32);
+            this.label1.Location = new System.Drawing.Point(13, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "Parti Adı:";
             // 
             // txtPartiAdi
             // 
-            this.txtPartiAdi.Location = new System.Drawing.Point(141, 26);
+            this.txtPartiAdi.Location = new System.Drawing.Point(94, 17);
+            this.txtPartiAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPartiAdi.Name = "txtPartiAdi";
-            this.txtPartiAdi.Size = new System.Drawing.Size(252, 26);
+            this.txtPartiAdi.Size = new System.Drawing.Size(169, 20);
             this.txtPartiAdi.TabIndex = 17;
             // 
             // FrmPartiTanim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 151);
+            this.ClientSize = new System.Drawing.Size(275, 98);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPartiAdi);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPartiTanim";
             this.Text = "FrmPartiTanim";
             this.ResumeLayout(false);

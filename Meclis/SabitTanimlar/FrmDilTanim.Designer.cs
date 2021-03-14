@@ -39,24 +39,27 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 47);
+            this.label1.Location = new System.Drawing.Point(29, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Dil Adı:";
             // 
             // txtDilAdi
             // 
-            this.txtDilAdi.Location = new System.Drawing.Point(174, 47);
+            this.txtDilAdi.Location = new System.Drawing.Point(116, 29);
+            this.txtDilAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDilAdi.Name = "txtDilAdi";
-            this.txtDilAdi.Size = new System.Drawing.Size(185, 26);
+            this.txtDilAdi.Size = new System.Drawing.Size(125, 20);
             this.txtDilAdi.TabIndex = 1;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(249, 146);
+            this.btnKaydet.Location = new System.Drawing.Point(166, 95);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(153, 42);
+            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -64,31 +67,34 @@ namespace Meclis.SabitTanimlar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 79);
+            this.label2.Location = new System.Drawing.Point(29, 51);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Dil Seviyesi:";
             // 
             // cbDilSeviyesi
             // 
             this.cbDilSeviyesi.FormattingEnabled = true;
-            this.cbDilSeviyesi.Location = new System.Drawing.Point(174, 79);
+            this.cbDilSeviyesi.Location = new System.Drawing.Point(116, 51);
+            this.cbDilSeviyesi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDilSeviyesi.Name = "cbDilSeviyesi";
-            this.cbDilSeviyesi.Size = new System.Drawing.Size(185, 28);
+            this.cbDilSeviyesi.Size = new System.Drawing.Size(125, 21);
             this.cbDilSeviyesi.TabIndex = 2;
             // 
             // FrmDilTanim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(456, 200);
+            this.ClientSize = new System.Drawing.Size(304, 130);
             this.Controls.Add(this.cbDilSeviyesi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDilAdi);
             this.Controls.Add(this.btnKaydet);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FrmDilTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
