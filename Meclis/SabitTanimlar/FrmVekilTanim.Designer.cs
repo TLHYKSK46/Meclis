@@ -54,17 +54,18 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(385, 192);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(168, 32);
             this.btnKaydet.TabIndex = 11;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtTcKimlikNo
             // 
             this.txtTcKimlikNo.Location = new System.Drawing.Point(104, 18);
-            this.txtTcKimlikNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTcKimlikNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTcKimlikNo.Name = "txtTcKimlikNo";
             this.txtTcKimlikNo.Size = new System.Drawing.Size(125, 20);
             this.txtTcKimlikNo.TabIndex = 1;
@@ -82,7 +83,7 @@ namespace Meclis.SabitTanimlar
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(104, 39);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(2);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(125, 20);
             this.txtAd.TabIndex = 2;
@@ -100,7 +101,7 @@ namespace Meclis.SabitTanimlar
             // txtSoyad
             // 
             this.txtSoyad.Location = new System.Drawing.Point(104, 60);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(125, 20);
             this.txtSoyad.TabIndex = 3;
@@ -118,7 +119,7 @@ namespace Meclis.SabitTanimlar
             // txtKurumsalTelNo
             // 
             this.txtKurumsalTelNo.Location = new System.Drawing.Point(104, 81);
-            this.txtKurumsalTelNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKurumsalTelNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtKurumsalTelNo.Name = "txtKurumsalTelNo";
             this.txtKurumsalTelNo.Size = new System.Drawing.Size(125, 20);
             this.txtKurumsalTelNo.TabIndex = 4;
@@ -136,7 +137,7 @@ namespace Meclis.SabitTanimlar
             // txtKisiselTelNo
             // 
             this.txtKisiselTelNo.Location = new System.Drawing.Point(104, 101);
-            this.txtKisiselTelNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKisiselTelNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtKisiselTelNo.Name = "txtKisiselTelNo";
             this.txtKisiselTelNo.Size = new System.Drawing.Size(125, 20);
             this.txtKisiselTelNo.TabIndex = 5;
@@ -154,7 +155,7 @@ namespace Meclis.SabitTanimlar
             // txtKurumsalMail
             // 
             this.txtKurumsalMail.Location = new System.Drawing.Point(104, 122);
-            this.txtKurumsalMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKurumsalMail.Margin = new System.Windows.Forms.Padding(2);
             this.txtKurumsalMail.Name = "txtKurumsalMail";
             this.txtKurumsalMail.Size = new System.Drawing.Size(125, 20);
             this.txtKurumsalMail.TabIndex = 6;
@@ -172,7 +173,7 @@ namespace Meclis.SabitTanimlar
             // txtKisiselMail
             // 
             this.txtKisiselMail.Location = new System.Drawing.Point(104, 143);
-            this.txtKisiselMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKisiselMail.Margin = new System.Windows.Forms.Padding(2);
             this.txtKisiselMail.Name = "txtKisiselMail";
             this.txtKisiselMail.Size = new System.Drawing.Size(125, 20);
             this.txtKisiselMail.TabIndex = 7;
@@ -190,7 +191,7 @@ namespace Meclis.SabitTanimlar
             // txtAciklama
             // 
             this.txtAciklama.Location = new System.Drawing.Point(271, 28);
-            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(283, 62);
@@ -209,7 +210,7 @@ namespace Meclis.SabitTanimlar
             // txtOzGecmis
             // 
             this.txtOzGecmis.Location = new System.Drawing.Point(271, 105);
-            this.txtOzGecmis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOzGecmis.Margin = new System.Windows.Forms.Padding(2);
             this.txtOzGecmis.Multiline = true;
             this.txtOzGecmis.Name = "txtOzGecmis";
             this.txtOzGecmis.Size = new System.Drawing.Size(283, 62);
@@ -229,7 +230,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Location = new System.Drawing.Point(104, 165);
-            this.chkAktif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkAktif.Margin = new System.Windows.Forms.Padding(2);
             this.chkAktif.Name = "chkAktif";
             this.chkAktif.Size = new System.Drawing.Size(47, 17);
             this.chkAktif.TabIndex = 8;
@@ -262,11 +263,12 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.txtTcKimlikNo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmVekilTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVekilTanim";
+            this.Load += new System.EventHandler(this.FrmVekilTanim_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

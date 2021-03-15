@@ -28,5 +28,11 @@ namespace Meclis
             Form frmDilTanim = new FrmDilTanim();
             frmDilTanim.Show();
         }
+
+        private void vekilTanımToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmVekilTanim = new FrmVekilTanim();
+            frmVekilTanim.Show();
+        }
     }
 }

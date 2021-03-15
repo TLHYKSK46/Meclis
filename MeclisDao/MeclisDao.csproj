@@ -74,6 +74,7 @@
     <Compile Include="DaoServis\VekilDanismanService.cs" />
     <Compile Include="DaoServis\VekilDetayService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
+    <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="IDaoServis\IKomisyonDurumService.cs" />
     <Compile Include="IDaoServis\IMeslekTanimService.cs" />
     <Compile Include="IDaoServis\IVekilDanismanService.cs" />

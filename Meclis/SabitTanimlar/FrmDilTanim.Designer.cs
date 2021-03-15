@@ -63,6 +63,7 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // label2
             // 
@@ -77,6 +78,13 @@ namespace Meclis.SabitTanimlar
             // cbDilSeviyesi
             // 
             this.cbDilSeviyesi.FormattingEnabled = true;
+            this.cbDilSeviyesi.Items.AddRange(new object[] {
+            "Başlangıç",
+            "Temel",
+            "Orta Seviye Öncesi",
+            "Orta Seviye",
+            "Orta Seviye Üstü",
+            "İleri"});
             this.cbDilSeviyesi.Location = new System.Drawing.Point(116, 51);
             this.cbDilSeviyesi.Margin = new System.Windows.Forms.Padding(2);
             this.cbDilSeviyesi.Name = "cbDilSeviyesi";
@@ -100,6 +108,7 @@ namespace Meclis.SabitTanimlar
             this.Name = "FrmDilTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDilTanim";
+            this.Load += new System.EventHandler(this.FrmDilTanim_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

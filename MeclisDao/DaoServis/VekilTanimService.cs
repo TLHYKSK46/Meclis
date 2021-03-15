@@ -25,9 +25,9 @@ namespace MeclisDao.DaoServis
 
         public void Ekle(VekilTanim vekilTanim)
         {
-            var data = !vekilTanim.Equals("") || !vekilTanim.Equals(null);
+         //  var data = vekilTanim.Equals(null);
 
-            if (data==false)
+            if (vekilTanim!=null)
             _vekilTanim.Add(vekilTanim);
         }
 
@@ -55,7 +55,7 @@ namespace MeclisDao.DaoServis
 
         public List<VekilTanim> TcNoyeGöreGetir(int tcNo)
         {
-            return _vekilTanim.GetAll(p => p.TcKimlikNo == tcNo);
+            return _vekilTanim.GetAll();
         }
 
        public VekilTanim Getir(int id)

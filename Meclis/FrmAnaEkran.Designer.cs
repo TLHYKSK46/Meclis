@@ -46,6 +46,8 @@ namespace Meclis
             this.partiTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vekilDanışmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vekilTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAnaEkran.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,11 +56,13 @@ namespace Meclis
             this.menuAnaEkran.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuAnaEkran.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuAnaEkran.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sabitTanımlarToolStripMenuItem});
+            this.sabitTanımlarToolStripMenuItem,
+            this.listelerToolStripMenuItem,
+            this.raporlarToolStripMenuItem});
             this.menuAnaEkran.Location = new System.Drawing.Point(0, 0);
             this.menuAnaEkran.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.menuAnaEkran.Name = "menuAnaEkran";
-            this.menuAnaEkran.Size = new System.Drawing.Size(800, 24);
+            this.menuAnaEkran.Size = new System.Drawing.Size(905, 24);
             this.menuAnaEkran.TabIndex = 0;
             this.menuAnaEkran.Text = "menuStrip1";
             // 
@@ -174,12 +178,25 @@ namespace Meclis
             this.vekilTanımToolStripMenuItem.Name = "vekilTanımToolStripMenuItem";
             this.vekilTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
             this.vekilTanımToolStripMenuItem.Text = "Vekil Tanım";
+            this.vekilTanımToolStripMenuItem.Click += new System.EventHandler(this.vekilTanımToolStripMenuItem_Click);
+            // 
+            // listelerToolStripMenuItem
+            // 
+            this.listelerToolStripMenuItem.Name = "listelerToolStripMenuItem";
+            this.listelerToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.listelerToolStripMenuItem.Text = "Listeler";
+            // 
+            // raporlarToolStripMenuItem
+            // 
+            this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.raporlarToolStripMenuItem.Text = "Raporlar";
             // 
             // FrmAnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(905, 450);
             this.Controls.Add(this.menuAnaEkran);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuAnaEkran;
@@ -215,5 +232,7 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem partiTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vekilDanışmanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vekilTanımToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listelerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
     }
 }
