@@ -53,7 +53,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Location = new System.Drawing.Point(102, 186);
-            this.chkAktif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkAktif.Margin = new System.Windows.Forms.Padding(2);
             this.chkAktif.Name = "chkAktif";
             this.chkAktif.Size = new System.Drawing.Size(47, 17);
             this.chkAktif.TabIndex = 9;
@@ -63,7 +63,7 @@ namespace Meclis.SabitTanimlar
             // txtMail
             // 
             this.txtMail.Location = new System.Drawing.Point(102, 99);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(2);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(125, 20);
             this.txtMail.TabIndex = 5;
@@ -81,7 +81,7 @@ namespace Meclis.SabitTanimlar
             // txtTelNo
             // 
             this.txtTelNo.Location = new System.Drawing.Point(102, 78);
-            this.txtTelNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelNo.Name = "txtTelNo";
             this.txtTelNo.Size = new System.Drawing.Size(125, 20);
             this.txtTelNo.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace Meclis.SabitTanimlar
             // txtSoyad
             // 
             this.txtSoyad.Location = new System.Drawing.Point(102, 57);
-            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(125, 20);
             this.txtSoyad.TabIndex = 3;
@@ -117,7 +117,7 @@ namespace Meclis.SabitTanimlar
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(102, 36);
-            this.txtAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAd.Margin = new System.Windows.Forms.Padding(2);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(125, 20);
             this.txtAd.TabIndex = 2;
@@ -135,7 +135,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(153, 252);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(132, 32);
             this.btnKaydet.TabIndex = 10;
@@ -145,7 +145,7 @@ namespace Meclis.SabitTanimlar
             // txtTcKimlikNo
             // 
             this.txtTcKimlikNo.Location = new System.Drawing.Point(102, 15);
-            this.txtTcKimlikNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTcKimlikNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTcKimlikNo.Name = "txtTcKimlikNo";
             this.txtTcKimlikNo.Size = new System.Drawing.Size(125, 20);
             this.txtTcKimlikNo.TabIndex = 1;
@@ -174,7 +174,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.cbIl.FormattingEnabled = true;
             this.cbIl.Location = new System.Drawing.Point(102, 142);
-            this.cbIl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbIl.Margin = new System.Windows.Forms.Padding(2);
             this.cbIl.Name = "cbIl";
             this.cbIl.Size = new System.Drawing.Size(125, 21);
             this.cbIl.TabIndex = 7;
@@ -193,7 +193,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.cbCinsiyet.FormattingEnabled = true;
             this.cbCinsiyet.Location = new System.Drawing.Point(102, 120);
-            this.cbCinsiyet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCinsiyet.Margin = new System.Windows.Forms.Padding(2);
             this.cbCinsiyet.Name = "cbCinsiyet";
             this.cbCinsiyet.Size = new System.Drawing.Size(125, 21);
             this.cbCinsiyet.TabIndex = 6;
@@ -212,7 +212,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.cbMeclisGorev.FormattingEnabled = true;
             this.cbMeclisGorev.Location = new System.Drawing.Point(102, 164);
-            this.cbMeclisGorev.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMeclisGorev.Margin = new System.Windows.Forms.Padding(2);
             this.cbMeclisGorev.Name = "cbMeclisGorev";
             this.cbMeclisGorev.Size = new System.Drawing.Size(125, 21);
             this.cbMeclisGorev.TabIndex = 8;
@@ -240,7 +240,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtTcKimlikNo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmGrupPersonelTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

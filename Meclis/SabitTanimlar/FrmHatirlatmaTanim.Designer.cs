@@ -41,7 +41,7 @@ namespace Meclis.SabitTanimlar
             // txtAciklama
             // 
             this.txtAciklama.Location = new System.Drawing.Point(107, 30);
-            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(253, 99);
@@ -60,7 +60,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(241, 189);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(132, 32);
             this.btnKaydet.TabIndex = 4;
@@ -70,7 +70,7 @@ namespace Meclis.SabitTanimlar
             // txtBaslik
             // 
             this.txtBaslik.Location = new System.Drawing.Point(107, 8);
-            this.txtBaslik.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBaslik.Margin = new System.Windows.Forms.Padding(2);
             this.txtBaslik.Name = "txtBaslik";
             this.txtBaslik.Size = new System.Drawing.Size(253, 20);
             this.txtBaslik.TabIndex = 1;
@@ -88,7 +88,7 @@ namespace Meclis.SabitTanimlar
             // dtHatirlatmaTarihi
             // 
             this.dtHatirlatmaTarihi.Location = new System.Drawing.Point(107, 131);
-            this.dtHatirlatmaTarihi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtHatirlatmaTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtHatirlatmaTarihi.Name = "dtHatirlatmaTarihi";
             this.dtHatirlatmaTarihi.Size = new System.Drawing.Size(161, 20);
             this.dtHatirlatmaTarihi.TabIndex = 3;
@@ -115,7 +115,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtBaslik);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmHatirlatmaTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

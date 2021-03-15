@@ -49,7 +49,7 @@ namespace Meclis.SabitTanimlar
             // txtUluslararasiAdi
             // 
             this.txtUluslararasiAdi.Location = new System.Drawing.Point(107, 40);
-            this.txtUluslararasiAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUluslararasiAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtUluslararasiAdi.Name = "txtUluslararasiAdi";
             this.txtUluslararasiAdi.Size = new System.Drawing.Size(125, 20);
             this.txtUluslararasiAdi.TabIndex = 2;
@@ -57,7 +57,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(130, 87);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 3;
@@ -77,7 +77,7 @@ namespace Meclis.SabitTanimlar
             // txtIhtisasAdi
             // 
             this.txtIhtisasAdi.Location = new System.Drawing.Point(107, 16);
-            this.txtIhtisasAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIhtisasAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIhtisasAdi.Name = "txtIhtisasAdi";
             this.txtIhtisasAdi.Size = new System.Drawing.Size(125, 20);
             this.txtIhtisasAdi.TabIndex = 1;
@@ -92,7 +92,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIhtisasAdi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmKomisyonTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

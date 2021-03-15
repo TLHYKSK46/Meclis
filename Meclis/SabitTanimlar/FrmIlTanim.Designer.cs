@@ -41,7 +41,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(140, 122);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 4;
@@ -61,7 +61,7 @@ namespace Meclis.SabitTanimlar
             // txtIlKodu
             // 
             this.txtIlKodu.Location = new System.Drawing.Point(109, 21);
-            this.txtIlKodu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIlKodu.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlKodu.Name = "txtIlKodu";
             this.txtIlKodu.Size = new System.Drawing.Size(125, 20);
             this.txtIlKodu.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace Meclis.SabitTanimlar
             // txtIlAdi
             // 
             this.txtIlAdi.Location = new System.Drawing.Point(109, 42);
-            this.txtIlAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIlAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlAdi.Name = "txtIlAdi";
             this.txtIlAdi.Size = new System.Drawing.Size(125, 20);
             this.txtIlAdi.TabIndex = 2;
@@ -98,7 +98,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.txtIlBolgesi.FormattingEnabled = true;
             this.txtIlBolgesi.Location = new System.Drawing.Point(109, 63);
-            this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlBolgesi.Name = "txtIlBolgesi";
             this.txtIlBolgesi.Size = new System.Drawing.Size(125, 21);
             this.txtIlBolgesi.TabIndex = 3;
@@ -115,7 +115,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtIlKodu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmIlTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

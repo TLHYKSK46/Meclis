@@ -47,7 +47,7 @@ namespace Meclis.SabitTanimlar
             // txtDonemAdi
             // 
             this.txtDonemAdi.Location = new System.Drawing.Point(113, 29);
-            this.txtDonemAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDonemAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDonemAdi.Name = "txtDonemAdi";
             this.txtDonemAdi.Size = new System.Drawing.Size(125, 20);
             this.txtDonemAdi.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(155, 65);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 2;
@@ -70,7 +70,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDonemAdi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmDonemTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

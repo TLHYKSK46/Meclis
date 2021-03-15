@@ -37,7 +37,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(161, 60);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 18;
@@ -57,7 +57,7 @@ namespace Meclis.SabitTanimlar
             // txtPartiAdi
             // 
             this.txtPartiAdi.Location = new System.Drawing.Point(94, 17);
-            this.txtPartiAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPartiAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtPartiAdi.Name = "txtPartiAdi";
             this.txtPartiAdi.Size = new System.Drawing.Size(169, 20);
             this.txtPartiAdi.TabIndex = 17;
@@ -70,7 +70,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPartiAdi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPartiTanim";
             this.Text = "FrmPartiTanim";
             this.ResumeLayout(false);

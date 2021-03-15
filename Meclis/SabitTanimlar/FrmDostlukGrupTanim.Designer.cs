@@ -36,9 +36,10 @@ namespace Meclis.SabitTanimlar
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(253, 133);
+            this.btnKaydet.Location = new System.Drawing.Point(169, 86);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(153, 42);
+            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -46,27 +47,31 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 52);
+            this.label1.Location = new System.Drawing.Point(8, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Dostluk Grup Adı:";
             // 
             // txtDostlukGrupAdi
             // 
-            this.txtDostlukGrupAdi.Location = new System.Drawing.Point(166, 46);
+            this.txtDostlukGrupAdi.Location = new System.Drawing.Point(111, 30);
+            this.txtDostlukGrupAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDostlukGrupAdi.Name = "txtDostlukGrupAdi";
-            this.txtDostlukGrupAdi.Size = new System.Drawing.Size(185, 26);
+            this.txtDostlukGrupAdi.Size = new System.Drawing.Size(125, 20);
             this.txtDostlukGrupAdi.TabIndex = 1;
             // 
             // FrmDostlukGrupTanim
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 187);
+            this.ClientSize = new System.Drawing.Size(279, 122);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDostlukGrupAdi);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FrmDostlukGrupTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

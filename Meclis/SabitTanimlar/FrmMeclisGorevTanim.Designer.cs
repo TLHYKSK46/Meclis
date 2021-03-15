@@ -37,7 +37,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(136, 71);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 12;
@@ -57,7 +57,7 @@ namespace Meclis.SabitTanimlar
             // txtMeclisGorevAdi
             // 
             this.txtMeclisGorevAdi.Location = new System.Drawing.Point(113, 25);
-            this.txtMeclisGorevAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMeclisGorevAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtMeclisGorevAdi.Name = "txtMeclisGorevAdi";
             this.txtMeclisGorevAdi.Size = new System.Drawing.Size(125, 20);
             this.txtMeclisGorevAdi.TabIndex = 11;
@@ -70,7 +70,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMeclisGorevAdi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmMeclisGorevTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

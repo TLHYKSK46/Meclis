@@ -37,7 +37,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(192, 70);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
             this.btnKaydet.TabIndex = 2;
@@ -57,7 +57,7 @@ namespace Meclis.SabitTanimlar
             // txtGenelMerkezGorevAdi
             // 
             this.txtGenelMerkezGorevAdi.Location = new System.Drawing.Point(133, 23);
-            this.txtGenelMerkezGorevAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGenelMerkezGorevAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenelMerkezGorevAdi.Name = "txtGenelMerkezGorevAdi";
             this.txtGenelMerkezGorevAdi.Size = new System.Drawing.Size(161, 20);
             this.txtGenelMerkezGorevAdi.TabIndex = 1;
@@ -70,7 +70,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtGenelMerkezGorevAdi);
             this.Controls.Add(this.btnKaydet);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGenelMerkezGorev";
             this.Text = "FrmGenelMerkezGorev";
             this.ResumeLayout(false);

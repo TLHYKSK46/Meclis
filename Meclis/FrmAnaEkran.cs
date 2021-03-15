@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meclis.SabitTanimlar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Meclis
         public FrmAnaEkran()
         {
             InitializeComponent();
+        }
+
+        private void FrmAnaEkran_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dilTanimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmDilTanim = new FrmDilTanim();
+            frmDilTanim.Show();
         }
     }
 }

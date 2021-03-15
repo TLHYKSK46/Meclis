@@ -55,7 +55,7 @@ namespace Meclis.SabitTanimlar
             // dtHatirlatmaTarihi
             // 
             this.dtHatirlatmaTarihi.Location = new System.Drawing.Point(123, 68);
-            this.dtHatirlatmaTarihi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtHatirlatmaTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtHatirlatmaTarihi.Name = "dtHatirlatmaTarihi";
             this.dtHatirlatmaTarihi.Size = new System.Drawing.Size(161, 20);
             this.dtHatirlatmaTarihi.TabIndex = 41;
@@ -63,7 +63,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Location = new System.Drawing.Point(208, 217);
-            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(132, 32);
             this.btnKaydet.TabIndex = 42;
@@ -74,7 +74,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.txtIlBolgesi.FormattingEnabled = true;
             this.txtIlBolgesi.Location = new System.Drawing.Point(123, 18);
-            this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlBolgesi.Name = "txtIlBolgesi";
             this.txtIlBolgesi.Size = new System.Drawing.Size(161, 21);
             this.txtIlBolgesi.TabIndex = 45;
@@ -93,7 +93,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(123, 43);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(161, 21);
             this.comboBox1.TabIndex = 47;
@@ -111,7 +111,7 @@ namespace Meclis.SabitTanimlar
             // txtAciklama
             // 
             this.txtAciklama.Location = new System.Drawing.Point(123, 116);
-            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(218, 79);
@@ -140,7 +140,7 @@ namespace Meclis.SabitTanimlar
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(123, 92);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(161, 20);
             this.dateTimePicker1.TabIndex = 51;
@@ -161,7 +161,8 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtHatirlatmaTarihi);
             this.Controls.Add(this.btnKaydet);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmMazeretTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
