@@ -1,4 +1,5 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
 using MeclisEntities.Entities;
 using Microsoft.SqlServer.Server;
 using System;

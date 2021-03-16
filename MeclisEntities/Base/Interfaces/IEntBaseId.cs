@@ -8,6 +8,6 @@ namespace MeclisEntities.Base.Interfaces
 {
    public interface IEntBaseId
     {
-        int Id { get; set; }
+       int Id { get; set; }
     }
 }

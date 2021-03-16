@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MeclisDal.BaseDb.Interfaces;
 namespace MeclisDal.IDal
 {
     public interface IVekilDanismanDal : IEntityRepository<VekilDanisman>

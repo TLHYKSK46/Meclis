@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeclisDal.Dal
+namespace MeclisDal.BaseDb
 {
    public  class MeclisContext:DbContext
     {

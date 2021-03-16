@@ -7,8 +7,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using MeclisDal.BaseDb.Interfaces;
 
-namespace MeclisDal.Dal
+namespace MeclisDal.BaseDb
 {
     public class EntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
          where TEntity : class, IEntity, new()
@@ -31,8 +32,11 @@ namespace MeclisDal.Dal
             using (TContext context = new TContext())
             {
 
-                var deleteEntity = context.Entry(entity);
-                deleteEntity.State = EntityState.Deleted;
+                //var deleteEntity = context.Entry(entity);
+                //deleteEntity.State = EntityState.Deleted;
+                //context.SaveChanges();
+                var updateEntity = context.Entry(entity);
+                updateEntity.State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

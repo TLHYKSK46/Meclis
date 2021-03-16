@@ -16,8 +16,7 @@ namespace MeclisDao.Instances
         public override void Load()
         {
             //Classların İnstance larını oluşturmak için yazmak zorundasın...
-            //Bind<IProductService>().To<ProductServis>().InSingletonScope();
-            //Bind<IProductDal>().To<ProductDal>().InSingletonScope();
+    
 
             Bind<ICinsiyetTanimService>().To<CinsiyetTanimService>().InSingletonScope();
             Bind<ICinsiyetTanimDal>().To<CinsiyetTanimDal>().InSingletonScope();

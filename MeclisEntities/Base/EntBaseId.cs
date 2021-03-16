@@ -21,6 +21,6 @@ namespace MeclisEntities.Base
             return base.ToString() + ";" + Id;
         }
 
-    
+
     }
 }

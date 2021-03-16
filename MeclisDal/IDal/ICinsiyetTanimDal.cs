@@ -1,4 +1,5 @@
 ﻿using MeclisEntities.Entities;
+using MeclisDal.BaseDb.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

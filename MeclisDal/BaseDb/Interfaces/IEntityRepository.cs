@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeclisDal.IDal
+namespace MeclisDal.BaseDb.Interfaces
 {
   public  interface IEntityRepository<T> where T:class,IEntity,new()
     {

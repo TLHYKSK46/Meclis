@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MeclisDal.BaseDb.Interfaces;
 namespace MeclisDal.IDal
 {
     public interface IGrupPesonelTanimDal : IEntityRepository<GrupPersonelTanim>
