@@ -15,7 +15,7 @@ namespace MeclisEntities.Mappings.BaseMap
         protected BaseIdMap()
         {
             HasKey(x => x.Id);
-            Property(p => p.Id).HasColumnName("ID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(p => p.Id).HasColumnName("id").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
 
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MeclisEntities.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace MeclisEntities.Entities
 {
@@ -12,8 +13,9 @@ namespace MeclisEntities.Entities
      
     {
    
+        [MaxLength(200)]
         public string PartiAdi { get; set; }
-       
+
 
     }
 } 

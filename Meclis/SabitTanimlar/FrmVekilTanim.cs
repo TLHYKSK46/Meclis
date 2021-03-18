@@ -33,12 +33,12 @@ namespace Meclis.SabitTanimlar
             string kisiselMail = txtKisiselMail.Text;
             string aciklama = txtAciklama.Text;
             string ozgecmis = txtOzGecmis.Text;
-            int aktif;
+            bool aktif;
             if (chkAktif.Checked == true)
             {
-                aktif = 1;
+                aktif = true;
             }
-            else { aktif = 0; }
+            else { aktif = false; }
     
 
             _vekilTanimService.Ekle(new VekilTanim { 

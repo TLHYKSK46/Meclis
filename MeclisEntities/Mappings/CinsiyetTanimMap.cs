@@ -12,10 +12,10 @@ namespace MeclisEntities.Mappings
     public class CinsiyetTanimMap : BaseMap<CinsiyetTanim>
     {
         public CinsiyetTanimMap() {
-            ToTable(@"Cinsiyet_Tanim", @"dbo");
+            ToTable(@"cinsiyet_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.Cinsiyet).HasColumnName("Cinsiyet");
+            Property(x => x.CinsiyetAdi).HasColumnName("cinsiyet_adi");
             
         }
     }
