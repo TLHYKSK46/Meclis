@@ -45,24 +45,27 @@ namespace Meclis.SabitTanimlar
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 68);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(37, 83);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.Size = new System.Drawing.Size(127, 20);
             this.label4.TabIndex = 44;
             this.label4.Text = "Başlama Tarihi:";
             // 
             // dtHatirlatmaTarihi
             // 
-            this.dtHatirlatmaTarihi.Location = new System.Drawing.Point(123, 68);
+            this.dtHatirlatmaTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtHatirlatmaTarihi.Location = new System.Drawing.Point(269, 83);
             this.dtHatirlatmaTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtHatirlatmaTarihi.Name = "dtHatirlatmaTarihi";
-            this.dtHatirlatmaTarihi.Size = new System.Drawing.Size(161, 20);
+            this.dtHatirlatmaTarihi.Size = new System.Drawing.Size(161, 27);
             this.dtHatirlatmaTarihi.TabIndex = 41;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(208, 217);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(298, 249);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(132, 32);
@@ -72,45 +75,50 @@ namespace Meclis.SabitTanimlar
             // 
             // txtIlBolgesi
             // 
+            this.txtIlBolgesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtIlBolgesi.FormattingEnabled = true;
-            this.txtIlBolgesi.Location = new System.Drawing.Point(123, 18);
+            this.txtIlBolgesi.Location = new System.Drawing.Point(269, 19);
             this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlBolgesi.Name = "txtIlBolgesi";
-            this.txtIlBolgesi.Size = new System.Drawing.Size(161, 21);
+            this.txtIlBolgesi.Size = new System.Drawing.Size(161, 28);
             this.txtIlBolgesi.TabIndex = 45;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(37, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 46;
             this.label3.Text = "Vekil:";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 43);
+            this.comboBox1.Location = new System.Drawing.Point(269, 51);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 21);
+            this.comboBox1.Size = new System.Drawing.Size(161, 28);
             this.comboBox1.TabIndex = 47;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 43);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(37, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 48;
             this.label2.Text = "Mazeret Kodu:";
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(123, 116);
+            this.txtAciklama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAciklama.Location = new System.Drawing.Point(212, 145);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(2);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
@@ -120,36 +128,39 @@ namespace Meclis.SabitTanimlar
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 119);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(37, 145);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.Size = new System.Drawing.Size(132, 20);
             this.label5.TabIndex = 50;
             this.label5.Text = "Mazeret Nedeni:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 92);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(37, 114);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.Size = new System.Drawing.Size(95, 20);
             this.label6.TabIndex = 52;
             this.label6.Text = "Bitiş Tarihi:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 92);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(269, 114);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(161, 27);
             this.dateTimePicker1.TabIndex = 51;
             // 
             // FrmMazeretTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 257);
+            this.ClientSize = new System.Drawing.Size(451, 307);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtAciklama);

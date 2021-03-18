@@ -39,24 +39,27 @@ namespace Meclis.SabitTanimlar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 40);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(11, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(133, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Uluslararası Adı:";
             // 
             // txtUluslararasiAdi
             // 
-            this.txtUluslararasiAdi.Location = new System.Drawing.Point(107, 40);
+            this.txtUluslararasiAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtUluslararasiAdi.Location = new System.Drawing.Point(188, 45);
             this.txtUluslararasiAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtUluslararasiAdi.Name = "txtUluslararasiAdi";
-            this.txtUluslararasiAdi.Size = new System.Drawing.Size(125, 20);
+            this.txtUluslararasiAdi.Size = new System.Drawing.Size(125, 27);
             this.txtUluslararasiAdi.TabIndex = 2;
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(130, 87);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(211, 109);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
@@ -67,26 +70,28 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 16);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(11, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "İhtisas Adı:";
             // 
             // txtIhtisasAdi
             // 
-            this.txtIhtisasAdi.Location = new System.Drawing.Point(107, 16);
+            this.txtIhtisasAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtIhtisasAdi.Location = new System.Drawing.Point(188, 9);
             this.txtIhtisasAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIhtisasAdi.Name = "txtIhtisasAdi";
-            this.txtIhtisasAdi.Size = new System.Drawing.Size(125, 20);
+            this.txtIhtisasAdi.Size = new System.Drawing.Size(125, 27);
             this.txtIhtisasAdi.TabIndex = 1;
             // 
             // FrmKomisyonTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 134);
+            this.ClientSize = new System.Drawing.Size(335, 173);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUluslararasiAdi);
             this.Controls.Add(this.btnKaydet);

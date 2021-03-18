@@ -36,7 +36,8 @@ namespace Meclis.SabitTanimlar
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(192, 70);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(277, 106);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
@@ -47,26 +48,28 @@ namespace Meclis.SabitTanimlar
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(5, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 13);
+            this.label2.Size = new System.Drawing.Size(197, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "Genel Merkez Görev Adı:";
             // 
             // txtGenelMerkezGorevAdi
             // 
-            this.txtGenelMerkezGorevAdi.Location = new System.Drawing.Point(133, 23);
+            this.txtGenelMerkezGorevAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtGenelMerkezGorevAdi.Location = new System.Drawing.Point(206, 25);
             this.txtGenelMerkezGorevAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenelMerkezGorevAdi.Name = "txtGenelMerkezGorevAdi";
-            this.txtGenelMerkezGorevAdi.Size = new System.Drawing.Size(161, 20);
+            this.txtGenelMerkezGorevAdi.Size = new System.Drawing.Size(173, 27);
             this.txtGenelMerkezGorevAdi.TabIndex = 1;
             // 
             // FrmGenelMerkezGorev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 119);
+            this.ClientSize = new System.Drawing.Size(396, 180);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtGenelMerkezGorevAdi);
             this.Controls.Add(this.btnKaydet);

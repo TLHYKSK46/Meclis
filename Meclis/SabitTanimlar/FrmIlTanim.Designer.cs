@@ -40,10 +40,11 @@ namespace Meclis.SabitTanimlar
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(140, 122);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(186, 179);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
+            this.btnKaydet.Size = new System.Drawing.Size(116, 35);
             this.btnKaydet.TabIndex = 4;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -51,63 +52,69 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(11, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "İl Kodu:";
             // 
             // txtIlKodu
             // 
-            this.txtIlKodu.Location = new System.Drawing.Point(109, 21);
+            this.txtIlKodu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtIlKodu.Location = new System.Drawing.Point(152, 21);
             this.txtIlKodu.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlKodu.Name = "txtIlKodu";
-            this.txtIlKodu.Size = new System.Drawing.Size(125, 20);
+            this.txtIlKodu.Size = new System.Drawing.Size(125, 27);
             this.txtIlKodu.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 42);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(11, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "İl Adı:";
             // 
             // txtIlAdi
             // 
-            this.txtIlAdi.Location = new System.Drawing.Point(109, 42);
+            this.txtIlAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtIlAdi.Location = new System.Drawing.Point(152, 63);
             this.txtIlAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlAdi.Name = "txtIlAdi";
-            this.txtIlAdi.Size = new System.Drawing.Size(125, 20);
+            this.txtIlAdi.Size = new System.Drawing.Size(125, 27);
             this.txtIlAdi.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 63);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(11, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 14;
             this.label3.Text = "İl Bölgesi:";
             // 
             // txtIlBolgesi
             // 
+            this.txtIlBolgesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtIlBolgesi.FormattingEnabled = true;
-            this.txtIlBolgesi.Location = new System.Drawing.Point(109, 63);
+            this.txtIlBolgesi.Location = new System.Drawing.Point(152, 100);
             this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlBolgesi.Name = "txtIlBolgesi";
-            this.txtIlBolgesi.Size = new System.Drawing.Size(125, 21);
+            this.txtIlBolgesi.Size = new System.Drawing.Size(125, 28);
             this.txtIlBolgesi.TabIndex = 3;
             // 
             // FrmIlTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 157);
+            this.ClientSize = new System.Drawing.Size(313, 225);
             this.Controls.Add(this.txtIlBolgesi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

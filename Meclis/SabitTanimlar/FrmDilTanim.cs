@@ -44,5 +44,10 @@ namespace Meclis.SabitTanimlar
             }
 
         }
+
+        private void cbDilSeviyesi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

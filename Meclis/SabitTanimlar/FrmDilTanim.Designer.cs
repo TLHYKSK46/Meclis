@@ -39,16 +39,17 @@ namespace Meclis.SabitTanimlar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 31);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(29, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Dil Adı:";
             // 
             // txtDilAdi
             // 
-            this.txtDilAdi.Location = new System.Drawing.Point(116, 29);
+            this.txtDilAdi.Location = new System.Drawing.Point(159, 27);
             this.txtDilAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDilAdi.Name = "txtDilAdi";
             this.txtDilAdi.Size = new System.Drawing.Size(125, 20);
@@ -56,10 +57,11 @@ namespace Meclis.SabitTanimlar
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(166, 95);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(200, 127);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
+            this.btnKaydet.Size = new System.Drawing.Size(136, 39);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -68,10 +70,11 @@ namespace Meclis.SabitTanimlar
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(29, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(102, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Dil Seviyesi:";
             // 
@@ -85,18 +88,19 @@ namespace Meclis.SabitTanimlar
             "Orta Seviye",
             "Orta Seviye Üstü",
             "İleri"});
-            this.cbDilSeviyesi.Location = new System.Drawing.Point(116, 51);
+            this.cbDilSeviyesi.Location = new System.Drawing.Point(159, 50);
             this.cbDilSeviyesi.Margin = new System.Windows.Forms.Padding(2);
             this.cbDilSeviyesi.Name = "cbDilSeviyesi";
             this.cbDilSeviyesi.Size = new System.Drawing.Size(125, 21);
             this.cbDilSeviyesi.TabIndex = 2;
+            this.cbDilSeviyesi.SelectedIndexChanged += new System.EventHandler(this.cbDilSeviyesi_SelectedIndexChanged);
             // 
             // FrmDilTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(304, 130);
+            this.ClientSize = new System.Drawing.Size(347, 177);
             this.Controls.Add(this.cbDilSeviyesi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
