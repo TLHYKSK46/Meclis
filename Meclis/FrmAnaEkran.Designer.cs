@@ -60,9 +60,10 @@ namespace Meclis
             this.listelerToolStripMenuItem,
             this.raporlarToolStripMenuItem});
             this.menuAnaEkran.Location = new System.Drawing.Point(0, 0);
-            this.menuAnaEkran.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.menuAnaEkran.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.menuAnaEkran.Name = "menuAnaEkran";
-            this.menuAnaEkran.Size = new System.Drawing.Size(905, 24);
+            this.menuAnaEkran.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
+            this.menuAnaEkran.Size = new System.Drawing.Size(1263, 30);
             this.menuAnaEkran.TabIndex = 0;
             this.menuAnaEkran.Text = "menuStrip1";
             // 
@@ -84,122 +85,140 @@ namespace Meclis
             this.partiTanımToolStripMenuItem,
             this.vekilDanışmanToolStripMenuItem,
             this.vekilTanımToolStripMenuItem});
+            this.sabitTanımlarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sabitTanımlarToolStripMenuItem.Name = "sabitTanımlarToolStripMenuItem";
-            this.sabitTanımlarToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.sabitTanımlarToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
             this.sabitTanımlarToolStripMenuItem.Text = "Sabit Tanımlar";
             // 
             // danismanTanimToolStripMenuItem
             // 
             this.danismanTanimToolStripMenuItem.Name = "danismanTanimToolStripMenuItem";
-            this.danismanTanimToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.danismanTanimToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.danismanTanimToolStripMenuItem.Text = "Danışman Tanım";
+            this.danismanTanimToolStripMenuItem.Click += new System.EventHandler(this.danismanTanimToolStripMenuItem_Click);
             // 
             // dilTanimToolStripMenuItem
             // 
             this.dilTanimToolStripMenuItem.Name = "dilTanimToolStripMenuItem";
-            this.dilTanimToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.dilTanimToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.dilTanimToolStripMenuItem.Text = "Dil Tanım";
             this.dilTanimToolStripMenuItem.Click += new System.EventHandler(this.dilTanimToolStripMenuItem_Click);
             // 
             // dönemTanımToolStripMenuItem
             // 
             this.dönemTanımToolStripMenuItem.Name = "dönemTanımToolStripMenuItem";
-            this.dönemTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.dönemTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.dönemTanımToolStripMenuItem.Text = "Dönem Tanım";
+            this.dönemTanımToolStripMenuItem.Click += new System.EventHandler(this.dönemTanımToolStripMenuItem_Click);
             // 
             // dostlukGrupTanımToolStripMenuItem
             // 
             this.dostlukGrupTanımToolStripMenuItem.Name = "dostlukGrupTanımToolStripMenuItem";
-            this.dostlukGrupTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.dostlukGrupTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.dostlukGrupTanımToolStripMenuItem.Text = "Dostluk Grup Tanım";
+            this.dostlukGrupTanımToolStripMenuItem.Click += new System.EventHandler(this.dostlukGrupTanımToolStripMenuItem_Click);
             // 
             // genelMerkezGörevTanımToolStripMenuItem
             // 
             this.genelMerkezGörevTanımToolStripMenuItem.Name = "genelMerkezGörevTanımToolStripMenuItem";
-            this.genelMerkezGörevTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.genelMerkezGörevTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.genelMerkezGörevTanımToolStripMenuItem.Text = "Genel Merkez Görev Tanım";
+            this.genelMerkezGörevTanımToolStripMenuItem.Click += new System.EventHandler(this.genelMerkezGörevTanımToolStripMenuItem_Click);
             // 
             // grupPersonelTanımToolStripMenuItem
             // 
             this.grupPersonelTanımToolStripMenuItem.Name = "grupPersonelTanımToolStripMenuItem";
-            this.grupPersonelTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.grupPersonelTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.grupPersonelTanımToolStripMenuItem.Text = "Grup Personel Tanım";
+            this.grupPersonelTanımToolStripMenuItem.Click += new System.EventHandler(this.grupPersonelTanımToolStripMenuItem_Click);
             // 
             // hatırlatmaTanımToolStripMenuItem
             // 
             this.hatırlatmaTanımToolStripMenuItem.Name = "hatırlatmaTanımToolStripMenuItem";
-            this.hatırlatmaTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.hatırlatmaTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.hatırlatmaTanımToolStripMenuItem.Text = "Hatırlatma Tanım";
+            this.hatırlatmaTanımToolStripMenuItem.Click += new System.EventHandler(this.hatırlatmaTanımToolStripMenuItem_Click);
             // 
             // ilTanımToolStripMenuItem
             // 
             this.ilTanımToolStripMenuItem.Name = "ilTanımToolStripMenuItem";
-            this.ilTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.ilTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.ilTanımToolStripMenuItem.Text = "İl Tanım";
+            this.ilTanımToolStripMenuItem.Click += new System.EventHandler(this.ilTanımToolStripMenuItem_Click);
             // 
             // komisyonTanımToolStripMenuItem
             // 
             this.komisyonTanımToolStripMenuItem.Name = "komisyonTanımToolStripMenuItem";
-            this.komisyonTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.komisyonTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.komisyonTanımToolStripMenuItem.Text = "Komisyon Tanım";
+            this.komisyonTanımToolStripMenuItem.Click += new System.EventHandler(this.komisyonTanımToolStripMenuItem_Click);
             // 
             // mazeretTanımToolStripMenuItem
             // 
             this.mazeretTanımToolStripMenuItem.Name = "mazeretTanımToolStripMenuItem";
-            this.mazeretTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.mazeretTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.mazeretTanımToolStripMenuItem.Text = "Mazeret Tanım";
+            this.mazeretTanımToolStripMenuItem.Click += new System.EventHandler(this.mazeretTanımToolStripMenuItem_Click);
             // 
             // meclisGörevTanımToolStripMenuItem
             // 
             this.meclisGörevTanımToolStripMenuItem.Name = "meclisGörevTanımToolStripMenuItem";
-            this.meclisGörevTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.meclisGörevTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.meclisGörevTanımToolStripMenuItem.Text = "Meclis Görev Tanım";
+            this.meclisGörevTanımToolStripMenuItem.Click += new System.EventHandler(this.meclisGörevTanımToolStripMenuItem_Click);
             // 
             // meslekTanımToolStripMenuItem
             // 
             this.meslekTanımToolStripMenuItem.Name = "meslekTanımToolStripMenuItem";
-            this.meslekTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.meslekTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.meslekTanımToolStripMenuItem.Text = "Meslek Tanım";
+            this.meslekTanımToolStripMenuItem.Click += new System.EventHandler(this.meslekTanımToolStripMenuItem_Click);
             // 
             // partiTanımToolStripMenuItem
             // 
             this.partiTanımToolStripMenuItem.Name = "partiTanımToolStripMenuItem";
-            this.partiTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.partiTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.partiTanımToolStripMenuItem.Text = "Parti Tanım";
+            this.partiTanımToolStripMenuItem.Click += new System.EventHandler(this.partiTanımToolStripMenuItem_Click);
             // 
             // vekilDanışmanToolStripMenuItem
             // 
             this.vekilDanışmanToolStripMenuItem.Name = "vekilDanışmanToolStripMenuItem";
-            this.vekilDanışmanToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.vekilDanışmanToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.vekilDanışmanToolStripMenuItem.Text = "Vekil Danışman Tanım";
+            this.vekilDanışmanToolStripMenuItem.Click += new System.EventHandler(this.vekilDanışmanToolStripMenuItem_Click);
             // 
             // vekilTanımToolStripMenuItem
             // 
             this.vekilTanımToolStripMenuItem.Name = "vekilTanımToolStripMenuItem";
-            this.vekilTanımToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.vekilTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.vekilTanımToolStripMenuItem.Text = "Vekil Tanım";
             this.vekilTanımToolStripMenuItem.Click += new System.EventHandler(this.vekilTanımToolStripMenuItem_Click);
             // 
             // listelerToolStripMenuItem
             // 
+            this.listelerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listelerToolStripMenuItem.Name = "listelerToolStripMenuItem";
-            this.listelerToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.listelerToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.listelerToolStripMenuItem.Text = "Listeler";
             // 
             // raporlarToolStripMenuItem
             // 
+            this.raporlarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
-            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
             // 
             // FrmAnaEkran
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 450);
+            this.ClientSize = new System.Drawing.Size(1263, 782);
             this.Controls.Add(this.menuAnaEkran);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuAnaEkran;
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "FrmAnaEkran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

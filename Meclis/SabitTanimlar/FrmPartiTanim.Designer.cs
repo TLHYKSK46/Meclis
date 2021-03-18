@@ -75,7 +75,9 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.txtPartiAdi);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FrmPartiTanim";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPartiTanim";
             this.ResumeLayout(false);
             this.PerformLayout();
