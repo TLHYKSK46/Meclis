@@ -54,6 +54,7 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new MazeretTanimMap());
             modelBuilder.Configurations.Add(new MeclisGorevTanimMap());
             modelBuilder.Configurations.Add(new PartiTanimMap());
+            modelBuilder.Configurations.Add(new IlTanimMap());
             modelBuilder.Configurations.Add(new VekilDanismanMap());
             modelBuilder.Configurations.Add(new VekilDetayMap());
             modelBuilder.Configurations.Add(new MeslekTanimMap());

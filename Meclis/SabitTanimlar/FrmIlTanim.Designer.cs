@@ -35,7 +35,7 @@ namespace Meclis.SabitTanimlar
             this.label2 = new System.Windows.Forms.Label();
             this.txtIlAdi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtIlBolgesi = new System.Windows.Forms.ComboBox();
+            this.cbIlBolgesi = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnKaydet
@@ -48,6 +48,7 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet.TabIndex = 4;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // label1
             // 
@@ -100,22 +101,30 @@ namespace Meclis.SabitTanimlar
             this.label3.TabIndex = 14;
             this.label3.Text = "İl Bölgesi:";
             // 
-            // txtIlBolgesi
+            // cbIlBolgesi
             // 
-            this.txtIlBolgesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtIlBolgesi.FormattingEnabled = true;
-            this.txtIlBolgesi.Location = new System.Drawing.Point(152, 100);
-            this.txtIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIlBolgesi.Name = "txtIlBolgesi";
-            this.txtIlBolgesi.Size = new System.Drawing.Size(125, 28);
-            this.txtIlBolgesi.TabIndex = 3;
+            this.cbIlBolgesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbIlBolgesi.FormattingEnabled = true;
+            this.cbIlBolgesi.Items.AddRange(new object[] {
+            "Akdeniz Bölgesi",
+            "Doğu Anadolu Bölgesi",
+            "Ege Bölgesi",
+            "Güneydoğu Anadolu Bölgesi",
+            "İç Anadolu Bölgesi",
+            "Karadeniz Bölgesi",
+            "Marmara Bölgesi"});
+            this.cbIlBolgesi.Location = new System.Drawing.Point(152, 100);
+            this.cbIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
+            this.cbIlBolgesi.Name = "cbIlBolgesi";
+            this.cbIlBolgesi.Size = new System.Drawing.Size(125, 28);
+            this.cbIlBolgesi.TabIndex = 3;
             // 
             // FrmIlTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 225);
-            this.Controls.Add(this.txtIlBolgesi);
+            this.Controls.Add(this.cbIlBolgesi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIlAdi);
@@ -141,6 +150,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIlAdi;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox txtIlBolgesi;
+        private System.Windows.Forms.ComboBox cbIlBolgesi;
     }
 }

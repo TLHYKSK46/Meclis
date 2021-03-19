@@ -41,6 +41,8 @@ namespace Meclis.SabitTanimlar
                 
                 });
                 MessageBox.Show("Dil Eklendi!","Admin");
+                txtDilAdi.Text = "";
+                cbDilSeviyesi.Text = "";
             }
 
         }

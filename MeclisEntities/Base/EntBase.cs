@@ -14,16 +14,9 @@ namespace MeclisEntities.Base
     public class EntBase : EntBaseId, IEntity
     {
         public int Silindi { get; set; }
-     
-    
         public DateTime? SilinmeTarihi { get; set; }
-
-   
-        public DateTime EklenmeTarihi { get; set; }
-      
-
-
-        public DateTime? GuncellemeTarihi { get; set; }
+        public DateTime EklenmeTarihi { get; set; } 
+        public DateTime? GuncellemeTarihi { get; set; } = DateTime.Now;
         public int? SilenPersonelId { get; set; }
         public int? GuncelleyenPersonelId { get; set; }
     }

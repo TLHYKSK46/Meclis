@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MeclisDao.IDaoServis;
+using MeclisDao.Instances;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,94 +14,57 @@ namespace Meclis.SabitTanimlar
 {
     public partial class FrmDanismanTanim : Form
     {
+        private IDanismanTanimService _danismanTanim;
+        private IIlTanimService _ilTanimService;
+        private ICinsiyetTanimService _cinsiyetTanim;
         public FrmDanismanTanim()
         {
             InitializeComponent();
+            _danismanTanim = InstanceFactory.GetInstance<IDanismanTanimService>();
+            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
         }
 
         private void FrmDanismanTanim_Load(object sender, EventArgs e)
         {
+           // CinsiyetDoldur();
+            SehirDoldur();
+
+
 
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-
+            string tcKimlik = txtTcKimlikNo.Text;
+            string ad = txtAd.Text;
+            string soyad = txtSoyad.Text;
+            string mail = txtMail.Text;
+            string telNo = txtTelNo.Text;
+            int cinsiyet = cbCinsiyet.SelectedIndex;
+            int il = cbIl.SelectedIndex;
+            if ((tcKimlik != null) && (ad != null) && (soyad != null)
+                && (cinsiyet != null) && (cbCinsiyet.SelectedItem!=null) && (cbIl.SelectedItem!=null)) {
+       
+                MessageBox.Show("Lütfe", "Program");
+            }
+        
+            else {
+                MessageBox.Show("Lütfen Tüm Alanları Doldurduğunuzdan Emin Olunuz..","Program");
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void CinsiyetDoldur() {
+           cbCinsiyet.DataSource= _cinsiyetTanim.ListeGetir();
+            cbCinsiyet.DisplayMember = "cinsiyet";
+            cbCinsiyet.ValueMember = "id";
+        }
+        private void SehirDoldur()
         {
-
+            cbIl.DataSource=_ilTanimService.ListeGetir();
+            cbIl.DisplayMember = "il_adi";
+            cbIl.ValueMember = "id";
         }
 
-        private void cbIl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbCinsiyet_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkAktif_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTelNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSoyad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAd_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTcKimlikNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
