@@ -12,6 +12,12 @@ namespace MeclisDao.DaoServis
     public class CinsiyetTanimService : ICinsiyetTanimService
     {
         ICinsiyetTanimDal _cinsiyetTanimDal;
+
+        public CinsiyetTanimService(ICinsiyetTanimDal cinsiyetTanimDal)
+        {
+            _cinsiyetTanimDal = cinsiyetTanimDal;
+        }
+
         public void Ekle(CinsiyetTanim cinsiyetTanim)
         {
             _cinsiyetTanimDal.Add(cinsiyetTanim);

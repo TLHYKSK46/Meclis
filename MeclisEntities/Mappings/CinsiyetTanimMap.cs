@@ -15,7 +15,7 @@ namespace MeclisEntities.Mappings
             ToTable(@"cinsiyet_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.CinsiyetAdi).HasColumnName("cinsiyet_adi");
+            Property(x => x.CinsiyetAdi).HasColumnName("cinsiyet");
             
         }
     }

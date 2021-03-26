@@ -27,8 +27,9 @@ namespace Meclis.SabitTanimlar
 
         private void FrmDanismanTanim_Load(object sender, EventArgs e)
         {
-           // CinsiyetDoldur();
             SehirDoldur();
+            CinsiyetDoldur();
+          
 
 
 
@@ -55,15 +56,17 @@ namespace Meclis.SabitTanimlar
         }
 
         private void CinsiyetDoldur() {
+
            cbCinsiyet.DataSource= _cinsiyetTanim.ListeGetir();
-            cbCinsiyet.DisplayMember = "cinsiyet";
-            cbCinsiyet.ValueMember = "id";
+            cbCinsiyet.DisplayMember = "CinsiyetAdi";
+            cbCinsiyet.ValueMember = "Id";
+           
         }
         private void SehirDoldur()
         {
             cbIl.DataSource=_ilTanimService.ListeGetir();
-            cbIl.DisplayMember = "il_adi";
-            cbIl.ValueMember = "id";
+            cbIl.DisplayMember = "IlAdi";
+            cbIl.ValueMember = "Id";
         }
 
     }

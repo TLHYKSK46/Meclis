@@ -13,7 +13,7 @@ namespace MeclisEntities.Base
     [Serializable]
     public class EntBase : EntBaseId, IEntity
     {
-        public int Silindi { get; set; }
+        public short Silindi { get; set; }
         public DateTime? SilinmeTarihi { get; set; }
         public DateTime EklenmeTarihi { get; set; } 
         public DateTime? GuncellemeTarihi { get; set; } = DateTime.Now;

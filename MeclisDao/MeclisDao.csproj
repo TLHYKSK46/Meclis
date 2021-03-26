@@ -74,6 +74,8 @@
     <Compile Include="DaoServis\VekilDanismanService.cs" />
     <Compile Include="DaoServis\VekilDetayService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
+    <Compile Include="Enums\BaseEnum\EnmBase.cs" />
+    <Compile Include="Enums\EnmCinsiyet.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="IDaoServis\IKomisyonDurumService.cs" />
     <Compile Include="IDaoServis\IMeslekTanimService.cs" />

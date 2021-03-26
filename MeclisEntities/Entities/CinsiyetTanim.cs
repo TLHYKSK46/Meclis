@@ -12,9 +12,9 @@ namespace MeclisEntities.Entities
     public class CinsiyetTanim:EntBase
      
     {
-      
+
         [MaxLength(5)]
-        public string CinsiyetAdi { get; set; }
+        public string CinsiyetAdi { get; set; } 
         
 
     }
