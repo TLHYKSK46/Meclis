@@ -13,7 +13,7 @@ namespace MeclisEntities.Entities
      
     {
 
-        [MaxLength(5)]
+       // [MaxLength(2)]
         public string CinsiyetAdi { get; set; } 
         
 

@@ -1,5 +1,6 @@
 ﻿using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
+using MeclisEntities.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,16 +18,19 @@ namespace Meclis.SabitTanimlar
         private IDanismanTanimService _danismanTanim;
         private IIlTanimService _ilTanimService;
         private ICinsiyetTanimService _cinsiyetTanim;
+        private IVekilTanimService _Vekil;
         public FrmDanismanTanim()
         {
             InitializeComponent();
             _danismanTanim = InstanceFactory.GetInstance<IDanismanTanimService>();
             _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
+            _Vekil = InstanceFactory.GetInstance<IVekilTanimService>();
         }
 
         private void FrmDanismanTanim_Load(object sender, EventArgs e)
         {
+            VekilDoldur();
             SehirDoldur();
             CinsiyetDoldur();
           
@@ -42,16 +46,30 @@ namespace Meclis.SabitTanimlar
             string soyad = txtSoyad.Text;
             string mail = txtMail.Text;
             string telNo = txtTelNo.Text;
-            int cinsiyet = cbCinsiyet.SelectedIndex;
-            int il = cbIl.SelectedIndex;
+            int cinsiyet = Convert.ToInt32(cbCinsiyet.SelectedValue);
+            int il = Convert.ToInt32(cbIl.SelectedValue);
+            int vekil = Convert.ToInt32(cbVekilTanim.SelectedValue);
+            bool aktif = chkAktif.Checked;
             if ((tcKimlik != null) && (ad != null) && (soyad != null)
-                && (cinsiyet != null) && (cbCinsiyet.SelectedItem!=null) && (cbIl.SelectedItem!=null)) {
-       
-                MessageBox.Show("Lütfe", "Program");
+                && !(cinsiyet < 0) && !(cinsiyet>1) && (il!=0)) {
+
+                _danismanTanim.Ekle(new DanismanTanim { 
+                    TcKimlikNo=tcKimlik,
+                Ad=ad,
+                Soyad=soyad,
+                Mail=mail,
+                TelNo=telNo,
+                CinsiyetTanimId=cinsiyet,
+                IlTanimId=il,
+                VekilTanimId=vekil,
+                Aktif=aktif
+                
+                
+                });
             }
         
             else {
-                MessageBox.Show("Lütfen Tüm Alanları Doldurduğunuzdan Emin Olunuz..","Program");
+                MessageBox.Show("Lütfen Tüm Alanları Doldurduğunuzdan Ve Bilgileri Doğru Girdiğinizden Emin Olunuz..","Program");
             }
         }
 
@@ -67,6 +85,14 @@ namespace Meclis.SabitTanimlar
             cbIl.DataSource=_ilTanimService.ListeGetir();
             cbIl.DisplayMember = "IlAdi";
             cbIl.ValueMember = "Id";
+        }
+        private void VekilDoldur() {
+            cbVekilTanim.DataSource = _Vekil.ListeGetir();
+            cbVekilTanim.DisplayMember = "Ad";
+            cbVekilTanim.DisplayMember += "Soyad";
+            cbVekilTanim.ValueMember = "Id";
+
+
         }
 
     }

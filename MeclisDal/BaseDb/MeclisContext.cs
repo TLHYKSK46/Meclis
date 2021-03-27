@@ -21,6 +21,7 @@ namespace MeclisDal.BaseDb
         public DbSet<VekilTanim> VekilTanims { get; set; }
         public DbSet<CinsiyetTanim> CinsiyetTanims { get; set; }
         public DbSet<DilTanim> DilTanims { get; set; }
+        public DbSet<DanismanTanim> DanismanTanims { get; set; }
         public DbSet<DonemTanim> DonemTanims { get; set; }
         public DbSet<DostlukGrupTanim> DostlukGrupTanims { get; set; }
         public DbSet<GenelMerkezGorev> GenelMerkezGorevs { get; set; }

@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,14 +14,20 @@ namespace MeclisDao.DaoServis
     public class DonemTanimService : IDonemTanimService
     {
         IDonemTanimDal _donemTanimDal;
+        MeclisContext _context;
 
-        public DonemTanimService(IDonemTanimDal donemTanimDal)
+        public DonemTanimService(IDonemTanimDal donemTanimDal, MeclisContext context)
         {
             _donemTanimDal = donemTanimDal;
+            _context = context;
         }
 
         public void Ekle(DonemTanim donemTanim)
         {
+            var aData = _context.DonemTanims.SingleOrDefault(p => p.Id == donemTanim.Id);
+            if(aData!=null)
+                throw new DaoException(donemTanim.DonemAdi + "Dönemi Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+
             _donemTanimDal.Add(donemTanim);
         }
 

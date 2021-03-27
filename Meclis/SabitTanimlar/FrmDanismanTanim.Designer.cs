@@ -45,13 +45,15 @@ namespace Meclis.SabitTanimlar
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbIl = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbVekilTanim = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // chkAktif
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkAktif.Location = new System.Drawing.Point(167, 268);
+            this.chkAktif.Location = new System.Drawing.Point(167, 299);
             this.chkAktif.Name = "chkAktif";
             this.chkAktif.Size = new System.Drawing.Size(61, 24);
             this.chkAktif.TabIndex = 8;
@@ -197,11 +199,32 @@ namespace Meclis.SabitTanimlar
             this.cbIl.Size = new System.Drawing.Size(206, 28);
             this.cbIl.TabIndex = 7;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(23, 257);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 20);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Vekil Tanım:";
+            // 
+            // cbVekilTanim
+            // 
+            this.cbVekilTanim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbVekilTanim.FormattingEnabled = true;
+            this.cbVekilTanim.Location = new System.Drawing.Point(167, 254);
+            this.cbVekilTanim.Name = "cbVekilTanim";
+            this.cbVekilTanim.Size = new System.Drawing.Size(206, 28);
+            this.cbVekilTanim.TabIndex = 44;
+            // 
             // FrmDanismanTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 386);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbVekilTanim);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbIl);
             this.Controls.Add(this.label5);
@@ -247,5 +270,7 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbIl;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbVekilTanim;
     }
 }
