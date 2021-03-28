@@ -50,9 +50,14 @@ namespace Meclis.SabitTanimlar
             int il = Convert.ToInt32(cbIl.SelectedValue);
             int vekil = Convert.ToInt32(cbVekilTanim.SelectedValue);
             bool aktif = chkAktif.Checked;
+         
+
             if ((tcKimlik != null) && (ad != null) && (soyad != null)
                 && !(cinsiyet < 0) && !(cinsiyet>1) && (il!=0)) {
 
+                if (tcKimlik.Length != 11 )
+                    MessageBox.Show("Lütfen Tc Kimlik No alanını kontrol ediniz..(11 karekterden oluşması gerekir!)");
+              
                 _danismanTanim.Ekle(new DanismanTanim { 
                     TcKimlikNo=tcKimlik,
                 Ad=ad,
@@ -62,7 +67,8 @@ namespace Meclis.SabitTanimlar
                 CinsiyetTanimId=cinsiyet,
                 IlTanimId=il,
                 VekilTanimId=vekil,
-                Aktif=aktif
+                Aktif=aktif,
+                EklenmeTarihi=DateTime.Now
                 
                 
                 });

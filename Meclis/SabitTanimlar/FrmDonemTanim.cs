@@ -31,9 +31,14 @@ namespace Meclis.SabitTanimlar
             string donem = txtDonemAdi.Text;
             if (donem != null || donem != "")
             {
-                _donemService.Ekle(new DonemTanim { 
-                DonemAdi=donem
-                });
+                _donemService.Ekle(new DonemTanim
+                {
+                    DonemAdi = donem,
+                    EklenmeTarihi = DateTime.Now
+
+                }) ;
+                MessageBox.Show("Ekleme İşlemi Başarılı!", "Program");
+                txtDonemAdi.Text = "";
 
             }
             else {

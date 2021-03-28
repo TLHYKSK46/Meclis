@@ -32,7 +32,6 @@ namespace Meclis.SabitTanimlar
             this.chkAktif = new System.Windows.Forms.CheckBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTelNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@ namespace Meclis.SabitTanimlar
             this.cbIl = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbVekilTanim = new System.Windows.Forms.ComboBox();
+            this.txtTelNo = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // chkAktif
@@ -77,14 +77,6 @@ namespace Meclis.SabitTanimlar
             this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 39;
             this.label7.Text = "Mail:";
-            // 
-            // txtTelNo
-            // 
-            this.txtTelNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTelNo.Location = new System.Drawing.Point(167, 118);
-            this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(206, 27);
-            this.txtTelNo.TabIndex = 4;
             // 
             // label4
             // 
@@ -218,11 +210,20 @@ namespace Meclis.SabitTanimlar
             this.cbVekilTanim.Size = new System.Drawing.Size(206, 28);
             this.cbVekilTanim.TabIndex = 44;
             // 
+            // txtTelNo
+            // 
+            this.txtTelNo.Location = new System.Drawing.Point(167, 118);
+            this.txtTelNo.Mask = "(999) 000-0000";
+            this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.Size = new System.Drawing.Size(206, 27);
+            this.txtTelNo.TabIndex = 46;
+            // 
             // FrmDanismanTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 386);
+            this.Controls.Add(this.txtTelNo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbVekilTanim);
             this.Controls.Add(this.label6);
@@ -232,7 +233,6 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.chkAktif);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTelNo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.label3);
@@ -257,7 +257,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.CheckBox chkAktif;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTelNo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.Label label3;
@@ -272,5 +271,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.ComboBox cbIl;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbVekilTanim;
+        private System.Windows.Forms.MaskedTextBox txtTelNo;
     }
 }

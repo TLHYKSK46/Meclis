@@ -21,9 +21,11 @@ namespace MeclisDal.BaseDb
         {
             using (TContext context = new TContext())
             {
-                
+                entity.EklenmeTarihi = DateTime.Now;
                 var addedEntity = context.Entry(entity);
                 addedEntity.State = EntityState.Added;
+              //  context.Configuration.LazyLoadingEnabled = false;
+
                 context.SaveChanges();
             }
         }

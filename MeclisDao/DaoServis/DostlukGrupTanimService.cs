@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,14 +14,20 @@ namespace MeclisDao.DaoServis
     public class DostlukGrupTanimService : IDostlukGrupTanimService
     {
         IDostlukGrupTanimDal _DostlukGrupTanim;
+        MeclisContext _context;
 
-        public DostlukGrupTanimService(IDostlukGrupTanimDal dostlukGrupTanim)
+        public DostlukGrupTanimService(IDostlukGrupTanimDal dostlukGrupTanim, MeclisContext context)
         {
             _DostlukGrupTanim = dostlukGrupTanim;
+            _context = context;
         }
 
         public void Ekle(DostlukGrupTanim doslukGrupTanim)
         {
+            var aData = _context.DostlukGrupTanims.SingleOrDefault(p =>p.DostlukGrupAdi==doslukGrupTanim.DostlukGrupAdi);
+            if (aData != null)
+                throw new DaoException(doslukGrupTanim.DostlukGrupAdi + "Dönemi Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+
             _DostlukGrupTanim.Add(doslukGrupTanim);
         }
 
@@ -35,7 +43,7 @@ namespace MeclisDao.DaoServis
 
         public List<DostlukGrupTanim> ListeGetir()
         {
-            return _DostlukGrupTanim.GetAll();
+            return _DostlukGrupTanim.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)
