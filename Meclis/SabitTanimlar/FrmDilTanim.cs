@@ -31,23 +31,26 @@ namespace Meclis.SabitTanimlar
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string dilAdi= txtDilAdi.Text;
-            string dilSeviyesi = cbDilSeviyesi.Text;
-            if ((!dilAdi.Equals("") || dilAdi!=null)&&(!dilSeviyesi.Equals("")||dilSeviyesi!=null))
+            if ((!dilAdi.Equals("") || dilAdi!=null))
             {
                 _dilService.Ekle(new DilTanim { 
-                DilAdi=dilAdi,
-                DilSeviye=dilSeviyesi,
+                DilAdi=dilAdi,              
                 EklenmeTarihi=DateTime.Now
                 
                 });
                 MessageBox.Show("Dil Eklendi!","Admin");
                 txtDilAdi.Text = "";
-                cbDilSeviyesi.Text = "";
+               
             }
 
         }
 
         private void cbDilSeviyesi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDilAdi_TextChanged(object sender, EventArgs e)
         {
 
         }

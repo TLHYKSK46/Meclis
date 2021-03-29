@@ -114,5 +114,10 @@ namespace Meclis
             Form frmDanismanTanim = new FrmDanismanTanim();
             frmDanismanTanim.Show();
                 }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

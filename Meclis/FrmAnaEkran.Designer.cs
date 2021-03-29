@@ -48,7 +48,9 @@ namespace Meclis
             this.vekilTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.menuAnaEkran.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuAnaEkran
@@ -57,8 +59,8 @@ namespace Meclis
             this.menuAnaEkran.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.menuAnaEkran.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sabitTanımlarToolStripMenuItem,
-            this.listelerToolStripMenuItem,
-            this.raporlarToolStripMenuItem});
+            this.raporlarToolStripMenuItem,
+            this.listelerToolStripMenuItem});
             this.menuAnaEkran.Location = new System.Drawing.Point(0, 0);
             this.menuAnaEkran.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.menuAnaEkran.Name = "menuAnaEkran";
@@ -209,11 +211,25 @@ namespace Meclis
             this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 132);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1251, 647);
+            this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
             // FrmAnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 782);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.menuAnaEkran);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -227,6 +243,7 @@ namespace Meclis
             this.Load += new System.EventHandler(this.FrmAnaEkran_Load);
             this.menuAnaEkran.ResumeLayout(false);
             this.menuAnaEkran.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +270,6 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem vekilTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listelerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

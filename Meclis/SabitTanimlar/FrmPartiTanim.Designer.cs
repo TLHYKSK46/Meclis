@@ -37,7 +37,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(172, 75);
+            this.btnKaydet.Location = new System.Drawing.Point(189, 67);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(102, 27);
@@ -59,7 +59,7 @@ namespace Meclis.SabitTanimlar
             // txtPartiAdi
             // 
             this.txtPartiAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPartiAdi.Location = new System.Drawing.Point(105, 21);
+            this.txtPartiAdi.Location = new System.Drawing.Point(122, 21);
             this.txtPartiAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtPartiAdi.Name = "txtPartiAdi";
             this.txtPartiAdi.Size = new System.Drawing.Size(169, 27);
