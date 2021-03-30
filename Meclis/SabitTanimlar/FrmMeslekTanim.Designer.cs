@@ -38,7 +38,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(199, 125);
+            this.btnKaydet.Location = new System.Drawing.Point(297, 123);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(106, 29);
@@ -61,25 +61,25 @@ namespace Meclis.SabitTanimlar
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 62);
+            this.comboBox1.Location = new System.Drawing.Point(147, 63);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 28);
+            this.comboBox1.Size = new System.Drawing.Size(256, 28);
             this.comboBox1.TabIndex = 17;
             // 
             // txtDilAdi
             // 
             this.txtDilAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDilAdi.Location = new System.Drawing.Point(131, 24);
+            this.txtDilAdi.Location = new System.Drawing.Point(147, 31);
             this.txtDilAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDilAdi.Name = "txtDilAdi";
-            this.txtDilAdi.Size = new System.Drawing.Size(174, 27);
+            this.txtDilAdi.Size = new System.Drawing.Size(256, 27);
             this.txtDilAdi.TabIndex = 18;
             // 
             // FrmMeslekTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 167);
+            this.ClientSize = new System.Drawing.Size(458, 182);
             this.Controls.Add(this.txtDilAdi);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnKaydet);

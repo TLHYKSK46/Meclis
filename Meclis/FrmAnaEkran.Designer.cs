@@ -46,8 +46,8 @@ namespace Meclis
             this.partiTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vekilDanışmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vekilTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.menuAnaEkran.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -197,19 +197,19 @@ namespace Meclis
             this.vekilTanımToolStripMenuItem.Text = "Vekil Tanım";
             this.vekilTanımToolStripMenuItem.Click += new System.EventHandler(this.vekilTanımToolStripMenuItem_Click);
             // 
-            // listelerToolStripMenuItem
-            // 
-            this.listelerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listelerToolStripMenuItem.Name = "listelerToolStripMenuItem";
-            this.listelerToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.listelerToolStripMenuItem.Text = "Listeler";
-            // 
             // raporlarToolStripMenuItem
             // 
             this.raporlarToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
             this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
+            // 
+            // listelerToolStripMenuItem
+            // 
+            this.listelerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listelerToolStripMenuItem.Name = "listelerToolStripMenuItem";
+            this.listelerToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.listelerToolStripMenuItem.Text = "Listeler";
             // 
             // dataGridView2
             // 

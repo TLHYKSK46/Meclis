@@ -53,7 +53,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkAktif.Location = new System.Drawing.Point(167, 299);
+            this.chkAktif.Location = new System.Drawing.Point(167, 325);
             this.chkAktif.Name = "chkAktif";
             this.chkAktif.Size = new System.Drawing.Size(61, 24);
             this.chkAktif.TabIndex = 8;
@@ -65,7 +65,7 @@ namespace Meclis.SabitTanimlar
             this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtMail.Location = new System.Drawing.Point(167, 152);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(206, 27);
+            this.txtMail.Size = new System.Drawing.Size(269, 27);
             this.txtMail.TabIndex = 5;
             // 
             // label7
@@ -93,7 +93,7 @@ namespace Meclis.SabitTanimlar
             this.txtSoyad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSoyad.Location = new System.Drawing.Point(167, 85);
             this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(206, 27);
+            this.txtSoyad.Size = new System.Drawing.Size(269, 27);
             this.txtSoyad.TabIndex = 3;
             // 
             // label3
@@ -111,7 +111,7 @@ namespace Meclis.SabitTanimlar
             this.txtAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAd.Location = new System.Drawing.Point(167, 52);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(206, 27);
+            this.txtAd.Size = new System.Drawing.Size(269, 27);
             this.txtAd.TabIndex = 2;
             // 
             // label2
@@ -140,7 +140,7 @@ namespace Meclis.SabitTanimlar
             this.txtTcKimlikNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtTcKimlikNo.Location = new System.Drawing.Point(167, 20);
             this.txtTcKimlikNo.Name = "txtTcKimlikNo";
-            this.txtTcKimlikNo.Size = new System.Drawing.Size(206, 27);
+            this.txtTcKimlikNo.Size = new System.Drawing.Size(269, 27);
             this.txtTcKimlikNo.TabIndex = 1;
             // 
             // label1
@@ -159,7 +159,7 @@ namespace Meclis.SabitTanimlar
             this.cbCinsiyet.FormattingEnabled = true;
             this.cbCinsiyet.Location = new System.Drawing.Point(167, 186);
             this.cbCinsiyet.Name = "cbCinsiyet";
-            this.cbCinsiyet.Size = new System.Drawing.Size(206, 28);
+            this.cbCinsiyet.Size = new System.Drawing.Size(269, 28);
             this.cbCinsiyet.TabIndex = 6;
             // 
             // label5
@@ -188,7 +188,7 @@ namespace Meclis.SabitTanimlar
             this.cbIl.FormattingEnabled = true;
             this.cbIl.Location = new System.Drawing.Point(167, 220);
             this.cbIl.Name = "cbIl";
-            this.cbIl.Size = new System.Drawing.Size(206, 28);
+            this.cbIl.Size = new System.Drawing.Size(269, 28);
             this.cbIl.TabIndex = 7;
             // 
             // label8
@@ -207,7 +207,7 @@ namespace Meclis.SabitTanimlar
             this.cbVekilTanim.FormattingEnabled = true;
             this.cbVekilTanim.Location = new System.Drawing.Point(167, 254);
             this.cbVekilTanim.Name = "cbVekilTanim";
-            this.cbVekilTanim.Size = new System.Drawing.Size(206, 28);
+            this.cbVekilTanim.Size = new System.Drawing.Size(269, 28);
             this.cbVekilTanim.TabIndex = 44;
             // 
             // txtTelNo
@@ -215,7 +215,7 @@ namespace Meclis.SabitTanimlar
             this.txtTelNo.Location = new System.Drawing.Point(167, 118);
             this.txtTelNo.Mask = "(999) 000-0000";
             this.txtTelNo.Name = "txtTelNo";
-            this.txtTelNo.Size = new System.Drawing.Size(206, 27);
+            this.txtTelNo.Size = new System.Drawing.Size(269, 27);
             this.txtTelNo.TabIndex = 46;
             // 
             // FrmDanismanTanim

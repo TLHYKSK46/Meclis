@@ -41,7 +41,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(186, 179);
+            this.btnKaydet.Location = new System.Drawing.Point(259, 181);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(116, 35);
@@ -67,7 +67,7 @@ namespace Meclis.SabitTanimlar
             this.txtIlKodu.Location = new System.Drawing.Point(152, 21);
             this.txtIlKodu.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlKodu.Name = "txtIlKodu";
-            this.txtIlKodu.Size = new System.Drawing.Size(125, 27);
+            this.txtIlKodu.Size = new System.Drawing.Size(223, 27);
             this.txtIlKodu.TabIndex = 1;
             // 
             // label2
@@ -87,7 +87,7 @@ namespace Meclis.SabitTanimlar
             this.txtIlAdi.Location = new System.Drawing.Point(152, 63);
             this.txtIlAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIlAdi.Name = "txtIlAdi";
-            this.txtIlAdi.Size = new System.Drawing.Size(125, 27);
+            this.txtIlAdi.Size = new System.Drawing.Size(223, 27);
             this.txtIlAdi.TabIndex = 2;
             // 
             // label3
@@ -116,14 +116,14 @@ namespace Meclis.SabitTanimlar
             this.cbIlBolgesi.Location = new System.Drawing.Point(152, 100);
             this.cbIlBolgesi.Margin = new System.Windows.Forms.Padding(2);
             this.cbIlBolgesi.Name = "cbIlBolgesi";
-            this.cbIlBolgesi.Size = new System.Drawing.Size(125, 28);
+            this.cbIlBolgesi.Size = new System.Drawing.Size(223, 28);
             this.cbIlBolgesi.TabIndex = 3;
             // 
             // FrmIlTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 225);
+            this.ClientSize = new System.Drawing.Size(386, 239);
             this.Controls.Add(this.cbIlBolgesi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

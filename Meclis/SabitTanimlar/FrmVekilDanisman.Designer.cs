@@ -41,7 +41,7 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(232, 126);
+            this.btnKaydet.Location = new System.Drawing.Point(268, 121);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(140, 40);
             this.btnKaydet.TabIndex = 3;
@@ -63,7 +63,7 @@ namespace Meclis.SabitTanimlar
             this.cbVekil.FormattingEnabled = true;
             this.cbVekil.Location = new System.Drawing.Point(148, 19);
             this.cbVekil.Name = "cbVekil";
-            this.cbVekil.Size = new System.Drawing.Size(224, 26);
+            this.cbVekil.Size = new System.Drawing.Size(260, 26);
             this.cbVekil.TabIndex = 1;
             // 
             // cbDanisman
@@ -71,7 +71,7 @@ namespace Meclis.SabitTanimlar
             this.cbDanisman.FormattingEnabled = true;
             this.cbDanisman.Location = new System.Drawing.Point(148, 50);
             this.cbDanisman.Name = "cbDanisman";
-            this.cbDanisman.Size = new System.Drawing.Size(224, 26);
+            this.cbDanisman.Size = new System.Drawing.Size(260, 26);
             this.cbDanisman.TabIndex = 2;
             // 
             // label2
@@ -98,14 +98,14 @@ namespace Meclis.SabitTanimlar
             // 
             this.txtSira.Location = new System.Drawing.Point(148, 80);
             this.txtSira.Name = "txtSira";
-            this.txtSira.Size = new System.Drawing.Size(224, 24);
+            this.txtSira.Size = new System.Drawing.Size(260, 24);
             this.txtSira.TabIndex = 23;
             // 
             // FrmVekilDanisman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 188);
+            this.ClientSize = new System.Drawing.Size(428, 180);
             this.Controls.Add(this.txtSira);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbDanisman);
