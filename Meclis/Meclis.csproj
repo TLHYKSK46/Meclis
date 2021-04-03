@@ -75,6 +75,48 @@
     <Compile Include="Listeler\DanismanListe.Designer.cs">
       <DependentUpon>DanismanListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listeler\DilListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\DilListe.Designer.cs">
+      <DependentUpon>DilListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listeler\GenelMerkezGorevListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\GenelMerkezGorevListe.Designer.cs">
+      <DependentUpon>GenelMerkezGorevListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listeler\GrupPersonelListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\GrupPersonelListe.Designer.cs">
+      <DependentUpon>GrupPersonelListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listeler\KomisyonListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\KomisyonListe.Designer.cs">
+      <DependentUpon>KomisyonListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listeler\MazeretListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\MazeretListe.Designer.cs">
+      <DependentUpon>MazeretListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listeler\MeclisGorevListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\MeclisGorevListe.Designer.cs">
+      <DependentUpon>MeclisGorevListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listeler\MeslekListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\MeslekListe.Designer.cs">
+      <DependentUpon>MeslekListe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SabitTanimlar\FrmCinsiyetTanim.cs">
@@ -181,6 +223,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Listeler\DanismanListe.resx">
       <DependentUpon>DanismanListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\DilListe.resx">
+      <DependentUpon>DilListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\GenelMerkezGorevListe.resx">
+      <DependentUpon>GenelMerkezGorevListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\GrupPersonelListe.resx">
+      <DependentUpon>GrupPersonelListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\KomisyonListe.resx">
+      <DependentUpon>KomisyonListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\MazeretListe.resx">
+      <DependentUpon>MazeretListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\MeclisGorevListe.resx">
+      <DependentUpon>MeclisGorevListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\MeslekListe.resx">
+      <DependentUpon>MeslekListe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
