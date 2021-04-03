@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 namespace MeclisDal.Dal
 {
     public class HatirlatmaTanimDal : EntityRepositoryBase<HatirlatmaTanim, MeclisContext>, IHatirlatmaTanimDal
-
     {
          
     }

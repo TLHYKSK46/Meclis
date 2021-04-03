@@ -36,6 +36,8 @@ namespace Meclis.SabitTanimlar
             this.label1 = new System.Windows.Forms.Label();
             this.dtHatirlatmaTarihi = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbVekilTanim = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtAciklama
@@ -66,6 +68,7 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet.TabIndex = 4;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // txtBaslik
             // 
@@ -103,11 +106,31 @@ namespace Meclis.SabitTanimlar
             this.label4.TabIndex = 39;
             this.label4.Text = "Hatırlatma Tarihi:";
             // 
+            // cbVekilTanim
+            // 
+            this.cbVekilTanim.FormattingEnabled = true;
+            this.cbVekilTanim.Location = new System.Drawing.Point(178, 276);
+            this.cbVekilTanim.Name = "cbVekilTanim";
+            this.cbVekilTanim.Size = new System.Drawing.Size(266, 28);
+            this.cbVekilTanim.TabIndex = 40;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(28, 279);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Vekil:";
+            // 
             // FrmHatirlatmaTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 404);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbVekilTanim);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtHatirlatmaTarihi);
             this.Controls.Add(this.txtAciklama);
@@ -134,5 +157,7 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtHatirlatmaTarihi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbVekilTanim;
+        private System.Windows.Forms.Label label3;
     }
 }

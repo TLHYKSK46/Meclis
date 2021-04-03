@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,15 +14,30 @@ namespace MeclisDao.DaoServis
     public class GrupPersonelTanimService : IGrupPersonelTanimService
     {
         IGrupPesonelTanimDal _GrupPersonel;
+        MeclisContext _meclisContext;
 
-        public GrupPersonelTanimService(IGrupPesonelTanimDal grupPersonel)
+        public GrupPersonelTanimService(IGrupPesonelTanimDal grupPersonel, MeclisContext meclisContext)
         {
             _GrupPersonel = grupPersonel;
+            _meclisContext = meclisContext;
         }
 
         public void Ekle(GrupPersonelTanim grupPersonelTanim)
         {
-            _GrupPersonel.Add(grupPersonelTanim);
+            try
+            {
+                var data = _meclisContext.GrupPersonelTanims.FirstOrDefault(p => p.Id == grupPersonelTanim.Id &&
+                        p.TcKimlikNo == grupPersonelTanim.TcKimlikNo);
+                if (data != null)
+                    throw new DaoException("Zaten Bu Kişi Sistemde Kayıtlıdır!.Lütfen Kontrol Ederek Tekrar Deneyiniz.");
+                _GrupPersonel.Add(grupPersonelTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message.ToString());
+            }
+        
         }
 
         public GrupPersonelTanim Getir(int id)

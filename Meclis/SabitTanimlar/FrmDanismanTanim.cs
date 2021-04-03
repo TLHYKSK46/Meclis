@@ -41,14 +41,14 @@ namespace Meclis.SabitTanimlar
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
 
-            }
-            catch (DaoException ex)
-            {
-                MessageBox.Show(ex.ToString(),"")
-            }
+            //}
+            //catch (DaoException ex)
+            //{
+            //    MessageBox.Show(ex.ToString(), "");
+            //}
             string tcKimlik = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;

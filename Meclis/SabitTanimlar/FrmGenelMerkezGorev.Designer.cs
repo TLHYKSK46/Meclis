@@ -44,6 +44,7 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // label2
             // 
@@ -75,7 +76,9 @@ namespace Meclis.SabitTanimlar
             this.Controls.Add(this.btnKaydet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FrmGenelMerkezGorev";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGenelMerkezGorev";
             this.ResumeLayout(false);
             this.PerformLayout();

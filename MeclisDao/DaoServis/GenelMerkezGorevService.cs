@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,15 +14,28 @@ namespace MeclisDao.DaoServis
     public class GenelMerkezGorevService : IGenelMerkezGorevService
     {
         IGenelMerkezGorevDal _genelMerkez;
-
-        public GenelMerkezGorevService(IGenelMerkezGorevDal genelMerkez)
+        MeclisContext _context;
+        public GenelMerkezGorevService(IGenelMerkezGorevDal genelMerkez, MeclisContext context)
         {
             _genelMerkez = genelMerkez;
+            _context = context;
         }
 
         public void Ekle(GenelMerkezGorev genelMerkezGorev)
         {
-            _genelMerkez.Add(genelMerkezGorev);
+            try
+            {
+                var aData = _context.GenelMerkezGorevs.FirstOrDefault(p => p.GenelMerkezGorevAdi == genelMerkezGorev.GenelMerkezGorevAdi && p.Silindi == 0);
+                if (aData != null)
+                    throw new DaoException(genelMerkezGorev.GenelMerkezGorevAdi + "Bu Görev Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+                _genelMerkez.Add(genelMerkezGorev);
+            }
+            catch (Exception ex)
+            {
+
+                throw new DaoException(ex.Message.ToString());
+            }
+        
         }
 
         public GenelMerkezGorev Getir(int id)

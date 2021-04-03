@@ -67,7 +67,7 @@ namespace MeclisDal.BaseDb
         {
             using (TContext context = new TContext())
             {
-
+                entity.GuncellemeTarihi = DateTime.Now;
                 var updateEntity = context.Entry(entity);
                 updateEntity.State = EntityState.Modified;
                 context.SaveChanges();
