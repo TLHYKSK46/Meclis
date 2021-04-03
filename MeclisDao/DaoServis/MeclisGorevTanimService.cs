@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,15 +14,29 @@ namespace MeclisDao.DaoServis
     public class MeclisGorevTanimService : IMeclisGorevTanimService
     {
         IMeclisGorevTanimDal _meclisGorevTanimDal;
-
-        public MeclisGorevTanimService(IMeclisGorevTanimDal meclisGorevTanimDal)
+        MeclisContext _meclisContext;
+        public MeclisGorevTanimService(IMeclisGorevTanimDal meclisGorevTanimDal, MeclisContext meclisContext)
         {
             _meclisGorevTanimDal = meclisGorevTanimDal;
+            _meclisContext = meclisContext;
         }
 
         public void Ekle(MeclisGorevTanim meclisGorevTanim)
         {
-            _meclisGorevTanimDal.Add(meclisGorevTanim);
+            try
+            {
+                var aData = _meclisContext.MeclisGorevTanims.SingleOrDefault(p => p.MeclisGorevAdi==meclisGorevTanim.MeclisGorevAdi && p.Silindi == 0);
+                if (aData != null)
+                    throw new DaoException("Zaten " + meclisGorevTanim.MeclisGorevAdi+ " Adın da  Tanımlama Yapılmıştır! ,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+
+                _meclisGorevTanimDal.Add(meclisGorevTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message.ToString());
+            }
+  
         }
 
         public MeclisGorevTanim Getir(int id)

@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,15 +14,29 @@ namespace MeclisDao.DaoServis
     public class MeslekTanimService : IMeslekTanimService
     {
         IMeslekTanimDal _meslekTanim;
-
-        public MeslekTanimService(IMeslekTanimDal meslekTanim)
+        MeclisContext _meclisContext;
+        public MeslekTanimService(IMeslekTanimDal meslekTanim, MeclisContext meclisContext)
         {
             _meslekTanim = meslekTanim;
+            _meclisContext = meclisContext;
         }
 
         public void Ekle(MeslekTanim Data)
         {
-            _meslekTanim.Add(Data);
+            try
+            {
+                var aData = _meclisContext.MeslekTanims.FirstOrDefault(p => p.MeslekAdi == Data.MeslekAdi && p.Silindi == 0);
+                if (aData != null)
+                    throw new DaoException("Zaten '" + Data.MeslekAdi + "' Adın da  Tanımlama Yapılmıştır! ,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+
+                _meslekTanim.Add(Data);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message.ToString());
+            }
+         
         }
 
         public MeslekTanim Getir(int id)

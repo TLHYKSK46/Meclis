@@ -32,7 +32,7 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtDilAdi = new System.Windows.Forms.TextBox();
+            this.txtMeslekAdi = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnKaydet
@@ -45,6 +45,7 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet.TabIndex = 15;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // label1
             // 
@@ -66,21 +67,21 @@ namespace Meclis.SabitTanimlar
             this.comboBox1.Size = new System.Drawing.Size(256, 28);
             this.comboBox1.TabIndex = 17;
             // 
-            // txtDilAdi
+            // txtMeslekAdi
             // 
-            this.txtDilAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDilAdi.Location = new System.Drawing.Point(147, 31);
-            this.txtDilAdi.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDilAdi.Name = "txtDilAdi";
-            this.txtDilAdi.Size = new System.Drawing.Size(256, 27);
-            this.txtDilAdi.TabIndex = 18;
+            this.txtMeslekAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMeslekAdi.Location = new System.Drawing.Point(147, 31);
+            this.txtMeslekAdi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMeslekAdi.Name = "txtMeslekAdi";
+            this.txtMeslekAdi.Size = new System.Drawing.Size(256, 27);
+            this.txtMeslekAdi.TabIndex = 18;
             // 
             // FrmMeslekTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 182);
-            this.Controls.Add(this.txtDilAdi);
+            this.Controls.Add(this.txtMeslekAdi);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.label1);
@@ -100,6 +101,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox txtDilAdi;
+        private System.Windows.Forms.TextBox txtMeslekAdi;
     }
 }

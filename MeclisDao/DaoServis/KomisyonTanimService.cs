@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,15 +14,30 @@ namespace MeclisDao.DaoServis
     public class KomisyonTanimService : IKomisyonTanimService
     {
         IKomisyonTanimDal _komisyonTanim;
+        MeclisContext _meclisContext;
 
-        public KomisyonTanimService(IKomisyonTanimDal komisyonTanim)
+        public KomisyonTanimService(IKomisyonTanimDal komisyonTanim, MeclisContext meclisContext)
         {
             _komisyonTanim = komisyonTanim;
+            _meclisContext = meclisContext;
         }
 
         public void Ekle(KomisyonTanim komisyonTanim)
         {
-            _komisyonTanim.Add(komisyonTanim);
+            try
+            {
+                var aData = _meclisContext.KomisyonTanims.SingleOrDefault(p => p.IhtisasAdi == komisyonTanim.IhtisasAdi && p.UluslararasiAdi == komisyonTanim.UluslararasiAdi && p.Silindi==0);
+                if (aData != null)
+                    throw new DaoException(komisyonTanim.UluslararasiAdi + " ve " + komisyonTanim.IhtisasAdi + " Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+
+                _komisyonTanim.Add(komisyonTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message.ToString());
+            }
+   
         }
 
         public KomisyonTanim Getir(int id)

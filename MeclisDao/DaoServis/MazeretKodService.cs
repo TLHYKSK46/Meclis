@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,15 +14,29 @@ namespace MeclisDao.DaoServis
    public class MazeretKodService:IMazeretKodService
     {
         IMazeretKodDal _mazeretKodDal;
-
-        public MazeretKodService(IMazeretKodDal mazeretKodDal)
+        MeclisContext _meclisContext;
+        public MazeretKodService(IMazeretKodDal mazeretKodDal, MeclisContext meclisContext)
         {
             _mazeretKodDal = mazeretKodDal;
+            _meclisContext = meclisContext;
         }
 
         public void Ekle(MazeretKod mazeretKod)
         {
-            _mazeretKodDal.Add(mazeretKod);
+            try
+            {
+                var aData = _meclisContext.MazeretKods.SingleOrDefault(p =>p.MazeretKodu==mazeretKod.MazeretKodu && p.Silindi == 0);
+                if (aData != null)
+                    throw new DaoException(" Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+               
+                _mazeretKodDal.Add(mazeretKod);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message.ToString());
+            }
+           
         }
 
         public MazeretKod Getir(int id)
