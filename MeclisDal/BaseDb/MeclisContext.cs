@@ -32,6 +32,7 @@ namespace MeclisDal.BaseDb
         public DbSet<MazeretKod> MazeretKods { get; set; }
         public DbSet<MazeretTanim> MazeretTanims { get; set; }
         public DbSet<MeclisGorevTanim> MeclisGorevTanims { get; set; }
+        public DbSet<PartiGrupTanim> PartiGrupTanims { get; set; }
         public DbSet<PartiTanim> PartiTanims { get; set; }
         public DbSet<VekilDanisman> VekilDanismans { get; set; }
         public DbSet<VekilDetay> VekilDetays { get; set; }
@@ -54,6 +55,7 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new MazeretKodMap());
             modelBuilder.Configurations.Add(new MazeretTanimMap());
             modelBuilder.Configurations.Add(new MeclisGorevTanimMap());
+            modelBuilder.Configurations.Add(new PartiGrupTanimMap());
             modelBuilder.Configurations.Add(new PartiTanimMap());
             modelBuilder.Configurations.Add(new IlTanimMap());
             modelBuilder.Configurations.Add(new VekilDanismanMap());

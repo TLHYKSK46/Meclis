@@ -56,6 +56,7 @@
     <Compile Include="Entities\CinsiyetTanim.cs" />
     <Compile Include="Entities\KomisyonDurum.cs" />
     <Compile Include="Entities\MeslekTanim.cs" />
+    <Compile Include="Entities\PartiGrupTanim.cs" />
     <Compile Include="Entities\VekilDanisman.cs" />
     <Compile Include="Entities\PartiTanim.cs" />
     <Compile Include="Entities\MeclisGorevTanim.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Mappings\KomisyonDurumMap.cs" />
     <Compile Include="Mappings\MeslekTanimMap.cs" />
     <Compile Include="Mappings\MazeretKodMap.cs" />
+    <Compile Include="Mappings\PartiGrupTanimMap.cs" />
     <Compile Include="Mappings\VekilDanismanMap.cs" />
     <Compile Include="Mappings\PartiTanimMap.cs" />
     <Compile Include="Mappings\MeclisGorevTanimMap.cs" />

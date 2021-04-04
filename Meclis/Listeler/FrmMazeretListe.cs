@@ -18,7 +18,7 @@ namespace Meclis.Listeler
         public FrmMazeretListe()
         {
             InitializeComponent();
-            _mazeretTanim = InstanceFactory.GetInstance<IKomisyonTanimService>();
+            _mazeretTanim = InstanceFactory.GetInstance<IMazeretTanimService>();
         }
 
         private void FrmMazeretListe_Load(object sender, EventArgs e)

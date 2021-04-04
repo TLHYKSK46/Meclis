@@ -63,8 +63,10 @@
     <Compile Include="Dal\GrupPersonelTanimDal.cs" />
     <Compile Include="Dal\HatirlatmaTanimDal.cs" />
     <Compile Include="Dal\IlTanimDal.cs" />
+    <Compile Include="Dal\PartiGrupTanimDal.cs" />
     <Compile Include="IDal\IKomisyonDurumDal.cs" />
     <Compile Include="IDal\IMeslekTanimDal.cs" />
+    <Compile Include="IDal\IPartiGrupTanimDal.cs" />
     <Compile Include="IDal\IVekilDetayDal.cs" />
     <Compile Include="Dal\KomisyonTanimDal.cs" />
     <Compile Include="Dal\MazeretKodDal.cs" />

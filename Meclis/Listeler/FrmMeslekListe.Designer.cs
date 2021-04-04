@@ -51,6 +51,7 @@ namespace Meclis.Listeler
             this.dgMeslekList.Name = "dgMeslekList";
             this.dgMeslekList.Size = new System.Drawing.Size(776, 354);
             this.dgMeslekList.TabIndex = 1;
+            this.dgMeslekList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMeslekList_CellContentClick);
             // 
             // FrmMeslekListe
             // 

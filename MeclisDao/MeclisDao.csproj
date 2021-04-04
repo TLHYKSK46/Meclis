@@ -58,6 +58,7 @@
     <Compile Include="DaoServis\KomisyonDurumService.cs" />
     <Compile Include="DaoServis\MeslekTanimService.cs" />
     <Compile Include="DaoServis\MeclisGorevTanimService.cs" />
+    <Compile Include="DaoServis\PartiGrupTanimService.cs" />
     <Compile Include="DaoServis\PartiTanimService.cs" />
     <Compile Include="DaoServis\MazeretTanimService.cs" />
     <Compile Include="DaoServis\MazeretKodService.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="IDaoServis\IKomisyonDurumService.cs" />
     <Compile Include="IDaoServis\IMeslekTanimService.cs" />
+    <Compile Include="IDaoServis\IPartiGrupTanimService.cs" />
     <Compile Include="IDaoServis\IVekilDanismanService.cs" />
     <Compile Include="IDaoServis\IPartiTanimService.cs" />
     <Compile Include="IDaoServis\IMeclisGorevTanimService.cs" />

@@ -44,5 +44,10 @@ namespace Meclis.Listeler
                 TumMeslekListele();
             }
         }
+
+        private void dgMeslekList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

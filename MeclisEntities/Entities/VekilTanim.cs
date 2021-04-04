@@ -20,6 +20,10 @@ namespace MeclisEntities.Entities
         [MaxLength(100)]
         public string Soyad { get; set; }
         [MaxLength(11)]
+        public DateTime Dogum_Tarihi { get; set; }
+        [MaxLength(11)
+        public string Dogum_Yeri { get; set; }
+        [MaxLength(11)
         public string KurumsalTelNo { get; set; }
         [MaxLength(11)]
         public string KisiselTelNo { get; set; }
