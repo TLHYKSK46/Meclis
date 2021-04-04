@@ -57,7 +57,7 @@ namespace MeclisDao.DaoServis
 
         public List<MeclisGorevTanim> ListeGetir()
         {
-            return _meclisGorevTanimDal.GetAll();
+            return _meclisGorevTanimDal.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

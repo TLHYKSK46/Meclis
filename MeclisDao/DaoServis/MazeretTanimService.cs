@@ -23,7 +23,7 @@ namespace MeclisDao.DaoServis
 
         public List<MazeretTanim> AdGoreGetir(string data)
         {
-            throw new NotImplementedException();
+            return _mazeretTanimService.GetAll(p=>p.MazeretNedeni.ToLower().Contains(data.ToLower()));
         }
 
         public void Ekle(MazeretTanim mazeretTanim)

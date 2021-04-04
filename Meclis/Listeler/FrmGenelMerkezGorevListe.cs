@@ -32,8 +32,6 @@ namespace Meclis.Listeler
             var liste = _genelMerkez.ListeGetir().Select(x=> new { 
             x.Id,
             x.GenelMerkezGorevAdi,
-            x.EklenmeTarihi,
-            x.GuncellemeTarihi
             }).ToList();
             
             dgGenelMerkezListe.DataSource = liste;

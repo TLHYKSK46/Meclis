@@ -57,7 +57,7 @@ namespace MeclisDao.DaoServis
 
         public List<GrupPersonelTanim> ListeGetir()
         {
-            return _GrupPersonel.GetAll();
+            return _GrupPersonel.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

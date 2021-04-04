@@ -49,6 +49,7 @@ namespace Meclis.Listeler
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(164, 26);
             this.txtAra.TabIndex = 1;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // FrmKomisyonListe
             // 
