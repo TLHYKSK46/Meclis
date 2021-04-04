@@ -23,7 +23,29 @@ namespace Meclis.Listeler
 
         private void FrmMeclisGorevListe_Load(object sender, EventArgs e)
         {
+            TumunuListele();
+        }
 
+        private void TumunuListele()
+        {
+            dgList.DataSource = _meclisGorev.ListeGetir().Select(x=>new { 
+            x.Id,
+            x.MeclisGorevAdi
+            
+            });
+        }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtAra.Text))
+            {
+                dgList.DataSource = _meclisGorev.AdGoreGetir(txtAra.Text);
+
+            }
+            else
+            {
+                TumunuListele();
+            }
         }
     }
 }

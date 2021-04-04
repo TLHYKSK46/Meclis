@@ -58,7 +58,7 @@ namespace MeclisDao.DaoServis
 
         public List<KomisyonTanim> ListeGetir()
         {
-            return _komisyonTanim.GetAll();
+            return _komisyonTanim.GetAll(p => p.Silindi == 0);
         }
 
         public void Sil(int id)

@@ -18,12 +18,38 @@ namespace Meclis.Listeler
         public FrmMazeretListe()
         {
             InitializeComponent();
-            _mazeretTanim = InstanceFactory.GetInstance<IKomisyonTanimService>();
+            _mazeretTanim = InstanceFactory.GetInstance<IMazeretTanimService>();
         }
 
         private void FrmMazeretListe_Load(object sender, EventArgs e)
         {
+            TumunuListele();
+        }
 
+        private void TumunuListele()
+        {
+            dgList.DataSource = _mazeretTanim.ListeGetir().Select(x=>new { 
+            x.Id,
+                x.VekilTanimId,
+                x.MazeretKodId,
+            x.MazeretNedeni,
+            x.BaslamaTarihi,
+            x.BitisTarihi,
+          
+            });
+        }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtAra.Text))
+            {
+                dgList.DataSource = _mazeretTanim.AdGoreGetir(txtAra.Text);
+
+            }
+            else
+            {
+                TumunuListele();
+            }
         }
     }
 }

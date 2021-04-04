@@ -23,7 +23,29 @@ namespace Meclis.Listeler
 
         private void FrmKomisyonListe_Load(object sender, EventArgs e)
         {
+            TumunuListele();
+        }
 
+        private void TumunuListele()
+        {
+            dgList.DataSource = _komisyonTanim.ListeGetir().Select(x=>new { 
+            x.Id,
+            x.IhtisasAdi,
+            x.UluslararasiAdi
+            }).ToList();
+        }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtAra.Text))
+            {
+                dgList.DataSource = _komisyonTanim.AdGoreGetir(txtAra.Text);
+
+            }
+            else
+            {
+                TumunuListele();
+            }
         }
     }
 }

@@ -15,10 +15,16 @@ namespace Meclis.Listeler
     public partial class FrmGrupPersonelListe : Form
     {
         private IGrupPersonelTanimService _grupPersonel;
+        private IIlTanimService _ilTanim;
+        private ICinsiyetTanimService _cinsiyetTanim;
+        private IMeclisGorevTanimService _meclisGorevTanim;
         public FrmGrupPersonelListe()
         {
             InitializeComponent();
             _grupPersonel = InstanceFactory.GetInstance<IGrupPersonelTanimService>();
+            _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
+            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _meclisGorevTanim = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
         }
 
         private void FrmGrupPersonelListe_Load(object sender, EventArgs e)
@@ -28,18 +34,31 @@ namespace Meclis.Listeler
 
         private void TumunuListele()
         {
-            var liste = _grupPersonel.ListeGetir().Select(x=> new {
-            x.Id,
-            x.TcKimlikNo,
-           AdSoyad= x.Ad+""+x.Soyad,
-           x.MeclisGorevId,
-           x.TelNo,
-           x.Mail,
-           x.IlTanimId,
-           x.CinsiyetTanimId,
-           x.Aktif
-           
-            }).ToList();
+            var illiste = _ilTanim.ListeGetir();
+            var cinsiyetList = _cinsiyetTanim.ListeGetir();
+            var meclisGorevList = _meclisGorevTanim.ListeGetir();
+            var grupPersonelliste = _grupPersonel.ListeGetir();
+
+            var liste = (from grupPer in grupPersonelliste
+                         join il in illiste on grupPer.IlTanimId equals il.Id
+                         join cinsiyet in cinsiyetList on grupPer.CinsiyetTanimId equals cinsiyet.Id
+                         join meclisgorev in meclisGorevList on grupPer.MeclisGorevId equals meclisgorev.Id
+                         select new {
+                             grupPer.Id,
+                             grupPer.TcKimlikNo,
+                             AdSoyad=grupPer.Ad+""+grupPer.Soyad,
+                             grupPer.TelNo,
+                             grupPer.Mail,
+                             il.IlAdi,
+                             cinsiyet.CinsiyetAdi,
+                             meclisgorev.MeclisGorevAdi,
+                             grupPer.Aktif
+
+
+                         }).ToList();
+            //var list = grupPersonelliste.GroupJoin(illiste,meclisGorevList,cinsiyetList);
+
+
             dgList.DataSource = liste;
         }
 
