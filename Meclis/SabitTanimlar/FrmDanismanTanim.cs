@@ -1,4 +1,5 @@
-﻿using MeclisDao.IDaoServis;
+﻿using MeclisDao.Exceptions;
+using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
 using System;
@@ -41,14 +42,7 @@ namespace Meclis.SabitTanimlar
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-
-            //}
-            //catch (DaoException ex)
-            //{
-            //    MessageBox.Show(ex.ToString(), "");
-            //}
+          
             string tcKimlik = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
@@ -62,28 +56,33 @@ namespace Meclis.SabitTanimlar
 
             if ((tcKimlik != null) && (ad != null) && (soyad != null)
                 && !(cinsiyet < 0) && !(cinsiyet>1) && (il!=0)) {
+                try
+                {
+                    if (tcKimlik.Length != 11)
+                        MessageBox.Show("Lütfen Tc Kimlik No alanını kontrol ediniz..(11 karekterden oluşması gerekir!)","Sistem");
 
-                if (tcKimlik.Length != 11 )
-                    MessageBox.Show("Lütfen Tc Kimlik No alanını kontrol ediniz..(11 karekterden oluşması gerekir!)");
-              
-                _danismanTanim.Ekle(new DanismanTanim { 
-                    TcKimlikNo=tcKimlik,
-                Ad=ad,
-                Soyad=soyad,
-                Mail=mail,
-                TelNo=telNo,
-                CinsiyetTanimId=cinsiyet,
-                IlTanimId=il,
-                VekilTanimId=vekil,
-                Aktif=aktif,
-                EklenmeTarihi=DateTime.Now
-                
-                
-                });
+                    _danismanTanim.Ekle(new DanismanTanim
+                    {
+                        TcKimlikNo = tcKimlik,
+                        Ad = ad,
+                        Soyad = soyad,
+                        Mail = mail,
+                        TelNo = telNo,
+                        CinsiyetTanimId = cinsiyet,
+                        IlTanimId = il,
+                        VekilTanimId = vekil,
+                        Aktif = aktif,
+                    });
+                }
+                catch (DaoException ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Sistem");
+                }
+             
             }
         
             else {
-                MessageBox.Show("Lütfen Tüm Alanları Doldurduğunuzdan Ve Bilgileri Doğru Girdiğinizden Emin Olunuz..","Program");
+                MessageBox.Show("Lütfen Tüm Alanları Doldurduğunuzdan Ve Bilgileri Doğru Girdiğinizden Emin Olunuz..", "Sistem");
             }
         }
 

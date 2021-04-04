@@ -33,13 +33,7 @@ namespace Meclis.SabitTanimlar
             string kisiselMail = txtKisiselMail.Text;
             string aciklama = txtAciklama.Text;
             string ozgecmis = txtOzGecmis.Text;
-            bool aktif;
-            if (chkAktif.Checked == true)
-            {
-                aktif = true;
-            }
-            else { aktif = false; }
-    
+            bool aktif=chkAktif.Checked;
 
             _vekilTanimService.Ekle(new VekilTanim { 
             TcKimlikNo=tcKimlikNo,

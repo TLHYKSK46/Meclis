@@ -22,6 +22,11 @@ namespace MeclisDao.DaoServis
             _meclisContext = meclisContext;
         }
 
+        public List<GrupPersonelTanim> AdGoreGetir(string data)
+        {
+            return _GrupPersonel.GetAll(p=>p.Ad.ToLower().Contains(data.ToLower())||p.Soyad.ToLower().Contains(data.ToLower())&&p.Silindi==0);
+        }
+
         public void Ekle(GrupPersonelTanim grupPersonelTanim)
         {
             try

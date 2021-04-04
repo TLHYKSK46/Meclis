@@ -58,10 +58,10 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(691, 405);
+            this.btnKaydet.Location = new System.Drawing.Point(735, 415);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(168, 32);
+            this.btnKaydet.Size = new System.Drawing.Size(168, 48);
             this.btnKaydet.TabIndex = 11;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkAktif.Location = new System.Drawing.Point(177, 361);
+            this.chkAktif.Location = new System.Drawing.Point(177, 309);
             this.chkAktif.Margin = new System.Windows.Forms.Padding(2);
             this.chkAktif.Name = "chkAktif";
             this.chkAktif.Size = new System.Drawing.Size(61, 24);
@@ -306,7 +306,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 448);
+            this.ClientSize = new System.Drawing.Size(914, 474);
             this.Controls.Add(this.cbDilSeviye);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cbDil);

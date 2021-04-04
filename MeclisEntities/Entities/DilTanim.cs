@@ -16,8 +16,7 @@ namespace MeclisEntities.Entities
        [Required]
        [MaxLength(50)]
         public string DilAdi { get; set; }
-        [MaxLength(50)]
-        public string DilSeviye { get; set; }
+            
        
 
     }

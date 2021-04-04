@@ -11,7 +11,7 @@ namespace MeclisDao.IDaoServis
     {
         List<MeslekTanim> ListeGetir();
         MeslekTanim Getir(int id);
-        //List<CinsiyetTanim> AdGoreGetir(string productName);
+        List<MeslekTanim> MeslekAdiGetir(string data);
         void Ekle(MeslekTanim Data);
         void Guncelle(MeslekTanim Data);
         void Sil(int id);

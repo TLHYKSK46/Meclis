@@ -1,4 +1,5 @@
-﻿using Meclis.SabitTanimlar;
+﻿using Meclis.Listeler;
+using Meclis.SabitTanimlar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,6 +119,54 @@ namespace Meclis
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void meslekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmMeslekList = new FrmMeslekListe();
+            frmMeslekList.Show();
+        }
+
+        private void danismanListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new FrmDanismanListe();
+            frm.Show();
+        }
+
+        private void dilListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmDilListe();
+            frm.Show();
+        }
+
+        private void genelMerkezGörevListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmGenelMerkezGorevListe();
+            frm.Show();
+        }
+
+        private void grupPersonelListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmGrupPersonelListe();
+            frm.Show();
+        }
+
+        private void komisyonListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmKomisyonListe();
+            frm.Show();
+        }
+
+        private void meclisGörevListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmMeclisGorevListe();
+            frm.Show();
+        }
+
+        private void mazeretListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmMazeretListe();
+            frm.Show();
         }
     }
 }

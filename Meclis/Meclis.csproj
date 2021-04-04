@@ -69,53 +69,53 @@
     <Compile Include="FrmAnaEkran.Designer.cs">
       <DependentUpon>FrmAnaEkran.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\DanismanListe.cs">
+    <Compile Include="Listeler\FrmDanismanListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\DanismanListe.Designer.cs">
-      <DependentUpon>DanismanListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmDanismanListe.Designer.cs">
+      <DependentUpon>FrmDanismanListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\DilListe.cs">
+    <Compile Include="Listeler\FrmDilListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\DilListe.Designer.cs">
-      <DependentUpon>DilListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmDilListe.Designer.cs">
+      <DependentUpon>FrmDilListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\GenelMerkezGorevListe.cs">
+    <Compile Include="Listeler\FrmGenelMerkezGorevListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\GenelMerkezGorevListe.Designer.cs">
-      <DependentUpon>GenelMerkezGorevListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmGenelMerkezGorevListe.Designer.cs">
+      <DependentUpon>FrmGenelMerkezGorevListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\GrupPersonelListe.cs">
+    <Compile Include="Listeler\FrmGrupPersonelListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\GrupPersonelListe.Designer.cs">
-      <DependentUpon>GrupPersonelListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmGrupPersonelListe.Designer.cs">
+      <DependentUpon>FrmGrupPersonelListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\KomisyonListe.cs">
+    <Compile Include="Listeler\FrmKomisyonListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\KomisyonListe.Designer.cs">
-      <DependentUpon>KomisyonListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmKomisyonListe.Designer.cs">
+      <DependentUpon>FrmKomisyonListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\MazeretListe.cs">
+    <Compile Include="Listeler\FrmMazeretListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\MazeretListe.Designer.cs">
-      <DependentUpon>MazeretListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmMazeretListe.Designer.cs">
+      <DependentUpon>FrmMazeretListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\MeclisGorevListe.cs">
+    <Compile Include="Listeler\FrmMeclisGorevListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\MeclisGorevListe.Designer.cs">
-      <DependentUpon>MeclisGorevListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmMeclisGorevListe.Designer.cs">
+      <DependentUpon>FrmMeclisGorevListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listeler\MeslekListe.cs">
+    <Compile Include="Listeler\FrmMeslekListe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listeler\MeslekListe.Designer.cs">
-      <DependentUpon>MeslekListe.cs</DependentUpon>
+    <Compile Include="Listeler\FrmMeslekListe.Designer.cs">
+      <DependentUpon>FrmMeslekListe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -221,29 +221,29 @@
     <EmbeddedResource Include="FrmAnaEkran.resx">
       <DependentUpon>FrmAnaEkran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\DanismanListe.resx">
-      <DependentUpon>DanismanListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmDanismanListe.resx">
+      <DependentUpon>FrmDanismanListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\DilListe.resx">
-      <DependentUpon>DilListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmDilListe.resx">
+      <DependentUpon>FrmDilListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\GenelMerkezGorevListe.resx">
-      <DependentUpon>GenelMerkezGorevListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmGenelMerkezGorevListe.resx">
+      <DependentUpon>FrmGenelMerkezGorevListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\GrupPersonelListe.resx">
-      <DependentUpon>GrupPersonelListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmGrupPersonelListe.resx">
+      <DependentUpon>FrmGrupPersonelListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\KomisyonListe.resx">
-      <DependentUpon>KomisyonListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmKomisyonListe.resx">
+      <DependentUpon>FrmKomisyonListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\MazeretListe.resx">
-      <DependentUpon>MazeretListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmMazeretListe.resx">
+      <DependentUpon>FrmMazeretListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\MeclisGorevListe.resx">
-      <DependentUpon>MeclisGorevListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmMeclisGorevListe.resx">
+      <DependentUpon>FrmMeclisGorevListe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listeler\MeslekListe.resx">
-      <DependentUpon>MeslekListe.cs</DependentUpon>
+    <EmbeddedResource Include="Listeler\FrmMeslekListe.resx">
+      <DependentUpon>FrmMeslekListe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

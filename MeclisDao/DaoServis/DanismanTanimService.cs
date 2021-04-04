@@ -1,4 +1,6 @@
-﻿using MeclisDal.IDal;
+﻿using MeclisDal.BaseDb;
+using MeclisDal.IDal;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisEntities.Entities;
 using System;
@@ -12,19 +14,33 @@ namespace MeclisDao.DaoServis
     public class DanismanTanimService : IDanismanTanimService
     {
         IDanismanTanimDal _danismanTanimDal;
+        MeclisContext _meclisContext;
 
-        public DanismanTanimService(IDanismanTanimDal danismanTanimDal)
+        public DanismanTanimService(IDanismanTanimDal danismanTanimDal, MeclisContext meclisContext)
         {
             _danismanTanimDal = danismanTanimDal;
+            _meclisContext = meclisContext;
         }
 
         public List<DanismanTanim> AdGoreGetir(string DanismanAdi)
         {
-            return _danismanTanimDal.GetAll(p => p.Ad == DanismanAdi);
+            //return _danismanTanimDal.GetAll(p => p.Ad == DanismanAdi);
+            return _danismanTanimDal.GetAll(p => p.Ad.ToLower().Contains(DanismanAdi.ToLower()) || p.Soyad.ToLower().Contains(DanismanAdi.ToLower()) && p.Silindi == 0);
         }
 
         public void Ekle(DanismanTanim danismanTanim)
         {
+            try
+            {
+                var data = _meclisContext.DanismanTanims.FirstOrDefault(p=>p.TcKimlikNo==danismanTanim.TcKimlikNo && p.Silindi==0);
+                if (data != null)
+                    throw new DaoException("Danışman Zaten Sistem de Kayıtlı!,Lütfen Kontrol Ederek Tekarar Deneyiniz.");
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message); ;
+            }
             _danismanTanimDal.Add(danismanTanim);
         }
 
@@ -40,7 +56,7 @@ namespace MeclisDao.DaoServis
 
         public List<DanismanTanim> ListeGetir()
         {
-            return _danismanTanimDal.GetAll();
+            return _danismanTanimDal.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

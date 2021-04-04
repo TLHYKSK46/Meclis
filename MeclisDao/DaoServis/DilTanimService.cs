@@ -23,9 +23,14 @@ namespace MeclisDao.DaoServis
             _context = context;
         }
 
+        public List<DilTanim> AdGoreGetir(string data)
+        {
+            return _dilTanimDal.GetAll(p=>p.DilAdi.ToLower().Contains(data.ToLower())&& p.Silindi==0);
+        }
+
         public void Ekle(DilTanim dilTanim)
         {
-            var aData = _context.DilTanims.SingleOrDefault(p=>p.Id==dilTanim.Id);
+            var aData = _context.DilTanims.FirstOrDefault(p=>p.Id==dilTanim.Id);
             if(aData!=null)
               throw new DaoException(dilTanim.DilAdi+"Dil Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
 

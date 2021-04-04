@@ -21,6 +21,11 @@ namespace MeclisDao.DaoServis
             _meclisContext = meclisContext;
         }
 
+        public List<MazeretTanim> AdGoreGetir(string data)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Ekle(MazeretTanim mazeretTanim)
         {
             try

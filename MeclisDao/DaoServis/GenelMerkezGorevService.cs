@@ -21,6 +21,11 @@ namespace MeclisDao.DaoServis
             _context = context;
         }
 
+        public List<GenelMerkezGorev> AdGoreGetir(string data)
+        {
+            return _genelMerkez.GetAll(p=>p.GenelMerkezGorevAdi.ToLower().Contains(data.ToLower()) && p.Silindi==0);
+        }
+
         public void Ekle(GenelMerkezGorev genelMerkezGorev)
         {
             try

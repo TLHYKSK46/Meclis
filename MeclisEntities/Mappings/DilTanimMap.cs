@@ -14,7 +14,7 @@ namespace MeclisEntities.Mappings
         public DilTanimMap() {
             ToTable(@"dil_tanim", @"dbo");
             Property(x => x.DilAdi).HasColumnName("dil_adi");
-            Property(x => x.DilSeviye).HasColumnName("dil_seviye");
+            //Property(x => x.DilSeviye).HasColumnName("dil_seviye");
 
 
 

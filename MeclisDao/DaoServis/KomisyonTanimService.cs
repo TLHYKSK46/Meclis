@@ -22,6 +22,12 @@ namespace MeclisDao.DaoServis
             _meclisContext = meclisContext;
         }
 
+        public List<KomisyonTanim> AdGoreGetir(string data)
+        {
+            return _komisyonTanim.GetAll(p => p.IhtisasAdi.ToLower().Contains(data.ToLower()) || p.UluslararasiAdi.ToLower().Contains(data.ToLower()) && p.Silindi == 0);
+
+        }
+
         public void Ekle(KomisyonTanim komisyonTanim)
         {
             try

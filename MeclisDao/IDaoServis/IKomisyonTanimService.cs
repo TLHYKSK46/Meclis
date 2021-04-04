@@ -11,7 +11,7 @@ namespace MeclisDao.IDaoServis
     {
         List<KomisyonTanim> ListeGetir();
        KomisyonTanim Getir(int id);
-        //List<CinsiyetTanim> AdGoreGetir(string productName);
+        List<KomisyonTanim> AdGoreGetir(string data);
         void Ekle(KomisyonTanim komisyonTanim);
         void Guncelle(KomisyonTanim komisyonTanim);
         void Sil(int id);

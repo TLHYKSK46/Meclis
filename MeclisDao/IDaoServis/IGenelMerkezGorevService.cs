@@ -11,7 +11,7 @@ namespace MeclisDao.IDaoServis
     {
         List<GenelMerkezGorev> ListeGetir();
         GenelMerkezGorev Getir(int id);
-        //List<GenelMerkezGorev> AdGoreGetir(string productName);
+        List<GenelMerkezGorev> AdGoreGetir(string data);
         void Ekle(GenelMerkezGorev genelMerkezGorev);
         void Guncelle(GenelMerkezGorev genelMerkezGorev);
         void Sil(int id);

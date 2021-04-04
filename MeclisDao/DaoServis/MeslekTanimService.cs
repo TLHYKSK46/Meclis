@@ -54,6 +54,11 @@ namespace MeclisDao.DaoServis
             return _meslekTanim.GetAll();
         }
 
+        public List<MeslekTanim> MeslekAdiGetir(string data)
+        {
+            return _meslekTanim.GetAll(p => p.MeslekAdi.ToLower().Contains(data.ToLower()) && p.Silindi==0);
+        }
+
         public void Sil(int id)
         {
             _meslekTanim.Delete(new MeslekTanim {Id=id});

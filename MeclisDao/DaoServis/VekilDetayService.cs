@@ -6,16 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MeclisDal.IDal;
+using MeclisDal.BaseDb;
 
 namespace MeclisDao.DaoServis
 {
     public class VekilDetayService : IVekilDetayService
     {
         IVekilDetayDal _DetayDal;
-
-        public VekilDetayService(IVekilDetayDal detayDal)
+        MeclisContext _meclisContext;
+        public VekilDetayService(IVekilDetayDal detayDal, MeclisContext meclisContext)
         {
             _DetayDal = detayDal;
+            _meclisContext = meclisContext;
         }
 
         public List<VekilDetay> AdGoreGetir(string vekilAdi)
