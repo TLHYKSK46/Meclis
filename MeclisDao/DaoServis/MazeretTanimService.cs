@@ -57,7 +57,7 @@ namespace MeclisDao.DaoServis
 
         public List<MazeretTanim> ListeGetir()
         {
-            return _mazeretTanimService.GetAll(p=>p.Silindi==0);
+            return _mazeretTanimService.GetAll();
         }
 
         public void Sil(int id)

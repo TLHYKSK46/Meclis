@@ -15,10 +15,17 @@ namespace Meclis.Listeler
     public partial class FrmGenelMerkezGorevListe : Form
     {
         private IGenelMerkezGorevService _genelMerkez;
+        IVekilTanimService _vekilTanim;
+        private ICinsiyetTanimService _cinsiyetTanim;
+        private IVekilDetayService _vekilDetayService;
+
         public FrmGenelMerkezGorevListe()
         {
             InitializeComponent();
             _genelMerkez = InstanceFactory.GetInstance<IGenelMerkezGorevService>();
+            _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
+            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 
         private void FrmGenelMerkezGorevListe_Load(object sender, EventArgs e)
@@ -33,8 +40,20 @@ namespace Meclis.Listeler
             x.Id,
             x.GenelMerkezGorevAdi,
             }).ToList();
-            
-            dgGenelMerkezListe.DataSource = liste;
+
+            dgGenelMerkezListe.DataSource = (from gm in _genelMerkez.ListeGetir()
+                                             join vd in _vekilDetayService.ListeGetir() on gm.Id equals vd.MeclisGorevTanimId
+                                             join vt in _vekilTanim.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                             select new
+                                             {
+                                                 gm.Id,
+                                                 vt.TcKimlikNo,
+                                                 AdSoyad=vt.Ad+""+vt.Soyad,
+                                                 gm.GenelMerkezGorevAdi,
+                                                 vt.KurumsalTelNo,
+                                                 vt.KurumsalMail,
+                                             }
+                                             ).ToList();
         }
 
         private void txtAra_TextChanged(object sender, EventArgs e)
