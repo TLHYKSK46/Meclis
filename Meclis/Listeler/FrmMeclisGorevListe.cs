@@ -15,10 +15,16 @@ namespace Meclis.Listeler
     public partial class FrmMeclisGorevListe : Form
     {
         private IMeclisGorevTanimService _meclisGorev;
+        IVekilTanimService _vekilTanim;
+        private ICinsiyetTanimService _cinsiyetTanim;
+        private IVekilDetayService _vekilDetayService;
         public FrmMeclisGorevListe()
         {
             InitializeComponent();
             _meclisGorev = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
+            _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
+            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 
         private void FrmMeclisGorevListe_Load(object sender, EventArgs e)
@@ -28,7 +34,17 @@ namespace Meclis.Listeler
 
         private void TumunuListele()
         {
-            dgList.DataSource = _meclisGorev.ListeGetir().Select(x=>new { 
+            dgList.DataSource = (from mg in _meclisGorev.ListeGetir()
+                                 join vd in _vekilDetayService.ListeGetir() on mg.Id equals vd.MeclisGorevTanimId
+                                 join vt in _vekilTanim.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                 select new { 
+                                 mg.Id,
+                                     vt.TcKimlikNo,
+                                     AdSoyad = vt.Ad + "" + vt.Soyad,
+                                     mg.MeclisGorevAdi,
+                                    
+                                 }).ToList(); 
+                _meclisGorev.ListeGetir().Select(x=>new { 
             x.Id,
             x.MeclisGorevAdi
             
