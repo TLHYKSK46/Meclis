@@ -15,10 +15,18 @@ namespace Meclis.Listeler
     public partial class FrmMazeretListe : Form
     {
         private IMazeretTanimService _mazeretTanim;
+        private IVekilTanimService _vekilTanim;
+        private ICinsiyetTanimService _cinsiyetTanim;
+        private IVekilDetayService _vekilDetayService;
+        private IMazeretKodService _mazeretKodService;
         public FrmMazeretListe()
         {
             InitializeComponent();
             _mazeretTanim = InstanceFactory.GetInstance<IMazeretTanimService>();
+            _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
+            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
+           _mazeretKodService = InstanceFactory.GetInstance<IMazeretKodService>();
         }
 
         private void FrmMazeretListe_Load(object sender, EventArgs e)
@@ -28,15 +36,29 @@ namespace Meclis.Listeler
 
         private void TumunuListele()
         {
-            dgList.DataSource = _mazeretTanim.ListeGetir().Select(x=>new { 
-            x.Id,
-                x.VekilTanimId,
-                x.MazeretKodId,
-            x.MazeretNedeni,
-            x.BaslamaTarihi,
-            x.BitisTarihi,
+            dgList.DataSource = (from mt in _mazeretTanim.ListeGetir()
+                                 join mk in _mazeretKodService.ListeGetir() on mt.MazeretKodId equals mk.Id
+                                 join vd in _vekilDetayService.ListeGetir() on mt.Id equals vd.MazeretTanimId
+                                 join vt in  _vekilTanim.ListeGetir() on mt.VekilTanimId equals vt.Id
+                                 select new { 
+                                 mt.Id,
+                                     vt.TcKimlikNo,
+                                     AdSoyad = vt.Ad + "" + vt.Soyad,
+                                     mk.MazeretKodu,
+                                     mt.MazeretNedeni,
+                                     mt.BaslamaTarihi,
+                                     mt.BitisTarihi
+                                 }).ToList();
+                
+            //    _mazeretTanim.ListeGetir().Select(x=>new { 
+            //x.Id,
+            //    x.VekilTanimId,
+            //    x.MazeretKodId,
+            //x.MazeretNedeni,
+            //x.BaslamaTarihi,
+            //x.BitisTarihi,
           
-            });
+            //});
         }
 
         private void txtAra_TextChanged(object sender, EventArgs e)
