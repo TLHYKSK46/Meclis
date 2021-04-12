@@ -10,6 +10,7 @@ namespace MeclisDao.IDaoServis
    public interface IVekilDetayService
     {
         List<VekilDetay> ListeGetir();
+  
         VekilDetay Getir(int id);
         List<VekilDetay> TcNoyeGöreGetir(int tcNo);
         List<VekilDetay> AdGoreGetir(string vekilAdi);

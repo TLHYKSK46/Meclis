@@ -1,5 +1,7 @@
 ﻿using Meclis.Listeler;
 using Meclis.SabitTanimlar;
+using MeclisDao.IDaoServis;
+using MeclisDao.Instances;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +16,23 @@ namespace Meclis
 {
     public partial class FrmAnaEkran : Form
     {
+        private IVekilDetayService _vekilDetayService;
+    
         public FrmAnaEkran()
         {
             InitializeComponent();
+         
+            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 
         private void FrmAnaEkran_Load(object sender, EventArgs e)
         {
+           
+
+            dgwVekilDetay.DataSource = _vekilDetayService.ListeGetir();
 
         }
-
+       
         private void dilTanimToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmDilTanim = new FrmDilTanim();

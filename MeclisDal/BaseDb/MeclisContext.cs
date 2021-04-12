@@ -43,6 +43,7 @@ namespace MeclisDal.BaseDb
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new VekilTanimMap());
+            modelBuilder.Configurations.Add(new DanismanTanimMap());
             modelBuilder.Configurations.Add(new CinsiyetTanimMap());
             modelBuilder.Configurations.Add(new DilTanimMap());
             modelBuilder.Configurations.Add(new DostlukGrupTanimMap());

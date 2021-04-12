@@ -11,11 +11,11 @@ namespace MeclisEntities.Mappings
 {
     public class PartiGrupTanimMap : BaseMap<PartiGrupTanim>
     {
-        public PartiTanimMap() {
+        public PartiGrupTanimMap() {
             ToTable(@"parti_grup_tanim", @"dbo");
             //HasKey(x => x.Id);
           //  Property(x => x.Id).HasColumnName("Id");
-            Property(x => x.PartiAdi).HasColumnName("parti_grup_adi");
+            Property(x => x.PartiGrupAdi).HasColumnName("parti_grup_adi");
            
 
 

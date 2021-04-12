@@ -18,7 +18,8 @@ namespace MeclisEntities.Entities
         public int KomisyonDurumId { get; set; }
         public int IlTanimId { get; set; }
         public int PartiTanimId { get; set; }
-        public int MazeretTanimId { get; set; }
+        public int PartiGrupTanimId { get; set; }
+        public int MazeretTanimId { get; set; } 
         public int DilTanimId { get; set; }
         public int DonemTanimId { get; set; }
         public int HatirlatmaTanimId { get; set; }
@@ -27,6 +28,7 @@ namespace MeclisEntities.Entities
         public int DanismanTanimId { get; set; }
         public int VekilDanismanId { get; set; }
         public int GrupPersonelTanimId { get; set; }
+        public int MeslekTanimId { get; set; }
 
 
 

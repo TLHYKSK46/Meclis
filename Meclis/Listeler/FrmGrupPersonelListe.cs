@@ -34,39 +34,31 @@ namespace Meclis.Listeler
 
         private void TumunuListele()
         {
-            var illiste = _ilTanim.ListeGetir();
-            var cinsiyetList = _cinsiyetTanim.ListeGetir();
-            var meclisGorevList = _meclisGorevTanim.ListeGetir();
-            var grupPersonelliste = _grupPersonel.ListeGetir();
-
-            var liste = (from grupPer in grupPersonelliste
-                         join il in illiste on grupPer.IlTanimId equals il.Id
-                         join cinsiyet in cinsiyetList on grupPer.CinsiyetTanimId equals cinsiyet.Id
-                         join meclisgorev in meclisGorevList on grupPer.MeclisGorevId equals meclisgorev.Id
-                         select new {
+            dgList.DataSource = (from grupPer in _grupPersonel.ListeGetir()
+                         join il in _ilTanim.ListeGetir() on grupPer.IlTanimId equals il.Id
+                         join cinsiyet in _cinsiyetTanim.ListeGetir() on grupPer.CinsiyetTanimId equals cinsiyet.Id
+                         join meclisgorev in _meclisGorevTanim.ListeGetir() on grupPer.MeclisGorevId equals meclisgorev.Id
+                         select new
+                         {
                              grupPer.Id,
                              grupPer.TcKimlikNo,
-                             AdSoyad=grupPer.Ad+""+grupPer.Soyad,
+                             AdSoyad = grupPer.Ad + "" + grupPer.Soyad,
                              grupPer.TelNo,
                              grupPer.Mail,
                              il.IlAdi,
                              cinsiyet.CinsiyetAdi,
                              meclisgorev.MeclisGorevAdi,
                              grupPer.Aktif
-
-
                          }).ToList();
-            //var list = grupPersonelliste.GroupJoin(illiste,meclisGorevList,cinsiyetList);
-
-
-            dgList.DataSource = liste;
+      
         }
 
         private void txtAra_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtAra.Text))
             {
-                dgList.DataSource = _grupPersonel.AdGoreGetir(txtAra.Text).Select(x=>new {
+                dgList.DataSource = _grupPersonel.AdGoreGetir(txtAra.Text).Select(x => new
+                {
                     x.Id,
                     x.TcKimlikNo,
                     AdSoyad = x.Ad + "" + x.Soyad,

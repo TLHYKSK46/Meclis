@@ -48,17 +48,17 @@ namespace Meclis
             this.vekilTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listelerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.meslekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danismanListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dilListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genelMerkezGörevListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupPersonelListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.komisyonListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mazeretListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meclisGörevListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mazeretListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meslekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgwVekilDetay = new System.Windows.Forms.DataGridView();
             this.menuAnaEkran.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwVekilDetay)).BeginInit();
             this.SuspendLayout();
             // 
             // menuAnaEkran
@@ -228,26 +228,6 @@ namespace Meclis
             this.listelerToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.listelerToolStripMenuItem.Text = "Listeler";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 132);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1251, 647);
-            this.dataGridView2.TabIndex = 1;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // meslekToolStripMenuItem
-            // 
-            this.meslekToolStripMenuItem.Name = "meslekToolStripMenuItem";
-            this.meslekToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
-            this.meslekToolStripMenuItem.Text = "Meslek Liste";
-            this.meslekToolStripMenuItem.Click += new System.EventHandler(this.meslekToolStripMenuItem_Click);
-            // 
             // danismanListeToolStripMenuItem
             // 
             this.danismanListeToolStripMenuItem.Name = "danismanListeToolStripMenuItem";
@@ -283,13 +263,6 @@ namespace Meclis
             this.komisyonListeToolStripMenuItem.Text = "Komisyon Liste";
             this.komisyonListeToolStripMenuItem.Click += new System.EventHandler(this.komisyonListeToolStripMenuItem_Click);
             // 
-            // mazeretListeToolStripMenuItem
-            // 
-            this.mazeretListeToolStripMenuItem.Name = "mazeretListeToolStripMenuItem";
-            this.mazeretListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
-            this.mazeretListeToolStripMenuItem.Text = "Mazeret Liste";
-            this.mazeretListeToolStripMenuItem.Click += new System.EventHandler(this.mazeretListeToolStripMenuItem_Click);
-            // 
             // meclisGörevListeToolStripMenuItem
             // 
             this.meclisGörevListeToolStripMenuItem.Name = "meclisGörevListeToolStripMenuItem";
@@ -297,12 +270,39 @@ namespace Meclis
             this.meclisGörevListeToolStripMenuItem.Text = "Meclis Görev Liste";
             this.meclisGörevListeToolStripMenuItem.Click += new System.EventHandler(this.meclisGörevListeToolStripMenuItem_Click);
             // 
+            // mazeretListeToolStripMenuItem
+            // 
+            this.mazeretListeToolStripMenuItem.Name = "mazeretListeToolStripMenuItem";
+            this.mazeretListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.mazeretListeToolStripMenuItem.Text = "Mazeret Liste";
+            this.mazeretListeToolStripMenuItem.Click += new System.EventHandler(this.mazeretListeToolStripMenuItem_Click);
+            // 
+            // meslekToolStripMenuItem
+            // 
+            this.meslekToolStripMenuItem.Name = "meslekToolStripMenuItem";
+            this.meslekToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.meslekToolStripMenuItem.Text = "Meslek Liste";
+            this.meslekToolStripMenuItem.Click += new System.EventHandler(this.meslekToolStripMenuItem_Click);
+            // 
+            // dgwVekilDetay
+            // 
+            this.dgwVekilDetay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgwVekilDetay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwVekilDetay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwVekilDetay.Location = new System.Drawing.Point(0, 132);
+            this.dgwVekilDetay.Name = "dgwVekilDetay";
+            this.dgwVekilDetay.Size = new System.Drawing.Size(1251, 647);
+            this.dgwVekilDetay.TabIndex = 1;
+            this.dgwVekilDetay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
             // FrmAnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 782);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgwVekilDetay);
             this.Controls.Add(this.menuAnaEkran);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -316,7 +316,7 @@ namespace Meclis
             this.Load += new System.EventHandler(this.FrmAnaEkran_Load);
             this.menuAnaEkran.ResumeLayout(false);
             this.menuAnaEkran.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwVekilDetay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,7 +343,7 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem vekilTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listelerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgwVekilDetay;
         private System.Windows.Forms.ToolStripMenuItem meslekToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem danismanListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dilListeToolStripMenuItem;

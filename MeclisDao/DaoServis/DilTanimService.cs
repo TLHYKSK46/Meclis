@@ -16,11 +16,14 @@ namespace MeclisDao.DaoServis
     {
         IDilTanimDal _dilTanimDal;
         MeclisContext _context;
-
-        public DilTanimService(IDilTanimDal dilTanimDal, MeclisContext context)
+        IVekilTanimDal _vekilTanimDal;
+        IVekilDetayDal _vekilDetayDal;
+        public DilTanimService(IDilTanimDal dilTanimDal, MeclisContext context, IVekilTanimDal vekilTanimDal, IVekilDetayDal vekilDetayDal)
         {
             _dilTanimDal = dilTanimDal;
             _context = context;
+            _vekilTanimDal = vekilTanimDal;
+            _vekilDetayDal = vekilDetayDal;
         }
 
         public List<DilTanim> AdGoreGetir(string data)
@@ -58,7 +61,20 @@ namespace MeclisDao.DaoServis
 
         public List<DilTanim> ListeGetir()
         {
-            return _dilTanimDal.GetAll(p=>p.Silindi==0);
+            //var vekildetay = _vekilDetayDal.GetAll();
+            //(from dt in _dilTanimDal.GetAll()
+            // join vd in vekildetay on dt.Id equals vd.DilTanimId
+            // join vt in _vekilTanimDal.GetAll() on vd.DilTanimId equals vt.Id
+            // select new 
+            // {
+            //     vt.TcKimlikNo,
+            //    AdSoyad=vt.Ad+""+vt.Soyad,
+            //    dt.DilAdi,
+            // }
+
+            // ).ToList();
+
+            return _dilTanimDal.GetAll();
         }
 
         public void Sil(int id)

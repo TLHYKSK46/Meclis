@@ -22,6 +22,7 @@ namespace MeclisEntities.Mappings
             Property(x => x.KomisyonDurumId).HasColumnName("komisyon_durum_id");
             Property(x => x.IlTanimId).HasColumnName("il_tanim_id");
             Property(x => x.PartiTanimId).HasColumnName("parti_tanim_id");
+            Property(x=>x.PartiGrupTanimId).HasColumnName("parti_grup_tanim_id");
             Property(x => x.MazeretTanimId).HasColumnName("mazeret_tanim_id");
             Property(x => x.DilTanimId).HasColumnName("dil_tanim_id");
             Property(x => x.DonemTanimId).HasColumnName("donem_tanim_id");
@@ -31,6 +32,7 @@ namespace MeclisEntities.Mappings
             Property(x => x.DanismanTanimId).HasColumnName("danisman_tanim_id");
             Property(x => x.VekilDanismanId).HasColumnName("vekil_danisman_id");
             Property(x => x.GrupPersonelTanimId).HasColumnName("grup_personel_tanim_id");
+            Property(x=>x.MeslekTanimId).HasColumnName("meslek_tanim_id");
 
 
         }
