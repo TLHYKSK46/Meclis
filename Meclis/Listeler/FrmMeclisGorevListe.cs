@@ -44,11 +44,11 @@ namespace Meclis.Listeler
                                      mg.MeclisGorevAdi,
                                     
                                  }).ToList(); 
-                _meclisGorev.ListeGetir().Select(x=>new { 
-            x.Id,
-            x.MeclisGorevAdi
+            //    _meclisGorev.ListeGetir().Select(x=>new { 
+            //x.Id,
+            //x.MeclisGorevAdi
             
-            });
+            //});
         }
 
         private void txtAra_TextChanged(object sender, EventArgs e)

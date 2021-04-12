@@ -15,10 +15,16 @@ namespace Meclis.Listeler
     public partial class FrmMeslekListe : Form
     {
         private IMeslekTanimService _meslekTanimService;
+       private IVekilTanimService _vekilTanim;
+        private ICinsiyetTanimService _cinsiyetTanim;
+        private IVekilDetayService _vekilDetayService;
         public FrmMeslekListe()
         {
             InitializeComponent();
             _meslekTanimService = InstanceFactory.GetInstance<IMeslekTanimService>();
+            _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
+            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 
         private void MeslekListe_Load(object sender, EventArgs e)
@@ -28,7 +34,19 @@ namespace Meclis.Listeler
 
         private void TumMeslekListele()
         {
-            dgMeslekList.DataSource = _meslekTanimService.ListeGetir();
+            //dgMeslekList.DataSource = _meslekTanimService.ListeGetir();
+            dgMeslekList.DataSource = (from mt in _meslekTanimService.ListeGetir()
+                                 join vd in _vekilDetayService.ListeGetir() on mt.Id equals vd.MeslekTanimId
+                                 join vt in _vekilTanim.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                 select new
+                                 {
+                                     mt.Id,
+                                     vt.TcKimlikNo,
+                                     AdSoyad = vt.Ad + "" + vt.Soyad,
+                                     mt.MeslekAdi,
+                                     
+
+                                 }).ToList();
         }
 
       
