@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Base\EntBase.cs" />
     <Compile Include="Entities\CinsiyetTanim.cs" />
+    <Compile Include="Entities\VekilDilTanim.cs" />
     <Compile Include="Entities\KomisyonDurum.cs" />
     <Compile Include="Entities\MeslekTanim.cs" />
     <Compile Include="Entities\PartiGrupTanim.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Base\EntBaseId.cs" />
     <Compile Include="Mappings\BaseMap\BaseIdMap.cs" />
     <Compile Include="Mappings\BaseMap\BaseMap.cs" />
+    <Compile Include="Mappings\VekilDilTanimMap.cs" />
     <Compile Include="Mappings\KomisyonDurumMap.cs" />
     <Compile Include="Mappings\MeslekTanimMap.cs" />
     <Compile Include="Mappings\MazeretKodMap.cs" />

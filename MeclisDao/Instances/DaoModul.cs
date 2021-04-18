@@ -79,6 +79,9 @@ namespace MeclisDao.Instances
             Bind<IMeslekTanimService>().To<MeslekTanimService>().InSingletonScope();
             Bind<IMeslekTanimDal>().To<MeslekTanimDal>().InSingletonScope();
 
+            Bind<IVekilDilTanimService>().To<VekilDilTanimService>().InSingletonScope();
+            Bind<IVekilDilTanimDal>().To<VekilDilTanimDal>().InSingletonScope();
+
 
         }
     }

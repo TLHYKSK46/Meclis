@@ -38,6 +38,7 @@ namespace MeclisDal.BaseDb
         public DbSet<VekilDetay> VekilDetays { get; set; }
         public DbSet<IlTanim> IlTanims { get; set; }
         public DbSet<MeslekTanim> MeslekTanims { get; set; }
+        public DbSet<VekilDilTanim> VekilDilTanims { get; set; }
         // public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -62,6 +63,7 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new VekilDanismanMap());
             modelBuilder.Configurations.Add(new VekilDetayMap());
             modelBuilder.Configurations.Add(new MeslekTanimMap());
+            modelBuilder.Configurations.Add(new VekilDilTanimMap());
             //modelBuilder.Configurations.Add(new VekilTanimMap());
 
         }

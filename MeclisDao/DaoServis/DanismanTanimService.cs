@@ -35,13 +35,15 @@ namespace MeclisDao.DaoServis
                 var data = _meclisContext.DanismanTanims.FirstOrDefault(p=>p.TcKimlikNo==danismanTanim.TcKimlikNo && p.Silindi==0);
                 if (data != null)
                     throw new DaoException("Danışman Zaten Sistem de Kayıtlı!,Lütfen Kontrol Ederek Tekarar Deneyiniz.");
+
+                _danismanTanimDal.Add(danismanTanim);
+
             }
             catch (DaoException ex)
             {
 
                 throw new DaoException(ex.Message); ;
             }
-            _danismanTanimDal.Add(danismanTanim);
         }
 
         public DanismanTanim Getir(int id)
@@ -51,7 +53,21 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(DanismanTanim danismanTanim)
         {
-            _danismanTanimDal.Update(danismanTanim);
+            try
+            {
+                var data = _meclisContext.DanismanTanims.FirstOrDefault(p => p.Id == danismanTanim.Id && p.Silindi == 0);
+                if (data == null)
+                    throw new DaoException("Danışman Sistem de Bulunamadı Değiştirilmiş Yada Silinmiş Olabilir!,Lütfen Kontrol Ederek Tekarar Deneyiniz.");
+                
+                danismanTanim.EklenmeTarihi = data.EklenmeTarihi;
+                danismanTanim.Id = data.Id;
+                _danismanTanimDal.Update(danismanTanim);
+
+            }
+            catch (DaoException ex)
+            {
+                throw new DaoException(ex.Message); 
+            }
         }
 
         public List<DanismanTanim> ListeGetir()
@@ -61,7 +77,19 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _danismanTanimDal.Delete(new DanismanTanim {Id=id });
+            var data = _meclisContext.DanismanTanims.SingleOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _danismanTanimDal.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _danismanTanimDal.Delete(new DanismanTanim {Id=id });
         }
     }
 }
