@@ -32,15 +32,22 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGenelMerkezGorevAdi = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(277, 106);
+            this.btnKaydet.Location = new System.Drawing.Point(7, 166);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
+            this.btnKaydet.Size = new System.Drawing.Size(104, 49);
             this.btnKaydet.TabIndex = 2;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -50,36 +57,91 @@ namespace Meclis.SabitTanimlar
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(5, 25);
+            this.label2.Location = new System.Drawing.Point(5, 41);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 20);
+            this.label2.Size = new System.Drawing.Size(118, 40);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Genel Merkez Görev Adı:";
+            this.label2.Text = "Genel Merkez \r\nGörev Adı:";
             // 
             // txtGenelMerkezGorevAdi
             // 
             this.txtGenelMerkezGorevAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtGenelMerkezGorevAdi.Location = new System.Drawing.Point(206, 25);
+            this.txtGenelMerkezGorevAdi.Location = new System.Drawing.Point(135, 54);
             this.txtGenelMerkezGorevAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtGenelMerkezGorevAdi.Name = "txtGenelMerkezGorevAdi";
-            this.txtGenelMerkezGorevAdi.Size = new System.Drawing.Size(173, 27);
+            this.txtGenelMerkezGorevAdi.Size = new System.Drawing.Size(159, 27);
             this.txtGenelMerkezGorevAdi.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSil);
+            this.groupBox1.Controls.Add(this.btnGuncelle);
+            this.groupBox1.Controls.Add(this.txtGenelMerkezGorevAdi);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnKaydet);
+            this.groupBox1.Location = new System.Drawing.Point(439, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(297, 414);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // txtAra
+            // 
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(12, 53);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(334, 27);
+            this.txtAra.TabIndex = 53;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 86);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(430, 336);
+            this.dataGridView1.TabIndex = 54;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(115, 166);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(100, 49);
+            this.btnGuncelle.TabIndex = 51;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // btnSil
+            // 
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSil.Location = new System.Drawing.Point(219, 166);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(73, 49);
+            this.btnSil.TabIndex = 52;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
             // 
             // FrmGenelMerkezGorev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 180);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtGenelMerkezGorevAdi);
-            this.Controls.Add(this.btnKaydet);
+            this.ClientSize = new System.Drawing.Size(748, 434);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtAra);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmGenelMerkezGorev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGenelMerkezGorev";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,5 +152,10 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtGenelMerkezGorevAdi;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }

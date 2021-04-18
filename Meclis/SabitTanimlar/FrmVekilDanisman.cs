@@ -74,5 +74,10 @@ namespace Meclis.SabitTanimlar
             cbVekil.DisplayMember = "ad";
             cbVekil.ValueMember = "Id";
         }
+
+        private void FrmVekilDanisman_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

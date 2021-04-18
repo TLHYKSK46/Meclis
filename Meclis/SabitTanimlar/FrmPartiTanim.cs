@@ -49,5 +49,10 @@ namespace Meclis.SabitTanimlar
                 MessageBox.Show("Lütfen Parti Adı Giriniz!", "Sistem");
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

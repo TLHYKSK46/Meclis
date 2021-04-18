@@ -59,5 +59,10 @@ namespace Meclis.SabitTanimlar
         {
 
         }
+
+        private void txtOzGecmis_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

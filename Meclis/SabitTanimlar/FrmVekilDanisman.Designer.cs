@@ -36,14 +36,21 @@ namespace Meclis.SabitTanimlar
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSira = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(268, 121);
+            this.btnKaydet.Location = new System.Drawing.Point(9, 207);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(140, 40);
+            this.btnKaydet.Size = new System.Drawing.Size(108, 49);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -53,7 +60,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(14, 26);
+            this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 18);
             this.label1.TabIndex = 19;
@@ -62,24 +69,24 @@ namespace Meclis.SabitTanimlar
             // cbVekil
             // 
             this.cbVekil.FormattingEnabled = true;
-            this.cbVekil.Location = new System.Drawing.Point(148, 19);
+            this.cbVekil.Location = new System.Drawing.Point(89, 23);
             this.cbVekil.Name = "cbVekil";
-            this.cbVekil.Size = new System.Drawing.Size(260, 26);
+            this.cbVekil.Size = new System.Drawing.Size(244, 26);
             this.cbVekil.TabIndex = 1;
             // 
             // cbDanisman
             // 
             this.cbDanisman.FormattingEnabled = true;
-            this.cbDanisman.Location = new System.Drawing.Point(148, 50);
+            this.cbDanisman.Location = new System.Drawing.Point(89, 54);
             this.cbDanisman.Name = "cbDanisman";
-            this.cbDanisman.Size = new System.Drawing.Size(260, 26);
+            this.cbDanisman.Size = new System.Drawing.Size(244, 26);
             this.cbDanisman.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(14, 57);
+            this.label2.Location = new System.Drawing.Point(6, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 21;
@@ -89,7 +96,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(14, 86);
+            this.label3.Location = new System.Drawing.Point(6, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 18);
             this.label3.TabIndex = 22;
@@ -97,29 +104,85 @@ namespace Meclis.SabitTanimlar
             // 
             // txtSira
             // 
-            this.txtSira.Location = new System.Drawing.Point(148, 80);
+            this.txtSira.Location = new System.Drawing.Point(89, 84);
             this.txtSira.Name = "txtSira";
-            this.txtSira.Size = new System.Drawing.Size(260, 24);
+            this.txtSira.Size = new System.Drawing.Size(244, 24);
             this.txtSira.TabIndex = 23;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSil);
+            this.groupBox1.Controls.Add(this.btnGuncelle);
+            this.groupBox1.Controls.Add(this.txtSira);
+            this.groupBox1.Controls.Add(this.btnKaydet);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cbVekil);
+            this.groupBox1.Controls.Add(this.cbDanisman);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(488, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(345, 533);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // btnSil
+            // 
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSil.Location = new System.Drawing.Point(234, 207);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(98, 49);
+            this.btnSil.TabIndex = 56;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(122, 207);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(108, 49);
+            this.btnGuncelle.TabIndex = 55;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // txtAra
+            // 
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(12, 76);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(340, 27);
+            this.txtAra.TabIndex = 53;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 110);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(476, 435);
+            this.dataGridView1.TabIndex = 54;
             // 
             // FrmVekilDanisman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 180);
-            this.Controls.Add(this.txtSira);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbDanisman);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbVekil);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(833, 547);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtAra);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmVekilDanisman";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmVekilDanisman";
+            this.Load += new System.EventHandler(this.FrmVekilDanisman_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +197,10 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSira;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

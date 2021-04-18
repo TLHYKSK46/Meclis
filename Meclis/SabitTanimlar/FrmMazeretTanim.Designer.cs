@@ -40,13 +40,20 @@ namespace Meclis.SabitTanimlar
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtBitisTarihi = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(37, 83);
+            this.label4.Location = new System.Drawing.Point(13, 92);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 20);
@@ -56,7 +63,7 @@ namespace Meclis.SabitTanimlar
             // dtBaslamaTarihi
             // 
             this.dtBaslamaTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtBaslamaTarihi.Location = new System.Drawing.Point(227, 76);
+            this.dtBaslamaTarihi.Location = new System.Drawing.Point(163, 85);
             this.dtBaslamaTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtBaslamaTarihi.Name = "dtBaslamaTarihi";
             this.dtBaslamaTarihi.Size = new System.Drawing.Size(261, 27);
@@ -65,10 +72,10 @@ namespace Meclis.SabitTanimlar
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(356, 246);
+            this.btnKaydet.Location = new System.Drawing.Point(50, 318);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(132, 32);
+            this.btnKaydet.Size = new System.Drawing.Size(132, 49);
             this.btnKaydet.TabIndex = 42;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -78,7 +85,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.cbVekilTanım.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbVekilTanım.FormattingEnabled = true;
-            this.cbVekilTanım.Location = new System.Drawing.Point(227, 12);
+            this.cbVekilTanım.Location = new System.Drawing.Point(163, 21);
             this.cbVekilTanım.Margin = new System.Windows.Forms.Padding(2);
             this.cbVekilTanım.Name = "cbVekilTanım";
             this.cbVekilTanım.Size = new System.Drawing.Size(261, 28);
@@ -88,7 +95,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(37, 20);
+            this.label3.Location = new System.Drawing.Point(13, 29);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
@@ -99,7 +106,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.cbMazeretKod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbMazeretKod.FormattingEnabled = true;
-            this.cbMazeretKod.Location = new System.Drawing.Point(227, 44);
+            this.cbMazeretKod.Location = new System.Drawing.Point(163, 53);
             this.cbMazeretKod.Margin = new System.Windows.Forms.Padding(2);
             this.cbMazeretKod.Name = "cbMazeretKod";
             this.cbMazeretKod.Size = new System.Drawing.Size(261, 28);
@@ -109,7 +116,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(37, 52);
+            this.label2.Location = new System.Drawing.Point(13, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
@@ -119,7 +126,7 @@ namespace Meclis.SabitTanimlar
             // txtMazeretNedeni
             // 
             this.txtMazeretNedeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMazeretNedeni.Location = new System.Drawing.Point(227, 148);
+            this.txtMazeretNedeni.Location = new System.Drawing.Point(163, 157);
             this.txtMazeretNedeni.Margin = new System.Windows.Forms.Padding(2);
             this.txtMazeretNedeni.Multiline = true;
             this.txtMazeretNedeni.Name = "txtMazeretNedeni";
@@ -130,7 +137,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(37, 148);
+            this.label5.Location = new System.Drawing.Point(13, 157);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 20);
@@ -141,7 +148,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(37, 114);
+            this.label6.Location = new System.Drawing.Point(13, 123);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 20);
@@ -151,34 +158,89 @@ namespace Meclis.SabitTanimlar
             // dtBitisTarihi
             // 
             this.dtBitisTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtBitisTarihi.Location = new System.Drawing.Point(227, 107);
+            this.dtBitisTarihi.Location = new System.Drawing.Point(163, 116);
             this.dtBitisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtBitisTarihi.Name = "dtBitisTarihi";
             this.dtBitisTarihi.Size = new System.Drawing.Size(261, 27);
             this.dtBitisTarihi.TabIndex = 51;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSil);
+            this.groupBox1.Controls.Add(this.btnGuncelle);
+            this.groupBox1.Controls.Add(this.txtMazeretNedeni);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnKaydet);
+            this.groupBox1.Controls.Add(this.dtBitisTarihi);
+            this.groupBox1.Controls.Add(this.dtBaslamaTarihi);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cbMazeretKod);
+            this.groupBox1.Controls.Add(this.cbVekilTanım);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(673, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(433, 642);
+            this.groupBox1.TabIndex = 53;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(654, 526);
+            this.dataGridView1.TabIndex = 54;
+            // 
+            // txtAra
+            // 
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(12, 73);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(356, 27);
+            this.txtAra.TabIndex = 55;
+            // 
+            // btnSil
+            // 
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSil.Location = new System.Drawing.Point(319, 318);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(109, 49);
+            this.btnSil.TabIndex = 54;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(186, 318);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(129, 49);
+            this.btnGuncelle.TabIndex = 53;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
             // FrmMazeretTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 298);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dtBitisTarihi);
-            this.Controls.Add(this.txtMazeretNedeni);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbMazeretKod);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbVekilTanım);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtBaslamaTarihi);
-            this.Controls.Add(this.btnKaydet);
+            this.ClientSize = new System.Drawing.Size(1108, 656);
+            this.Controls.Add(this.txtAra);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmMazeretTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMazeretTanim";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +259,10 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtBitisTarihi;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }

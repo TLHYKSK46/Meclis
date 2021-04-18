@@ -290,9 +290,9 @@ namespace Meclis.SabitTanimlar
             // txtAra
             // 
             this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(-3, 88);
+            this.txtAra.Location = new System.Drawing.Point(12, 84);
             this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(298, 27);
+            this.txtAra.Size = new System.Drawing.Size(356, 27);
             this.txtAra.TabIndex = 49;
             // 
             // FrmDanismanTanim

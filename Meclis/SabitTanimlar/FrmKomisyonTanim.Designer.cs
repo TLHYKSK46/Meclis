@@ -34,13 +34,20 @@ namespace Meclis.SabitTanimlar
             this.btnKaydet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtIhtisasAdi = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(11, 68);
+            this.label2.Location = new System.Drawing.Point(5, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 20);
@@ -50,19 +57,19 @@ namespace Meclis.SabitTanimlar
             // txtUluslararasiAdi
             // 
             this.txtUluslararasiAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUluslararasiAdi.Location = new System.Drawing.Point(188, 61);
+            this.txtUluslararasiAdi.Location = new System.Drawing.Point(152, 80);
             this.txtUluslararasiAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtUluslararasiAdi.Name = "txtUluslararasiAdi";
-            this.txtUluslararasiAdi.Size = new System.Drawing.Size(238, 27);
+            this.txtUluslararasiAdi.Size = new System.Drawing.Size(199, 27);
             this.txtUluslararasiAdi.TabIndex = 2;
             // 
             // btnKaydet
             // 
             this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKaydet.Location = new System.Drawing.Point(324, 120);
+            this.btnKaydet.Location = new System.Drawing.Point(9, 238);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(102, 27);
+            this.btnKaydet.Size = new System.Drawing.Size(124, 49);
             this.btnKaydet.TabIndex = 3;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -72,7 +79,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(11, 16);
+            this.label1.Location = new System.Drawing.Point(5, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
@@ -82,28 +89,83 @@ namespace Meclis.SabitTanimlar
             // txtIhtisasAdi
             // 
             this.txtIhtisasAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtIhtisasAdi.Location = new System.Drawing.Point(188, 9);
+            this.txtIhtisasAdi.Location = new System.Drawing.Point(152, 28);
             this.txtIhtisasAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtIhtisasAdi.Name = "txtIhtisasAdi";
-            this.txtIhtisasAdi.Size = new System.Drawing.Size(238, 27);
+            this.txtIhtisasAdi.Size = new System.Drawing.Size(199, 27);
             this.txtIhtisasAdi.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSil);
+            this.groupBox1.Controls.Add(this.btnGuncelle);
+            this.groupBox1.Controls.Add(this.btnKaydet);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtUluslararasiAdi);
+            this.groupBox1.Controls.Add(this.txtIhtisasAdi);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(546, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(356, 503);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // btnSil
+            // 
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSil.Location = new System.Drawing.Point(257, 238);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(109, 49);
+            this.btnSil.TabIndex = 50;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuncelle.Location = new System.Drawing.Point(137, 238);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(116, 49);
+            this.btnGuncelle.TabIndex = 49;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // txtAra
+            // 
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(12, 73);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(356, 27);
+            this.txtAra.TabIndex = 51;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 106);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(528, 401);
+            this.dataGridView1.TabIndex = 52;
             // 
             // FrmKomisyonTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 174);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtUluslararasiAdi);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtIhtisasAdi);
+            this.ClientSize = new System.Drawing.Size(905, 519);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtAra);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmKomisyonTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmKomisyonTanim";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +178,10 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIhtisasAdi;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

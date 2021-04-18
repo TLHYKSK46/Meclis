@@ -49,5 +49,10 @@ namespace Meclis.SabitTanimlar
        
 
         }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

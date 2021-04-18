@@ -106,5 +106,15 @@ namespace Meclis.SabitTanimlar
             txtTelNo.Text = "";
            
         }
+
+        private void FrmGrupPersonelTanim_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
