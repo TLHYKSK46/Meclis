@@ -46,5 +46,26 @@ namespace Meclis.SabitTanimlar
             }
 
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            string donem = txtDonemAdi.Text;
+            if (donem != null || donem != "")
+            {
+                _donemService.Guncelle(new DonemTanim
+                {
+                    DonemAdi = donem
+                   
+
+                });
+                MessageBox.Show("Güncelleme İşlemi Başarılı!", "Program");
+                txtDonemAdi.Text = "";
+
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Bir Dönem Giriniz!", "Program");
+            }
+        }
     }
 }
