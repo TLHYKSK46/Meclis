@@ -38,7 +38,24 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(DostlukGrupTanim doslukGrupTanim)
         {
-            _DostlukGrupTanim.Update(doslukGrupTanim);
+            try
+            {
+                var data = _context.VekilDilTanims.FirstOrDefault(p => p.Id == doslukGrupTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+
+                doslukGrupTanim.EklenmeTarihi = data.EklenmeTarihi;
+                doslukGrupTanim.Id = data.Id;
+
+                _DostlukGrupTanim.Update(doslukGrupTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+           
         }
 
         public List<DostlukGrupTanim> ListeGetir()
@@ -48,7 +65,19 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _DostlukGrupTanim.Delete(new DostlukGrupTanim {Id=id });
+            var data = _context.DostlukGrupTanims.SingleOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _DostlukGrupTanim.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _DostlukGrupTanim.Delete(new DostlukGrupTanim {Id=id });
         }
     }
 }
