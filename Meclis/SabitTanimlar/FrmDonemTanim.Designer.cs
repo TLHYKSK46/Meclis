@@ -98,6 +98,7 @@ namespace Meclis.SabitTanimlar
             this.btnSil.TabIndex = 48;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -126,6 +127,7 @@ namespace Meclis.SabitTanimlar
             this.dgListe.Name = "dgListe";
             this.dgListe.Size = new System.Drawing.Size(551, 438);
             this.dgListe.TabIndex = 50;
+            this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
             // FrmDonemTanim
             // 
@@ -141,6 +143,7 @@ namespace Meclis.SabitTanimlar
             this.Name = "FrmDonemTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDonemTanim";
+            this.Load += new System.EventHandler(this.FrmDonemTanim_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
