@@ -52,7 +52,22 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(GrupPersonelTanim grupPersonelTanim)
         {
-            _GrupPersonel.Update(grupPersonelTanim);
+            try
+            {
+                var data = _meclisContext.GrupPersonelTanims.FirstOrDefault(p => p.Id == grupPersonelTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                grupPersonelTanim.EklenmeTarihi = data.EklenmeTarihi;
+                grupPersonelTanim.Id = data.Id;
+                _GrupPersonel.Update(grupPersonelTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+          
         }
 
         public List<GrupPersonelTanim> ListeGetir()
@@ -62,7 +77,19 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _GrupPersonel.Delete(new GrupPersonelTanim {Id=id });
+            var data = _meclisContext.GrupPersonelTanims.SingleOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _GrupPersonel.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _GrupPersonel.Delete(new GrupPersonelTanim {Id=id });
         }
     }
 }
