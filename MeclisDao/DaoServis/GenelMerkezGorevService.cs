@@ -50,17 +50,46 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(GenelMerkezGorev genelMerkezGorev)
         {
-            _genelMerkez.Update(genelMerkezGorev);
+            try
+            {
+                var data = _context.VekilDilTanims.FirstOrDefault(p => p.Id == genelMerkezGorev.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+
+                genelMerkezGorev.EklenmeTarihi = data.EklenmeTarihi;
+                genelMerkezGorev.Id = data.Id;
+
+                _genelMerkez.Update(genelMerkezGorev);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+          
         }
 
         public List<GenelMerkezGorev> ListeGetir()
         {
-            return _genelMerkez.GetAll();
+            return _genelMerkez.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)
         {
-            _genelMerkez.Delete(new GenelMerkezGorev { Id=id});
+            var data = _context.GenelMerkezGorevs.SingleOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _genelMerkez.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _genelMerkez.Delete(new GenelMerkezGorev { Id=id});
         }
     }
 }
