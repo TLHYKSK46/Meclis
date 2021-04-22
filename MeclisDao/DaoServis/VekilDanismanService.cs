@@ -49,7 +49,22 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(VekilDanisman vekilDanisman)
         {
-            _vekilDanismanDal.Update(vekilDanisman);
+            try
+            {
+                var data = _meclisContext.VekilDanismans.FirstOrDefault(p => p.Id == vekilDanisman.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                vekilDanisman.EklenmeTarihi = data.EklenmeTarihi;
+                vekilDanisman.Id = data.Id;
+                _vekilDanismanDal.Update(vekilDanisman);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+           
         }
 
         public List<VekilDanisman> ListeGetir()
@@ -59,7 +74,17 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _vekilDanismanDal.Delete(new VekilDanisman { Id = id });
+            var data = _meclisContext.VekilDanismans.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _vekilDanismanDal.Delete(data);
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _vekilDanismanDal.Delete(new VekilDanisman { Id = id });
         }
     }
 }

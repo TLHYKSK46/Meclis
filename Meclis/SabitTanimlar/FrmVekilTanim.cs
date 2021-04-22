@@ -64,5 +64,20 @@ namespace Meclis.SabitTanimlar
         {
 
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgListe_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
