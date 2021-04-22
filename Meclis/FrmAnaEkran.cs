@@ -17,22 +17,105 @@ namespace Meclis
     public partial class FrmAnaEkran : Form
     {
         private IVekilDetayService _vekilDetayService;
-    
+        private IVekilTanimService _vekilTanimService;
+        private IDanismanTanimService _danismanTanimService;
+        private ICinsiyetTanimService _cinsiyetTanimService;
+        private IKomisyonDurumService _komisyonDurumService;
+        private IKomisyonTanimService _komisyonTanimService;
+        private IIlTanimService _ilTanimService;
+        private IPartiTanimService _partiTanimService;
+        private IPartiGrupTanimService _partiGrupTanimService;
+        private IMazeretTanimService _mazeretTanim;
+        private IVekilDilTanimService _vekilDilTanim;
+        private IDilTanimService _dilTanimService;
+        private IDonemTanimService _donemTanimService;
+        private IHatirlatmaTanimService _hatirlatmaTanimService;
+        private IDostlukGrupTanimService _dostlukGrupTanimService;
+        private IMeclisGorevTanimService _meclisGorevTanimService;
+        private IVekilDanismanService _vekilDanismanService;
+        private IGrupPersonelTanimService _grupPersonelTanimService;
+        private IMeslekTanimService _meslekTanimService;
+        private IGenelMerkezGorevService _genelMerkezGorevService;
         public FrmAnaEkran()
         {
             InitializeComponent();
-         
+
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
+            _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
+            _danismanTanimService = InstanceFactory.GetInstance<IDanismanTanimService>();
+            _cinsiyetTanimService = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            _komisyonDurumService = InstanceFactory.GetInstance<IKomisyonDurumService>();
+            _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
+            _partiTanimService = InstanceFactory.GetInstance<IPartiTanimService>();
+            _partiGrupTanimService = InstanceFactory.GetInstance<IPartiGrupTanimService>();
+            _mazeretTanim = InstanceFactory.GetInstance<IMazeretTanimService>();
+            _vekilDilTanim = InstanceFactory.GetInstance<IVekilDilTanimService>();
+            _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
+            _donemTanimService = InstanceFactory.GetInstance<IDonemTanimService>();
+            _hatirlatmaTanimService = InstanceFactory.GetInstance<IHatirlatmaTanimService>();
+            _dostlukGrupTanimService = InstanceFactory.GetInstance<IDostlukGrupTanimService>();
+            _meclisGorevTanimService = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
+            _vekilDanismanService = InstanceFactory.GetInstance<IVekilDanismanService>();
+            _grupPersonelTanimService = InstanceFactory.GetInstance<IGrupPersonelTanimService>();
+            _meslekTanimService = InstanceFactory.GetInstance<IMeslekTanimService>();
+            _genelMerkezGorevService = InstanceFactory.GetInstance<IGenelMerkezGorevService>();
+            _komisyonTanimService = InstanceFactory.GetInstance<IKomisyonTanimService>();
+
+
         }
 
         private void FrmAnaEkran_Load(object sender, EventArgs e)
         {
-           
 
-            dgwVekilDetay.DataSource = _vekilDetayService.ListeGetir();
+            dgwVekilDetay.DataSource = (from vd in _vekilDetayService.ListeGetir()
+                                        join vt in _vekilTanimService.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                        join ct in _cinsiyetTanimService.ListeGetir() on vd.CinsiyetTanimId equals ct.Id
+                                        join kdt in _komisyonDurumService.ListeGetir() on vd.KomisyonDurumId equals kdt.Id
+                                        join kt in _komisyonTanimService.ListeGetir() on kdt.KomisyonTanimId equals kt.Id
+                                        join pt in _partiTanimService.ListeGetir() on vd.PartiTanimId equals pt.Id
+                                        join pgt in _partiGrupTanimService.ListeGetir() on vd.PartiGrupTanimId equals pgt.Id
+                                        join it in _ilTanimService.ListeGetir() on vd.IlTanimId equals it.Id
+                                        join mt in _mazeretTanim.ListeGetir() on vd.MazeretTanimId equals mt.Id
+                                        join vdta in _vekilDilTanim.ListeGetir() on vd.DilTanimId equals vdta.Id
+                                        join dt in _dilTanimService.ListeGetir() on vdta.DilTanimId equals dt.Id
+                                        join dont in _donemTanimService.ListeGetir() on vd.DonemTanimId equals dont.Id
+                                        join ht in _hatirlatmaTanimService.ListeGetir() on vd.HatirlatmaTanimId equals ht.Id
+                                        join dgt in _dostlukGrupTanimService.ListeGetir() on vd.DostlukGrupTanimId equals dgt.Id
+                                        join mgt in _meclisGorevTanimService.ListeGetir() on vd.MeclisGorevTanimId equals mgt.Id
+                                        join dant in _danismanTanimService.ListeGetir() on vd.DanismanTanimId equals dant.Id
+                                        join dantt in _danismanTanimService.ListeGetir() on ct.Id equals dantt.IlTanimId
+                                        join vdt in _vekilDanismanService.ListeGetir() on  vd.VekilDanismanId equals vdt.Id
+                                        join gpt in _grupPersonelTanimService.ListeGetir() on vd.GrupPersonelTanimId equals gpt.Id
+                                        join mest in _meslekTanimService.ListeGetir() on vd.MeslekTanimId equals mest.Id
+                                        select new 
+                                        {
+                                            vd.Id,
+                                            vt.TcKimlikNo,
+                                            vt.Ad,
+                                            vt.Soyad,
+                                            ct.CinsiyetAdi,
+                                            kt.IhtisasAdi,
+                                            it.IlAdi,
+                                            mt.MazeretNedeni,
+                                            mgt.MeclisGorevAdi,
+                                         mest.MeslekAdi,
+                                            pt.PartiAdi,
+                                            pgt.PartiGrupAdi,
+                                            hatirlatmabaşlık =ht.Baslik,
+                                            hatirlatmaDetay=ht.Aciklama,
+                                            dgt.DostlukGrupAdi,
+                                            dont.DonemAdi,
+                                            grupPerTC=gpt.TcKimlikNo,
+                                           GrupAdSoayd=gpt.Ad+""+gpt.Soyad,
+                                            DanismanTC = dant.TcKimlikNo,
+                                            DanismanAdSoayad = dant.Ad+""+dant.Soyad,
+                                            dt.DilAdi,
+                                          
+                                        }).ToList();
+
 
         }
-       
+
         private void dilTanimToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmDilTanim = new FrmDilTanim();
@@ -123,7 +206,7 @@ namespace Meclis
         {
             Form frmDanismanTanim = new FrmDanismanTanim();
             frmDanismanTanim.Show();
-                }
+        }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
