@@ -58,6 +58,10 @@ namespace Meclis.SabitTanimlar
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.dgListe = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
+            this.dtDogumTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbDogumYeri = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -244,7 +248,6 @@ namespace Meclis.SabitTanimlar
             this.txtOzGecmis.Name = "txtOzGecmis";
             this.txtOzGecmis.Size = new System.Drawing.Size(357, 161);
             this.txtOzGecmis.TabIndex = 10;
-            this.txtOzGecmis.TextChanged += new System.EventHandler(this.txtOzGecmis_TextChanged);
             // 
             // label9
             // 
@@ -261,7 +264,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chkAktif.Location = new System.Drawing.Point(170, 324);
+            this.chkAktif.Location = new System.Drawing.Point(170, 372);
             this.chkAktif.Margin = new System.Windows.Forms.Padding(2);
             this.chkAktif.Name = "chkAktif";
             this.chkAktif.Size = new System.Drawing.Size(61, 24);
@@ -279,7 +282,6 @@ namespace Meclis.SabitTanimlar
             this.label10.Size = new System.Drawing.Size(31, 20);
             this.label10.TabIndex = 23;
             this.label10.Text = "Dil:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // cbDil
             // 
@@ -312,6 +314,10 @@ namespace Meclis.SabitTanimlar
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDogumYeri);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.dtDogumTarihi);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
             this.groupBox1.Controls.Add(this.btnKaydet);
@@ -340,7 +346,7 @@ namespace Meclis.SabitTanimlar
             this.groupBox1.Controls.Add(this.txtKurumsalMail);
             this.groupBox1.Location = new System.Drawing.Point(1, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1012, 395);
+            this.groupBox1.Size = new System.Drawing.Size(1012, 405);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -372,19 +378,58 @@ namespace Meclis.SabitTanimlar
             // dgListe
             // 
             this.dgListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgListe.Location = new System.Drawing.Point(1, 446);
+            this.dgListe.Location = new System.Drawing.Point(1, 463);
             this.dgListe.Name = "dgListe";
-            this.dgListe.Size = new System.Drawing.Size(1012, 348);
+            this.dgListe.Size = new System.Drawing.Size(1012, 331);
             this.dgListe.TabIndex = 28;
             this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
             // txtAra
             // 
             this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(12, 413);
+            this.txtAra.Location = new System.Drawing.Point(12, 423);
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(340, 27);
             this.txtAra.TabIndex = 54;
+            // 
+            // dtDogumTarihi
+            // 
+            this.dtDogumTarihi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtDogumTarihi.Location = new System.Drawing.Point(170, 313);
+            this.dtDogumTarihi.Name = "dtDogumTarihi";
+            this.dtDogumTarihi.Size = new System.Drawing.Size(287, 26);
+            this.dtDogumTarihi.TabIndex = 59;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(11, 314);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 20);
+            this.label12.TabIndex = 60;
+            this.label12.Text = "Doğum Tarihi:";
+            // 
+            // cbDogumYeri
+            // 
+            this.cbDogumYeri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbDogumYeri.FormattingEnabled = true;
+            this.cbDogumYeri.Location = new System.Drawing.Point(170, 345);
+            this.cbDogumYeri.Name = "cbDogumYeri";
+            this.cbDogumYeri.Size = new System.Drawing.Size(287, 28);
+            this.cbDogumYeri.TabIndex = 62;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Location = new System.Drawing.Point(11, 348);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 20);
+            this.label13.TabIndex = 61;
+            this.label13.Text = "Doğum Yeri:";
             // 
             // FrmVekilTanim
             // 
@@ -440,5 +485,9 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.DataGridView dgListe;
         private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.ComboBox cbDogumYeri;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtDogumTarihi;
     }
 }
