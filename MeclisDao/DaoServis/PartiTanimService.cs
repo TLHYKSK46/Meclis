@@ -46,17 +46,42 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(PartiTanim partiTanim)
         {
-            _partiTanimDal.Update(partiTanim);
+            try
+            {
+                var data = _meclisContext.PartiTanims.FirstOrDefault(p => p.Id == partiTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                partiTanim.EklenmeTarihi = data.EklenmeTarihi;
+                partiTanim.Id = data.Id;
+                _partiTanimDal.Update(partiTanim);
+
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
         }
 
         public List<PartiTanim> ListeGetir()
         {
-            return _partiTanimDal.GetAll();
+            return _partiTanimDal.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)
         {
-            _partiTanimDal.Delete(new PartiTanim { Id = id });
+            var data = _meclisContext.PartiTanims.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _partiTanimDal.Delete(data);
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+            //_partiTanimDal.Delete(new PartiTanim { Id = id });
         }
     }
 }

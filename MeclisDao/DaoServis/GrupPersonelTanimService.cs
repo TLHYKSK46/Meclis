@@ -77,13 +77,11 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            var data = _meclisContext.GrupPersonelTanims.SingleOrDefault(p => p.Id == id);
+            var data = _meclisContext.GrupPersonelTanims.FirstOrDefault(p => p.Id == id);
             if (data != null && data.Silindi != 1)
             {
                 data.Silindi = 1;
                 _GrupPersonel.Delete(data);
-
-
             }
             else
             {

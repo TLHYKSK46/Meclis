@@ -37,9 +37,9 @@ namespace Meclis.SabitTanimlar
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgListe = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKaydet
@@ -108,6 +108,7 @@ namespace Meclis.SabitTanimlar
             this.btnSil.TabIndex = 52;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -119,6 +120,7 @@ namespace Meclis.SabitTanimlar
             this.btnGuncelle.TabIndex = 51;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // txtAra
             // 
@@ -128,20 +130,21 @@ namespace Meclis.SabitTanimlar
             this.txtAra.Size = new System.Drawing.Size(340, 27);
             this.txtAra.TabIndex = 51;
             // 
-            // dataGridView1
+            // dgListe
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 113);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(532, 507);
-            this.dataGridView1.TabIndex = 52;
+            this.dgListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgListe.Location = new System.Drawing.Point(12, 113);
+            this.dgListe.Name = "dgListe";
+            this.dgListe.Size = new System.Drawing.Size(532, 507);
+            this.dgListe.TabIndex = 52;
+            this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
             // FrmMeslekTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 623);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgListe);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -152,7 +155,7 @@ namespace Meclis.SabitTanimlar
             this.Text = "FrmMeslekTanim";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +171,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.TextBox txtAra;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgListe;
     }
 }

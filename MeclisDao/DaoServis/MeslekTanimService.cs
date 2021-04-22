@@ -46,12 +46,27 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(MeslekTanim Data)
         {
-            _meslekTanim.Update(Data);
+            try
+            {
+                var ldata = _meclisContext.MeslekTanims.FirstOrDefault(p => p.Id == Data.Id);
+                if (ldata == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                Data.EklenmeTarihi = ldata.EklenmeTarihi;
+                Data.Id = ldata.Id;
+                _meslekTanim.Update(Data);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+        
         }
 
         public List<MeslekTanim> ListeGetir()
         {
-            return _meslekTanim.GetAll();
+            return _meslekTanim.GetAll(p=>p.Silindi==0);
         }
 
         public List<MeslekTanim> MeslekAdiGetir(string data)
@@ -61,7 +76,17 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _meslekTanim.Delete(new MeslekTanim {Id=id});
+            var data = _meclisContext.MeslekTanims.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _meslekTanim.Delete(data);
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _meslekTanim.Delete(new MeslekTanim {Id=id});
         }
     }
 }
