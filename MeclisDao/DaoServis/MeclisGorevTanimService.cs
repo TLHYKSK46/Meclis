@@ -31,7 +31,7 @@ namespace MeclisDao.DaoServis
         {
             try
             {
-                var aData = _meclisContext.MeclisGorevTanims.SingleOrDefault(p => p.MeclisGorevAdi==meclisGorevTanim.MeclisGorevAdi && p.Silindi == 0);
+                var aData = _meclisContext.MeclisGorevTanims.FirstOrDefault(p => p.MeclisGorevAdi==meclisGorevTanim.MeclisGorevAdi && p.Silindi == 0);
                 if (aData != null)
                     throw new DaoException("Zaten " + meclisGorevTanim.MeclisGorevAdi+ " Adın da  Tanımlama Yapılmıştır! ,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
 
@@ -52,7 +52,22 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(MeclisGorevTanim meclisGorevTanim)
         {
-            _meclisGorevTanimDal.Update(meclisGorevTanim);
+            try
+            {
+                var data = _meclisContext.GrupPersonelTanims.FirstOrDefault(p => p.Id == meclisGorevTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                meclisGorevTanim.EklenmeTarihi = data.EklenmeTarihi;
+                meclisGorevTanim.Id = data.Id;
+                _meclisGorevTanimDal.Update(meclisGorevTanim);
+
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
         }
 
         public List<MeclisGorevTanim> ListeGetir()
@@ -62,7 +77,19 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _meclisGorevTanimDal.Delete(new MeclisGorevTanim {Id=id });
+            var data = _meclisContext.MeclisGorevTanims.SingleOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _meclisGorevTanimDal.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _meclisGorevTanimDal.Delete(new MeclisGorevTanim {Id=id });
         }
     }
 }

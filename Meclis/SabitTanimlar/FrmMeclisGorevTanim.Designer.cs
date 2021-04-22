@@ -33,12 +33,12 @@ namespace Meclis.SabitTanimlar
             this.label1 = new System.Windows.Forms.Label();
             this.txtMeclisGorevAdi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtAra = new System.Windows.Forms.TextBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.dgListe = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
             // 
             // btnKaydet
@@ -70,7 +70,7 @@ namespace Meclis.SabitTanimlar
             this.txtMeclisGorevAdi.Location = new System.Drawing.Point(109, 36);
             this.txtMeclisGorevAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtMeclisGorevAdi.Name = "txtMeclisGorevAdi";
-            this.txtMeclisGorevAdi.Size = new System.Drawing.Size(222, 27);
+            this.txtMeclisGorevAdi.Size = new System.Drawing.Size(227, 27);
             this.txtMeclisGorevAdi.TabIndex = 11;
             // 
             // groupBox1
@@ -80,21 +80,12 @@ namespace Meclis.SabitTanimlar
             this.groupBox1.Controls.Add(this.txtMeclisGorevAdi);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnKaydet);
-            this.groupBox1.Location = new System.Drawing.Point(508, 8);
+            this.groupBox1.Location = new System.Drawing.Point(594, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(333, 468);
+            this.groupBox1.Size = new System.Drawing.Size(350, 518);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            // 
-            // txtAra
-            // 
-            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(12, 63);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(340, 27);
-            this.txtAra.TabIndex = 50;
-            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // btnSil
             // 
@@ -106,6 +97,7 @@ namespace Meclis.SabitTanimlar
             this.btnSil.TabIndex = 50;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -117,21 +109,32 @@ namespace Meclis.SabitTanimlar
             this.btnGuncelle.TabIndex = 49;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
-            // dataGridView1
+            // txtAra
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(490, 380);
-            this.dataGridView1.TabIndex = 51;
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(12, 63);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(340, 27);
+            this.txtAra.TabIndex = 50;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            // 
+            // dgListe
+            // 
+            this.dgListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgListe.Location = new System.Drawing.Point(12, 96);
+            this.dgListe.Name = "dgListe";
+            this.dgListe.Size = new System.Drawing.Size(576, 430);
+            this.dgListe.TabIndex = 51;
+            this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
             // FrmMeclisGorevTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 478);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(946, 526);
+            this.Controls.Add(this.dgListe);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -142,7 +145,7 @@ namespace Meclis.SabitTanimlar
             this.Text = "FrmMeclisGorevTanim";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +160,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgListe;
     }
 }
