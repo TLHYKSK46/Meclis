@@ -286,14 +286,11 @@ namespace Meclis
             // 
             // dgwVekilDetay
             // 
-            this.dgwVekilDetay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgwVekilDetay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwVekilDetay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwVekilDetay.Location = new System.Drawing.Point(0, 132);
             this.dgwVekilDetay.Name = "dgwVekilDetay";
-            this.dgwVekilDetay.Size = new System.Drawing.Size(1251, 647);
+            this.dgwVekilDetay.Size = new System.Drawing.Size(1263, 647);
             this.dgwVekilDetay.TabIndex = 1;
             this.dgwVekilDetay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -301,6 +298,7 @@ namespace Meclis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1263, 782);
             this.Controls.Add(this.dgwVekilDetay);
             this.Controls.Add(this.menuAnaEkran);

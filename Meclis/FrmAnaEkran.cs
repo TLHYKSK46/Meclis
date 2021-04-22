@@ -66,7 +66,8 @@ namespace Meclis
 
         private void FrmAnaEkran_Load(object sender, EventArgs e)
         {
-
+            dgwVekilDetay.AutoSize = true;
+            
             dgwVekilDetay.DataSource = (from vd in _vekilDetayService.ListeGetir()
                                         join vt in _vekilTanimService.ListeGetir() on vd.VekilTanimId equals vt.Id
                                         join ct in _cinsiyetTanimService.ListeGetir() on vd.CinsiyetTanimId equals ct.Id

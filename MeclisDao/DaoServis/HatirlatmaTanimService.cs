@@ -49,17 +49,44 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(HatirlatmaTanim hatirlatmaTanim)
         {
+            try
+            {
+                var data = _Context.HatirlatmaTanims.FirstOrDefault(p => p.Id == hatirlatmaTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                hatirlatmaTanim.EklenmeTarihi = data.EklenmeTarihi;
+                hatirlatmaTanim.Id = data.Id;
+                _hatirlatmaTanim.Update(hatirlatmaTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
             _hatirlatmaTanim.Update(hatirlatmaTanim);
         }
 
         public List<HatirlatmaTanim> ListeGetir()
         {
-            return _hatirlatmaTanim.GetAll();
+            return _hatirlatmaTanim.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)
         {
-            _hatirlatmaTanim.Delete(new HatirlatmaTanim {Id=id});
+            var data = _Context.HatirlatmaTanims.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _hatirlatmaTanim.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _hatirlatmaTanim.Delete(new HatirlatmaTanim {Id=id});
         }
     }
 }
