@@ -25,7 +25,7 @@ namespace MeclisDao.DaoServis
         {
             try
             {
-                var aData = _meclisContext.MazeretKods.SingleOrDefault(p =>p.MazeretKodu==mazeretKod.MazeretKodu && p.Silindi == 0);
+                var aData = _meclisContext.MazeretKods.FirstOrDefault(p =>p.MazeretKodu==mazeretKod.MazeretKodu && p.Silindi == 0);
                 if (aData != null)
                     throw new DaoException(" Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
                
@@ -46,7 +46,23 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(MazeretKod mazeretKod)
         {
-            _mazeretKodDal.Update(mazeretKod);
+            try
+            {
+                var data = _meclisContext.MazeretKods.FirstOrDefault(p => p.Id == mazeretKod.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                mazeretKod.EklenmeTarihi = data.EklenmeTarihi;
+                mazeretKod.Id = data.Id;
+                _mazeretKodDal.Update(mazeretKod);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+
+         
         }
 
         public List<MazeretKod> ListeGetir()
@@ -56,7 +72,19 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _mazeretKodDal.Delete(new MazeretKod { Id=id});
+            var data = _meclisContext.MazeretKods.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _mazeretKodDal.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+          //  _mazeretKodDal.Delete(new MazeretKod { Id=id});
         }
     }
 }

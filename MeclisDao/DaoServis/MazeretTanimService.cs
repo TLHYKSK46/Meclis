@@ -30,7 +30,7 @@ namespace MeclisDao.DaoServis
         {
             try
             {
-                var aData = _meclisContext.MazeretTanims.SingleOrDefault(p => p.BaslamaTarihi == mazeretTanim.BaslamaTarihi
+                var aData = _meclisContext.MazeretTanims.FirstOrDefault(p => p.BaslamaTarihi == mazeretTanim.BaslamaTarihi
                 && p.BitisTarihi == mazeretTanim.BitisTarihi && p.Silindi == 0);
                 if (aData != null)
                     throw new DaoException("Zaten "+mazeretTanim.BaslamaTarihi+"ve "+mazeretTanim.BitisTarihi+" arasına Tanım Oluşturulmuş! ,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
@@ -52,17 +52,45 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(MazeretTanim mazeretTanim)
         {
-            _mazeretTanimService.Update(mazeretTanim);
+            try
+            {
+                var data = _meclisContext.MazeretTanims.FirstOrDefault(p => p.Id == mazeretTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                mazeretTanim.EklenmeTarihi = data.EklenmeTarihi;
+                mazeretTanim.Id = data.Id;
+                _mazeretTanimService.Update(mazeretTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+
+      
         }
 
         public List<MazeretTanim> ListeGetir()
         {
-            return _mazeretTanimService.GetAll();
+            return _mazeretTanimService.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)
         {
-            _mazeretTanimService.Delete(new MazeretTanim { Id=id});
+            var data = _meclisContext.MazeretTanims.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _mazeretTanimService.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+            //_mazeretTanimService.Delete(new MazeretTanim { Id=id});
         }
     }
 }

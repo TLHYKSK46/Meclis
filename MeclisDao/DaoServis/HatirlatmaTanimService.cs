@@ -54,7 +54,9 @@ namespace MeclisDao.DaoServis
                 var data = _Context.HatirlatmaTanims.FirstOrDefault(p => p.Id == hatirlatmaTanim.Id);
                 if (data == null)
                     throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
-
+                var kontrol = hatirlatmaTanim.HatirlatmaTarihi.Date != DateTime.Now.Date && (hatirlatmaTanim.HatirlatmaTarihi.Date > DateTime.Now.Date);
+                if (!kontrol)
+                    throw new DaoException("Bugün veya Eski Bir Tarihe Hatırlatma Ekleyemezsiniz!");
                 hatirlatmaTanim.EklenmeTarihi = data.EklenmeTarihi;
                 hatirlatmaTanim.Id = data.Id;
                 _hatirlatmaTanim.Update(hatirlatmaTanim);
@@ -64,7 +66,7 @@ namespace MeclisDao.DaoServis
 
                 throw new DaoException(ex.Message);
             }
-            _hatirlatmaTanim.Update(hatirlatmaTanim);
+           // _hatirlatmaTanim.Update(hatirlatmaTanim);
         }
 
         public List<HatirlatmaTanim> ListeGetir()

@@ -32,7 +32,7 @@ namespace MeclisDao.DaoServis
         {
             try
             {
-                var aData = _meclisContext.KomisyonTanims.SingleOrDefault(p => p.IhtisasAdi == komisyonTanim.IhtisasAdi && p.UluslararasiAdi == komisyonTanim.UluslararasiAdi && p.Silindi==0);
+                var aData = _meclisContext.KomisyonTanims.FirstOrDefault(p => p.IhtisasAdi == komisyonTanim.IhtisasAdi && p.UluslararasiAdi == komisyonTanim.UluslararasiAdi && p.Silindi==0);
                 if (aData != null)
                     throw new DaoException(komisyonTanim.UluslararasiAdi + " ve " + komisyonTanim.IhtisasAdi + " Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
 
@@ -53,7 +53,23 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(KomisyonTanim komisyonTanim)
         {
-            _komisyonTanim.Update(komisyonTanim);
+            try
+            {
+                var data = _meclisContext.KomisyonTanims.FirstOrDefault(p => p.Id == komisyonTanim.Id);
+                if (data == null)
+                    throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+
+                komisyonTanim.EklenmeTarihi = data.EklenmeTarihi;
+                komisyonTanim.Id = data.Id;
+                _komisyonTanim.Update(komisyonTanim);
+            }
+            catch (DaoException ex)
+            {
+
+                throw new DaoException(ex.Message);
+            }
+
+            
         }
 
         public List<KomisyonTanim> ListeGetir()
@@ -63,7 +79,19 @@ namespace MeclisDao.DaoServis
 
         public void Sil(int id)
         {
-            _komisyonTanim.Delete(new KomisyonTanim { Id=id});
+            var data = _meclisContext.KomisyonTanims.FirstOrDefault(p => p.Id == id);
+            if (data != null && data.Silindi != 1)
+            {
+                data.Silindi = 1;
+                _komisyonTanim.Delete(data);
+
+
+            }
+            else
+            {
+                throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
+            }
+           // _komisyonTanim.Delete(new KomisyonTanim { Id=id});
         }
     }
 }

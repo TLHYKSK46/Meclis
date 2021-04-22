@@ -41,12 +41,12 @@ namespace Meclis.SabitTanimlar
             this.label6 = new System.Windows.Forms.Label();
             this.dtBitisTarihi = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtAra = new System.Windows.Forms.TextBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.dgListe = new System.Windows.Forms.DataGridView();
+            this.txtAra = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -186,22 +186,6 @@ namespace Meclis.SabitTanimlar
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(654, 526);
-            this.dataGridView1.TabIndex = 54;
-            // 
-            // txtAra
-            // 
-            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(12, 73);
-            this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(356, 27);
-            this.txtAra.TabIndex = 55;
-            // 
             // btnSil
             // 
             this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -212,6 +196,7 @@ namespace Meclis.SabitTanimlar
             this.btnSil.TabIndex = 54;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -223,6 +208,24 @@ namespace Meclis.SabitTanimlar
             this.btnGuncelle.TabIndex = 53;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // dgListe
+            // 
+            this.dgListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgListe.Location = new System.Drawing.Point(13, 106);
+            this.dgListe.Name = "dgListe";
+            this.dgListe.Size = new System.Drawing.Size(654, 526);
+            this.dgListe.TabIndex = 54;
+            this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
+            // 
+            // txtAra
+            // 
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtAra.Location = new System.Drawing.Point(12, 73);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(356, 27);
+            this.txtAra.TabIndex = 55;
             // 
             // FrmMazeretTanim
             // 
@@ -230,7 +233,7 @@ namespace Meclis.SabitTanimlar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1108, 656);
             this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgListe);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -240,7 +243,7 @@ namespace Meclis.SabitTanimlar
             this.Text = "FrmMazeretTanim";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +263,7 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtBitisTarihi;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgListe;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;

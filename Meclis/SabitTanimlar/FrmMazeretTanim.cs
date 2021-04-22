@@ -28,9 +28,11 @@ namespace Meclis.SabitTanimlar
 
             cbVekilDoldur();
             cbMazeretKodDoldur();
+            TumunuListele();
+
         }
 
-   
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             int vekilTanimId= Convert.ToInt32(cbVekilTanım.SelectedValue);
@@ -54,6 +56,7 @@ namespace Meclis.SabitTanimlar
                     };
                     _mazeretTanim.Ekle(data);
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
+                    TumunuListele();
                     txtMazeretNedeni.Text = "";
                     cbVekilDoldur();
                     cbMazeretKodDoldur();
@@ -86,6 +89,94 @@ namespace Meclis.SabitTanimlar
             cbMazeretKod.ValueMember = "Id";
         }
 
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int vekilTanimId = Convert.ToInt32(cbVekilTanım.SelectedValue);
+            int mazeretKodu = Convert.ToInt32(cbMazeretKod.SelectedValue);
+            string mazeretNedini = txtMazeretNedeni.Text;
+            DateTime basTarih = dtBaslamaTarihi.Value;
+            DateTime bitisTarih = dtBitisTarihi.Value;
 
+            if ((vekilTanimId > 0) && (mazeretKodu > 0))
+            {
+                try
+                {
+                    var data = new MazeretTanim()
+                    {
+                        Id= Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
+                        MazeretKodId = mazeretKodu,
+                        VekilTanimId = vekilTanimId,
+                        BaslamaTarihi = basTarih,
+                        BitisTarihi = bitisTarih,
+                        MazeretNedeni = mazeretNedini,
+
+                    };
+                    _mazeretTanim.Guncelle(data);
+                    MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");
+                    TumunuListele();
+                    txtMazeretNedeni.Text = "";
+                    cbVekilDoldur();
+                    cbMazeretKodDoldur();
+                }
+                catch (DaoException ex)
+                {
+
+                    MessageBox.Show(ex.Message.ToString(), "Sistem");
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Boş Alanları Doldurunuz!.", "Sistem");
+            }
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DialogResult msg = MessageBox.Show("Silmek İstediğinizden Eminmisiniz?", "Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (msg == DialogResult.Yes && dgListe.CurrentRow != null)
+            {
+
+                try
+                {
+                    _mazeretTanim.Sil(Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value));
+                    TumunuListele();
+                    MessageBox.Show("Kayıt Başarıyla  Silindi!", "Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Hata Oluştu! \n");
+                }
+            }
+        }
+
+        private void TumunuListele()
+        {
+            dgListe.DataSource = (from mt in _mazeretTanim.ListeGetir()
+                                  join mk in _mazeretKod.ListeGetir() on mt.MazeretKodId equals mk.Id
+                                  join vt in _vekilTanim.ListeGetir() on mt.VekilTanimId equals vt.Id
+                                  select new { 
+                                  mt.Id,
+                                  vt.TcKimlikNo,
+                                 VekilAdSoyad= vt.Ad+" "+ vt.Soyad,
+                                  mk.MazeretKodu,
+                                  mt.MazeretNedeni,
+                                  mt.BaslamaTarihi,
+                                  mt.BitisTarihi,
+                                  
+                                  }).ToList();
+        }
+
+        private void dgListe_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbVekilTanım.Text = dgListe.CurrentRow.Cells[2].Value.ToString();
+            cbMazeretKod.Text = dgListe.CurrentRow.Cells[3].Value.ToString();
+            txtMazeretNedeni.Text = dgListe.CurrentRow.Cells[4].Value.ToString();
+            dtBaslamaTarihi.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
+            dtBitisTarihi.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
+        }
     }
 }

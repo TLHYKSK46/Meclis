@@ -288,9 +288,10 @@ namespace Meclis
             // 
             this.dgwVekilDetay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwVekilDetay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwVekilDetay.Location = new System.Drawing.Point(0, 132);
+            this.dgwVekilDetay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgwVekilDetay.Location = new System.Drawing.Point(0, 30);
             this.dgwVekilDetay.Name = "dgwVekilDetay";
-            this.dgwVekilDetay.Size = new System.Drawing.Size(1263, 647);
+            this.dgwVekilDetay.Size = new System.Drawing.Size(1263, 752);
             this.dgwVekilDetay.TabIndex = 1;
             this.dgwVekilDetay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
