@@ -15,5 +15,6 @@ namespace MeclisDao.IDaoServis
         void Ekle(DilSeviyeTanim data);
         void Guncelle(DilSeviyeTanim data);
         void Sil(int id);
+        
     }
 }
