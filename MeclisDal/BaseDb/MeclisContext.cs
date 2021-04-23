@@ -39,11 +39,13 @@ namespace MeclisDal.BaseDb
         public DbSet<IlTanim> IlTanims { get; set; }
         public DbSet<MeslekTanim> MeslekTanims { get; set; }
         public DbSet<VekilDilTanim> VekilDilTanims { get; set; }
+        public DbSet<DilSeviyeTanim> DilSeviyeTanims { get; set; }
         // public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new VekilTanimMap());
+            modelBuilder.Configurations.Add(new DilSeviyeTanimMap());
             modelBuilder.Configurations.Add(new DanismanTanimMap());
             modelBuilder.Configurations.Add(new CinsiyetTanimMap());
             modelBuilder.Configurations.Add(new DilTanimMap());

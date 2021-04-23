@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoServis\DilSeviyeTanimService.cs" />
     <Compile Include="DaoServis\VekilDilTanimService.cs" />
     <Compile Include="DaoServis\KomisyonDurumService.cs" />
     <Compile Include="DaoServis\MeslekTanimService.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Enums\BaseEnum\EnmBase.cs" />
     <Compile Include="Enums\EnmCinsiyet.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
+    <Compile Include="IDaoServis\IDilSeviyeTanimService.cs" />
     <Compile Include="IDaoServis\IVekilDilTanimService.cs" />
     <Compile Include="IDaoServis\IKomisyonDurumService.cs" />
     <Compile Include="IDaoServis\IMeslekTanimService.cs" />
