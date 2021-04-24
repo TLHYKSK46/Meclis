@@ -31,13 +31,14 @@ namespace Meclis.Listeler
         {
             this.txtListeAra = new System.Windows.Forms.TextBox();
             this.dgMeslekList = new System.Windows.Forms.DataGridView();
+            this.btnExcelAktar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgMeslekList)).BeginInit();
             this.SuspendLayout();
             // 
             // txtListeAra
             // 
             this.txtListeAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtListeAra.Location = new System.Drawing.Point(576, 52);
+            this.txtListeAra.Location = new System.Drawing.Point(12, 52);
             this.txtListeAra.Name = "txtListeAra";
             this.txtListeAra.Size = new System.Drawing.Size(212, 26);
             this.txtListeAra.TabIndex = 0;
@@ -53,11 +54,22 @@ namespace Meclis.Listeler
             this.dgMeslekList.TabIndex = 1;
             this.dgMeslekList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMeslekList_CellContentClick);
             // 
+            // btnExcelAktar
+            // 
+            this.btnExcelAktar.Location = new System.Drawing.Point(643, 35);
+            this.btnExcelAktar.Name = "btnExcelAktar";
+            this.btnExcelAktar.Size = new System.Drawing.Size(145, 43);
+            this.btnExcelAktar.TabIndex = 3;
+            this.btnExcelAktar.Text = "Excel\'e Aktar";
+            this.btnExcelAktar.UseVisualStyleBackColor = true;
+            this.btnExcelAktar.Click += new System.EventHandler(this.btnExcelAktar_Click);
+            // 
             // FrmMeslekListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcelAktar);
             this.Controls.Add(this.dgMeslekList);
             this.Controls.Add(this.txtListeAra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -75,5 +87,6 @@ namespace Meclis.Listeler
 
         private System.Windows.Forms.TextBox txtListeAra;
         private System.Windows.Forms.DataGridView dgMeslekList;
+        private System.Windows.Forms.Button btnExcelAktar;
     }
 }

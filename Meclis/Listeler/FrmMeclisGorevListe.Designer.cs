@@ -31,6 +31,7 @@ namespace Meclis.Listeler
         {
             this.dgList = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
+            this.btnExcelAktar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,17 +46,28 @@ namespace Meclis.Listeler
             // txtAra
             // 
             this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(627, 45);
+            this.txtAra.Location = new System.Drawing.Point(12, 48);
             this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(161, 26);
+            this.txtAra.Size = new System.Drawing.Size(196, 26);
             this.txtAra.TabIndex = 1;
             this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
+            // 
+            // btnExcelAktar
+            // 
+            this.btnExcelAktar.Location = new System.Drawing.Point(652, 31);
+            this.btnExcelAktar.Name = "btnExcelAktar";
+            this.btnExcelAktar.Size = new System.Drawing.Size(145, 43);
+            this.btnExcelAktar.TabIndex = 3;
+            this.btnExcelAktar.Text = "Excel\'e Aktar";
+            this.btnExcelAktar.UseVisualStyleBackColor = true;
+            this.btnExcelAktar.Click += new System.EventHandler(this.btnExcelAktar_Click);
             // 
             // FrmMeclisGorevListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcelAktar);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.dgList);
             this.Name = "FrmMeclisGorevListe";
@@ -71,5 +83,6 @@ namespace Meclis.Listeler
 
         private System.Windows.Forms.DataGridView dgList;
         private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.Button btnExcelAktar;
     }
 }

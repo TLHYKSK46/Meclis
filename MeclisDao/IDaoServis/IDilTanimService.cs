@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MeclisDao.IDaoServis
 {
@@ -15,5 +16,6 @@ namespace MeclisDao.IDaoServis
         void Ekle(DilTanim dilTanim);
         void Guncelle(DilTanim dilTanim);
         void Sil(int id);
+        void ExceleAktar(DataGridView dataGridView);
     }
 }

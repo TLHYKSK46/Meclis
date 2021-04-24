@@ -24,7 +24,7 @@ namespace MeclisDao.DaoServis
 
         public void Ekle(IlTanim ilTanim)
         {
-            var kontrol = ilTanim.IlAdi != null && ilTanim.IlBolgesi != null && ilTanim.IlKodu != null;
+            var kontrol = ilTanim.IlAdi != null && ilTanim.IlBolgesi != null && ilTanim.IlKodu !=0;
             if (kontrol)
             {
                 var data = _context.IlTanims.SingleOrDefault(p =>p.IlKodu==ilTanim.IlKodu && p.Silindi==0);

@@ -1,4 +1,5 @@
-﻿using MeclisDao.IDaoServis;
+﻿using MeclisDao.Exceptions;
+using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,20 @@ namespace Meclis.Listeler
             else
             {
                 TumunuListele();
+            }
+        }
+
+        private void btnExcelAktar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _meclisGorev.ExceleAktar(dgList);
+                MessageBox.Show("Excele Aktarım İşlemi Başarıyla Tamamlandı.", "Sistem", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+            }
+            catch (DaoException ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
     }
