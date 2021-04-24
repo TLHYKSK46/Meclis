@@ -90,6 +90,7 @@ namespace Meclis.SabitTanimlar
             this.cbVekilTanım.Name = "cbVekilTanım";
             this.cbVekilTanım.Size = new System.Drawing.Size(261, 28);
             this.cbVekilTanım.TabIndex = 45;
+            this.cbVekilTanım.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbVekilTanım_Format);
             // 
             // label3
             // 

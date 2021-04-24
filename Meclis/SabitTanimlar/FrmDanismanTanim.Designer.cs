@@ -216,6 +216,7 @@ namespace Meclis.SabitTanimlar
             this.cbVekilTanim.Name = "cbVekilTanim";
             this.cbVekilTanim.Size = new System.Drawing.Size(250, 28);
             this.cbVekilTanim.TabIndex = 44;
+            this.cbVekilTanim.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbVekilTanim_Format);
             // 
             // txtTelNo
             // 

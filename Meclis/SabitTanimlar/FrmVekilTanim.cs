@@ -19,15 +19,19 @@ namespace Meclis.SabitTanimlar
         private IVekilTanimService _vekilTanimService;
         private IDilTanimService _dilTanimService;
         private IVekilDilTanimService _vekilDilTanimService;
+        private IDilSeviyeTanimService _dilSeviyeTanimService;
        
         public FrmVekilTanim()
         {
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
             _vekilDilTanimService = InstanceFactory.GetInstance<IVekilDilTanimService>();
+            _dilSeviyeTanimService = InstanceFactory.GetInstance<IDilSeviyeTanimService>();
             InitializeComponent();
             TumunuListele();
             cbDilDoldur();
+          cbDilSeviyeDoldur();
+
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -153,6 +157,7 @@ namespace Meclis.SabitTanimlar
             dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
                                   join vdt in _vekilDilTanimService.ListeGetir() on vt.Id equals vdt.VekilTanimId
                                   join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
+                                  join ds in _dilSeviyeTanimService.ListeGetir() on vdt.DilSeviyeId equals ds.Id
                                   select new
                                   {
                                       vt.Id,
@@ -164,6 +169,7 @@ namespace Meclis.SabitTanimlar
                                       vt.KurumsalMail,
                                       vt.Kisiselmail,
                                       dt.DilAdi,
+                                      ds.DilSeviye,
                                       vt.Ozgecmis,
                                       vt.Aciklama,
                                       vt.Aktif
@@ -181,9 +187,10 @@ namespace Meclis.SabitTanimlar
             txtKurumsalMail.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
             txtKisiselMail.Text= dgListe.CurrentRow.Cells[7].Value.ToString();
             cbDil.Text = dgListe.CurrentRow.Cells[8].Value.ToString();
-            txtOzGecmis.Text = dgListe.CurrentRow.Cells[9].Value.ToString();
-            txtAciklama.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
-            chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[11].Value);
+            cbDilSeviye.Text = dgListe.CurrentRow.Cells[9].Value.ToString();
+            txtOzGecmis.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
+            txtAciklama.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
+            chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[12].Value);
          
            
 
@@ -193,6 +200,12 @@ namespace Meclis.SabitTanimlar
             cbDil.DataSource = _dilTanimService.ListeGetir();
             cbDil.DisplayMember = "DilAdi";
             cbDil.ValueMember = "Id";
+        }
+        private void cbDilSeviyeDoldur()
+        {
+            cbDilSeviye.DataSource = _dilSeviyeTanimService.ListeGetir();
+            cbDilSeviye.DisplayMember = "DilSeviye";
+            cbDilSeviye.ValueMember = "Id";
         }
         private void txtTemizle() {
             txtAd.Text = "";

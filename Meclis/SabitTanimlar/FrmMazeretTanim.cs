@@ -178,5 +178,12 @@ namespace Meclis.SabitTanimlar
             dtBaslamaTarihi.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
             dtBitisTarihi.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
         }
+
+        private void cbVekilTanım_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string lastname = ((VekilTanim)e.ListItem).Ad;
+            string firstname = ((VekilTanim)e.ListItem).Soyad;
+            e.Value = lastname + " " + firstname;
+        }
     }
 }

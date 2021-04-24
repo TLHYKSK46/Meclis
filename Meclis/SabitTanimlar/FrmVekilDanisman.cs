@@ -163,5 +163,19 @@ namespace Meclis.SabitTanimlar
             txtSira.Text = dgListe.CurrentRow.Cells[3].Value.ToString();
          
         }
+
+        private void cbVekil_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string lastname = ((VekilTanim)e.ListItem).Ad;
+            string firstname = ((VekilTanim)e.ListItem).Soyad;
+            e.Value = lastname + " " + firstname;
+        }
+
+        private void cbDanisman_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string lastname = ((DanismanTanim)e.ListItem).Ad;
+            string firstname = ((DanismanTanim)e.ListItem).Soyad;
+            e.Value = lastname + " " + firstname;
+        }
     }
 }

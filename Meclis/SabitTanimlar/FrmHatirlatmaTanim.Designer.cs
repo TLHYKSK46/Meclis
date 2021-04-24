@@ -39,9 +39,9 @@ namespace Meclis.SabitTanimlar
             this.cbVekilTanim = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgListe = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
@@ -121,6 +121,7 @@ namespace Meclis.SabitTanimlar
             this.cbVekilTanim.Name = "cbVekilTanim";
             this.cbVekilTanim.Size = new System.Drawing.Size(249, 28);
             this.cbVekilTanim.TabIndex = 40;
+            this.cbVekilTanim.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbVekilTanim_Format);
             // 
             // label3
             // 

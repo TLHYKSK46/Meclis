@@ -148,7 +148,7 @@ namespace Meclis.SabitTanimlar
                                   select new { 
                                   h.Id,
                                   v.TcKimlikNo,
-                                  VekilAdSoyad=v.Ad+""+v.Soyad,
+                                  VekilAdSoyad=v.Ad+" "+v.Soyad,
                                   h.Baslik,
                                   h.Aciklama,
                                   h.HatirlatmaTarihi,
@@ -165,6 +165,12 @@ namespace Meclis.SabitTanimlar
             cbVekilTanim.DisplayMember = "Ad";
             cbVekilTanim.ValueMember = "Id";
         }
-      
+
+        private void cbVekilTanim_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string lastname = ((VekilTanim)e.ListItem).Ad;
+            string firstname = ((VekilTanim)e.ListItem).Soyad;
+            e.Value = lastname + " " + firstname;
+        }
     }
 }
