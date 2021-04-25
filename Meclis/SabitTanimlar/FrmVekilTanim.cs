@@ -20,18 +20,20 @@ namespace Meclis.SabitTanimlar
         private IDilTanimService _dilTanimService;
         private IVekilDilTanimService _vekilDilTanimService;
         private IDilSeviyeTanimService _dilSeviyeTanimService;
-       
+        private IIlTanimService _ilTanimService;
+
         public FrmVekilTanim()
         {
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
             _vekilDilTanimService = InstanceFactory.GetInstance<IVekilDilTanimService>();
             _dilSeviyeTanimService = InstanceFactory.GetInstance<IDilSeviyeTanimService>();
+            _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             InitializeComponent();
             TumunuListele();
             cbDilDoldur();
-          cbDilSeviyeDoldur();
-
+            cbDilSeviyeDoldur();
+            cbDogumYeriDoldur();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -47,6 +49,9 @@ namespace Meclis.SabitTanimlar
             string ozgecmis = txtOzGecmis.Text;
             bool aktif = chkAktif.Checked;
             DateTime dogumtarihi = dtDogumTarihi.Value;
+            string dogumyeri = cbDogumYeri.SelectedText;
+            dogumtarihi.ToString("MMM/dd/yyy");
+
             if (tcKimlikNo != null && ad != null & soyad != null)
             {
                 try
@@ -63,10 +68,11 @@ namespace Meclis.SabitTanimlar
                         Aciklama = aciklama,
                         Aktif = aktif,
                         Ozgecmis = ozgecmis,
-                         DogumTarihi = dogumtarihi,
+                        DogumTarihi = dogumtarihi,
+                        DogumYeri = dogumyeri,
 
                     });
-                    MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");
+                    MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
 
                     TumunuListele();
                     txtTemizle();
@@ -77,7 +83,7 @@ namespace Meclis.SabitTanimlar
 
                     MessageBox.Show(ex.Message.ToString(), "Program");
                 }
-            
+
             }
             else
             {
@@ -86,7 +92,7 @@ namespace Meclis.SabitTanimlar
 
         }
 
-       
+
         private void FrmVekilTanim_Load(object sender, EventArgs e)
         {
 
@@ -104,8 +110,8 @@ namespace Meclis.SabitTanimlar
             string aciklama = txtAciklama.Text;
             string ozgecmis = txtOzGecmis.Text;
             DateTime dogumtarihi = dtDogumTarihi.Value;
-            int dogumyeri = Convert.ToInt32(cbDogumYeri.SelectedValue);
-
+            string dogumyeri = cbDogumYeri.SelectedText;
+            dogumtarihi.ToString("MMM/dd/yyy");
             bool aktif = chkAktif.Checked;
             if (tcKimlikNo != null && ad != null & soyad != null)
             {
@@ -124,8 +130,8 @@ namespace Meclis.SabitTanimlar
                         Aciklama = aciklama,
                         Aktif = aktif,
                         Ozgecmis = ozgecmis,
-                        DogumTarihi=dogumtarihi,
-                        //DogumYeri= dogumyeri,
+                        DogumTarihi = dogumtarihi,
+                        DogumYeri = dogumyeri,
 
                     });
                     MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");
@@ -139,7 +145,7 @@ namespace Meclis.SabitTanimlar
 
                     MessageBox.Show(ex.Message.ToString(), "Program");
                 }
-           
+
             }
             else
             {
@@ -170,6 +176,8 @@ namespace Meclis.SabitTanimlar
                                       vt.Kisiselmail,
                                       dt.DilAdi,
                                       ds.DilSeviye,
+                                     DoğumTarihi= vt.DogumTarihi.ToString("MMM/dd/yyy"),
+                                      vt.DogumYeri,
                                       vt.Ozgecmis,
                                       vt.Aciklama,
                                       vt.Aktif
@@ -185,14 +193,16 @@ namespace Meclis.SabitTanimlar
             txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[4].Value.ToString();
             txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
             txtKurumsalMail.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
-            txtKisiselMail.Text= dgListe.CurrentRow.Cells[7].Value.ToString();
+            txtKisiselMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString();
             cbDil.Text = dgListe.CurrentRow.Cells[8].Value.ToString();
             cbDilSeviye.Text = dgListe.CurrentRow.Cells[9].Value.ToString();
-            txtOzGecmis.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
-            txtAciklama.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
-            chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[12].Value);
-         
-           
+            dtDogumTarihi.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
+            cbDogumYeri.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
+            txtOzGecmis.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
+            txtAciklama.Text = dgListe.CurrentRow.Cells[13].Value.ToString();
+            chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[14].Value);
+
+
 
         }
         private void cbDilDoldur()
@@ -207,7 +217,14 @@ namespace Meclis.SabitTanimlar
             cbDilSeviye.DisplayMember = "DilSeviye";
             cbDilSeviye.ValueMember = "Id";
         }
-        private void txtTemizle() {
+        private void cbDogumYeriDoldur()
+        {
+            cbDogumYeri.DataSource = _ilTanimService.ListeGetir();
+            cbDogumYeri.DisplayMember = "IlAdi";
+            cbDogumYeri.ValueMember = "Id";
+        }
+        private void txtTemizle()
+        {
             txtAd.Text = "";
             txtSoyad.Text = "";
             txtKisiselMail.Text = "";
@@ -217,7 +234,10 @@ namespace Meclis.SabitTanimlar
             txtOzGecmis.Text = "";
             txtTcKimlikNo.Text = "";
             cbDil.Text = "";
-            
-        } 
+            cbDogumYeri.Text = "";
+            dtDogumTarihi.Text = "";
+
+
+        }
     }
 }
