@@ -12,7 +12,7 @@ namespace MeclisDao.IDaoServis
     {
         List<DanismanTanim> ListeGetir();
         DanismanTanim Getir(int id);
-        List<DanismanTanim> AdGoreGetir(string DanismanAdi);
+        List<DanismanTanim> VeriGetir(string tur, string value);
         void Ekle(DanismanTanim danismanTanim);
         void Guncelle(DanismanTanim danismanTanim);
         void Sil(int id);

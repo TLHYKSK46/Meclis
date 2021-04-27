@@ -6,8 +6,6 @@ using MeclisEntities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MeclisDao.DaoServis
@@ -23,10 +21,21 @@ namespace MeclisDao.DaoServis
             _meclisContext = meclisContext;
         }
 
-        public List<DanismanTanim> AdGoreGetir(string DanismanAdi)
+        public List<DanismanTanim> VeriGetir(string tur,string value)
         {
-            //return _danismanTanimDal.GetAll(p => p.Ad == DanismanAdi);
-            return _danismanTanimDal.GetAll(p => p.Ad.ToLower().Contains(DanismanAdi.ToLower()) || p.Soyad.ToLower().Contains(DanismanAdi.ToLower()) && p.Silindi == 0);
+            var data = new List<DanismanTanim>();
+            switch (tur)
+            {
+                case "Tümü":  data= _danismanTanimDal.GetAll(p => p.Silindi == 0);
+                            break;
+                case "Ad Soyad":
+                    data = _danismanTanimDal.GetAll(p => p.Ad.ToLower().Contains(value.ToLower()) || p.Soyad.ToLower().Contains(value.ToLower()) && p.Silindi == 0);
+                    break;
+                case "TC Kimlik No":
+                    data = _danismanTanimDal.GetAll(p => p.TcKimlikNo== value && p.Silindi == 0);
+                    break; 
+            } 
+            return data; 
         }
 
         public void Ekle(DanismanTanim danismanTanim)

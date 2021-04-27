@@ -1,6 +1,7 @@
 ﻿using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
+using MeclisEntities.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace Meclis.Listeler
 
         private void FrmDanismanListe_Load(object sender, EventArgs e)
         {
+            cmbFiltre.SelectedItem = "Tümü";
             TumunuListele();
         }
 
@@ -55,18 +57,6 @@ namespace Meclis.Listeler
 
         }
 
-        private void txtAra_TextChanged(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(txtAra.Text))
-            {
-                dgDanismanListe.DataSource = _danismanTanimService.AdGoreGetir(txtAra.Text);
-            }
-            else
-            {
-                TumunuListele();
-            }
-        }
-
         private void btnExcelAktar_Click(object sender, EventArgs e)
         {
             try
@@ -80,6 +70,11 @@ namespace Meclis.Listeler
                 MessageBox.Show(ex.Message.ToString());
             }
           
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        { 
+            dgDanismanListe.DataSource = _danismanTanimService.VeriGetir(cmbFiltre.SelectedItem.ToString(), txtAra.Text); ;
         }
     }
 }
