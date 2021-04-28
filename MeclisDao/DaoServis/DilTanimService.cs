@@ -82,7 +82,24 @@ namespace MeclisDao.DaoServis
             }
 
         }
-    
+
+        public List<DilTanim> FiltreleGetir(string tur, string value)
+        {
+            var data = new List<DilTanim>();
+            //switch (tur)
+            //{
+            //    case "Tümü":
+            //        data = _dilTanimDal.GetAll(p => p.Silindi == 0);
+            //        break;
+            //    case "Ad Soyad":
+            //        data = _dilTanimDal.GetAll(p => p.Ad.ToLower().Contains(value.ToLower()) || p.Soyad.ToLower().Contains(value.ToLower()) && p.Silindi == 0);
+            //        break;
+            //    case "TC Kimlik No":
+            //        data = _dilTanimDal.GetAll(p => p.TcKimlikNo == value && p.Silindi == 0);
+            //        break;
+            //}
+            return data;
+        }
 
         public DilTanim Getir(int id)
         {

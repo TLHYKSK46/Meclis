@@ -103,6 +103,22 @@ namespace MeclisDao.DaoServis
             return _vekilTanim.Get(p => p.Id == id);
         }
 
-      
+        public List<VekilTanim> FiltreleGetir(string tur, string value)
+        {
+            var data = new List<VekilTanim>();
+            switch (tur)
+            {
+                case "Tümü":
+                    data = _vekilTanim.GetAll(p => p.Silindi == 0);
+                    break;
+                case "Ad Soyad":
+                    data = _vekilTanim.GetAll(p => p.Ad.ToLower().Contains(value.ToLower()) || p.Soyad.ToLower().Contains(value.ToLower()) && p.Silindi == 0);
+                    break;
+                case "TC Kimlik No":
+                    data = _vekilTanim.GetAll(p => p.TcKimlikNo == value && p.Silindi == 0);
+                    break;
+            }
+            return data;
+        }
     }
 }

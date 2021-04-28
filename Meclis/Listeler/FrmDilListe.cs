@@ -70,5 +70,21 @@ namespace Meclis.Listeler
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            dgDilListe.DataSource = (from vt in _vekilTanim.FiltreleGetir(cmbFiltre.SelectedItem.ToString(),txtAra.Text)
+                                     join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
+                                     join dt in _dilTanimService.ListeGetir() on vd.DilTanimId equals dt.Id
+                                     select new
+                                     {
+                                         vt.Id,
+                                         vt.TcKimlikNo,
+                                         AdSoyad = vt.Ad + " " + vt.Soyad,
+                                         Dil = dt.DilAdi,
+                                     }
+                    ).ToList();
+           
+        }
     }
 }

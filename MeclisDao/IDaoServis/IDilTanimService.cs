@@ -13,6 +13,7 @@ namespace MeclisDao.IDaoServis
         List<DilTanim> ListeGetir();
         DilTanim Getir(int id);
         List<DilTanim> AdGoreGetir(string data);
+        List<DilTanim> FiltreleGetir(string tur, string value);
         void Ekle(DilTanim dilTanim);
         void Guncelle(DilTanim dilTanim);
         void Sil(int id);
