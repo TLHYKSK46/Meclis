@@ -40,27 +40,25 @@ namespace Meclis.Listeler
             // dgDanismanListe
             // 
             this.dgDanismanListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDanismanListe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgDanismanListe.Location = new System.Drawing.Point(0, 0);
+            this.dgDanismanListe.Location = new System.Drawing.Point(0, 75);
             this.dgDanismanListe.Name = "dgDanismanListe";
-            this.dgDanismanListe.Size = new System.Drawing.Size(800, 450);
+            this.dgDanismanListe.Size = new System.Drawing.Size(1093, 434);
             this.dgDanismanListe.TabIndex = 0;
             // 
             // txtAra
             // 
-            this.txtAra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtAra.Location = new System.Drawing.Point(0, 0);
+            this.txtAra.Location = new System.Drawing.Point(437, 38);
             this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(800, 20);
+            this.txtAra.Size = new System.Drawing.Size(409, 20);
             this.txtAra.TabIndex = 1;
             // 
             // btnExcelAktar
             // 
             this.btnExcelAktar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExcelAktar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnExcelAktar.Location = new System.Drawing.Point(0, 407);
+            this.btnExcelAktar.Location = new System.Drawing.Point(0, 515);
             this.btnExcelAktar.Name = "btnExcelAktar";
-            this.btnExcelAktar.Size = new System.Drawing.Size(800, 43);
+            this.btnExcelAktar.Size = new System.Drawing.Size(1093, 43);
             this.btnExcelAktar.TabIndex = 2;
             this.btnExcelAktar.Text = "Excel\'e Aktar";
             this.btnExcelAktar.UseVisualStyleBackColor = true;
@@ -68,24 +66,22 @@ namespace Meclis.Listeler
             // 
             // cmbFiltre
             // 
-            this.cmbFiltre.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbFiltre.FormattingEnabled = true;
             this.cmbFiltre.Items.AddRange(new object[] {
             "Tümü",
             "Ad Soyad",
             "TC Kimlik No",
             "İl"});
-            this.cmbFiltre.Location = new System.Drawing.Point(0, 20);
+            this.cmbFiltre.Location = new System.Drawing.Point(218, 37);
             this.cmbFiltre.Name = "cmbFiltre";
-            this.cmbFiltre.Size = new System.Drawing.Size(800, 21);
+            this.cmbFiltre.Size = new System.Drawing.Size(203, 21);
             this.cmbFiltre.TabIndex = 3;
             // 
             // btnAra
             // 
-            this.btnAra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAra.Location = new System.Drawing.Point(0, 41);
+            this.btnAra.Location = new System.Drawing.Point(852, 26);
             this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(800, 20);
+            this.btnAra.Size = new System.Drawing.Size(204, 43);
             this.btnAra.TabIndex = 4;
             this.btnAra.Text = "Filtrele";
             this.btnAra.UseVisualStyleBackColor = true;
@@ -95,13 +91,15 @@ namespace Meclis.Listeler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1093, 558);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.cmbFiltre);
             this.Controls.Add(this.btnExcelAktar);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.dgDanismanListe);
+            this.MaximizeBox = false;
             this.Name = "FrmDanismanListe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DanismanListe";
             this.Load += new System.EventHandler(this.FrmDanismanListe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgDanismanListe)).EndInit();

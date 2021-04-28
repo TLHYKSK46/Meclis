@@ -21,7 +21,7 @@ namespace MeclisDao.DaoServis
             _meclisContext = meclisContext;
         }
 
-        public List<DanismanTanim> VeriGetir(string tur,string value)
+        public List<DanismanTanim> FiltreleGetir(string tur,string value)
         {
             var data = new List<DanismanTanim>();
             switch (tur)

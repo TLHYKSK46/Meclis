@@ -73,8 +73,24 @@ namespace Meclis.Listeler
         }
 
         private void btnAra_Click(object sender, EventArgs e)
-        { 
-            dgDanismanListe.DataSource = _danismanTanimService.VeriGetir(cmbFiltre.SelectedItem.ToString(), txtAra.Text); ;
+        {
+           
+            dgDanismanListe.DataSource = (from dts in _danismanTanimService.FiltreleGetir(cmbFiltre.SelectedItem.ToString(), txtAra.Text)
+                                          join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
+                                          join vt in _vekilTanim.ListeGetir() on dts.VekilTanimId equals vt.Id
+                                          join i in _ilTanim.ListeGetir() on dts.IlTanimId equals i.Id
+                                          select new {
+                                              dts.Id,
+                                              dts.TcKimlikNo,
+                                              AdSoyad = dts.Ad + "" + dts.Soyad,
+                                              dts.TelNo,
+                                              dts.Mail,
+                                              c.CinsiyetAdi,
+                                              i.IlAdi,
+                                              VekilAdSoyad = vt.Ad + "" + vt.Soyad,
+                                              VekilTcKimlikNo = vt.TcKimlikNo,
+                                              dts.Aktif,
+                                          }).ToList();
         }
     }
 }
