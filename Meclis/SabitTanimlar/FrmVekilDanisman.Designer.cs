@@ -73,6 +73,7 @@ namespace Meclis.SabitTanimlar
             this.cbVekil.Name = "cbVekil";
             this.cbVekil.Size = new System.Drawing.Size(244, 26);
             this.cbVekil.TabIndex = 1;
+            this.cbVekil.Text = "Vekil Seçiniz";
             this.cbVekil.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbVekil_Format);
             // 
             // cbDanisman

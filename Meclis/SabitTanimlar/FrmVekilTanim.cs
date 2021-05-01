@@ -38,6 +38,7 @@ namespace Meclis.SabitTanimlar
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            Form frm = new FrmVekilDetay();
             string tcKimlikNo = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
@@ -73,7 +74,9 @@ namespace Meclis.SabitTanimlar
 
                     });
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
-
+                  
+                        frm.Show();
+                    
                     TumunuListele();
                     txtTemizle();
 

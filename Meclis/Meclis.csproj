@@ -209,6 +209,12 @@
     <Compile Include="SabitTanimlar\FrmVekilDanisman.Designer.cs">
       <DependentUpon>FrmVekilDanisman.cs</DependentUpon>
     </Compile>
+    <Compile Include="SabitTanimlar\FrmVekilDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SabitTanimlar\FrmVekilDetay.Designer.cs">
+      <DependentUpon>FrmVekilDetay.cs</DependentUpon>
+    </Compile>
     <Compile Include="SabitTanimlar\FrmVekilTanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmVekilDanisman.resx">
       <DependentUpon>FrmVekilDanisman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SabitTanimlar\FrmVekilDetay.resx">
+      <DependentUpon>FrmVekilDetay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmVekilTanim.resx">
       <DependentUpon>FrmVekilTanim.cs</DependentUpon>

@@ -47,9 +47,10 @@ namespace Meclis.Listeler
             // 
             // txtAra
             // 
+            this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAra.Location = new System.Drawing.Point(437, 38);
             this.txtAra.Name = "txtAra";
-            this.txtAra.Size = new System.Drawing.Size(409, 20);
+            this.txtAra.Size = new System.Drawing.Size(409, 24);
             this.txtAra.TabIndex = 1;
             // 
             // btnExcelAktar
@@ -66,6 +67,7 @@ namespace Meclis.Listeler
             // 
             // cmbFiltre
             // 
+            this.cmbFiltre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbFiltre.FormattingEnabled = true;
             this.cmbFiltre.Items.AddRange(new object[] {
             "Tümü",
@@ -74,7 +76,7 @@ namespace Meclis.Listeler
             "İl"});
             this.cmbFiltre.Location = new System.Drawing.Point(218, 37);
             this.cmbFiltre.Name = "cmbFiltre";
-            this.cmbFiltre.Size = new System.Drawing.Size(203, 21);
+            this.cmbFiltre.Size = new System.Drawing.Size(203, 26);
             this.cmbFiltre.TabIndex = 3;
             // 
             // btnAra
