@@ -1,4 +1,5 @@
-﻿using MeclisDao.Exceptions;
+﻿using MeclisDao.Enums;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
@@ -92,9 +93,9 @@ namespace Meclis.SabitTanimlar
             cbIl.ValueMember = "Id";
         }
         private void cbCinsiyetDoldur() {
-            cbCinsiyet.DataSource = _cinsiyetTanim.ListeGetir();
-            cbCinsiyet.DisplayMember = "CinsiyetAdi";
-            cbCinsiyet.ValueMember = "Id";
+            cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
+            //cbCinsiyet.DisplayMember = "CinsiyetAdi";
+            //cbCinsiyet.ValueMember = "Id";
         }
         private void textBoşalt() {
             txtAd.Text = "";
@@ -146,8 +147,6 @@ namespace Meclis.SabitTanimlar
                         TcKimlikNo = tcKimlikNo,
                         TelNo = telNo,
                         Sifre = sifre
-
-
                     });
                 }
                 catch (DaoException ex)

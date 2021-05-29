@@ -60,22 +60,13 @@ namespace MeclisDao.DaoServis
             }
             catch (DaoException ex)
             {
-
                 throw new DaoException(ex.Message);
             }
-            //var data = !vekilTanim.Equals("") || !vekilTanim.Equals(null);
-            //if (data==false)
-            //{
-            //   var IData= Getir(vekilTanim.Id);
-            //    if(IData!=null)
-            //    _vekilTanim.Update(vekilTanim);
-
-            //}
         }
 
         public List<VekilTanim> ListeGetir()
         {
-          return _vekilTanim.GetAll();
+          return _vekilTanim.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

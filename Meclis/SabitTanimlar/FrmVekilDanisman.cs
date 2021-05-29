@@ -48,6 +48,7 @@ namespace Meclis.SabitTanimlar
                        Sira=sira
                     };
                     _vekilDanisman.Ekle(data);
+                   
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
                     TumunuListele();
 
@@ -70,7 +71,7 @@ namespace Meclis.SabitTanimlar
             int vekilId = Convert.ToInt32(cbVekil.SelectedValue);
             int danismanId = Convert.ToInt32(cbDanisman.SelectedValue);
             int sira = Convert.ToInt32(txtSira.Text);
-
+            int id = Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value);
             if ((vekilId > 0) && (danismanId > 0) && sira != 0)
             {
                 try
@@ -85,8 +86,9 @@ namespace Meclis.SabitTanimlar
                     _vekilDanisman.Guncelle(data);
                     MessageBox.Show("Kayıt Güncellem İşlemi Başarılı.", "Sistem");
                     TumunuListele();
-
-                    txtSira.Text = "";
+                    //var sonuc = id > -1 ? _vekilDanisman.Guncelle(data) : _vekilDanisman.Ekle(data);
+                   
+                        txtSira.Text = "";
                     cbDanisman.Refresh();
                     cbVekil.Refresh();
                 }

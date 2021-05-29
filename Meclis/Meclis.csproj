@@ -119,23 +119,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SabitTanimlar\FrmCinsiyetTanim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SabitTanimlar\FrmCinsiyetTanim.Designer.cs">
-      <DependentUpon>FrmCinsiyetTanim.cs</DependentUpon>
-    </Compile>
     <Compile Include="SabitTanimlar\FrmDanismanTanim.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SabitTanimlar\FrmDanismanTanim.Designer.cs">
       <DependentUpon>FrmDanismanTanim.cs</DependentUpon>
     </Compile>
-    <Compile Include="SabitTanimlar\FrmDilTanim.cs">
+    <Compile Include="SabitTanimlar\FrmVekilDilTanim.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SabitTanimlar\FrmDilTanim.Designer.cs">
-      <DependentUpon>FrmDilTanim.cs</DependentUpon>
+    <Compile Include="SabitTanimlar\FrmVekilDilTanim.Designer.cs">
+      <DependentUpon>FrmVekilDilTanim.cs</DependentUpon>
     </Compile>
     <Compile Include="SabitTanimlar\FrmDonemTanim.cs">
       <SubType>Form</SubType>
@@ -166,12 +160,6 @@
     </Compile>
     <Compile Include="SabitTanimlar\FrmHatirlatmaTanim.Designer.cs">
       <DependentUpon>FrmHatirlatmaTanim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SabitTanimlar\FrmIlTanim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SabitTanimlar\FrmIlTanim.Designer.cs">
-      <DependentUpon>FrmIlTanim.cs</DependentUpon>
     </Compile>
     <Compile Include="SabitTanimlar\FrmKomisyonTanim.cs">
       <SubType>Form</SubType>
@@ -261,14 +249,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SabitTanimlar\FrmCinsiyetTanim.resx">
-      <DependentUpon>FrmCinsiyetTanim.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmDanismanTanim.resx">
       <DependentUpon>FrmDanismanTanim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SabitTanimlar\FrmDilTanim.resx">
-      <DependentUpon>FrmDilTanim.cs</DependentUpon>
+    <EmbeddedResource Include="SabitTanimlar\FrmVekilDilTanim.resx">
+      <DependentUpon>FrmVekilDilTanim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmDonemTanim.resx">
       <DependentUpon>FrmDonemTanim.cs</DependentUpon>
@@ -284,9 +269,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmHatirlatmaTanim.resx">
       <DependentUpon>FrmHatirlatmaTanim.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SabitTanimlar\FrmIlTanim.resx">
-      <DependentUpon>FrmIlTanim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmKomisyonTanim.resx">
       <DependentUpon>FrmKomisyonTanim.cs</DependentUpon>

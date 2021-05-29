@@ -1,4 +1,5 @@
-﻿using MeclisDao.Exceptions;
+﻿using MeclisDao.Enums;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
@@ -14,47 +15,45 @@ using System.Windows.Forms;
 
 namespace Meclis.SabitTanimlar
 {
-    public partial class FrmDilTanim : Form
+    public partial class FrmVekilDilTanim : Form
     {
         private IDilTanimService _dilTanimService;
         IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+     
         private IVekilDetayService _vekilDetayService;
         private IVekilDilTanimService _vekilDilTanim;
-        public FrmDilTanim()
+        public FrmVekilDilTanim()
         {
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
 
             InitializeComponent();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
             _vekilDilTanim = InstanceFactory.GetInstance<IVekilDilTanimService>();
+    
         }
 
         private void FrmDilTanim_Load(object sender, EventArgs e)
         {
             TumunuListele();
+            DilSeviyeDoldur();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             try
             {
-                string dilAdi = txtDilAdi.Text;
+                string dilAdi = cbDilAdi.Text;
                 if ((!dilAdi.Equals("") || dilAdi != null))
                 {
                     _vekilDilTanim.Ekle(new VekilDilTanim
                     {
-                        DilTanimId = Convert.ToInt32(cbDil.SelectedValue),
+                        DilTanimId = Convert.ToInt32(cbDilAdi.SelectedValue),
                         DilSeviyeId = Convert.ToInt32(cbDilSeviye.SelectedValue),
                         VekilTanimId = Convert.ToInt32(cbVekil.SelectedValue)
-
                     });
                     MessageBox.Show("Dil Eklendi!", "Admin");
                     TumunuListele();
-                    txtDilAdi.Text = "";
-
                 }
             }
             catch (DaoException ex)
@@ -73,20 +72,17 @@ namespace Meclis.SabitTanimlar
                 _vekilDilTanim.Guncelle(new VekilDilTanim
                 {
                     Id = Convert.ToInt32(dgDilListe.CurrentRow.Cells[0].Value),
-                    DilTanimId = Convert.ToInt32(cbDil.SelectedValue),
-                    DilSeviyeId = 1,//Convert.ToInt32(cbDilSeviye.SelectedValue),
+                    DilTanimId = Convert.ToInt32(cbDilAdi.SelectedValue),
+                    DilSeviyeId = Convert.ToInt32(cbDilSeviye.SelectedValue),
                     VekilTanimId = Convert.ToInt32(cbVekil.SelectedValue)
 
                 }); ;
                 MessageBox.Show("Dil Güncellendi!", "Admin");
                 TumunuListele();
-                txtDilAdi.Text = "";
             }
             catch (DaoException ex)
             {
                 MessageBox.Show(ex.Message.ToString(), "Admin");
-
-
             }
           
 
@@ -110,7 +106,7 @@ namespace Meclis.SabitTanimlar
                                      join vt in _vekilTanim.ListeGetir() on vdt.VekilTanimId equals vt.Id
                                      join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
                                      join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
-                                    
+                                     
                                      select new
                                      {
                                          vdt.Id,
@@ -131,7 +127,7 @@ namespace Meclis.SabitTanimlar
         }
         private void dgDilListe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbDil.Text = dgDilListe.CurrentRow.Cells[3].Value.ToString();
+            cbDilAdi.Text = dgDilListe.CurrentRow.Cells[3].Value.ToString();
             cbVekil.Text = dgDilListe.CurrentRow.Cells[2].Value.ToString();
            
             //cbDil.DisplayMember = "DilAdi";
@@ -143,14 +139,13 @@ namespace Meclis.SabitTanimlar
 
         private void DilDoldur()
         {
-            cbDil.DataSource = _dilTanimService.ListeGetir();
-            cbDil.DisplayMember = "DilAdi";
-            cbDil.ValueMember = "Id";
+            cbDilAdi.DataSource = _dilTanimService.ListeGetir();
+            cbDilAdi.DisplayMember = "DilAdi";
+            cbDilAdi.ValueMember = "Id";
 
         }
         private void VekilDoldur()
         {
-     
             //dgDilListe.Columns.Add("Ad","Soyad");
             cbVekil.DataSource = _vekilTanim.ListeGetir();
             cbVekil.DisplayMember = "Ad";
@@ -159,9 +154,9 @@ namespace Meclis.SabitTanimlar
         }
         private void DilSeviyeDoldur()
         {
-            cbDil.DataSource = _dilTanimService.ListeGetir();
-            cbDil.DisplayMember = "DilAdi";
-            cbDil.ValueMember = "Id";
+            cbDilAdi.DataSource = Enum.GetValues(typeof(DilSeviye));
+            //cbDilAdi.DisplayMember = "DilAdi";
+            //cbDilAdi.ValueMember = "Id";
         }
 
         private void btnSil_Click(object sender, EventArgs e)

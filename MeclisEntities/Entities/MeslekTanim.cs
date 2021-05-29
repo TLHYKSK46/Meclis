@@ -11,5 +11,6 @@ namespace MeclisEntities.Entities
   public class MeslekTanim: EntBase
     {
         public string MeslekAdi { get; set; }
+        public string UzmanlikAlani { get; set; }
     }
 }

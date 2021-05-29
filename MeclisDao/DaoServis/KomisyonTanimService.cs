@@ -24,7 +24,7 @@ namespace MeclisDao.DaoServis
 
         public List<KomisyonTanim> AdGoreGetir(string data)
         {
-            return _komisyonTanim.GetAll(p => p.IhtisasAdi.ToLower().Contains(data.ToLower()) || p.UluslararasiAdi.ToLower().Contains(data.ToLower()) && p.Silindi == 0);
+            return _komisyonTanim.GetAll(p => p.KomisyonAdi.ToLower().Contains(data.ToLower()) || p.KomisyonTuru.ToLower().Contains(data.ToLower()) && p.Silindi == 0);
 
         }
 
@@ -32,9 +32,9 @@ namespace MeclisDao.DaoServis
         {
             try
             {
-                var aData = _meclisContext.KomisyonTanims.FirstOrDefault(p => p.IhtisasAdi == komisyonTanim.IhtisasAdi && p.UluslararasiAdi == komisyonTanim.UluslararasiAdi && p.Silindi==0);
+                var aData = _meclisContext.KomisyonTanims.FirstOrDefault(p => p.KomisyonAdi == komisyonTanim.KomisyonAdi && p.KomisyonTuru == komisyonTanim.KomisyonTuru && p.Silindi==0);
                 if (aData != null)
-                    throw new DaoException(komisyonTanim.UluslararasiAdi + " ve " + komisyonTanim.IhtisasAdi + " Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+                    throw new DaoException(komisyonTanim.KomisyonTuru + " ve " + komisyonTanim.KomisyonAdi + " Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
 
                 _komisyonTanim.Add(komisyonTanim);
             }
@@ -68,15 +68,11 @@ namespace MeclisDao.DaoServis
 
                 throw new DaoException(ex.Message);
             }
-
-            
         }
-
         public List<KomisyonTanim> ListeGetir()
         {
             return _komisyonTanim.GetAll(p => p.Silindi == 0);
         }
-
         public void Sil(int id)
         {
             var data = _meclisContext.KomisyonTanims.FirstOrDefault(p => p.Id == id);
@@ -84,8 +80,6 @@ namespace MeclisDao.DaoServis
             {
                 data.Silindi = 1;
                 _komisyonTanim.Delete(data);
-
-
             }
             else
             {

@@ -45,8 +45,8 @@ namespace Meclis.Listeler
                                  kd.Id,
                                      vt.TcKimlikNo,
                                      AdSoyad = vt.Ad + "" + vt.Soyad,
-                                     kt.IhtisasAdi,
-                                 kt.UluslararasiAdi,
+                                     kt.KomisyonAdi,
+                                 kt.KomisyonTuru,
                                 
                                  
                                  }

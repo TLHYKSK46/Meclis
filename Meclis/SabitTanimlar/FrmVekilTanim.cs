@@ -1,4 +1,5 @@
-﻿using MeclisDao.Exceptions;
+﻿using MeclisDao.Enums;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
@@ -31,17 +32,19 @@ namespace Meclis.SabitTanimlar
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             InitializeComponent();
             TumunuListele();
-            cbDilDoldur();
-            cbDilSeviyeDoldur();
             cbDogumYeriDoldur();
+            CinsiyetDoldur();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Form frm = new FrmVekilDetay();
+         
             string tcKimlikNo = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
+            int cinsiyet = Convert.ToInt32(cbCinsiyet.SelectedValue);
+
             string kurumsalTel = txtKurumsalTelNo.Text;
             string kisiselTel = txtKisiselTelNo.Text;
             string kurumsalMail = txtKurumsalMail.Text;
@@ -62,6 +65,7 @@ namespace Meclis.SabitTanimlar
                         TcKimlikNo = tcKimlikNo,
                         Ad = ad,
                         Soyad = soyad,
+                        CinsiyetTanimId = cinsiyet,
                         KurumsalTelNo = kurumsalTel,
                         KurumsalMail = kurumsalMail,
                         Kisiselmail = kisiselMail,
@@ -74,7 +78,7 @@ namespace Meclis.SabitTanimlar
 
                     });
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
-                  
+                    //frm.vekilId = _vekilTanimService.Getir(5);
                         frm.Show();
                     
                     TumunuListele();
@@ -106,6 +110,7 @@ namespace Meclis.SabitTanimlar
             string tcKimlikNo = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
+            int cinsiyet = Convert.ToInt32(cbCinsiyet.SelectedValue);
             string kurumsalTel = txtKurumsalTelNo.Text;
             string kisiselTel = txtKisiselTelNo.Text;
             string kurumsalMail = txtKurumsalMail.Text;
@@ -126,6 +131,7 @@ namespace Meclis.SabitTanimlar
                         TcKimlikNo = tcKimlikNo,
                         Ad = ad,
                         Soyad = soyad,
+                        CinsiyetTanimId=cinsiyet,
                         KurumsalTelNo = kurumsalTel,
                         KurumsalMail = kurumsalMail,
                         Kisiselmail = kisiselMail,
@@ -197,8 +203,7 @@ namespace Meclis.SabitTanimlar
             txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
             txtKurumsalMail.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
             txtKisiselMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString();
-            cbDil.Text = dgListe.CurrentRow.Cells[8].Value.ToString();
-            cbDilSeviye.Text = dgListe.CurrentRow.Cells[9].Value.ToString();
+
             dtDogumTarihi.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
             cbDogumYeri.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
             txtOzGecmis.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
@@ -208,23 +213,21 @@ namespace Meclis.SabitTanimlar
 
 
         }
-        private void cbDilDoldur()
-        {
-            cbDil.DataSource = _dilTanimService.ListeGetir();
-            cbDil.DisplayMember = "DilAdi";
-            cbDil.ValueMember = "Id";
-        }
-        private void cbDilSeviyeDoldur()
-        {
-            cbDilSeviye.DataSource = _dilSeviyeTanimService.ListeGetir();
-            cbDilSeviye.DisplayMember = "DilSeviye";
-            cbDilSeviye.ValueMember = "Id";
-        }
+    
+       
         private void cbDogumYeriDoldur()
         {
             cbDogumYeri.DataSource = _ilTanimService.ListeGetir();
             cbDogumYeri.DisplayMember = "IlAdi";
             cbDogumYeri.ValueMember = "Id";
+        }
+        private void CinsiyetDoldur()
+        {
+
+            cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
+            //cbCinsiyet.DisplayMember = "Key";
+            //cbCinsiyet.ValueMember = "Value";
+
         }
         private void txtTemizle()
         {
@@ -236,7 +239,6 @@ namespace Meclis.SabitTanimlar
             txtKurumsalTelNo.Text = "";
             txtOzGecmis.Text = "";
             txtTcKimlikNo.Text = "";
-            cbDil.Text = "";
             cbDogumYeri.Text = "";
             dtDogumTarihi.Text = "";
 

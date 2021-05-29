@@ -18,6 +18,7 @@ namespace MeclisEntities.Mappings
             Property(x => x.TcKimlikNo).HasColumnName("tc_kimlik_no");
             Property(x => x.Ad).HasColumnName("ad");
             Property(x => x.Soyad).HasColumnName("soyad");
+            Property(x=>x.CinsiyetTanimId).HasColumnName("cinsiyet_tanim_id");
             Property(x => x.DogumTarihi).HasColumnName("dogum_tarihi");
             Property(x => x.DogumYeri).HasColumnName("dogum_yeri");
             Property(x => x.KurumsalTelNo).HasColumnName("kurumsal_tel_no");

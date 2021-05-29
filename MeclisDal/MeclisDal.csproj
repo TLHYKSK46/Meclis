@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Dal\DanismanTanimDal.cs" />
     <Compile Include="Dal\DilSeviyeTanimDal.cs" />
+    <Compile Include="Dal\KomisyonUyeDal.cs" />
     <Compile Include="Dal\VekilDilTanimDal.cs" />
     <Compile Include="Dal\KomisyonDurumDal.cs" />
     <Compile Include="Dal\MeslekTanimDal.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Dal\IlTanimDal.cs" />
     <Compile Include="Dal\PartiGrupTanimDal.cs" />
     <Compile Include="IDal\IDilSeviyeTanimDal.cs" />
+    <Compile Include="IDal\IKomisyonUyeDal.cs" />
     <Compile Include="IDal\IVekilDilTanimDal.cs" />
     <Compile Include="IDal\IKomisyonDurumDal.cs" />
     <Compile Include="IDal\IMeslekTanimDal.cs" />

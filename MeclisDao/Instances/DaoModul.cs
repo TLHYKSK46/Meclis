@@ -53,6 +53,9 @@ namespace MeclisDao.Instances
             Bind<IKomisyonTanimService>().To<KomisyonTanimService>().InSingletonScope();
             Bind<IKomisyonTanimDal>().To<KomisyonTanimDal>().InSingletonScope();
 
+            Bind<IKomisyonUyeService>().To<KomisyonUyeService>().InSingletonScope();
+            Bind<IKomisyonUyeDal>().To<KomisyonUyeDal>().InSingletonScope();
+
             Bind<IMazeretKodService>().To<MazeretKodService>().InSingletonScope();
             Bind<IMazeretKodDal>().To<MazeretKodDal>().InSingletonScope();
 

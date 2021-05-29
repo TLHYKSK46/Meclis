@@ -35,8 +35,8 @@ namespace Meclis.SabitTanimlar
                 try
                 {
                     var data = new KomisyonTanim() { 
-                    IhtisasAdi=ihtisasAdi,
-                    UluslararasiAdi=uluslararasiAdi
+                    KomisyonAdi=ihtisasAdi,
+                    KomisyonTuru=uluslararasiAdi
                     };
                     _komisyonTanim.Ekle(data);
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.","Sistem");
@@ -66,8 +66,8 @@ namespace Meclis.SabitTanimlar
                     var data = new KomisyonTanim()
                     {
                         Id= Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
-                        IhtisasAdi = ihtisasAdi,
-                        UluslararasiAdi = uluslararasiAdi
+                        KomisyonAdi = ihtisasAdi,
+                        KomisyonTuru = uluslararasiAdi
                     };
                     _komisyonTanim.Guncelle(data);
                     MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");

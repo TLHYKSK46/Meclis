@@ -68,58 +68,58 @@ namespace Meclis
         {
         
             
-            dgwVekilDetay.DataSource = (from vd in _vekilDetayService.ListeGetir()
-                                        join vt in _vekilTanimService.ListeGetir() on vd.VekilTanimId equals vt.Id
-                                        join ct in _cinsiyetTanimService.ListeGetir() on vd.CinsiyetTanimId equals ct.Id
-                                        join kdt in _komisyonDurumService.ListeGetir() on vd.KomisyonDurumId equals kdt.Id
-                                        join kt in _komisyonTanimService.ListeGetir() on kdt.KomisyonTanimId equals kt.Id
-                                        join pt in _partiTanimService.ListeGetir() on vd.PartiTanimId equals pt.Id
-                                        join pgt in _partiGrupTanimService.ListeGetir() on vd.PartiGrupTanimId equals pgt.Id
-                                        join it in _ilTanimService.ListeGetir() on vd.IlTanimId equals it.Id
-                                        join mt in _mazeretTanim.ListeGetir() on vd.MazeretTanimId equals mt.Id
-                                        join vdta in _vekilDilTanim.ListeGetir() on vd.DilTanimId equals vdta.Id
-                                        join dt in _dilTanimService.ListeGetir() on vdta.DilTanimId equals dt.Id
-                                        join dont in _donemTanimService.ListeGetir() on vd.DonemTanimId equals dont.Id
-                                        join ht in _hatirlatmaTanimService.ListeGetir() on vd.HatirlatmaTanimId equals ht.Id
-                                        join dgt in _dostlukGrupTanimService.ListeGetir() on vd.DostlukGrupTanimId equals dgt.Id
-                                        join mgt in _meclisGorevTanimService.ListeGetir() on vd.MeclisGorevTanimId equals mgt.Id
-                                        join dant in _danismanTanimService.ListeGetir() on vd.DanismanTanimId equals dant.Id
-                                        join dantt in _danismanTanimService.ListeGetir() on ct.Id equals dantt.IlTanimId
-                                        join vdt in _vekilDanismanService.ListeGetir() on  vd.VekilDanismanId equals vdt.Id
-                                        join gpt in _grupPersonelTanimService.ListeGetir() on vd.GrupPersonelTanimId equals gpt.Id
-                                        join mest in _meslekTanimService.ListeGetir() on vd.MeslekTanimId equals mest.Id
-                                        select new 
-                                        {
-                                            vd.Id,
-                                            vt.TcKimlikNo,
-                                            vt.Ad,
-                                            vt.Soyad,
-                                            ct.CinsiyetAdi,
-                                            kt.IhtisasAdi,
-                                            it.IlAdi,
-                                            mt.MazeretNedeni,
-                                            mgt.MeclisGorevAdi,
-                                         mest.MeslekAdi,
-                                            pt.PartiAdi,
-                                            pgt.PartiGrupAdi,
-                                            hatirlatmabaşlık =ht.Baslik,
-                                            hatirlatmaDetay=ht.Aciklama,
-                                            dgt.DostlukGrupAdi,
-                                            dont.DonemAdi,
-                                            grupPerTC=gpt.TcKimlikNo,
-                                           GrupAdSoayd=gpt.Ad+""+gpt.Soyad,
-                                            DanismanTC = dant.TcKimlikNo,
-                                            DanismanAdSoayad = dant.Ad+""+dant.Soyad,
-                                            dt.DilAdi,
+            //dgwVekilDetay.DataSource = (from vd in _vekilDetayService.ListeGetir()
+            //                            join vt in _vekilTanimService.ListeGetir() on vd.VekilTanimId equals vt.Id
+            //                            join ct in _cinsiyetTanimService.ListeGetir() on vd.CinsiyetTanimId equals ct.Id
+            //                            join kdt in _komisyonDurumService.ListeGetir() on vd.KomisyonDurumId equals kdt.Id
+            //                            join kt in _komisyonTanimService.ListeGetir() on kdt.KomisyonTanimId equals kt.Id
+            //                            join pt in _partiTanimService.ListeGetir() on vd.PartiTanimId equals pt.Id
+            //                            join pgt in _partiGrupTanimService.ListeGetir() on vd.PartiGrupTanimId equals pgt.Id
+            //                            join it in _ilTanimService.ListeGetir() on vd.IlTanimId equals it.Id
+            //                            join mt in _mazeretTanim.ListeGetir() on vd.MazeretTanimId equals mt.Id
+            //                            join vdta in _vekilDilTanim.ListeGetir() on vd.DilTanimId equals vdta.Id
+            //                            join dt in _dilTanimService.ListeGetir() on vdta.DilTanimId equals dt.Id
+            //                            join dont in _donemTanimService.ListeGetir() on vd.DonemTanimId equals dont.Id
+            //                            join ht in _hatirlatmaTanimService.ListeGetir() on vd.HatirlatmaTanimId equals ht.Id
+            //                            join dgt in _dostlukGrupTanimService.ListeGetir() on vd.DostlukGrupTanimId equals dgt.Id
+            //                            join mgt in _meclisGorevTanimService.ListeGetir() on vd.MeclisGorevTanimId equals mgt.Id
+            //                            join dant in _danismanTanimService.ListeGetir() on vd.DanismanTanimId equals dant.Id
+            //                            join dantt in _danismanTanimService.ListeGetir() on ct.Id equals dantt.IlTanimId
+            //                            join vdt in _vekilDanismanService.ListeGetir() on  vd.VekilDanismanId equals vdt.Id
+            //                            join gpt in _grupPersonelTanimService.ListeGetir() on vd.GrupPersonelTanimId equals gpt.Id
+            //                            join mest in _meslekTanimService.ListeGetir() on vd.MeslekTanimId equals mest.Id
+            //                            select new 
+            //                            {
+            //                                vd.Id,
+            //                                vt.TcKimlikNo,
+            //                                vt.Ad,
+            //                                vt.Soyad,
+            //                                ct.CinsiyetAdi,
+            //                                kt.IhtisasAdi,
+            //                                it.IlAdi,
+            //                                mt.MazeretNedeni,
+            //                                mgt.MeclisGorevAdi,
+            //                             mest.MeslekAdi,
+            //                                pt.PartiAdi,
+            //                                pgt.PartiGrupAdi,
+            //                                hatirlatmabaşlık =ht.Baslik,
+            //                                hatirlatmaDetay=ht.Aciklama,
+            //                                dgt.DostlukGrupAdi,
+            //                                dont.DonemAdi,
+            //                                grupPerTC=gpt.TcKimlikNo,
+            //                               GrupAdSoayd=gpt.Ad+""+gpt.Soyad,
+            //                                DanismanTC = dant.TcKimlikNo,
+            //                                DanismanAdSoayad = dant.Ad+""+dant.Soyad,
+            //                                dt.DilAdi,
                                           
-                                        }).ToList();
+            //                            }).ToList();
 
 
         }
 
         private void dilTanimToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmDilTanim = new FrmDilTanim();
+            Form frmDilTanim = new FrmVekilDilTanim();
             frmDilTanim.Show();
         }
 
@@ -160,11 +160,7 @@ namespace Meclis
             frmHatirlatmaTanim.Show();
         }
 
-        private void ilTanımToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frmIlTanim = new FrmIlTanim();
-            frmIlTanim.Show();
-        }
+     
 
         private void komisyonTanımToolStripMenuItem_Click(object sender, EventArgs e)
         {

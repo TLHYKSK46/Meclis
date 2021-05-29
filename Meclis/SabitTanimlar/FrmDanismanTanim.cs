@@ -1,15 +1,11 @@
-﻿using MeclisDao.Exceptions;
+﻿using MeclisDao.Enums;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Meclis.SabitTanimlar
@@ -18,13 +14,12 @@ namespace Meclis.SabitTanimlar
     {
         private IDanismanTanimService _danismanTanim;
         private IIlTanimService _ilTanimService;
-        private ICinsiyetTanimService _cinsiyetTanim;
         private IVekilTanimService _Vekil;
         public FrmDanismanTanim()
         {
             InitializeComponent();
             _danismanTanim = InstanceFactory.GetInstance<IDanismanTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             _Vekil = InstanceFactory.GetInstance<IVekilTanimService>();
         }
@@ -35,15 +30,10 @@ namespace Meclis.SabitTanimlar
             VekilDoldur();
             SehirDoldur();
             CinsiyetDoldur();
-
-
-
-
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-
             string tcKimlik = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
@@ -53,7 +43,6 @@ namespace Meclis.SabitTanimlar
             int il = Convert.ToInt32(cbIl.SelectedValue);
             int vekil = Convert.ToInt32(cbVekilTanim.SelectedValue);
             bool aktif = chkAktif.Checked;
-
 
             if ((tcKimlik != null) && (ad != null) && (soyad != null)
                 && !(cinsiyet < 0) && !(cinsiyet > 1) && (il != 0))
@@ -100,15 +89,12 @@ namespace Meclis.SabitTanimlar
             int il = Convert.ToInt32(cbIl.SelectedValue);
             int vekil = Convert.ToInt32(cbVekilTanim.SelectedValue);
             bool aktif = chkAktif.Checked;
-
-            if ((tcKimlik != null) && (ad != null) && (soyad != null)
-                && !(cinsiyet < 0) && !(cinsiyet > 1) && (il != 0))
+            if ((tcKimlik != null) && (ad != null) && (soyad != null)&& !(cinsiyet < 0) && !(cinsiyet > 1) && (il != 0))
             {
                 try
                 {
                     if (tcKimlik.Length != 11)
                         MessageBox.Show("Lütfen Tc Kimlik No alanını kontrol ediniz..(11 karekterden oluşması gerekir!)", "Sistem");
-
                     _danismanTanim.Guncelle(new DanismanTanim
                     {
                         Id = Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
@@ -124,8 +110,6 @@ namespace Meclis.SabitTanimlar
                     });
                     MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı!", "Sistem");
                     TumunuListele();
-
-
                 }
                 catch (DaoException ex)
                 {
@@ -175,9 +159,10 @@ namespace Meclis.SabitTanimlar
         #region Listeler
         private void TumunuListele()
         {
+        
             dgListe.DataSource = (from dt in _danismanTanim.ListeGetir()
                                   join vt in _Vekil.ListeGetir() on dt.VekilTanimId equals vt.Id
-                                  join c in _cinsiyetTanim.ListeGetir() on dt.CinsiyetTanimId equals c.Id
+                                  join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on dt.CinsiyetTanimId equals c.GetHashCode()
                                   join i in _ilTanimService.ListeGetir() on dt.IlTanimId equals i.Id
                                   select new
                                   {
@@ -189,7 +174,7 @@ namespace Meclis.SabitTanimlar
                                       dt.Mail,
                                       VekilTanim = vt.Ad + " " + vt.Soyad,
                                       VekilTanimTC = vt.TcKimlikNo,
-                                      c.CinsiyetAdi,
+                                      cinsiyet=c.ToString(),
                                       i.IlAdi,
                                       dt.Aktif
                                   }).ToList();
@@ -197,11 +182,9 @@ namespace Meclis.SabitTanimlar
         }
         private void CinsiyetDoldur()
         {
-
-            cbCinsiyet.DataSource = _cinsiyetTanim.ListeGetir();
-            cbCinsiyet.DisplayMember = "CinsiyetAdi";
-            cbCinsiyet.ValueMember = "Id";
-
+            cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
+            //cbCinsiyet.DisplayMember = "Key";
+            //cbCinsiyet.ValueMember = "Value";
         }
         private void SehirDoldur()
         {

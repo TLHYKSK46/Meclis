@@ -38,7 +38,6 @@ namespace Meclis
             this.genelMerkezGörevTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupPersonelTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hatırlatmaTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ilTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.komisyonTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mazeretTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meclisGörevTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +86,6 @@ namespace Meclis
             this.genelMerkezGörevTanımToolStripMenuItem,
             this.grupPersonelTanımToolStripMenuItem,
             this.hatırlatmaTanımToolStripMenuItem,
-            this.ilTanımToolStripMenuItem,
             this.komisyonTanımToolStripMenuItem,
             this.mazeretTanımToolStripMenuItem,
             this.meclisGörevTanımToolStripMenuItem,
@@ -111,7 +109,7 @@ namespace Meclis
             // 
             this.dilTanimToolStripMenuItem.Name = "dilTanimToolStripMenuItem";
             this.dilTanimToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
-            this.dilTanimToolStripMenuItem.Text = "Dil Tanım";
+            this.dilTanimToolStripMenuItem.Text = "Vekil Dil Tanım";
             this.dilTanimToolStripMenuItem.Click += new System.EventHandler(this.dilTanimToolStripMenuItem_Click);
             // 
             // dönemTanımToolStripMenuItem
@@ -148,13 +146,6 @@ namespace Meclis
             this.hatırlatmaTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.hatırlatmaTanımToolStripMenuItem.Text = "Hatırlatma Tanım";
             this.hatırlatmaTanımToolStripMenuItem.Click += new System.EventHandler(this.hatırlatmaTanımToolStripMenuItem_Click);
-            // 
-            // ilTanımToolStripMenuItem
-            // 
-            this.ilTanımToolStripMenuItem.Name = "ilTanımToolStripMenuItem";
-            this.ilTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
-            this.ilTanımToolStripMenuItem.Text = "İl Tanım";
-            this.ilTanımToolStripMenuItem.Click += new System.EventHandler(this.ilTanımToolStripMenuItem_Click);
             // 
             // komisyonTanımToolStripMenuItem
             // 
@@ -332,7 +323,6 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem genelMerkezGörevTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grupPersonelTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hatırlatmaTanımToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ilTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem komisyonTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mazeretTanımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meclisGörevTanımToolStripMenuItem;

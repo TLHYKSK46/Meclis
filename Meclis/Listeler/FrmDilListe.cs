@@ -44,17 +44,17 @@ namespace Meclis.Listeler
         }
         private void TumunuListele()
         {
-            dgDilListe.DataSource = (from vt in _vekilTanim.ListeGetir()
-                                     join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
-                                     join dt in _dilTanimService.ListeGetir() on vd.DilTanimId equals dt.Id
-                                     select new
-                                     {
-                                         vt.Id,
-                                         vt.TcKimlikNo,
-                                         AdSoyad = vt.Ad + "" + vt.Soyad,
-                                         Dil = dt.DilAdi,
-                                     }
-                        ).ToList();
+            //dgDilListe.DataSource = (from vt in _vekilTanim.ListeGetir()
+            //                         join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
+            //                         join dt in _dilTanimService on vt.Id equals dt.
+            //                         select new
+            //                         {
+            //                             vt.Id,
+            //                             vt.TcKimlikNo,
+            //                             AdSoyad = vt.Ad + "" + vt.Soyad,
+            //                             Dil = dt.DilAdi,
+            //                         }
+            //            ).ToList();
         }
 
         private void btnExcelAktar_Click(object sender, EventArgs e)
@@ -73,17 +73,17 @@ namespace Meclis.Listeler
 
         private void btnAra_Click(object sender, EventArgs e)
         {
-            dgDilListe.DataSource = (from vt in _vekilTanim.FiltreleGetir(cmbFiltre.SelectedItem.ToString(),txtAra.Text)
-                                     join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
-                                     join dt in _dilTanimService.ListeGetir() on vd.DilTanimId equals dt.Id
-                                     select new
-                                     {
-                                         vt.Id,
-                                         vt.TcKimlikNo,
-                                         AdSoyad = vt.Ad + " " + vt.Soyad,
-                                         Dil = dt.DilAdi,
-                                     }
-                    ).ToList();
+            //dgDilListe.DataSource = (from vt in _vekilTanim.FiltreleGetir(cmbFiltre.SelectedItem.ToString(),txtAra.Text)
+            //                         join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
+            //                         join dt in _dilTanimService.ListeGetir() on vd.DilTanimId equals dt.Id
+            //                         select new
+            //                         {
+            //                             vt.Id,
+            //                             vt.TcKimlikNo,
+            //                             AdSoyad = vt.Ad + " " + vt.Soyad,
+            //                             Dil = dt.DilAdi,
+            //                         }
+            //        ).ToList();
            
         }
     }

@@ -19,6 +19,7 @@ namespace MeclisEntities.Entities
         public string Ad { get; set; }
         [MaxLength(100)]
         public string Soyad { get; set; }
+        public int CinsiyetTanimId { get; set; }
         public DateTime DogumTarihi { get; set; }
         public string DogumYeri { get; set; }
         [MaxLength(11)]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MeclisDao.Enums
 {
-  public  enum EnmCinsiyet
+  public  enum Cinsiyet
     {
         [Description("Erkek")]
         Erkek=1,

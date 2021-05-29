@@ -14,6 +14,7 @@ namespace MeclisEntities.Mappings
         public MeslekTanimMap() {
             ToTable(@"meslek_tanim", @"dbo");
             Property(x => x.MeslekAdi).HasColumnName("meslek_adi");
+            Property(x=>x.UzmanlikAlani).HasColumnName("uzmanlik_alani");
           
         }
     }

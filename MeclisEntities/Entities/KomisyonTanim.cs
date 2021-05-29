@@ -12,8 +12,8 @@ namespace MeclisEntities.Entities
      
     {
         
-        public string IhtisasAdi { get; set; }
-        public string UluslararasiAdi { get; set; }
+        public string KomisyonAdi { get; set; }
+        public string KomisyonTuru { get; set; }
         
 
 
