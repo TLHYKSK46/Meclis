@@ -12,7 +12,7 @@ namespace MeclisEntities.Mappings
     public class KomisyonUyeMap : BaseMap<KomisyonUye>
     {
         public KomisyonUyeMap() {
-            ToTable(@"komisyon_tanim", @"dbo");
+            ToTable(@"komisyon_uye", @"dbo");
           
             Property(x => x.KomisyonTanimId).HasColumnName("komisyon_tanim_id");
             Property(x => x.KomisyonUyeTuru).HasColumnName("komisyon_uye_turu");

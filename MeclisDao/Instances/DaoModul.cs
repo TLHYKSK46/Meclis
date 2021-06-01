@@ -18,14 +18,13 @@ namespace MeclisDao.Instances
             //Classların İnstance larını oluşturmak için yazmak zorundasın...
     
 
-            Bind<ICinsiyetTanimService>().To<CinsiyetTanimService>().InSingletonScope();
-            Bind<ICinsiyetTanimDal>().To<CinsiyetTanimDal>().InSingletonScope();
 
             Bind<IDanismanTanimService>().To<DanismanTanimService>().InSingletonScope();
             Bind<IDanismanTanimDal>().To<DanismanTanimDal>().InSingletonScope();
 
             Bind<IDilTanimService>().To<DilTanimService>().InSingletonScope();
             Bind<IDilTanimDal>().To<DilTanimDal>().InSingletonScope();
+
             Bind<IDilSeviyeTanimService>().To<DilSeviyeTanimService>().InSingletonScope();
             Bind<IDilSeviyeTanimDal>().To<DilSeviyeTanimDal>().InSingletonScope();
 
@@ -87,6 +86,15 @@ namespace MeclisDao.Instances
             Bind<IVekilDilTanimService>().To<VekilDilTanimService>().InSingletonScope();
             Bind<IVekilDilTanimDal>().To<VekilDilTanimDal>().InSingletonScope();
 
+
+            Bind<IGrupBaskanTanimService>().To<GrupBaskanTanimService>().InSingletonScope();
+            Bind<IGrupBaskanTanimDal>().To<GrupBaskanTanimDal>().InSingletonScope();
+
+            Bind<IGrupBaskanVekilTanimService>().To<GrupBaskanVekilTanimService>().InSingletonScope();
+            Bind<IGrupBaskanVekilTanimDal>().To<GrupBaskanVekilTanimDal>().InSingletonScope();
+
+            Bind<IGrupYonetimKurulUyesiService>().To<GrupYonetimKurulUyesiDal>().InSingletonScope();
+            Bind<IGrupYonetimKurulUyesiDal>().To<GrupYonetimKuruluUyesiDal>().InSingletonScope();
 
         }
     }

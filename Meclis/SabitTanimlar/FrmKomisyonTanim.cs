@@ -1,4 +1,5 @@
-﻿using MeclisDao.Exceptions;
+﻿using MeclisDao.Enums;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
@@ -22,27 +23,29 @@ namespace Meclis.SabitTanimlar
             InitializeComponent();
             _komisyonTanim = InstanceFactory.GetInstance<IKomisyonTanimService>();
             TumunuListele();
+            KomisyonTuruDoldur();
 
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            string ihtisasAdi = txtIhtisasAdi.Text;
-            string uluslararasiAdi = txtUluslararasiAdi.Text;
+           
+            //KOmisyon türü enumdan gelecek
 
-            if (ihtisasAdi!=null && uluslararasiAdi!=null)
+            if (txtKomisyonAdi.Text != null && cbKomisyonTuru.Text != null)
             {
                 try
                 {
                     var data = new KomisyonTanim() { 
-                    KomisyonAdi=ihtisasAdi,
-                    KomisyonTuru=uluslararasiAdi
+                    KomisyonAdi= txtKomisyonAdi.Text,
+                    KomisyonTuru= cbKomisyonTuru.Text
                     };
                     _komisyonTanim.Ekle(data);
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.","Sistem");
                     TumunuListele();
-                    txtIhtisasAdi.Text = "";
-                    txtUluslararasiAdi.Text = "";
+                    txtKomisyonAdi.Text = "";
+                    cbKomisyonTuru.Text = "";
+
                 }
                 catch (DaoException  ex)
                 {
@@ -56,24 +59,23 @@ namespace Meclis.SabitTanimlar
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            string ihtisasAdi = txtIhtisasAdi.Text;
-            string uluslararasiAdi = txtUluslararasiAdi.Text;
+     
 
-            if (ihtisasAdi != null && uluslararasiAdi != null)
+            if (txtKomisyonAdi.Text != null && cbKomisyonTuru.Text != null)
             {
                 try
                 {
                     var data = new KomisyonTanim()
                     {
                         Id= Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
-                        KomisyonAdi = ihtisasAdi,
-                        KomisyonTuru = uluslararasiAdi
+                        KomisyonAdi = txtKomisyonAdi.Text,
+                        KomisyonTuru = cbKomisyonTuru.Text
                     };
                     _komisyonTanim.Guncelle(data);
                     MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");
                     TumunuListele();
-                    txtIhtisasAdi.Text = "";
-                    txtUluslararasiAdi.Text = "";
+                    txtKomisyonAdi.Text = "";
+                    cbKomisyonTuru.Text = "";
                 }
                 catch (DaoException ex)
                 {
@@ -109,12 +111,20 @@ namespace Meclis.SabitTanimlar
         {
             dgListe.DataSource = _komisyonTanim.ListeGetir();
         }
-
+        private void KomisyonTuruDoldur()
+        {
+            cbKomisyonTuru.DataSource = Enum.GetValues(typeof(KomisyonTuru));
+        }
         private void dgListe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtIhtisasAdi.Text = dgListe.CurrentRow.Cells[0].Value.ToString();
-            txtUluslararasiAdi.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
+            txtKomisyonAdi.Text = dgListe.CurrentRow.Cells[0].Value.ToString();
+            cbKomisyonTuru.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
            
+        }
+
+        private void FrmKomisyonTanim_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

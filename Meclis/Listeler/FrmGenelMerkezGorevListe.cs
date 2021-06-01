@@ -17,7 +17,7 @@ namespace Meclis.Listeler
     {
         private IGenelMerkezGorevService _genelMerkez;
         IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+ 
         private IVekilDetayService _vekilDetayService;
 
         public FrmGenelMerkezGorevListe()
@@ -25,7 +25,7 @@ namespace Meclis.Listeler
             InitializeComponent();
             _genelMerkez = InstanceFactory.GetInstance<IGenelMerkezGorevService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 

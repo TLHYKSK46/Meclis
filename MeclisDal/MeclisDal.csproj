@@ -54,6 +54,9 @@
   <ItemGroup>
     <Compile Include="Dal\DanismanTanimDal.cs" />
     <Compile Include="Dal\DilSeviyeTanimDal.cs" />
+    <Compile Include="Dal\GrupYonetimKuruluUyesiDal.cs" />
+    <Compile Include="Dal\GrupBaskanVekilTanimDal.cs" />
+    <Compile Include="Dal\GrupBaskanTanimDal.cs" />
     <Compile Include="Dal\KomisyonUyeDal.cs" />
     <Compile Include="Dal\VekilDilTanimDal.cs" />
     <Compile Include="Dal\KomisyonDurumDal.cs" />
@@ -68,6 +71,9 @@
     <Compile Include="Dal\IlTanimDal.cs" />
     <Compile Include="Dal\PartiGrupTanimDal.cs" />
     <Compile Include="IDal\IDilSeviyeTanimDal.cs" />
+    <Compile Include="IDal\IGrupYonetimKurulUyesiDal.cs" />
+    <Compile Include="IDal\IGrupBaskanVekilTanimDal.cs" />
+    <Compile Include="IDal\IGrupBaskanTanimDal.cs" />
     <Compile Include="IDal\IKomisyonUyeDal.cs" />
     <Compile Include="IDal\IVekilDilTanimDal.cs" />
     <Compile Include="IDal\IKomisyonDurumDal.cs" />
@@ -78,7 +84,6 @@
     <Compile Include="Dal\MazeretKodDal.cs" />
     <Compile Include="Dal\MazeretTanimDal.cs" />
     <Compile Include="BaseDb\MeclisContext.cs" />
-    <Compile Include="Dal\CinsiyetTanimDal.cs" />
     <Compile Include="Dal\MeclisGorevTanimDal.cs" />
     <Compile Include="Dal\PartiTanimDal.cs" />
     <Compile Include="Dal\VekilDanismanDal.cs" />
@@ -89,7 +94,6 @@
     <Compile Include="IDal\IDonemTanimDal.cs" />
     <Compile Include="IDal\IDostlukGrupTanimDal.cs" />
     <Compile Include="BaseDb\Interfaces\IEntityRepository.cs" />
-    <Compile Include="IDal\ICinsiyetTanimDal.cs" />
     <Compile Include="IDal\IGenelMerkezGorevDal.cs" />
     <Compile Include="IDal\IGrupPersonelTanimDal.cs" />
     <Compile Include="IDal\IHatirlatmaTanimDal.cs" />

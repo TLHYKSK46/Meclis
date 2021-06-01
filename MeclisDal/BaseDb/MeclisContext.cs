@@ -19,7 +19,7 @@ namespace MeclisDal.BaseDb
         }
 
         public DbSet<VekilTanim> VekilTanims { get; set; }
-        public DbSet<CinsiyetTanim> CinsiyetTanims { get; set; }
+       
         public DbSet<DilTanim> DilTanims { get; set; }
         public DbSet<DanismanTanim> DanismanTanims { get; set; }
         public DbSet<DonemTanim> DonemTanims { get; set; }
@@ -41,6 +41,12 @@ namespace MeclisDal.BaseDb
         public DbSet<VekilDilTanim> VekilDilTanims { get; set; }
         public DbSet<DilSeviyeTanim> DilSeviyeTanims { get; set; }
         public DbSet<KomisyonUye> KomisyonUyes { get; set; }
+        public DbSet<GrupBaskanTanim> GrupBaskanTanims { get; set; }
+        public DbSet<GrupBaskanVekilTanim> GrupBaskanVekilTanims { get; set; }
+        public DbSet<GrupYonetimKurulUyesi> GrupYonetimKurulUyesis { get; set; }
+
+
+
         // public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -48,7 +54,6 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new VekilTanimMap());
             modelBuilder.Configurations.Add(new DilSeviyeTanimMap());
             modelBuilder.Configurations.Add(new DanismanTanimMap());
-            modelBuilder.Configurations.Add(new CinsiyetTanimMap());
             modelBuilder.Configurations.Add(new DilTanimMap());
             modelBuilder.Configurations.Add(new DostlukGrupTanimMap());
             modelBuilder.Configurations.Add(new DonemTanimMap());
@@ -68,6 +73,12 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new MeslekTanimMap());
             modelBuilder.Configurations.Add(new VekilDilTanimMap());
             modelBuilder.Configurations.Add(new KomisyonUyeMap());
+            modelBuilder.Configurations.Add(new GrupBaskanTanimMap());
+            modelBuilder.Configurations.Add(new GrupBaskanVekilTanimMap());
+            modelBuilder.Configurations.Add(new GrupYonetimKurulUyesiMap());
+
+
+
             //modelBuilder.Configurations.Add(new VekilTanimMap());
 
         }

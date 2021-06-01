@@ -30,15 +30,15 @@ namespace Meclis.SabitTanimlar
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUluslararasiAdi = new System.Windows.Forms.TextBox();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtIhtisasAdi = new System.Windows.Forms.TextBox();
+            this.txtKomisyonAdi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.dgListe = new System.Windows.Forms.DataGridView();
+            this.cbKomisyonTuru = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -50,18 +50,9 @@ namespace Meclis.SabitTanimlar
             this.label2.Location = new System.Drawing.Point(5, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Uluslararası Adı:";
-            // 
-            // txtUluslararasiAdi
-            // 
-            this.txtUluslararasiAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUluslararasiAdi.Location = new System.Drawing.Point(152, 80);
-            this.txtUluslararasiAdi.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUluslararasiAdi.Name = "txtUluslararasiAdi";
-            this.txtUluslararasiAdi.Size = new System.Drawing.Size(199, 27);
-            this.txtUluslararasiAdi.TabIndex = 2;
+            this.label2.Text = "Komisyon Türü:";
             // 
             // btnKaydet
             // 
@@ -82,27 +73,27 @@ namespace Meclis.SabitTanimlar
             this.label1.Location = new System.Drawing.Point(5, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 20);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 16;
-            this.label1.Text = "İhtisas Adı:";
+            this.label1.Text = "Komisyon  Adı:";
             // 
-            // txtIhtisasAdi
+            // txtKomisyonAdi
             // 
-            this.txtIhtisasAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtIhtisasAdi.Location = new System.Drawing.Point(152, 28);
-            this.txtIhtisasAdi.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIhtisasAdi.Name = "txtIhtisasAdi";
-            this.txtIhtisasAdi.Size = new System.Drawing.Size(199, 27);
-            this.txtIhtisasAdi.TabIndex = 1;
+            this.txtKomisyonAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKomisyonAdi.Location = new System.Drawing.Point(152, 28);
+            this.txtKomisyonAdi.Margin = new System.Windows.Forms.Padding(2);
+            this.txtKomisyonAdi.Name = "txtKomisyonAdi";
+            this.txtKomisyonAdi.Size = new System.Drawing.Size(199, 27);
+            this.txtKomisyonAdi.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbKomisyonTuru);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
             this.groupBox1.Controls.Add(this.btnKaydet);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtUluslararasiAdi);
-            this.groupBox1.Controls.Add(this.txtIhtisasAdi);
+            this.groupBox1.Controls.Add(this.txtKomisyonAdi);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(546, 12);
             this.groupBox1.Name = "groupBox1";
@@ -151,11 +142,19 @@ namespace Meclis.SabitTanimlar
             this.dgListe.TabIndex = 52;
             this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
+            // cbKomisyonTuru
+            // 
+            this.cbKomisyonTuru.FormattingEnabled = true;
+            this.cbKomisyonTuru.Location = new System.Drawing.Point(147, 79);
+            this.cbKomisyonTuru.Name = "cbKomisyonTuru";
+            this.cbKomisyonTuru.Size = new System.Drawing.Size(204, 21);
+            this.cbKomisyonTuru.TabIndex = 51;
+            // 
             // FrmKomisyonTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 519);
+            this.ClientSize = new System.Drawing.Size(926, 571);
             this.Controls.Add(this.dgListe);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.groupBox1);
@@ -165,6 +164,7 @@ namespace Meclis.SabitTanimlar
             this.Name = "FrmKomisyonTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmKomisyonTanim";
+            this.Load += new System.EventHandler(this.FrmKomisyonTanim_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
@@ -176,14 +176,14 @@ namespace Meclis.SabitTanimlar
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUluslararasiAdi;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIhtisasAdi;
+        private System.Windows.Forms.TextBox txtKomisyonAdi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.DataGridView dgListe;
+        private System.Windows.Forms.ComboBox cbKomisyonTuru;
     }
 }

@@ -17,14 +17,14 @@ namespace Meclis.Listeler
     {
         private IGrupPersonelTanimService _grupPersonel;
         private IIlTanimService _ilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+       
         private IMeclisGorevTanimService _meclisGorevTanim;
         public FrmGrupPersonelListe()
         {
             InitializeComponent();
             _grupPersonel = InstanceFactory.GetInstance<IGrupPersonelTanimService>();
             _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+           
             _meclisGorevTanim = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
         }
 
@@ -37,7 +37,7 @@ namespace Meclis.Listeler
         {
             dgList.DataSource = (from grupPer in _grupPersonel.ListeGetir()
                          join il in _ilTanim.ListeGetir() on grupPer.IlTanimId equals il.Id
-                         join cinsiyet in _cinsiyetTanim.ListeGetir() on grupPer.CinsiyetTanimId equals cinsiyet.Id
+                        
                          join meclisgorev in _meclisGorevTanim.ListeGetir() on grupPer.MeclisGorevId equals meclisgorev.Id
                          select new
                          {
@@ -47,7 +47,7 @@ namespace Meclis.Listeler
                              grupPer.TelNo,
                              grupPer.Mail,
                              il.IlAdi,
-                             cinsiyet.CinsiyetAdi,
+                      
                              meclisgorev.MeclisGorevAdi,
                              grupPer.Aktif
                          }).ToList();

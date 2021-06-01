@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DaoServis\DilSeviyeTanimService.cs" />
+    <Compile Include="DaoServis\GrupYonetimKurulUyesiService.cs" />
+    <Compile Include="DaoServis\GrupBaskanVekilTanimService.cs" />
+    <Compile Include="DaoServis\GrupBaskanTanimService.cs" />
     <Compile Include="DaoServis\KomisyonUyeService.cs" />
     <Compile Include="DaoServis\VekilDilTanimService.cs" />
     <Compile Include="DaoServis\KomisyonDurumService.cs" />
@@ -75,7 +78,6 @@
     <Compile Include="DaoServis\DonemTanimService.cs" />
     <Compile Include="DaoServis\DilTanimService.cs" />
     <Compile Include="DaoServis\DanismanTanimService.cs" />
-    <Compile Include="DaoServis\CinsiyetTanimService.cs" />
     <Compile Include="DaoServis\VekilDanismanService.cs" />
     <Compile Include="DaoServis\VekilDetayService.cs" />
     <Compile Include="DaoServis\VekilTanimService.cs" />
@@ -85,6 +87,9 @@
     <Compile Include="Enums\KomisyonUyeTuru.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="IDaoServis\IDilSeviyeTanimService.cs" />
+    <Compile Include="IDaoServis\IGrupYonetimKurulUyesiService.cs" />
+    <Compile Include="IDaoServis\IGrupBaskanVekilTanimService.cs" />
+    <Compile Include="IDaoServis\IGrupBaskanTanimService.cs" />
     <Compile Include="IDaoServis\IKomisyonUyeService.cs" />
     <Compile Include="IDaoServis\IVekilDilTanimService.cs" />
     <Compile Include="IDaoServis\IKomisyonDurumService.cs" />
@@ -102,7 +107,6 @@
     <Compile Include="IDaoServis\IDostlukGrupTanimService.cs" />
     <Compile Include="IDaoServis\IDonemTanimService.cs" />
     <Compile Include="IDaoServis\IDilTanimService.cs" />
-    <Compile Include="IDaoServis\ICinsiyetTanimService.cs" />
     <Compile Include="IDaoServis\IDanismanTanimService.cs" />
     <Compile Include="IDaoServis\IGenelMerkezGorevService.cs" />
     <Compile Include="IDaoServis\IVekilDetayService.cs" />

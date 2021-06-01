@@ -19,7 +19,7 @@ namespace Meclis.SabitTanimlar
     {
         private IGrupPersonelTanimService _grupPersonel;
         private IMeclisGorevTanimService _meclisGorevTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+      
         private IIlTanimService _ilTanim;
         public FrmGrupPersonelTanim()
         {
@@ -27,7 +27,7 @@ namespace Meclis.SabitTanimlar
             _grupPersonel = InstanceFactory.GetInstance<IGrupPersonelTanimService>();
             _meclisGorevTanim = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
             _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+       
             TumunuListele();
             cbMeclisGorevDoldur();
             cbSehirDoldur();
@@ -191,7 +191,7 @@ namespace Meclis.SabitTanimlar
         {
             dgListe.DataSource = (from p in _grupPersonel.ListeGetir()
                                   join i in _ilTanim.ListeGetir() on p.IlTanimId equals i.Id
-                                  join c in _cinsiyetTanim.ListeGetir() on p.CinsiyetTanimId equals c.Id
+                                 
                                   join m in _meclisGorevTanim.ListeGetir() on p.MeclisGorevId equals m.Id
                                   select new { 
                                   p.Id,
@@ -200,7 +200,7 @@ namespace Meclis.SabitTanimlar
                                     p.Soyad,
                                       p.TelNo,
                                       p.Mail,
-                                      c.CinsiyetAdi,
+                                     
                                    i.IlAdi,
                                     m.MeclisGorevAdi,
                                     p.Aktif

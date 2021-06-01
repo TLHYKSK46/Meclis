@@ -18,7 +18,7 @@ namespace Meclis.Listeler
     {
         private IDanismanTanimService _danismanTanimService;
         IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+      
         private IIlTanimService _ilTanim;
         public FrmDanismanListe()
         {
@@ -26,7 +26,7 @@ namespace Meclis.Listeler
             _danismanTanimService = InstanceFactory.GetInstance<IDanismanTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
             _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+      
         }
 
         private void FrmDanismanListe_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Meclis.Listeler
         private void TumunuListele()
         {
             dgDanismanListe.DataSource = (from dts in _danismanTanimService.ListeGetir()
-                                          join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
+                                          //join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
                                           join vt in _vekilTanim.ListeGetir() on dts.VekilTanimId equals vt.Id
                                           join i in _ilTanim.ListeGetir() on dts.IlTanimId equals i.Id
                                           select new
@@ -48,7 +48,7 @@ namespace Meclis.Listeler
                                               AdSoyad = dts.Ad + "" + dts.Soyad,
                                               dts.TelNo,
                                               dts.Mail,
-                                              c.CinsiyetAdi,
+                                              
                                               i.IlAdi,
                                               VekilAdSoyad = vt.Ad + "" + vt.Soyad,
                                               VekilTcKimlikNo = vt.TcKimlikNo,
@@ -76,7 +76,7 @@ namespace Meclis.Listeler
         {
            
             dgDanismanListe.DataSource = (from dts in _danismanTanimService.FiltreleGetir(cmbFiltre.SelectedItem.ToString(), txtAra.Text)
-                                          join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
+                                          //join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
                                           join vt in _vekilTanim.ListeGetir() on dts.VekilTanimId equals vt.Id
                                           join i in _ilTanim.ListeGetir() on dts.IlTanimId equals i.Id
                                           select new {
@@ -85,7 +85,7 @@ namespace Meclis.Listeler
                                               AdSoyad = dts.Ad + "" + dts.Soyad,
                                               dts.TelNo,
                                               dts.Mail,
-                                              c.CinsiyetAdi,
+                                             
                                               i.IlAdi,
                                               VekilAdSoyad = vt.Ad + "" + vt.Soyad,
                                               VekilTcKimlikNo = vt.TcKimlikNo,

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MeclisDal.Dal
 {
-    public class CinsiyetTanimDal : EntityRepositoryBase<CinsiyetTanim, MeclisContext>, ICinsiyetTanimDal
+    public class GrupBaskanTanimDal : EntityRepositoryBase<GrupBaskanTanim, MeclisContext>, IGrupBaskanTanimDal
 
     {
          

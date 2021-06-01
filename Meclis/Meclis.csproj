@@ -125,6 +125,18 @@
     <Compile Include="SabitTanimlar\FrmDanismanTanim.Designer.cs">
       <DependentUpon>FrmDanismanTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="SabitTanimlar\FrmGrupBaskanTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SabitTanimlar\FrmGrupBaskanTanim.Designer.cs">
+      <DependentUpon>FrmGrupBaskanTanim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SabitTanimlar\FrmKomisyonUye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SabitTanimlar\FrmKomisyonUye.Designer.cs">
+      <DependentUpon>FrmKomisyonUye.cs</DependentUpon>
+    </Compile>
     <Compile Include="SabitTanimlar\FrmVekilDilTanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +263,12 @@
     </Compile>
     <EmbeddedResource Include="SabitTanimlar\FrmDanismanTanim.resx">
       <DependentUpon>FrmDanismanTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SabitTanimlar\FrmGrupBaskanTanim.resx">
+      <DependentUpon>FrmGrupBaskanTanim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SabitTanimlar\FrmKomisyonUye.resx">
+      <DependentUpon>FrmKomisyonUye.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmVekilDilTanim.resx">
       <DependentUpon>FrmVekilDilTanim.cs</DependentUpon>

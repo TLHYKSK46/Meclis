@@ -15,7 +15,7 @@ namespace MeclisDao.DaoServis
         IVekilDetayDal _DetayDal;
         MeclisContext _meclisContext;
         IVekilTanimDal _vekilTanimDal;
-        ICinsiyetTanimDal _cinsiyetTanimDal;
+       
         IDanismanTanimDal _danismanTanimDal;
         IGenelMerkezGorevDal _genelMerkezGorevDal;
         IKomisyonDurumDal _komisyonDurumDal;
@@ -38,7 +38,7 @@ namespace MeclisDao.DaoServis
 
 
         public VekilDetayService(IVekilDetayDal detayDal, MeclisContext meclisContext,
-            IVekilTanimDal vekilTanimDal, ICinsiyetTanimDal cinsiyetTanimDal, IDanismanTanimDal danismanTanimDal,
+            IVekilTanimDal vekilTanimDal,  IDanismanTanimDal danismanTanimDal,
             IMeslekTanimDal meslekTanimDal, IGrupPesonelTanimDal grupPesonelTanimDal, IVekilDanismanDal vekilDanismanDal
 , IMeclisGorevTanimDal meclisGorevTanimDal, IDostlukGrupTanimDal dostlukGrupTanimDal, IHatirlatmaTanimDal hatirlatmaTanimDal,
             IDonemTanimDal donemTanimDal, IDilTanimDal dilTanimDal, IMazeretTanimDal mazeretTanimDal, IPartiTanimDal partiTanimDal,
@@ -47,7 +47,7 @@ namespace MeclisDao.DaoServis
             _DetayDal = detayDal;
             _meclisContext = meclisContext;
             _vekilTanimDal = vekilTanimDal;
-            _cinsiyetTanimDal = cinsiyetTanimDal;
+        
             _danismanTanimDal = danismanTanimDal;
             _meslekTanimDal = meslekTanimDal;
             _grupPesonelTanimDal = grupPesonelTanimDal;
@@ -90,7 +90,7 @@ namespace MeclisDao.DaoServis
         {
             var vekidetayList = _DetayDal.GetAll();
             var vekiltanimList = _vekilTanimDal.GetAll();
-            var cinsiyetList = _cinsiyetTanimDal.GetAll();
+  
             var komisyonDurumList = _komisyonDurumDal.GetAll();
             var komisyonTanimList = _komisyonTanim.GetAll();
             var partiList = _partiTanimDal.GetAll();

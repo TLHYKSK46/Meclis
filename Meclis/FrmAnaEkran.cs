@@ -19,7 +19,7 @@ namespace Meclis
         private IVekilDetayService _vekilDetayService;
         private IVekilTanimService _vekilTanimService;
         private IDanismanTanimService _danismanTanimService;
-        private ICinsiyetTanimService _cinsiyetTanimService;
+       
         private IKomisyonDurumService _komisyonDurumService;
         private IKomisyonTanimService _komisyonTanimService;
         private IIlTanimService _ilTanimService;
@@ -43,7 +43,7 @@ namespace Meclis
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _danismanTanimService = InstanceFactory.GetInstance<IDanismanTanimService>();
-            _cinsiyetTanimService = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+     
             _komisyonDurumService = InstanceFactory.GetInstance<IKomisyonDurumService>();
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             _partiTanimService = InstanceFactory.GetInstance<IPartiTanimService>();
@@ -255,6 +255,12 @@ namespace Meclis
         private void mazeretListeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new FrmMazeretListe();
+            frm.Show();
+        }
+
+        private void grupBaşkanTanımToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmGrupBaskanTanim();
             frm.Show();
         }
     }

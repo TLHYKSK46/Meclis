@@ -56,6 +56,7 @@ namespace Meclis
             this.mazeretListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meslekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgwVekilDetay = new System.Windows.Forms.DataGridView();
+            this.grupBaşkanTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAnaEkran.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVekilDetay)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,7 @@ namespace Meclis
             this.dilTanimToolStripMenuItem,
             this.dönemTanımToolStripMenuItem,
             this.dostlukGrupTanımToolStripMenuItem,
+            this.grupBaşkanTanımToolStripMenuItem,
             this.genelMerkezGörevTanımToolStripMenuItem,
             this.grupPersonelTanımToolStripMenuItem,
             this.hatırlatmaTanımToolStripMenuItem,
@@ -286,6 +288,13 @@ namespace Meclis
             this.dgwVekilDetay.TabIndex = 1;
             this.dgwVekilDetay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // grupBaşkanTanımToolStripMenuItem
+            // 
+            this.grupBaşkanTanımToolStripMenuItem.Name = "grupBaşkanTanımToolStripMenuItem";
+            this.grupBaşkanTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.grupBaşkanTanımToolStripMenuItem.Text = "Grup Başkan Tanım";
+            this.grupBaşkanTanımToolStripMenuItem.Click += new System.EventHandler(this.grupBaşkanTanımToolStripMenuItem_Click);
+            // 
             // FrmAnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -341,5 +350,6 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem komisyonListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meclisGörevListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mazeretListeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grupBaşkanTanımToolStripMenuItem;
     }
 }

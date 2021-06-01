@@ -17,7 +17,7 @@ namespace Meclis.Listeler
     {
         private IKomisyonTanimService _komisyonTanim;
         private IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+       
         private IVekilDetayService _vekilDetayService;
         private IKomisyonDurumService _komisyonDurumService;
         public FrmKomisyonListe()
@@ -25,7 +25,7 @@ namespace Meclis.Listeler
             InitializeComponent();
             _komisyonTanim = InstanceFactory.GetInstance<IKomisyonTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+         
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
             _komisyonDurumService = InstanceFactory.GetInstance<IKomisyonDurumService>();
         }

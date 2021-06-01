@@ -38,6 +38,9 @@ namespace Meclis.SabitTanimlar
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.dgListe = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +72,7 @@ namespace Meclis.SabitTanimlar
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(105, 66);
+            this.comboBox1.Location = new System.Drawing.Point(109, 26);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(227, 28);
             this.comboBox1.TabIndex = 17;
@@ -77,7 +80,7 @@ namespace Meclis.SabitTanimlar
             // txtMeslekAdi
             // 
             this.txtMeslekAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMeslekAdi.Location = new System.Drawing.Point(105, 34);
+            this.txtMeslekAdi.Location = new System.Drawing.Point(109, 66);
             this.txtMeslekAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtMeslekAdi.Name = "txtMeslekAdi";
             this.txtMeslekAdi.Size = new System.Drawing.Size(227, 27);
@@ -85,6 +88,9 @@ namespace Meclis.SabitTanimlar
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
             this.groupBox1.Controls.Add(this.label1);
@@ -139,6 +145,37 @@ namespace Meclis.SabitTanimlar
             this.dgListe.TabIndex = 52;
             this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(5, 66);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 40);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Uzmanlık \r\nAlanı:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(9, 123);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 20);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Vekil";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(109, 115);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(227, 28);
+            this.comboBox2.TabIndex = 54;
+            // 
             // FrmMeslekTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,5 +209,8 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.DataGridView dgListe;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

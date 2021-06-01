@@ -17,14 +17,14 @@ namespace Meclis.Listeler
     {
         IDilTanimService _dilTanimService;
         IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+        
         private IVekilDetayService _vekilDetayService;
         public FrmDilListe()
         {
             InitializeComponent();
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+            
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
         private void FrmDilListe_Load(object sender, EventArgs e)

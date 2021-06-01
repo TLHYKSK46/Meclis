@@ -17,14 +17,14 @@ namespace Meclis.Listeler
     {
         private IMeclisGorevTanimService _meclisGorev;
         IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+       
         private IVekilDetayService _vekilDetayService;
         public FrmMeclisGorevListe()
         {
             InitializeComponent();
             _meclisGorev = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+       
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 

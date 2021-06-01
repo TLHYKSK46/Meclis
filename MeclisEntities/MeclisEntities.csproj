@@ -53,8 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\EntBase.cs" />
-    <Compile Include="Entities\CinsiyetTanim.cs" />
     <Compile Include="Entities\DilSeviyeTanim.cs" />
+    <Compile Include="Entities\GrupYonetimKurulUyesi.cs" />
+    <Compile Include="Entities\GrupBaskanVekilTanim.cs" />
+    <Compile Include="Entities\GrupBaskanTanim.cs" />
     <Compile Include="Entities\KomisyonUye.cs" />
     <Compile Include="Entities\VekilDilTanim.cs" />
     <Compile Include="Entities\KomisyonDurum.cs" />
@@ -81,6 +83,9 @@
     <Compile Include="Mappings\BaseMap\BaseIdMap.cs" />
     <Compile Include="Mappings\BaseMap\BaseMap.cs" />
     <Compile Include="Mappings\DilSeviyeTanimMap.cs" />
+    <Compile Include="Mappings\GrupYonetimKurulUyesiMap.cs" />
+    <Compile Include="Mappings\GrupBaskanVekilTanimMap.cs" />
+    <Compile Include="Mappings\GrupBaskanTanimMap.cs" />
     <Compile Include="Mappings\KomisyonUyeMap.cs" />
     <Compile Include="Mappings\VekilDilTanimMap.cs" />
     <Compile Include="Mappings\KomisyonDurumMap.cs" />
@@ -102,7 +107,6 @@
     <Compile Include="Mappings\DanismanTanimMap.cs" />
     <Compile Include="Mappings\VekilDetayMap.cs" />
     <Compile Include="Mappings\VekilTanimMap.cs" />
-    <Compile Include="Mappings\CinsiyetTanimMap.cs" />
     <Compile Include="Base\Interfaces\IEntBaseId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

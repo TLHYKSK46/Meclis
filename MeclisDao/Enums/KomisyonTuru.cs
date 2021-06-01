@@ -15,6 +15,8 @@ namespace MeclisDao.Enums
         Ihtisas=2,
         [Description("AraştırmaKomisyon")]
         Arastirma=3,
+        [Description("DostlukGrup")]
+        DostlukGrup = 4,
 
     }
 }

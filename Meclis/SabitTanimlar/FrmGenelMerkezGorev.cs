@@ -123,5 +123,10 @@ namespace Meclis.SabitTanimlar
             txtGenelMerkezGorevAdi.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
 
         }
+
+        private void FrmGenelMerkezGorev_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

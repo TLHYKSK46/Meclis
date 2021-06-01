@@ -17,14 +17,14 @@ namespace Meclis.Listeler
     {
         private IMeslekTanimService _meslekTanimService;
        private IVekilTanimService _vekilTanim;
-        private ICinsiyetTanimService _cinsiyetTanim;
+        
         private IVekilDetayService _vekilDetayService;
         public FrmMeslekListe()
         {
             InitializeComponent();
             _meslekTanimService = InstanceFactory.GetInstance<IMeslekTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _cinsiyetTanim = InstanceFactory.GetInstance<ICinsiyetTanimService>();
+ 
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 

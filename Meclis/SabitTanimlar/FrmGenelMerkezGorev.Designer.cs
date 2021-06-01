@@ -142,6 +142,7 @@ namespace Meclis.SabitTanimlar
             this.Name = "FrmGenelMerkezGorev";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmGenelMerkezGorev";
+            this.Load += new System.EventHandler(this.FrmGenelMerkezGorev_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
