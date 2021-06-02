@@ -25,9 +25,6 @@ namespace MeclisDao.Instances
             Bind<IDilTanimService>().To<DilTanimService>().InSingletonScope();
             Bind<IDilTanimDal>().To<DilTanimDal>().InSingletonScope();
 
-            Bind<IDilSeviyeTanimService>().To<DilSeviyeTanimService>().InSingletonScope();
-            Bind<IDilSeviyeTanimDal>().To<DilSeviyeTanimDal>().InSingletonScope();
-
             Bind<IDonemTanimService>().To<DonemTanimService>().InSingletonScope();
             Bind<IDonemTanimDal>().To<DonemTanimDal>().InSingletonScope();
 

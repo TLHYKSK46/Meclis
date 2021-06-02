@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using MeclisEntities.Base;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 
 namespace MeclisEntities.Entities
 {
     public class VekilTanim:EntBase
      
     {
-      
+        public Byte[] Foto { get; set; }
         [MaxLength(11)]
         public string TcKimlikNo { get; set; }
         [MaxLength(100)]

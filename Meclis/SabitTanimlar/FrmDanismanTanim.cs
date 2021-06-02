@@ -157,6 +157,7 @@ namespace Meclis.SabitTanimlar
             }
         }
         #region Listeler
+        //to do Enum Linq Kullanımı
         private void TumunuListele()
         {
         

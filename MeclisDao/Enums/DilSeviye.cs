@@ -14,6 +14,6 @@ namespace MeclisDao.Enums
         [Description("Orta Seviye")]
         Orta = 1,
         [Description("İleri Seviye")]
-        Ileri = 1
+        Ileri = 2
     }
 }

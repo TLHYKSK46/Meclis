@@ -154,7 +154,7 @@ namespace Meclis.SabitTanimlar
         }
         private void DilSeviyeDoldur()
         {
-            cbDilAdi.DataSource = Enum.GetValues(typeof(DilSeviye));
+            cbDilSeviye.DataSource = Enum.GetValues(typeof(DilSeviye));
             //cbDilAdi.DisplayMember = "DilAdi";
             //cbDilAdi.ValueMember = "Id";
         }

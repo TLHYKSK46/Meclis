@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Meclis.SabitTanimlar
         private IVekilTanimService _vekilTanimService;
         private IDilTanimService _dilTanimService;
         private IVekilDilTanimService _vekilDilTanimService;
-        private IDilSeviyeTanimService _dilSeviyeTanimService;
+      
         private IIlTanimService _ilTanimService;
 
         public FrmVekilTanim()
@@ -28,7 +29,7 @@ namespace Meclis.SabitTanimlar
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
             _vekilDilTanimService = InstanceFactory.GetInstance<IVekilDilTanimService>();
-            _dilSeviyeTanimService = InstanceFactory.GetInstance<IDilSeviyeTanimService>();
+        
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             InitializeComponent();
             TumunuListele();
@@ -62,6 +63,7 @@ namespace Meclis.SabitTanimlar
                 {
                     _vekilTanimService.Ekle(new VekilTanim
                     {
+                        Foto=ConvertImageToBaytes(pbFoto.Image),
                         TcKimlikNo = tcKimlikNo,
                         Ad = ad,
                         Soyad = soyad,
@@ -79,7 +81,7 @@ namespace Meclis.SabitTanimlar
                     });
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
                     //frm.vekilId = _vekilTanimService.Getir(5);
-                        frm.Show();
+                   //    frm.Show();
                     
                     TumunuListele();
                     txtTemizle();
@@ -158,8 +160,9 @@ namespace Meclis.SabitTanimlar
             }
             else
             {
-                MessageBox.Show("Lütfen Doldurulması Zorunlu Alanların Boş Olmadığından Emin Olunuz!", "Sistem");
+                MessageBox.Show("Lütfen Doldurulması Zorunlu Alanları Doldurunuz!", "Sistem");
             }
+
 
         }
 
@@ -172,7 +175,7 @@ namespace Meclis.SabitTanimlar
             dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
                                   join vdt in _vekilDilTanimService.ListeGetir() on vt.Id equals vdt.VekilTanimId
                                   join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
-                                  join ds in _dilSeviyeTanimService.ListeGetir() on vdt.DilSeviyeId equals ds.Id
+                                 join ds  in Enum.GetValues(typeof(DilSeviye)).Cast<DilSeviye>() on vdt.DilSeviyeId equals ds.GetHashCode()
                                   select new
                                   {
                                       vt.Id,
@@ -184,8 +187,8 @@ namespace Meclis.SabitTanimlar
                                       vt.KurumsalMail,
                                       vt.Kisiselmail,
                                       dt.DilAdi,
-                                      ds.DilSeviye,
-                                     DoğumTarihi= vt.DogumTarihi.ToString("MMM/dd/yyy"),
+                                     DilSeviye = ds.ToString(),
+                                      DoğumTarihi = vt.DogumTarihi.ToString("MMM/dd/yyy"),
                                       vt.DogumYeri,
                                       vt.Ozgecmis,
                                       vt.Aciklama,
@@ -243,6 +246,35 @@ namespace Meclis.SabitTanimlar
             dtDogumTarihi.Text = "";
 
 
+        }
+        Byte[] ConvertImageToBaytes(Image img) {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                img.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        
+        }
+        public Image ConvertByteArrayImage(byte[] data) {
+
+
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+
+        }
+
+        private void btnFotoYukle_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files(*.jpg;*.jpeg)|*.jpg;*.jpeg", Multiselect = false })
+            {
+                if (ofd.ShowDialog()==DialogResult.OK)
+                {
+                    pbFoto.Image = Image.FromFile(ofd.FileName);
+                    txtDosyaAdi.Text = ofd.FileName;
+                }
+            }
         }
     }
 }

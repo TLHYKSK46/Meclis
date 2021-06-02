@@ -13,8 +13,7 @@ namespace MeclisEntities.Mappings
     {
         public VekilTanimMap() {
             ToTable(@"vekil_tanim", @"dbo");
-            //HasKey(x => x.Id);
-            //  Property(x => x.Id).HasColumnName("Id");
+            Property(x => x.Foto).HasColumnName("foto");
             Property(x => x.TcKimlikNo).HasColumnName("tc_kimlik_no");
             Property(x => x.Ad).HasColumnName("ad");
             Property(x => x.Soyad).HasColumnName("soyad");

@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\DanismanTanimDal.cs" />
-    <Compile Include="Dal\DilSeviyeTanimDal.cs" />
     <Compile Include="Dal\GrupYonetimKuruluUyesiDal.cs" />
     <Compile Include="Dal\GrupBaskanVekilTanimDal.cs" />
     <Compile Include="Dal\GrupBaskanTanimDal.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="Dal\HatirlatmaTanimDal.cs" />
     <Compile Include="Dal\IlTanimDal.cs" />
     <Compile Include="Dal\PartiGrupTanimDal.cs" />
-    <Compile Include="IDal\IDilSeviyeTanimDal.cs" />
     <Compile Include="IDal\IGrupYonetimKurulUyesiDal.cs" />
     <Compile Include="IDal\IGrupBaskanVekilTanimDal.cs" />
     <Compile Include="IDal\IGrupBaskanTanimDal.cs" />
