@@ -32,9 +32,7 @@ namespace Meclis.SabitTanimlar
         
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             InitializeComponent();
-            TumunuListele();
-            cbDogumYeriDoldur();
-            CinsiyetDoldur();
+          
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -56,6 +54,7 @@ namespace Meclis.SabitTanimlar
             DateTime dogumtarihi = dtDogumTarihi.Value;
             string dogumyeri = cbDogumYeri.SelectedText;
             dogumtarihi.ToString("MMM/dd/yyy");
+
 
             if (tcKimlikNo != null && ad != null & soyad != null)
             {
@@ -102,9 +101,12 @@ namespace Meclis.SabitTanimlar
         }
 
 
-        private void FrmVekilTanim_Load(object sender, EventArgs e)
+        private async void FrmVekilTanim_Load(object sender, EventArgs e)
         {
-
+          await TumunuListele();
+         await   cbDogumYeriDoldur();
+           await CinsiyetDoldur();
+          //  await Task.WaitAll(TumunuListele(), cbDogumYeriDoldur(), CinsiyetDoldur());
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -130,6 +132,7 @@ namespace Meclis.SabitTanimlar
                     _vekilTanimService.Guncelle(new VekilTanim
                     {
                         Id = Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
+                        Foto= ConvertImageToBaytes(pbFoto.Image),
                         TcKimlikNo = tcKimlikNo,
                         Ad = ad,
                         Soyad = soyad,
@@ -168,63 +171,106 @@ namespace Meclis.SabitTanimlar
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            DialogResult msg = MessageBox.Show("Silmek İstediğinizden Eminmisiniz?", "Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (msg == DialogResult.Yes && dgListe.CurrentRow != null)
+            {
 
+                try
+                {
+                    _vekilTanimService.Sil(Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value));
+                    TumunuListele();
+                    MessageBox.Show("Kayıt Başarıyla  Silindi!", "Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Hata Oluştu! \n");
+                }
+            }
         }
-        private void TumunuListele()
+        private async   Task TumunuListele()
         {
             dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
-                                  join vdt in _vekilDilTanimService.ListeGetir() on vt.Id equals vdt.VekilTanimId
-                                  join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
-                                 join ds  in Enum.GetValues(typeof(DilSeviye)).Cast<DilSeviye>() on vdt.DilSeviyeId equals ds.GetHashCode()
+                                  //join vdt in _vekilDilTanimService.ListeGetir() on vt.Id equals vdt.VekilTanimId
+                                  //join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
+                                //  join ds in Enum.GetValues(typeof(DilSeviye)).Cast<DilSeviye>() on vdt.DilSeviyeId equals ds.GetHashCode()
+                                  join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on vt.CinsiyetTanimId equals c.GetHashCode()
                                   select new
                                   {
                                       vt.Id,
                                       vt.TcKimlikNo,
                                       vt.Ad,
                                       vt.Soyad,
+                                      Cinsiyet=c.ToString(),
                                       vt.KurumsalTelNo,
                                       vt.KisiselTelNo,
                                       vt.KurumsalMail,
                                       vt.Kisiselmail,
-                                      dt.DilAdi,
-                                     DilSeviye = ds.ToString(),
+                                      //dt.DilAdi,
+                                      //DilSeviye = ds.ToString(),
                                       DoğumTarihi = vt.DogumTarihi.ToString("MMM/dd/yyy"),
                                       vt.DogumYeri,
                                       vt.Ozgecmis,
                                       vt.Aciklama,
-                                      vt.Aktif
+                                      vt.Aktif,
+                                      vt.Foto
                                   }
                                  ).ToList();
+            
+            dgListe.Columns[14].Visible = false;
+           
+            //for (int i = 0; i < dgListe.Columns.Count; i++)
+            //    if (dgListe.Columns[i] is DataGridViewImageColumn)
+            //    {
+            //        ((DataGridViewImageColumn)dgListe.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+            //        break;
+            //    }
         }
 
         private void dgListe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTcKimlikNo.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
-            txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString();
-            txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString();
-            txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[4].Value.ToString();
-            txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
-            txtKurumsalMail.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
-            txtKisiselMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString();
+            try
+            {
+                txtTcKimlikNo.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
+                txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString();
+                txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString();
+                cbCinsiyet.Text = dgListe.CurrentRow.Cells[4].Value.ToString();
 
-            dtDogumTarihi.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
-            cbDogumYeri.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
-            txtOzGecmis.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
-            txtAciklama.Text = dgListe.CurrentRow.Cells[13].Value.ToString();
-            chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[14].Value);
+                txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
+                txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
+                txtKurumsalMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString();
+                txtKisiselMail.Text = dgListe.CurrentRow.Cells[8].Value.ToString();
+                dtDogumTarihi.Value = Convert.ToDateTime(dgListe.CurrentRow.Cells[9].Value);
+                cbDogumYeri.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
+                txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
+                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
+                chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[13].Value);
+                pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[14].Value);
+
+
+            }
+            catch (DaoException ex)
+            {
+                MessageBox.Show("Bazı Veriler eksik yada hatalı! Hata mesajı:"+ex.Message.ToString(), "Program");
+
+
+            }
+
 
 
 
         }
-    
-       
-        private void cbDogumYeriDoldur()
+
+
+        private async  Task cbDogumYeriDoldur()
         {
             cbDogumYeri.DataSource = _ilTanimService.ListeGetir();
             cbDogumYeri.DisplayMember = "IlAdi";
             cbDogumYeri.ValueMember = "Id";
+            
         }
-        private void CinsiyetDoldur()
+        private async  Task CinsiyetDoldur()
         {
 
             cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
@@ -247,7 +293,7 @@ namespace Meclis.SabitTanimlar
 
 
         }
-        Byte[] ConvertImageToBaytes(Image img) {
+       Byte[] ConvertImageToBaytes(Image img) {
             using (MemoryStream ms = new MemoryStream())
             {
                 img.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
@@ -255,7 +301,7 @@ namespace Meclis.SabitTanimlar
             }
         
         }
-        public Image ConvertByteArrayImage(byte[] data) {
+        public  Image ConvertByteArrayImage(byte[] data) {
 
 
             using (MemoryStream ms = new MemoryStream(data))
@@ -265,14 +311,14 @@ namespace Meclis.SabitTanimlar
 
         }
 
-        private void btnFotoYukle_Click(object sender, EventArgs e)
+        private async void btnFotoYukle_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files(*.jpg;*.jpeg)|*.jpg;*.jpeg", Multiselect = false })
             {
                 if (ofd.ShowDialog()==DialogResult.OK)
                 {
                     pbFoto.Image = Image.FromFile(ofd.FileName);
-                    txtDosyaAdi.Text = ofd.FileName;
+                   // txtDosyaAdi.Text = ofd.FileName;// textbox içerisine dosya yolunu yazması için.
                 }
             }
         }

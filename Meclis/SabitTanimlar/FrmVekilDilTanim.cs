@@ -104,15 +104,17 @@ namespace Meclis.SabitTanimlar
             VekilDoldur();
             dgDilListe.DataSource = (from vdt in _vekilDilTanim.ListeGetir() 
                                      join vt in _vekilTanim.ListeGetir() on vdt.VekilTanimId equals vt.Id
-                                     join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
+                                    // join vd in _vekilDetayService.ListeGetir() on vt.Id equals vd.VekilTanimId
                                      join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
-                                     
+                                  join ds in Enum.GetValues(typeof(DilSeviye)).Cast<DilSeviye>() on vdt.DilSeviyeId equals ds.GetHashCode()
+
                                      select new
                                      {
                                          vdt.Id,
                                          vt.TcKimlikNo,
                                          AdSoyad = vt.Ad + " " + vt.Soyad,
                                          Dil = dt.DilAdi,
+                                         DilSeviyesi=ds.ToString()
                                      }
                         ).ToList();
         }

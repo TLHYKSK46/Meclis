@@ -42,8 +42,8 @@ namespace MeclisDao.DaoServis
 
                 throw new DaoException(ex.Message.ToString());
             }
-            if (vekilTanim!=null)
-            _vekilTanim.Add(vekilTanim);
+           
+       
         }
 
         public void Guncelle(VekilTanim vekilTanim)
@@ -51,7 +51,7 @@ namespace MeclisDao.DaoServis
             try
             {
                 var data = _meclisContext.VekilTanims.FirstOrDefault(p => p.Id == vekilTanim.Id);
-                if (data == null)
+                if (data == null && !(vekilTanim.Id<=0))
                     throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
 
                 vekilTanim.EklenmeTarihi = data.EklenmeTarihi;
