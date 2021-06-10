@@ -35,7 +35,7 @@ namespace Meclis.SabitTanimlar
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            TumunuListele();
+            
             cbMeclisGorevDoldur();
             cbSehirDoldur();
             cbCinsiyetDoldur();
