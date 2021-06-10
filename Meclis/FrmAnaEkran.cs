@@ -16,7 +16,7 @@ namespace Meclis
 {
     public partial class FrmAnaEkran : Form
     {
-        private IVekilDetayService _vekilDetayService;
+        
         private IVekilTanimService _vekilTanimService;
         private IDanismanTanimService _danismanTanimService;
        
@@ -40,7 +40,7 @@ namespace Meclis
         {
             InitializeComponent();
 
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
+         
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _danismanTanimService = InstanceFactory.GetInstance<IDanismanTanimService>();
      

@@ -16,7 +16,7 @@ namespace Meclis.SabitTanimlar
 {
     public partial class FrmVekilDetay : Form
     {
-       private IVekilDetayService _vekilDetay;
+       
         private IDonemTanimService _donemTanim;
         private IDostlukGrupTanimService _dostlukGrupTanim;
         private IIlTanimService _ilTanim;
@@ -28,7 +28,7 @@ namespace Meclis.SabitTanimlar
         private IVekilTanimService _vekilTanim;
         public FrmVekilDetay()
         {
-            _vekilDetay = InstanceFactory.GetInstance<IVekilDetayService>();
+      
             _donemTanim= InstanceFactory.GetInstance<IDonemTanimService>();
             _dostlukGrupTanim = InstanceFactory.GetInstance<IDostlukGrupTanimService>();
             _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
@@ -41,7 +41,6 @@ namespace Meclis.SabitTanimlar
 
             InitializeComponent();
 
-            combolariDoldur();
         }
 
         private void FrmVekilDetay_Load(object sender, EventArgs e)
@@ -59,22 +58,7 @@ namespace Meclis.SabitTanimlar
             {
                 try
                 {
-                    var data = new VekilDetay()
-                    {
-                        DonemTanimId = Convert.ToInt32(cbDonem.SelectedValue),
-                        DostlukGrupTanimId=Convert.ToInt32(cbDostlukGrup.SelectedValue),
-                        IlTanimId = Convert.ToInt32(cbIl.SelectedValue),
-                        KomisyonDurumId = Convert.ToInt32(cbKomisyonDurum.SelectedValue),
-                        //MazeretTanimId = Convert.ToInt32(cbm.SelectedValue),
-                        MeclisGorevTanimId = Convert.ToInt32(cbGenelMerkezGorev.SelectedValue),
-                        MeslekTanimId = Convert.ToInt32(cbMeslek.SelectedValue),
-                        OdaNoId = Convert.ToInt32(cbOdaNo.SelectedValue),
-                        PartiGrupTanimId = Convert.ToInt32(cbPartiGrup.SelectedValue),
-                        PartiTanimId = Convert.ToInt32(cbParti.SelectedValue),
-                        VekilTanimId = Convert.ToInt32(vekilId.Text),
-
-                    };
-                    _vekilDetay.Ekle(data);
+                   
 
                     MessageBox.Show("Kayıt Ekleme İşlemi Başarılı.", "Sistem");
                   
@@ -92,64 +76,7 @@ namespace Meclis.SabitTanimlar
             }
         }
         #region combo doldur metotları
-        private void combolariDoldur() {
-            cbMeslekDoldur();
-            cbKomisyonDurumDoldur();
-            cbMeclisGorevDoldur();
-            cbPartiDoldur();
-            cbPartiGrupDoldur();
-            cbDonemDoldur();
-            cbDostlukGrupDoldur();
-            cbIlDoldur();
-        }
-        private void cbDonemDoldur()
-        {
-            cbDonem.DataSource = _donemTanim.ListeGetir();
-            cbDonem.DisplayMember = "ad";
-            cbDonem.ValueMember = "Id";
-        }
-        private void cbDostlukGrupDoldur()
-        {
-            cbDostlukGrup.DataSource = _dostlukGrupTanim.ListeGetir();
-            cbDostlukGrup.DisplayMember = "ad";
-            cbDostlukGrup.ValueMember = "Id";
-        }
-        private void cbIlDoldur()
-        {
-            cbIl.DataSource = _ilTanim.ListeGetir();
-            cbIl.DisplayMember = "ad";
-            cbIl.ValueMember = "Id";
-        }
-        private void cbKomisyonDurumDoldur()
-        {
-            cbKomisyonDurum.DataSource = _komisyonDurum.ListeGetir();
-            cbKomisyonDurum.DisplayMember = "ad";
-            cbKomisyonDurum.ValueMember = "Id";
-        }
-        private void cbMeclisGorevDoldur()
-        {
-            cbMeclisGorev.DataSource = _meclisGorevTanim.ListeGetir();
-            cbMeclisGorev.DisplayMember = "ad";
-            cbMeclisGorev.ValueMember = "Id";
-        }
-        private void cbMeslekDoldur()
-        {
-            cbMeslek.DataSource = _meslekTanim.ListeGetir();
-            cbMeslek.DisplayMember = "ad";
-            cbMeslek.ValueMember = "Id";
-        }
-        private void cbPartiGrupDoldur()
-        {
-            cbPartiGrup.DataSource = _PartiGrupTanim.ListeGetir();
-            cbPartiGrup.DisplayMember = "ad";
-            cbPartiGrup.ValueMember = "Id";
-        }
-        private void cbPartiDoldur()
-        {
-            cbParti.DataSource = _partiTanim.ListeGetir();
-            cbParti.DisplayMember = "ad";
-            cbParti.ValueMember = "Id";
-        }
+        
 
         #endregion
     }

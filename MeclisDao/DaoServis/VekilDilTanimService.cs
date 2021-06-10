@@ -17,13 +17,11 @@ namespace MeclisDao.DaoServis
         IVekilDilTanimDal _dilTanimDal;
         MeclisContext _context;
         IVekilTanimDal _vekilTanimDal;
-        IVekilDetayDal _vekilDetayDal;
-        public VekilDilTanimService(IVekilDilTanimDal dilTanimDal, MeclisContext context, IVekilTanimDal vekilTanimDal, IVekilDetayDal vekilDetayDal)
+        public VekilDilTanimService(IVekilDilTanimDal dilTanimDal, MeclisContext context, IVekilTanimDal vekilTanimDal)
         {
             _dilTanimDal = dilTanimDal;
             _context = context;
             _vekilTanimDal = vekilTanimDal;
-            _vekilDetayDal = vekilDetayDal;
         }
 
         public void Ekle(VekilDilTanim lData)

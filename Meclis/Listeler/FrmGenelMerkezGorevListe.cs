@@ -17,16 +17,12 @@ namespace Meclis.Listeler
     {
         private IGenelMerkezGorevService _genelMerkez;
         IVekilTanimService _vekilTanim;
- 
-        private IVekilDetayService _vekilDetayService;
-
         public FrmGenelMerkezGorevListe()
         {
             InitializeComponent();
             _genelMerkez = InstanceFactory.GetInstance<IGenelMerkezGorevService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
+           
         }
 
         private void FrmGenelMerkezGorevListe_Load(object sender, EventArgs e)
@@ -43,8 +39,7 @@ namespace Meclis.Listeler
             }).ToList();
 
             dgGenelMerkezListe.DataSource = (from gm in _genelMerkez.ListeGetir()
-                                             join vd in _vekilDetayService.ListeGetir() on gm.Id equals vd.MeclisGorevTanimId
-                                             join vt in _vekilTanim.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                             join vt in _vekilTanim.ListeGetir() on gm.Id equals vt.GenelMerkezGorevId
                                              select new
                                              {
                                                  gm.Id,

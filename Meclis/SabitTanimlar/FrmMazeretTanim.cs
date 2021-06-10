@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MeclisDao.Enums;
 
 namespace Meclis.SabitTanimlar
 {
@@ -84,9 +85,11 @@ namespace Meclis.SabitTanimlar
         }
         private void cbMazeretKodDoldur()
         {
-            cbMazeretKod.DataSource = _mazeretKod.ListeGetir();
-            cbMazeretKod.DisplayMember = "MazeretKodu";
-            cbMazeretKod.ValueMember = "Id";
+            cbMazeretKod.DataSource = Enum.GetValues(typeof(MeclisDao.Enums.MazeretKod));
+
+            //    cbMazeretKod.DataSource = _mazeretKod.ListeGetir();
+            //    cbMazeretKod.DisplayMember = "MazeretKodu";
+            //    cbMazeretKod.ValueMember = "Id";
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -156,13 +159,14 @@ namespace Meclis.SabitTanimlar
         private void TumunuListele()
         {
             dgListe.DataSource = (from mt in _mazeretTanim.ListeGetir()
-                                  join mk in _mazeretKod.ListeGetir() on mt.MazeretKodId equals mk.Id
+                                  join mk in Enum.GetValues(typeof(MeclisDao.Enums.MazeretKod)).Cast<MeclisDao.Enums.MazeretKod>() on mt.MazeretKodId equals mk.GetHashCode()
+
                                   join vt in _vekilTanim.ListeGetir() on mt.VekilTanimId equals vt.Id
                                   select new { 
                                   mt.Id,
                                   vt.TcKimlikNo,
                                  VekilAdSoyad= vt.Ad+" "+ vt.Soyad,
-                                  mk.MazeretKodu,
+                                  MazeretKod=mk.ToString(),
                                   mt.MazeretNedeni,
                                   mt.BaslamaTarihi,
                                   mt.BitisTarihi,
@@ -184,6 +188,11 @@ namespace Meclis.SabitTanimlar
             string lastname = ((VekilTanim)e.ListItem).Ad;
             string firstname = ((VekilTanim)e.ListItem).Soyad;
             e.Value = lastname + " " + firstname;
+        }
+
+        private void FrmMazeretTanim_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

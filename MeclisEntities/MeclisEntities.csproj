@@ -75,7 +75,6 @@
     <Compile Include="Entities\DonemTanim.cs" />
     <Compile Include="Entities\DilTanim.cs" />
     <Compile Include="Entities\DanismanTanim.cs" />
-    <Compile Include="Entities\VekilDetay.cs" />
     <Compile Include="Entities\VekilTanim.cs" />
     <Compile Include="IEntities\IEntity.cs" />
     <Compile Include="Base\EntBaseId.cs" />
@@ -103,7 +102,6 @@
     <Compile Include="Mappings\DonemTanimMap.cs" />
     <Compile Include="Mappings\DilTanimMap.cs" />
     <Compile Include="Mappings\DanismanTanimMap.cs" />
-    <Compile Include="Mappings\VekilDetayMap.cs" />
     <Compile Include="Mappings\VekilTanimMap.cs" />
     <Compile Include="Base\Interfaces\IEntBaseId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -18,7 +18,6 @@ namespace Meclis.Listeler
         private IMazeretTanimService _mazeretTanim;
         private IVekilTanimService _vekilTanim;
        
-        private IVekilDetayService _vekilDetayService;
         private IMazeretKodService _mazeretKodService;
         public FrmMazeretListe()
         {
@@ -26,7 +25,6 @@ namespace Meclis.Listeler
             _mazeretTanim = InstanceFactory.GetInstance<IMazeretTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
           
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
            _mazeretKodService = InstanceFactory.GetInstance<IMazeretKodService>();
         }
 

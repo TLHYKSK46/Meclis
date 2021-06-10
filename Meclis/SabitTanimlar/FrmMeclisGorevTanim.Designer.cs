@@ -33,10 +33,14 @@ namespace Meclis.SabitTanimlar
             this.label1 = new System.Windows.Forms.Label();
             this.txtMeclisGorevAdi = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbVekilTanim = new System.Windows.Forms.ComboBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.dgListe = new System.Windows.Forms.DataGridView();
+            this.btnListele = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +71,7 @@ namespace Meclis.SabitTanimlar
             // txtMeclisGorevAdi
             // 
             this.txtMeclisGorevAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMeclisGorevAdi.Location = new System.Drawing.Point(109, 36);
+            this.txtMeclisGorevAdi.Location = new System.Drawing.Point(118, 36);
             this.txtMeclisGorevAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtMeclisGorevAdi.Name = "txtMeclisGorevAdi";
             this.txtMeclisGorevAdi.Size = new System.Drawing.Size(227, 27);
@@ -75,6 +79,8 @@ namespace Meclis.SabitTanimlar
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cbVekilTanim);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
             this.groupBox1.Controls.Add(this.txtMeclisGorevAdi);
@@ -86,6 +92,26 @@ namespace Meclis.SabitTanimlar
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(6, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 20);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Vekil Tanım:";
+            // 
+            // cbVekilTanim
+            // 
+            this.cbVekilTanim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbVekilTanim.FormattingEnabled = true;
+            this.cbVekilTanim.Location = new System.Drawing.Point(118, 68);
+            this.cbVekilTanim.Name = "cbVekilTanim";
+            this.cbVekilTanim.Size = new System.Drawing.Size(227, 28);
+            this.cbVekilTanim.TabIndex = 51;
+            this.cbVekilTanim.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbVekilTanim_Format);
             // 
             // btnSil
             // 
@@ -129,11 +155,28 @@ namespace Meclis.SabitTanimlar
             this.dgListe.TabIndex = 51;
             this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
+            // btnListele
+            // 
+            this.btnListele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnListele.Location = new System.Drawing.Point(384, 60);
+            this.btnListele.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(113, 30);
+            this.btnListele.TabIndex = 53;
+            this.btnListele.Text = "Liste";
+            this.btnListele.UseVisualStyleBackColor = true;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // FrmMeclisGorevTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 526);
+            this.Controls.Add(this.btnListele);
             this.Controls.Add(this.dgListe);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.groupBox1);
@@ -143,6 +186,7 @@ namespace Meclis.SabitTanimlar
             this.Name = "FrmMeclisGorevTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMeclisGorevTanim";
+            this.Load += new System.EventHandler(this.FrmMeclisGorevTanim_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).EndInit();
@@ -161,5 +205,9 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.DataGridView dgListe;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbVekilTanim;
+        private System.Windows.Forms.Button btnListele;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

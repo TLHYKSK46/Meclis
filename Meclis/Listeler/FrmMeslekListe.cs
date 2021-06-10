@@ -18,14 +18,12 @@ namespace Meclis.Listeler
         private IMeslekTanimService _meslekTanimService;
        private IVekilTanimService _vekilTanim;
         
-        private IVekilDetayService _vekilDetayService;
         public FrmMeslekListe()
         {
             InitializeComponent();
             _meslekTanimService = InstanceFactory.GetInstance<IMeslekTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
  
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 
         private void MeslekListe_Load(object sender, EventArgs e)
@@ -37,8 +35,7 @@ namespace Meclis.Listeler
         {
             //dgMeslekList.DataSource = _meslekTanimService.ListeGetir();
             dgMeslekList.DataSource = (from mt in _meslekTanimService.ListeGetir()
-                                 join vd in _vekilDetayService.ListeGetir() on mt.Id equals vd.MeslekTanimId
-                                 join vt in _vekilTanim.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                 join vt in _vekilTanim.ListeGetir() on mt.Id equals vt.MeslekTanimId
                                  select new
                                  {
                                      mt.Id,

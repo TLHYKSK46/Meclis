@@ -18,13 +18,11 @@ namespace MeclisDao.DaoServis
         IDilTanimDal _dilTanimDal;
         MeclisContext _context;
         IVekilTanimDal _vekilTanimDal;
-        IVekilDetayDal _vekilDetayDal;
-        public DilTanimService(IDilTanimDal dilTanimDal, MeclisContext context, IVekilTanimDal vekilTanimDal, IVekilDetayDal vekilDetayDal)
+        public DilTanimService(IDilTanimDal dilTanimDal, MeclisContext context, IVekilTanimDal vekilTanimDal)
         {
             _dilTanimDal = dilTanimDal;
             _context = context;
             _vekilTanimDal = vekilTanimDal;
-            _vekilDetayDal = vekilDetayDal;
         }
 
         public List<DilTanim> AdGoreGetir(string data)

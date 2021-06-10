@@ -11,7 +11,8 @@ namespace MeclisEntities.Entities
     public class MeclisGorevTanim:EntBase
      
     {
-       
+
+        public int VekilTanimId { get; set; }
         public string MeclisGorevAdi { get; set; }
        
 

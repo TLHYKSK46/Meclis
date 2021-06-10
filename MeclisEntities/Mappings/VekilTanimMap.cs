@@ -27,7 +27,20 @@ namespace MeclisEntities.Mappings
             Property(x => x.Aciklama).HasColumnName("aciklama");
             Property(x => x.Ozgecmis).HasColumnName("ozgecmis");
             Property(x => x.Aktif).HasColumnName("aktif");
-            
+            Property(x => x.OdaNo).HasColumnName("oda_no");
+            Property(x => x.IlTanimId).HasColumnName("il_tanim_id");
+            Property(x => x.DostlukGrupTanimId).HasColumnName("dostluk_grup_tanim_id");
+            Property(x => x.MeclisGorevId).HasColumnName("meclis_gorev_tanim_id");
+            Property(x => x.DonemTanimId).HasColumnName("donem_tanim_id");
+            Property(x => x.IlTanimId).HasColumnName("il_tanim_id");
+            Property(x => x.PartiTanimId).HasColumnName("parti_tanim_id");
+            Property(x => x.PartiGrupTanimId).HasColumnName("parti_grup_tanim_id");
+            Property(x => x.MeslekTanimId).HasColumnName("meslek_tanim_id");
+            Property(x => x.MeslekUzmanlikAlani).HasColumnName("meslek_uzmanlik_alani");
+            Property(x=>x.GenelMerkezGorevId).HasColumnName("genel_merkez_gorev_id");
+
+
+
 
 
 

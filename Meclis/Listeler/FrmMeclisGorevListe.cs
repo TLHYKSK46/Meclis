@@ -17,15 +17,12 @@ namespace Meclis.Listeler
     {
         private IMeclisGorevTanimService _meclisGorev;
         IVekilTanimService _vekilTanim;
-       
-        private IVekilDetayService _vekilDetayService;
         public FrmMeclisGorevListe()
         {
             InitializeComponent();
             _meclisGorev = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
        
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
         }
 
         private void FrmMeclisGorevListe_Load(object sender, EventArgs e)
@@ -36,8 +33,7 @@ namespace Meclis.Listeler
         private void TumunuListele()
         {
             dgList.DataSource = (from mg in _meclisGorev.ListeGetir()
-                                 join vd in _vekilDetayService.ListeGetir() on mg.Id equals vd.MeclisGorevTanimId
-                                 join vt in _vekilTanim.ListeGetir() on vd.VekilTanimId equals vt.Id
+                                 join vt in _vekilTanim.ListeGetir() on mg.Id equals vt.MeclisGorevId
                                  select new { 
                                  mg.Id,
                                      vt.TcKimlikNo,

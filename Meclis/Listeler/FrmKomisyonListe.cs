@@ -17,8 +17,6 @@ namespace Meclis.Listeler
     {
         private IKomisyonTanimService _komisyonTanim;
         private IVekilTanimService _vekilTanim;
-       
-        private IVekilDetayService _vekilDetayService;
         private IKomisyonDurumService _komisyonDurumService;
         public FrmKomisyonListe()
         {
@@ -26,7 +24,6 @@ namespace Meclis.Listeler
             _komisyonTanim = InstanceFactory.GetInstance<IKomisyonTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
          
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
             _komisyonDurumService = InstanceFactory.GetInstance<IKomisyonDurumService>();
         }
 
@@ -39,7 +36,6 @@ namespace Meclis.Listeler
         {
             dgList.DataSource = (from kt in _komisyonTanim.ListeGetir()
                                  join kd in _komisyonDurumService.ListeGetir() on kt.Id equals kd.KomisyonTanimId
-                                 join vd in _vekilDetayService.ListeGetir() on kd.Id equals vd.KomisyonDurumId
                                  join vt in _vekilTanim.ListeGetir() on kd.VekilTanimId equals vt.Id
                                  select new { 
                                  kd.Id,

@@ -34,6 +34,17 @@ namespace MeclisEntities.Entities
         public string Aciklama { get; set; }
         public string Ozgecmis { get; set; }
         public bool Aktif { get; set; }
+        public string OdaNo { get; set; }
+        public int IlTanimId { get; set; }
+        public int PartiTanimId { get; set; }
+        public int PartiGrupTanimId { get; set; }
+        public int DonemTanimId { get; set; }
+        public int DostlukGrupTanimId { get; set; }
+        public int MeclisGorevId { get; set; }
+        public int MeslekTanimId { get; set; }
+        public string MeslekUzmanlikAlani { get; set; }
+        public int GenelMerkezGorevId { get; set; }
+
 
 
     }

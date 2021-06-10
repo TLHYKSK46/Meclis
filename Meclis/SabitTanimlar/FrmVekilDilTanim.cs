@@ -21,14 +21,12 @@ namespace Meclis.SabitTanimlar
         private IDilTanimService _dilTanimService;
         IVekilTanimService _vekilTanim;
      
-        private IVekilDetayService _vekilDetayService;
         private IVekilDilTanimService _vekilDilTanim;
         public FrmVekilDilTanim()
         {
             CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
-            _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
             _vekilDilTanim = InstanceFactory.GetInstance<IVekilDilTanimService>();
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
 
