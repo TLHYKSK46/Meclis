@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using MeclisDal.IDal;
 using MeclisDal.BaseDb;
 using MeclisDao.Exceptions;
+using MeclisDao.MessageDialogs;
 
 namespace MeclisDao.DaoServis
 {
@@ -24,7 +25,7 @@ namespace MeclisDao.DaoServis
 
         public List<VekilTanim> AdGoreGetir(string vekilAdi)
         {
-            return _vekilTanim.GetAll(p => p.Ad == vekilAdi);
+            return _vekilTanim.GetAll(p => p.Ad == vekilAdi.ToLower() || p.Soyad==vekilAdi.ToLower());
         }
 
         public void Ekle(VekilTanim vekilTanim)
@@ -50,6 +51,7 @@ namespace MeclisDao.DaoServis
         {
             try
             {
+               
                 var data = _meclisContext.VekilTanims.FirstOrDefault(p => p.Id == vekilTanim.Id);
                 if (data == null && !(vekilTanim.Id<=0))
                     throw new DaoException("Bu Kayıt Silinmiş Yada Değiştirilmiş Olabilir.Lütfen Kontrol Ederek Tekrar Deneyiniz!");
@@ -66,7 +68,7 @@ namespace MeclisDao.DaoServis
 
         public List<VekilTanim> ListeGetir()
         {
-          return _vekilTanim.GetAll(p=>p.Silindi==0);
+          return _vekilTanim.GetAll(p=>p.Silindi==0).ToList();
         }
 
         public void Sil(int id)

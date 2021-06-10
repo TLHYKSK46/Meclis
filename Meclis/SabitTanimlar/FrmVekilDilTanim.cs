@@ -2,6 +2,7 @@
 using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
+using MeclisDao.MessageDialogs;
 using MeclisEntities.Entities;
 using System;
 using System.Collections.Generic;
@@ -24,19 +25,23 @@ namespace Meclis.SabitTanimlar
         private IVekilDilTanimService _vekilDilTanim;
         public FrmVekilDilTanim()
         {
-            _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
-
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
             _vekilDetayService = InstanceFactory.GetInstance<IVekilDetayService>();
             _vekilDilTanim = InstanceFactory.GetInstance<IVekilDilTanimService>();
-    
-        }
+            _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
 
-        private void FrmDilTanim_Load(object sender, EventArgs e)
+
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             TumunuListele();
             DilSeviyeDoldur();
+        }
+        private void FrmDilTanim_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -53,6 +58,7 @@ namespace Meclis.SabitTanimlar
                         VekilTanimId = Convert.ToInt32(cbVekil.SelectedValue)
                     });
                     MessageBox.Show("Dil Eklendi!", "Admin");
+                    MesajGoster.Bilgi("Kayıt İşlemi Başarılı.");
                     TumunuListele();
                 }
             }
@@ -78,13 +84,15 @@ namespace Meclis.SabitTanimlar
 
                 }); ;
                 MessageBox.Show("Dil Güncellendi!", "Admin");
+                MesajGoster.Basarili("Güncelleme işlemi başarılı!");
                 TumunuListele();
             }
             catch (DaoException ex)
             {
-                MessageBox.Show(ex.Message.ToString(), "Admin");
+                MesajGoster.Hata("Güncelleme işlemi başarısız!",ex.Message.ToString());
+
             }
-          
+
 
         }
         private void txtAra_TextChanged(object sender, EventArgs e)
@@ -163,21 +171,20 @@ namespace Meclis.SabitTanimlar
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            DialogResult msg = MessageBox.Show("Silmek İstediğinizden Eminmisiniz?", "Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (msg == DialogResult.Yes && dgDilListe.CurrentRow != null)
+            bool msg = MesajGoster.Uyari("Silmek İstediğinizden Eminmisiniz?");
+            if (msg ==true && dgDilListe.CurrentRow != null)
             {
 
                 try
                 {
                     _vekilDilTanim.Sil(Convert.ToInt32(dgDilListe.CurrentRow.Cells[0].Value));
                     TumunuListele();
-                    MessageBox.Show("Kayıt Başarıyla  Silindi!","Program",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MesajGoster.Basarili("Kayıt Başarıyla  Silindi!");
 
                 }
-                catch (Exception)
+                catch (DaoException ex)
                 {
-
-                    MessageBox.Show("Hata Oluştu! \n");
+                    MesajGoster.Hata("Silerken bir hata ile karşılaşıldı! Silme işlemi başarısız.",ex.Message.ToString());
                 }
             }
         }
@@ -189,6 +196,6 @@ namespace Meclis.SabitTanimlar
             e.Value = lastname + " " + firstname;
         }
 
-      
+     
     }
 }

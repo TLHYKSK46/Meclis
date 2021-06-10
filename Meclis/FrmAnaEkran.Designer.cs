@@ -35,6 +35,7 @@ namespace Meclis
             this.dilTanimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dönemTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dostlukGrupTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grupBaşkanTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genelMerkezGörevTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupPersonelTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hatırlatmaTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,7 @@ namespace Meclis
             this.mazeretListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meslekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgwVekilDetay = new System.Windows.Forms.DataGridView();
-            this.grupBaşkanTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuAnaEkran.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVekilDetay)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +128,13 @@ namespace Meclis
             this.dostlukGrupTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.dostlukGrupTanımToolStripMenuItem.Text = "Dostluk Grup Tanım";
             this.dostlukGrupTanımToolStripMenuItem.Click += new System.EventHandler(this.dostlukGrupTanımToolStripMenuItem_Click);
+            // 
+            // grupBaşkanTanımToolStripMenuItem
+            // 
+            this.grupBaşkanTanımToolStripMenuItem.Name = "grupBaşkanTanımToolStripMenuItem";
+            this.grupBaşkanTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.grupBaşkanTanımToolStripMenuItem.Text = "Grup Başkan Tanım";
+            this.grupBaşkanTanımToolStripMenuItem.Click += new System.EventHandler(this.grupBaşkanTanımToolStripMenuItem_Click);
             // 
             // genelMerkezGörevTanımToolStripMenuItem
             // 
@@ -288,13 +296,6 @@ namespace Meclis
             this.dgwVekilDetay.TabIndex = 1;
             this.dgwVekilDetay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // grupBaşkanTanımToolStripMenuItem
-            // 
-            this.grupBaşkanTanımToolStripMenuItem.Name = "grupBaşkanTanımToolStripMenuItem";
-            this.grupBaşkanTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
-            this.grupBaşkanTanımToolStripMenuItem.Text = "Grup Başkan Tanım";
-            this.grupBaşkanTanımToolStripMenuItem.Click += new System.EventHandler(this.grupBaşkanTanımToolStripMenuItem_Click);
-            // 
             // FrmAnaEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -351,5 +352,6 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem meclisGörevListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mazeretListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grupBaşkanTanımToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

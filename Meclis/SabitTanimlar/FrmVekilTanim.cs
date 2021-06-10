@@ -2,6 +2,7 @@
 using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
+using MeclisDao.MessageDialogs;
 using MeclisEntities.Entities;
 using System;
 using System.Collections.Generic;
@@ -26,15 +27,38 @@ namespace Meclis.SabitTanimlar
 
         public FrmVekilTanim()
         {
-            _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
-            _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
-            _vekilDilTanimService = InstanceFactory.GetInstance<IVekilDilTanimService>();
-        
-            _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
+
+           
+         
           
         }
 
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
+            _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
+            _vekilDilTanimService = InstanceFactory.GetInstance<IVekilDilTanimService>();
+
+            _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
+             // TumunuListele();
+            cbDogumYeriDoldur();
+            CinsiyetDoldur();
+
+            bindingSource1.DataSource = dgListe.DataSource;
+            bindingNavigator1.BindingSource = bindingSource1;
+            dgListe.AllowUserToAddRows = false;
+
+
+
+        }
+        private void FrmVekilTanim_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+            //  await Task.WaitAll(TumunuListele(), cbDogumYeriDoldur(), CinsiyetDoldur());
+        }
+        #region CRUD
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Form frm = new FrmVekilDetay();
@@ -101,13 +125,7 @@ namespace Meclis.SabitTanimlar
         }
 
 
-        private async void FrmVekilTanim_Load(object sender, EventArgs e)
-        {
-          await TumunuListele();
-         await   cbDogumYeriDoldur();
-           await CinsiyetDoldur();
-          //  await Task.WaitAll(TumunuListele(), cbDogumYeriDoldur(), CinsiyetDoldur());
-        }
+    
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
@@ -125,7 +143,7 @@ namespace Meclis.SabitTanimlar
             string dogumyeri = cbDogumYeri.SelectedText;
             dogumtarihi.ToString("MMM/dd/yyy");
             bool aktif = chkAktif.Checked;
-            if (tcKimlikNo != null && ad != null & soyad != null)
+            if (tcKimlikNo != null && ad != null && soyad != null && Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value)>0)
             {
                 try
                 {
@@ -163,7 +181,7 @@ namespace Meclis.SabitTanimlar
             }
             else
             {
-                MessageBox.Show("Lütfen Doldurulması Zorunlu Alanları Doldurunuz!", "Sistem");
+                MessageBox.Show("Lütfen zorunlu alanları doldurunuz veya bir kayıt seçiniz !", "Sistem");
             }
 
 
@@ -171,15 +189,14 @@ namespace Meclis.SabitTanimlar
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            DialogResult msg = MessageBox.Show("Silmek İstediğinizden Eminmisiniz?", "Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (msg == DialogResult.Yes && dgListe.CurrentRow != null)
+             bool msg= MesajGoster.Uyari("Silmek İstediğinizden Eminmisiniz?");
+            if (msg ==true && dgListe.CurrentRow != null)
             {
-
                 try
                 {
                     _vekilTanimService.Sil(Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value));
                     TumunuListele();
-                    MessageBox.Show("Kayıt Başarıyla  Silindi!", "Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                         MesajGoster.Bilgi("Kayıt Başarıyla  Silindi!");
 
                 }
                 catch (Exception)
@@ -189,7 +206,9 @@ namespace Meclis.SabitTanimlar
                 }
             }
         }
-        private async   Task TumunuListele()
+        #endregion
+        #region Listeler
+        private void TumunuListele()
         {
             dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
                                   //join vdt in _vekilDilTanimService.ListeGetir() on vt.Id equals vdt.VekilTanimId
@@ -217,9 +236,9 @@ namespace Meclis.SabitTanimlar
                                       vt.Foto
                                   }
                                  ).ToList();
-            
             dgListe.Columns[14].Visible = false;
-           
+
+
             //for (int i = 0; i < dgListe.Columns.Count; i++)
             //    if (dgListe.Columns[i] is DataGridViewImageColumn)
             //    {
@@ -278,6 +297,7 @@ namespace Meclis.SabitTanimlar
             //cbCinsiyet.ValueMember = "Value";
 
         }
+        #endregion
         private void txtTemizle()
         {
             txtAd.Text = "";
@@ -293,7 +313,8 @@ namespace Meclis.SabitTanimlar
 
 
         }
-       Byte[] ConvertImageToBaytes(Image img) {
+        #region fotograf yükleme işlemleri
+        Byte[] ConvertImageToBaytes(Image img) {
             using (MemoryStream ms = new MemoryStream())
             {
                 img.Save(ms,System.Drawing.Imaging.ImageFormat.Png);
@@ -321,6 +342,31 @@ namespace Meclis.SabitTanimlar
                    // txtDosyaAdi.Text = ofd.FileName;// textbox içerisine dosya yolunu yazması için.
                 }
             }
+        }
+        #endregion
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+             TumunuListele();
+        }
+
+        private void txtAra_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtAra.Text))
+            {
+          
+                dgListe.DataSource=_vekilTanimService.AdGoreGetir(txtAra.Text.ToString());
+                //TumunuListele();
+            }
+            else
+            {
+                TumunuListele();
+            }
+        }
+
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

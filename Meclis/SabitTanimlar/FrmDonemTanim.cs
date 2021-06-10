@@ -20,12 +20,23 @@ namespace Meclis.SabitTanimlar
         public FrmDonemTanim()
         {
             _donemService = InstanceFactory.GetInstance<IDonemTanimService>();
-       
+            CheckForIllegalCrossThreadCalls = false;
+
 
             InitializeComponent();
 
         }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+          //  TumunuListele();
 
+        }
+        private void FrmDonemTanim_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+
+        }
+        #region Crud
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string donem = txtDonemAdi.Text;
@@ -87,7 +98,7 @@ namespace Meclis.SabitTanimlar
                 }
             }
         }
-
+        #endregion
         private void TumunuListele()
         {
             dgListe.DataSource =_donemService.ListeGetir().Select(p=> new { 
@@ -99,15 +110,18 @@ namespace Meclis.SabitTanimlar
 
         }
 
-        private void FrmDonemTanim_Load(object sender, EventArgs e)
-        {
-            TumunuListele();
-        }
+      
 
         private void dgListe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtDonemAdi.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
             //cbVekil.Text = dgDilListe.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnListe_Click(object sender, EventArgs e)
+        {
+            TumunuListele();
+
         }
     }
 }

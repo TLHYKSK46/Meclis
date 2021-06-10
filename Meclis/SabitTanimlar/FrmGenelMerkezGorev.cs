@@ -19,11 +19,22 @@ namespace Meclis.SabitTanimlar
         private IGenelMerkezGorevService _genelMerkez;
         public FrmGenelMerkezGorev()
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             InitializeComponent();
             _genelMerkez = InstanceFactory.GetInstance<IGenelMerkezGorevService>();
             TumunuListele();
         }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
 
+        }
+        private void FrmGenelMerkezGorev_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+
+        }
+        #region Crud
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string genelMerkez = txtGenelMerkezGorevAdi.Text;
@@ -108,7 +119,7 @@ namespace Meclis.SabitTanimlar
                 }
             }
         }
-
+        #endregion
         private void TumunuListele()
         {
             dgListe.DataSource = _genelMerkez.ListeGetir().Select(p => new
@@ -124,9 +135,12 @@ namespace Meclis.SabitTanimlar
 
         }
 
-        private void FrmGenelMerkezGorev_Load(object sender, EventArgs e)
+      
+        private void btnListe_Click(object sender, EventArgs e)
         {
-
+            TumunuListele();
         }
+
+       
     }
 }

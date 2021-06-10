@@ -41,6 +41,7 @@ namespace Meclis.SabitTanimlar
             this.cbDilAdi = new System.Windows.Forms.ComboBox();
             this.dgDilListe = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDilListe)).BeginInit();
             this.SuspendLayout();
@@ -175,7 +176,11 @@ namespace Meclis.SabitTanimlar
             this.txtAra.Size = new System.Drawing.Size(412, 26);
             this.txtAra.TabIndex = 7;
             // 
-            // FrmDilTanim
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // FrmVekilDilTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,7 +192,7 @@ namespace Meclis.SabitTanimlar
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "FrmDilTanim";
+            this.Name = "FrmVekilDilTanim";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "\"";
             this.Load += new System.EventHandler(this.FrmDilTanim_Load);
@@ -212,5 +217,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.DataGridView dgDilListe;
         private System.Windows.Forms.TextBox txtAra;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

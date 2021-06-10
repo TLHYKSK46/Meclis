@@ -34,6 +34,7 @@ namespace Meclis.Listeler
             this.btnExcelAktar = new System.Windows.Forms.Button();
             this.cmbFiltre = new System.Windows.Forms.ComboBox();
             this.btnAra = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgDanismanListe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,10 @@ namespace Meclis.Listeler
             this.btnAra.UseVisualStyleBackColor = true;
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // FrmDanismanListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,5 +122,6 @@ namespace Meclis.Listeler
         private System.Windows.Forms.Button btnExcelAktar;
         private System.Windows.Forms.ComboBox cmbFiltre;
         private System.Windows.Forms.Button btnAra;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

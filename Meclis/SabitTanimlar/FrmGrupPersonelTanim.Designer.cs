@@ -54,6 +54,8 @@ namespace Meclis.SabitTanimlar
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.dgListe = new System.Windows.Forms.DataGridView();
+            this.btnListe = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -338,11 +340,28 @@ namespace Meclis.SabitTanimlar
             this.dgListe.TabIndex = 55;
             this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
             // 
+            // btnListe
+            // 
+            this.btnListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnListe.Location = new System.Drawing.Point(453, 59);
+            this.btnListe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListe.Name = "btnListe";
+            this.btnListe.Size = new System.Drawing.Size(111, 29);
+            this.btnListe.TabIndex = 56;
+            this.btnListe.Text = "Listele";
+            this.btnListe.UseVisualStyleBackColor = true;
+            this.btnListe.Click += new System.EventHandler(this.btnListe_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // FrmGrupPersonelTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 661);
+            this.Controls.Add(this.btnListe);
             this.Controls.Add(this.dgListe);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.groupBox1);
@@ -388,5 +407,7 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.DataGridView dgListe;
+        private System.Windows.Forms.Button btnListe;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

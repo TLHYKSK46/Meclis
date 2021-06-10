@@ -85,6 +85,7 @@
     <Compile Include="Enums\KomisyonTuru.cs" />
     <Compile Include="Enums\KomisyonUyeTuru.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
+    <Compile Include="Exceptions\Try.cs" />
     <Compile Include="IDaoServis\IGrupYonetimKurulUyesiService.cs" />
     <Compile Include="IDaoServis\IGrupBaskanVekilTanimService.cs" />
     <Compile Include="IDaoServis\IGrupBaskanTanimService.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="IDaoServis\IVekilTanimService.cs" />
     <Compile Include="Instances\DaoModul.cs" />
     <Compile Include="Instances\InstanceFactory.cs" />
+    <Compile Include="MessageDialogs\MesajGoster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

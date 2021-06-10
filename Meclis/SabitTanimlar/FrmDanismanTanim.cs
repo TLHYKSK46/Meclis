@@ -17,21 +17,29 @@ namespace Meclis.SabitTanimlar
         private IVekilTanimService _Vekil;
         public FrmDanismanTanim()
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             InitializeComponent();
             _danismanTanim = InstanceFactory.GetInstance<IDanismanTanimService>();
 
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
             _Vekil = InstanceFactory.GetInstance<IVekilTanimService>();
         }
-
-        private void FrmDanismanTanim_Load(object sender, EventArgs e)
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            TumunuListele();
             VekilDoldur();
             SehirDoldur();
             CinsiyetDoldur();
+
+        }
+        private void FrmDanismanTanim_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+
+        
         }
 
+        #region Crud
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string tcKimlik = txtTcKimlikNo.Text;
@@ -156,6 +164,7 @@ namespace Meclis.SabitTanimlar
                 }
             }
         }
+        #endregion
         #region Listeler
         //to do Enum Linq Kullanımı
         private void TumunuListele()
@@ -228,6 +237,12 @@ namespace Meclis.SabitTanimlar
             string lastname = ((VekilTanim)e.ListItem).Ad;
             string firstname = ((VekilTanim)e.ListItem).Soyad;
             e.Value = lastname + " " + firstname;
+        }
+
+        private void btnListe_Click(object sender, EventArgs e)
+        {
+            TumunuListele();
+
         }
     }
 }

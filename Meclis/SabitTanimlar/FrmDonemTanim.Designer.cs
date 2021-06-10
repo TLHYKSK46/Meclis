@@ -38,6 +38,7 @@ namespace Meclis.SabitTanimlar
             this.txtAra = new System.Windows.Forms.TextBox();
             this.dgListe = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnListe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,7 @@ namespace Meclis.SabitTanimlar
             // txtAra
             // 
             this.txtAra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(12, 12);
+            this.txtAra.Location = new System.Drawing.Point(2, 80);
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(334, 27);
             this.txtAra.TabIndex = 51;
@@ -123,17 +124,34 @@ namespace Meclis.SabitTanimlar
             // dgListe
             // 
             this.dgListe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgListe.Location = new System.Drawing.Point(2, 49);
+            this.dgListe.Location = new System.Drawing.Point(2, 113);
             this.dgListe.Name = "dgListe";
-            this.dgListe.Size = new System.Drawing.Size(551, 438);
+            this.dgListe.Size = new System.Drawing.Size(551, 374);
             this.dgListe.TabIndex = 50;
             this.dgListe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListe_CellClick);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
+            // btnListe
+            // 
+            this.btnListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnListe.Location = new System.Drawing.Point(370, 48);
+            this.btnListe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListe.Name = "btnListe";
+            this.btnListe.Size = new System.Drawing.Size(109, 49);
+            this.btnListe.TabIndex = 49;
+            this.btnListe.Text = "Listele";
+            this.btnListe.UseVisualStyleBackColor = true;
+            this.btnListe.Click += new System.EventHandler(this.btnListe_Click);
             // 
             // FrmDonemTanim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 499);
+            this.Controls.Add(this.btnListe);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.dgListe);
             this.Controls.Add(this.groupBox1);
@@ -163,5 +181,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.DataGridView dgListe;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnListe;
     }
 }

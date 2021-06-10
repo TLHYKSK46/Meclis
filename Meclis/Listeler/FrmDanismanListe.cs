@@ -1,4 +1,5 @@
-﻿using MeclisDao.Exceptions;
+﻿using MeclisDao.Enums;
+using MeclisDao.Exceptions;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using MeclisEntities.Entities;
@@ -22,23 +23,30 @@ namespace Meclis.Listeler
         private IIlTanimService _ilTanim;
         public FrmDanismanListe()
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             InitializeComponent();
             _danismanTanimService = InstanceFactory.GetInstance<IDanismanTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
             _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
       
         }
-
-        private void FrmDanismanListe_Load(object sender, EventArgs e)
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             cmbFiltre.SelectedItem = "Tümü";
-            TumunuListele();
+          //  TumunuListele();
+        }
+        private void FrmDanismanListe_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+
         }
 
         private void TumunuListele()
         {
             dgDanismanListe.DataSource = (from dts in _danismanTanimService.ListeGetir()
-                                          //join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
+                                          join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on dts.CinsiyetTanimId equals c.GetHashCode()
+
                                           join vt in _vekilTanim.ListeGetir() on dts.VekilTanimId equals vt.Id
                                           join i in _ilTanim.ListeGetir() on dts.IlTanimId equals i.Id
                                           select new
@@ -48,7 +56,7 @@ namespace Meclis.Listeler
                                               AdSoyad = dts.Ad + "" + dts.Soyad,
                                               dts.TelNo,
                                               dts.Mail,
-                                              
+                                              Cinsiyet = c.ToString(),
                                               i.IlAdi,
                                               VekilAdSoyad = vt.Ad + "" + vt.Soyad,
                                               VekilTcKimlikNo = vt.TcKimlikNo,
@@ -76,7 +84,7 @@ namespace Meclis.Listeler
         {
            
             dgDanismanListe.DataSource = (from dts in _danismanTanimService.FiltreleGetir(cmbFiltre.SelectedItem.ToString(), txtAra.Text)
-                                          //join c in _cinsiyetTanim.ListeGetir() on dts.CinsiyetTanimId equals c.Id
+                                          join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on dts.CinsiyetTanimId equals c.GetHashCode()
                                           join vt in _vekilTanim.ListeGetir() on dts.VekilTanimId equals vt.Id
                                           join i in _ilTanim.ListeGetir() on dts.IlTanimId equals i.Id
                                           select new {
@@ -85,12 +93,14 @@ namespace Meclis.Listeler
                                               AdSoyad = dts.Ad + "" + dts.Soyad,
                                               dts.TelNo,
                                               dts.Mail,
-                                             
+                                              Cinsiyet = c.ToString(),
                                               i.IlAdi,
                                               VekilAdSoyad = vt.Ad + "" + vt.Soyad,
                                               VekilTcKimlikNo = vt.TcKimlikNo,
                                               dts.Aktif,
                                           }).ToList();
         }
+
+      
     }
 }

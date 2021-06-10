@@ -19,9 +19,21 @@ namespace Meclis.SabitTanimlar
         public FrmDostlukGrupTanim()
         {
             _dostlukGrupTanim = InstanceFactory.GetInstance<IDostlukGrupTanimService>();
+            CheckForIllegalCrossThreadCalls = false;
+
             InitializeComponent();
         }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
 
+        }
+        private void FrmDostlukGrupTanim_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
+           
+        }
+        #region Crud
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string dgAdi = txtDostlukGrupAdi.Text;
@@ -86,7 +98,7 @@ namespace Meclis.SabitTanimlar
                 }
             }
         }
-
+        #endregion
         private void TumunuListele()
         {
             dgListe.DataSource = _dostlukGrupTanim.ListeGetir().Select(p => new {
@@ -101,9 +113,13 @@ namespace Meclis.SabitTanimlar
             txtDostlukGrupAdi.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
         }
 
-        private void FrmDostlukGrupTanim_Load(object sender, EventArgs e)
+      
+
+        private void btnListe_Click(object sender, EventArgs e)
         {
             TumunuListele();
         }
+
+     
     }
 }

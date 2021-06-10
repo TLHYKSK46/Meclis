@@ -23,18 +23,29 @@ namespace Meclis.SabitTanimlar
         private IIlTanimService _ilTanim;
         public FrmGrupPersonelTanim()
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             InitializeComponent();
             _grupPersonel = InstanceFactory.GetInstance<IGrupPersonelTanimService>();
             _meclisGorevTanim = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
             _ilTanim = InstanceFactory.GetInstance<IIlTanimService>();
        
+         
+
+        }
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
             TumunuListele();
             cbMeclisGorevDoldur();
             cbSehirDoldur();
             cbCinsiyetDoldur();
+        }
+        private void FrmGrupPersonelTanim_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
 
         }
-
+        #region Crud
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string tcKimlikNo = txtTcKimlikNo.Text;
@@ -80,42 +91,7 @@ namespace Meclis.SabitTanimlar
             }
         }
 
-        private void cbMeclisGorevDoldur() {
-            cbMeclisGorev.DataSource = _meclisGorevTanim.ListeGetir();
-            cbMeclisGorev.DisplayMember = "MeclisGorevAdi";
-            cbMeclisGorev.ValueMember = "Id";
-
-        }
-        private void cbSehirDoldur()
-        {
-            cbIl.DataSource = _ilTanim.ListeGetir();
-            cbIl.DisplayMember = "IlAdi";
-            cbIl.ValueMember = "Id";
-        }
-        private void cbCinsiyetDoldur() {
-            cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
-            //cbCinsiyet.DisplayMember = "CinsiyetAdi";
-            //cbCinsiyet.ValueMember = "Id";
-        }
-        private void textBoşalt() {
-            txtAd.Text = "";
-            txtMail.Text = "";
-            txtSifre.Text = "";
-            txtSoyad.Text = "";
-            txtTcKimlikNo.Text = "";
-            txtTelNo.Text = "";
-           
-        }
-
-        private void FrmGrupPersonelTanim_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
@@ -186,7 +162,43 @@ namespace Meclis.SabitTanimlar
             }
 
         }
+        #endregion
+        #region Listeler
+        private void cbMeclisGorevDoldur()
+        {
+            cbMeclisGorev.DataSource = _meclisGorevTanim.ListeGetir();
+            cbMeclisGorev.DisplayMember = "MeclisGorevAdi";
+            cbMeclisGorev.ValueMember = "Id";
 
+        }
+        private void cbSehirDoldur()
+        {
+            cbIl.DataSource = _ilTanim.ListeGetir();
+            cbIl.DisplayMember = "IlAdi";
+            cbIl.ValueMember = "Id";
+        }
+        private void cbCinsiyetDoldur()
+        {
+            cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
+            //cbCinsiyet.DisplayMember = "CinsiyetAdi";
+            //cbCinsiyet.ValueMember = "Id";
+        }
+        private void textBoşalt()
+        {
+            txtAd.Text = "";
+            txtMail.Text = "";
+            txtSifre.Text = "";
+            txtSoyad.Text = "";
+            txtTcKimlikNo.Text = "";
+            txtTelNo.Text = "";
+
+        }
+
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
         private void TumunuListele()
         {
             dgListe.DataSource = (from p in _grupPersonel.ListeGetir()
@@ -229,5 +241,12 @@ namespace Meclis.SabitTanimlar
             //cbVekilTanim.DisplayMember += "Soyad";
             //cbVekilTanim.ValueMember = "Id";
         }
+        #endregion
+        private void btnListe_Click(object sender, EventArgs e)
+        {
+            TumunuListele();
+        }
+
+      
     }
 }
