@@ -111,6 +111,7 @@
     <Compile Include="IDaoServis\IVekilTanimService.cs" />
     <Compile Include="Instances\DaoModul.cs" />
     <Compile Include="Instances\InstanceFactory.cs" />
+    <Compile Include="Json\JsonParse.cs" />
     <Compile Include="MessageDialogs\MesajGoster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

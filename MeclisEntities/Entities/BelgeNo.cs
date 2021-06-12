@@ -16,6 +16,6 @@ namespace MeclisEntities.Entities
        
         public string BelgeNo1 { get; set; }
 
-
+        
     }
 } 
