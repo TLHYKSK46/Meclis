@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace MeclisDao.DaoServis
 {
-    public class GrupYonetimKurulUyesiDal : IGrupYonetimKurulUyesiService
+    public class GrupYonetimKurulUyesiService : IGrupYonetimKurulUyesiService
     {
         IGrupYonetimKurulUyesiDal _grupYonetimKurul;
         MeclisContext _meclisContext;
 
-        public GrupYonetimKurulUyesiDal(MeclisContext meclisContext, IGrupYonetimKurulUyesiDal grupYonetimKurul)
+        public GrupYonetimKurulUyesiService(MeclisContext meclisContext, IGrupYonetimKurulUyesiDal grupYonetimKurul)
         {
             _meclisContext = meclisContext;
             _grupYonetimKurul = grupYonetimKurul;

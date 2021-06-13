@@ -1,5 +1,6 @@
 ﻿using Meclis.Listeler;
 using Meclis.SabitTanimlar;
+using Meclis.Yoklama;
 using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
 using System;
@@ -261,6 +262,12 @@ namespace Meclis
         private void grupBaşkanTanımToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new FrmGrupBaskanTanim();
+            frm.Show();
+        }
+
+        private void yoklamaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmYoklamaEski();
             frm.Show();
         }
     }

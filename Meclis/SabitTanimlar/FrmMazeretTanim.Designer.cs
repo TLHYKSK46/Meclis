@@ -41,12 +41,13 @@ namespace Meclis.SabitTanimlar
             this.label6 = new System.Windows.Forms.Label();
             this.dtBitisTarihi = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.dgListe = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnListe = new System.Windows.Forms.Button();
+            this.lblBelgeNo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
             this.SuspendLayout();
@@ -169,6 +170,7 @@ namespace Meclis.SabitTanimlar
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblBelgeNo);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
@@ -189,6 +191,17 @@ namespace Meclis.SabitTanimlar
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(13, 61);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 20);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Mazeret Belge No";
             // 
             // btnSil
             // 
@@ -231,17 +244,6 @@ namespace Meclis.SabitTanimlar
             this.txtAra.Size = new System.Drawing.Size(356, 27);
             this.txtAra.TabIndex = 55;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(13, 61);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 20);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Mazeret Belge No";
-            // 
             // btnListe
             // 
             this.btnListe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -252,6 +254,18 @@ namespace Meclis.SabitTanimlar
             this.btnListe.TabIndex = 56;
             this.btnListe.Text = "Listele";
             this.btnListe.UseVisualStyleBackColor = true;
+            // 
+            // lblBelgeNo
+            // 
+            this.lblBelgeNo.AutoSize = true;
+            this.lblBelgeNo.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblBelgeNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBelgeNo.Location = new System.Drawing.Point(161, 61);
+            this.lblBelgeNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBelgeNo.Name = "lblBelgeNo";
+            this.lblBelgeNo.Size = new System.Drawing.Size(45, 20);
+            this.lblBelgeNo.TabIndex = 56;
+            this.lblBelgeNo.Text = "0000";
             // 
             // FrmMazeretTanim
             // 
@@ -297,5 +311,6 @@ namespace Meclis.SabitTanimlar
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnListe;
+        private System.Windows.Forms.Label lblBelgeNo;
     }
 }

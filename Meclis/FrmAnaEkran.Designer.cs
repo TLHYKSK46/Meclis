@@ -56,6 +56,7 @@ namespace Meclis
             this.meclisGörevListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mazeretListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meslekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yoklamaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgwVekilDetay = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuAnaEkran.SuspendLayout();
@@ -69,7 +70,8 @@ namespace Meclis
             this.menuAnaEkran.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sabitTanımlarToolStripMenuItem,
             this.raporlarToolStripMenuItem,
-            this.listelerToolStripMenuItem});
+            this.listelerToolStripMenuItem,
+            this.yoklamaİşlemleriToolStripMenuItem});
             this.menuAnaEkran.Location = new System.Drawing.Point(0, 0);
             this.menuAnaEkran.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.menuAnaEkran.Name = "menuAnaEkran";
@@ -285,6 +287,14 @@ namespace Meclis
             this.meslekToolStripMenuItem.Text = "Meslek Liste";
             this.meslekToolStripMenuItem.Click += new System.EventHandler(this.meslekToolStripMenuItem_Click);
             // 
+            // yoklamaİşlemleriToolStripMenuItem
+            // 
+            this.yoklamaİşlemleriToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.yoklamaİşlemleriToolStripMenuItem.Name = "yoklamaİşlemleriToolStripMenuItem";
+            this.yoklamaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.yoklamaİşlemleriToolStripMenuItem.Text = "Yoklama İşlemleri";
+            this.yoklamaİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.yoklamaİşlemleriToolStripMenuItem_Click);
+            // 
             // dgwVekilDetay
             // 
             this.dgwVekilDetay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -353,5 +363,6 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem mazeretListeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grupBaşkanTanımToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripMenuItem yoklamaİşlemleriToolStripMenuItem;
     }
 }

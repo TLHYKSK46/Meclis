@@ -19,20 +19,21 @@ namespace MeclisDao.DaoServis
         IBelgeNo _belgeNo;
         MeclisContext _context;
         IVekilTanimDal _vekilTanimDal;
-        public BelgeNoService(MeclisContext context, IVekilTanimDal vekilTanimDal)
+        public BelgeNoService(MeclisContext context, IVekilTanimDal vekilTanimDal, IBelgeNo belgeNo)
         {
-            _belgeNo = dilTanimDal;
+            _belgeNo = belgeNo;
             _context = context;
             _vekilTanimDal = vekilTanimDal;
+            _belgeNo = belgeNo;
         }
 
-      
+
 
         public void Ekle(BelgeNo no)
         {
-            var aData = _context.DilTanims.FirstOrDefault(p=>p.Id==no.Id);
+            var aData = _context.BelgeNos.FirstOrDefault(p=>p.Id==no.Id);
             if(aData!=null)
-              throw new DaoException(no.BelgeNo1+"Dil Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+              throw new DaoException(no.BelgeNo1+"Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
 
             _belgeNo.Add(no);
         }
@@ -49,7 +50,7 @@ namespace MeclisDao.DaoServis
 
         public void Guncelle(BelgeNo no)
         {
-            var data  = _context.DilTanims.SingleOrDefault(p => p.Id == no.Id);
+            var data  = _context.BelgeNos.SingleOrDefault(p => p.Id == no.Id);
             if (data!=null)
             _belgeNo.Update(no);
 

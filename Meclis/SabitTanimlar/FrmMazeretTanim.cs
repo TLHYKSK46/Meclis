@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MeclisDao.Enums;
+using MeclisDao.Json;
 
 namespace Meclis.SabitTanimlar
 {
@@ -20,12 +21,14 @@ namespace Meclis.SabitTanimlar
         private IMazeretTanimService _mazeretTanim;
         private IVekilTanimService _vekilTanim;
         private IMazeretKodService _mazeretKod;
+        private IBelgeNoService _belgNoService;
         public FrmMazeretTanim()
         {
             InitializeComponent();
             _mazeretTanim = InstanceFactory.GetInstance<IMazeretTanimService>();
             _vekilTanim = InstanceFactory.GetInstance<IVekilTanimService>();
             _mazeretKod = InstanceFactory.GetInstance<IMazeretKodService>();
+            _belgNoService = InstanceFactory.GetInstance<IBelgeNoService>();
 
             cbVekilDoldur();
             cbMazeretKodDoldur();
@@ -82,6 +85,10 @@ namespace Meclis.SabitTanimlar
             cbVekilTanım.DataSource = _vekilTanim.ListeGetir();
             cbVekilTanım.DisplayMember = "ad";
             cbVekilTanım.ValueMember = "Id";
+        }
+        private void cbBelgeNoGetir()
+        {
+           
         }
         private void cbMazeretKodDoldur()
         {
@@ -192,6 +199,10 @@ namespace Meclis.SabitTanimlar
 
         private void FrmMazeretTanim_Load(object sender, EventArgs e)
         {
+            var no = new BelgeNo {
+            BelgeNo1=1,
+            };
+            JsonParse.JsonSave(no);
 
         }
     }

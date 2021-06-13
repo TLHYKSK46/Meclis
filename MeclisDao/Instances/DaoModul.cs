@@ -73,9 +73,6 @@ namespace MeclisDao.Instances
             Bind<IVekilDanismanService>().To<VekilDanismanService>().InSingletonScope();
             Bind<IVekilDanismanDal>().To<VekilDanismanDal>().InSingletonScope();
 
-           
-
-
             Bind<IMeslekTanimService>().To<MeslekTanimService>().InSingletonScope();
             Bind<IMeslekTanimDal>().To<MeslekTanimDal>().InSingletonScope();
 
@@ -89,8 +86,14 @@ namespace MeclisDao.Instances
             Bind<IGrupBaskanVekilTanimService>().To<GrupBaskanVekilTanimService>().InSingletonScope();
             Bind<IGrupBaskanVekilTanimDal>().To<GrupBaskanVekilTanimDal>().InSingletonScope();
 
-            Bind<IGrupYonetimKurulUyesiService>().To<GrupYonetimKurulUyesiDal>().InSingletonScope();
+            Bind<IGrupYonetimKurulUyesiService>().To<GrupYonetimKurulUyesiService>().InSingletonScope();
             Bind<IGrupYonetimKurulUyesiDal>().To<GrupYonetimKuruluUyesiDal>().InSingletonScope();
+
+            Bind<IYoklamaService>().To<YoklamaService>().InSingletonScope();
+            Bind<IYoklamaDal>().To<YoklamaDal>().InSingletonScope();
+
+            Bind<IOturumService>().To<OturumService>().InSingletonScope();
+            Bind<IOturumDal>().To<OturumDal>().InSingletonScope();
 
         }
     }

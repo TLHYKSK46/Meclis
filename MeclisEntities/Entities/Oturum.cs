@@ -9,13 +9,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MeclisEntities.Entities
 {
-    public class BelgeNo:EntBase
+    public class Oturum:EntBase
      
     {
-   
-       
-        public int BelgeNo1 { get; set; }
 
-        
+
+        public string OturumAdi { get; set; }
+        public DateTime OturumZamani { get; set; }
+
+
     }
 } 

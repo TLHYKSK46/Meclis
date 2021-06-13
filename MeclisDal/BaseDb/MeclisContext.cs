@@ -17,7 +17,7 @@ namespace MeclisDal.BaseDb
             
             Database.SetInitializer<MeclisContext>(null);//Bu satır Kodlar ile veritabanındaki tabloları oluşturulmasını engeller kapatırsan kendisi otomatik olarak tabloları oluşturur..
         }
-
+        #region DbSet
         public DbSet<VekilTanim> VekilTanims { get; set; }
        
         public DbSet<DilTanim> DilTanims { get; set; }
@@ -43,11 +43,16 @@ namespace MeclisDal.BaseDb
         public DbSet<GrupBaskanTanim> GrupBaskanTanims { get; set; }
         public DbSet<GrupBaskanVekilTanim> GrupBaskanVekilTanims { get; set; }
         public DbSet<GrupYonetimKurulUyesi> GrupYonetimKurulUyesis { get; set; }
+        public DbSet<BelgeNo> BelgeNos { get; set; }
+        public DbSet<Oturum> Oturums { get; set; }
+        public DbSet<Yoklama> Yoklamas { get; set; }
+
 
 
 
         // public DbSet<Category> Categories { get; set; }
-
+        #endregion
+        #region Mapping
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new VekilTanimMap());
@@ -74,11 +79,14 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new GrupBaskanTanimMap());
             modelBuilder.Configurations.Add(new GrupBaskanVekilTanimMap());
             modelBuilder.Configurations.Add(new GrupYonetimKurulUyesiMap());
+            modelBuilder.Configurations.Add(new BelgeNoMap());
+            modelBuilder.Configurations.Add(new OturumMap());
+            modelBuilder.Configurations.Add(new YoklamaMap());
 
 
 
             //modelBuilder.Configurations.Add(new VekilTanimMap());
-
+            #endregion
         }
 
     }
