@@ -11,15 +11,17 @@ using System.Windows.Forms;
 
 namespace Meclis.Yoklama
 {
-    public partial class FrmYoklamaEski : Form
+    public partial class FrmYoklama : Form
     {
         IOturumService _oturumService;
         IYoklamaService _yoklamaService;
-        public FrmYoklamaEski()
+        IMazeretTanimService _mazeretTanimService;
+        public FrmYoklama()
         {
             InitializeComponent();
             _oturumService = InstanceFactory.GetInstance<IOturumService>();
             _yoklamaService = InstanceFactory.GetInstance<IYoklamaService>();
+            _mazeretTanimService = InstanceFactory.GetInstance<IMazeretTanimService>();
         }
 
         private void FrmYoklamaEski_Load(object sender, EventArgs e)
@@ -27,14 +29,36 @@ namespace Meclis.Yoklama
 
         }
 
-       
+
         #region Oturumlar
 
         #endregion
-
-        private void btnMazeretSec_Click(object sender, EventArgs e)
+        private void btnSistemdenIsle_Click(object sender, EventArgs e)
         {
 
+        }
+        private void btnMazeretSec_Click(object sender, EventArgs e)
+        {
+            dtGridMazeret.DataSource = ExcelImport.ExcelYukle(txtMazeret.Text).DataSource;
+
+            //for (int i = 1; i < dtGridMazeret.Rows.Count; i++)
+            //{
+            //    var il = dtGridMazeret.Rows[i].Cells[0].Value ?? "";
+            //    var soyad = dtGridMazeret.Rows[i].Cells[1].Value ?? "";
+            //    var ad = dtGridMazeret.Rows[i].Cells[2].Value ?? "";
+            //    var mazeret = dtGridMazeret.Rows[i].Cells[3].Value ?? "";
+
+
+            //    var query = @"Insert into Mazeret(Il,AdSoyad,Mazaret,Tarih)values(@Il,@AdSoyad,@Mazaret,@Tarih);";
+            //    using (var cmd = new SqlCommand(query, con))
+            //    {
+            //        cmd.Parameters.Add("@Il", SqlDbType.NVarChar).Value = il;
+            //        cmd.Parameters.Add("@AdSoyad", SqlDbType.NVarChar).Value = ad + " " + soyad;
+            //        cmd.Parameters.Add("@Tarih", SqlDbType.Date).Value = dtOturum.Value.Date;
+            //        cmd.Parameters.Add("@Mazaret", SqlDbType.NVarChar).Value = mazeret;
+            //        cmd.ExecuteNonQuery();
+            //    }
+            //}
         }
         private void BtnYoklamaKaydet_Click(object sender, EventArgs e)
         {
@@ -85,5 +109,7 @@ namespace Meclis.Yoklama
      
            // dtGridYoklama.DataSource=file;
         }
+
+       
     }
 }

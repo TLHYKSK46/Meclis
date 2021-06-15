@@ -221,11 +221,11 @@
     <Compile Include="SabitTanimlar\FrmVekilTanim.Designer.cs">
       <DependentUpon>FrmVekilTanim.cs</DependentUpon>
     </Compile>
-    <Compile Include="Yoklama\FrmYoklamaEski.cs">
+    <Compile Include="Yoklama\FrmYoklama.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Yoklama\FrmYoklamaEski.Designer.cs">
-      <DependentUpon>FrmYoklamaEski.cs</DependentUpon>
+    <Compile Include="Yoklama\FrmYoklama.Designer.cs">
+      <DependentUpon>FrmYoklama.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -318,8 +318,8 @@
     <EmbeddedResource Include="SabitTanimlar\FrmVekilTanim.resx">
       <DependentUpon>FrmVekilTanim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Yoklama\FrmYoklamaEski.resx">
-      <DependentUpon>FrmYoklamaEski.cs</DependentUpon>
+    <EmbeddedResource Include="Yoklama\FrmYoklama.resx">
+      <DependentUpon>FrmYoklama.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

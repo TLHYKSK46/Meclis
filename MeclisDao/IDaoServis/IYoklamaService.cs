@@ -17,6 +17,7 @@ namespace MeclisDao.IDaoServis
         void Ekle(Yoklama data);
         void Guncelle(Yoklama data);
         void Sil(int id);
+        int BugunListele();
         //void ExceleAktar(DataGridView dataGridView);
     }
 }

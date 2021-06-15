@@ -36,15 +36,15 @@ namespace MeclisDao.Json
 
         public static  void JsonSave(BelgeNo data)
         {
-            using (StreamWriter w=new StreamWriter(@"~/Meclis/MeclisDao/Json/BelgeNo.json"))
-            {
-                dynamic array = JsonConvert.SerializeObject(data);
-                foreach (var item in array)
-                {
-                    Console.WriteLine("{0} {1}", item.temp, item.vcc);
-                }
+            //using (StreamWriter w=new StreamWriter(@"~/Meclis/MeclisDao/Json/BelgeNo.json"))
+            //{
+            //    dynamic array = JsonConvert.SerializeObject(data);
+            //    foreach (var item in array)
+            //    {
+            //        Console.WriteLine("{0} {1}", item.temp, item.vcc);
+            //    }
 
-            }
+            //}
         
         }
 

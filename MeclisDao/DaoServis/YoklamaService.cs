@@ -26,7 +26,10 @@ namespace MeclisDao.DaoServis
             _vekilTanimDal = vekilTanimDal;
         }
 
-     
+        public int BugunListele()
+        {
+            return _yoklamaDal.GetAll().Max(p=>p.Id);
+        }
 
         public void Ekle(Yoklama data)
         {

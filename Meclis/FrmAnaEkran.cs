@@ -267,7 +267,7 @@ namespace Meclis
 
         private void yoklamaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new FrmYoklamaEski();
+            var frm = new FrmYoklama();
             frm.Show();
         }
     }

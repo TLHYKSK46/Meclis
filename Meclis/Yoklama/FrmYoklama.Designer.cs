@@ -1,7 +1,7 @@
 ﻿
 namespace Meclis.Yoklama
 {
-    partial class FrmYoklamaEski
+    partial class FrmYoklama
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@ namespace Meclis.Yoklama
             this.btnIndir = new System.Windows.Forms.Button();
             this.fdMazeret = new System.Windows.Forms.OpenFileDialog();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dtGridMazeret = new System.Windows.Forms.DataGridView();
             this.btnMazeretKaydet = new System.Windows.Forms.Button();
             this.btnMazeretSec = new System.Windows.Forms.Button();
             this.txtMazeret = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@ namespace Meclis.Yoklama
             this.txtOturum = new System.Windows.Forms.TextBox();
             this.btnSistemdenIsle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridMazeret)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridYoklama)).BeginInit();
             this.SuspendLayout();
@@ -184,13 +184,13 @@ namespace Meclis.Yoklama
             this.label8.TabIndex = 69;
             this.label8.Text = "SEÇİLİ İKİ OTURUMUN İLKİNDE OLMAYIP İKİNCİSİNDE OLANLAR";
             // 
-            // dataGridView3
+            // dtGridMazeret
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(663, 106);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(645, 312);
-            this.dataGridView3.TabIndex = 58;
+            this.dtGridMazeret.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridMazeret.Location = new System.Drawing.Point(663, 106);
+            this.dtGridMazeret.Name = "dtGridMazeret";
+            this.dtGridMazeret.Size = new System.Drawing.Size(645, 312);
+            this.dtGridMazeret.TabIndex = 58;
             // 
             // btnMazeretKaydet
             // 
@@ -339,8 +339,9 @@ namespace Meclis.Yoklama
             this.btnSistemdenIsle.TabIndex = 71;
             this.btnSistemdenIsle.Text = "Sistemden İşle";
             this.btnSistemdenIsle.UseVisualStyleBackColor = true;
+            this.btnSistemdenIsle.Click += new System.EventHandler(this.btnSistemdenIsle_Click);
             // 
-            // FrmYoklamaEski
+            // FrmYoklama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -358,7 +359,7 @@ namespace Meclis.Yoklama
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.btnIndir);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dtGridMazeret);
             this.Controls.Add(this.btnMazeretKaydet);
             this.Controls.Add(this.btnMazeretSec);
             this.Controls.Add(this.txtMazeret);
@@ -376,12 +377,12 @@ namespace Meclis.Yoklama
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOturum);
             this.MaximizeBox = false;
-            this.Name = "FrmYoklamaEski";
+            this.Name = "FrmYoklama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YoklamaEski";
             this.Load += new System.EventHandler(this.FrmYoklamaEski_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridMazeret)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridYoklama)).EndInit();
             this.ResumeLayout(false);
@@ -404,7 +405,7 @@ namespace Meclis.Yoklama
         private System.Windows.Forms.Button btnIndir;
         private System.Windows.Forms.OpenFileDialog fdMazeret;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dtGridMazeret;
         private System.Windows.Forms.Button btnMazeretKaydet;
         private System.Windows.Forms.Button btnMazeretSec;
         private System.Windows.Forms.DataGridView dataGridView2;

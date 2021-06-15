@@ -36,14 +36,14 @@ namespace Meclis.Listeler
         private void TumunuListele()
         {
             dgList.DataSource = (from mt in _mazeretTanim.ListeGetir()
-                                 join mk in _mazeretKodService.ListeGetir() on mt.MazeretKodId equals mk.Id
+                               //  join mk in _mazeretKodService.ListeGetir() on mt.MazeretKodId equals mk.Id
                                  //join vd in _vekilDetayService.ListeGetir() on mt.Id equals vd.MazeretTanimId
                                  join vt in  _vekilTanim.ListeGetir() on mt.VekilTanimId equals vt.Id
                                  select new { 
                                  mt.Id,
                                      vt.TcKimlikNo,
                                      AdSoyad = vt.Ad + "" + vt.Soyad,
-                                     mk.MazeretKodu,
+                                    // mk.MazeretKodu,
                                      mt.MazeretNedeni,
                                      mt.BaslamaTarihi,
                                      mt.BitisTarihi
