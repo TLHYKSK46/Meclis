@@ -22,9 +22,15 @@ namespace Meclis.SabitTanimlar
         private IVekilTanimService _vekilTanimService;
         private IDilTanimService _dilTanimService;
         private IVekilDilTanimService _vekilDilTanimService;
-      
         private IIlTanimService _ilTanimService;
-
+        private IPartiTanimService _partiTanimService;
+        private IPartiGrupTanimService _partiGrupTanimService;
+        private IDonemTanimService _donemTanimService;
+        private IDostlukGrupTanimService _dostlukGrupTanimService;
+        private IMeclisGorevTanimService _meclisGorevTanimService;
+        private IGenelMerkezGorevService _genelMerkezGorevService;
+        private IMeslekTanimService _meslekTanimService;
+        
         public FrmVekilTanim()
         {
             CheckForIllegalCrossThreadCalls = false;
@@ -39,15 +45,29 @@ namespace Meclis.SabitTanimlar
         {
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _dilTanimService = InstanceFactory.GetInstance<IDilTanimService>();
-            _vekilDilTanimService = InstanceFactory.GetInstance<IVekilDilTanimService>();
+            _partiTanimService = InstanceFactory.GetInstance<IPartiTanimService>();
+            _partiGrupTanimService = InstanceFactory.GetInstance<IPartiGrupTanimService>();
+            _donemTanimService = InstanceFactory.GetInstance<IDonemTanimService>();
+            _dostlukGrupTanimService = InstanceFactory.GetInstance<IDostlukGrupTanimService>();
+            _meclisGorevTanimService = InstanceFactory.GetInstance<IMeclisGorevTanimService>();
+            _genelMerkezGorevService = InstanceFactory.GetInstance<IGenelMerkezGorevService>();
+            _meslekTanimService = InstanceFactory.GetInstance<IMeslekTanimService>();
+
 
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();
              // TumunuListele();
             cbDogumYeriDoldur();
             CinsiyetDoldur();
-
+            cbMeslekDoldur();
+            cbilDoldur();
+            cbMeclisGorevDoldur();
+            cbGenelMerkezGorevDoldur();
+            cbDostlukGrupDoldur();
+            cbPartiDoldur();
+            cbPartiGrupDoldur();
+            cbDonemDoldur();
             bindingSource1.DataSource = dgListe.DataSource;
-            bindingNavigator1.BindingSource = bindingSource1;
+            //bindingNavigator1.BindingSource = bindingSource1;
             dgListe.AllowUserToAddRows = false;
 
 
@@ -211,9 +231,14 @@ namespace Meclis.SabitTanimlar
         private void TumunuListele()
         {
             dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
-                                  //join vdt in _vekilDilTanimService.ListeGetir() on vt.Id equals vdt.VekilTanimId
-                                  //join dt in _dilTanimService.ListeGetir() on vdt.DilTanimId equals dt.Id
-                                //  join ds in Enum.GetValues(typeof(DilSeviye)).Cast<DilSeviye>() on vdt.DilSeviyeId equals ds.GetHashCode()
+                                   join il in _ilTanimService.ListeGetir() on vt.IlTanimId equals il.Id
+                                   join p in _partiTanimService.ListeGetir() on vt.PartiTanimId equals p.Id
+                                   join pg in _partiGrupTanimService.ListeGetir() on  vt.PartiGrupTanimId equals pg.Id
+                                   join d in _donemTanimService.ListeGetir() on vt.DonemTanimId equals d.Id
+                                   join dg in _dostlukGrupTanimService.ListeGetir() on vt.DostlukGrupTanimId equals dg.Id
+                                   join mg in _meclisGorevTanimService.ListeGetir() on vt.MeclisGorevId equals mg.Id
+                                   join gm in _genelMerkezGorevService.ListeGetir() on vt.GenelMerkezGorevId equals gm.Id
+                                   join mt in _meslekTanimService.ListeGetir() on  vt.MeslekTanimId equals mt.Id
                                   join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on vt.CinsiyetTanimId equals c.GetHashCode()
                                   select new
                                   {
@@ -226,17 +251,24 @@ namespace Meclis.SabitTanimlar
                                       vt.KisiselTelNo,
                                       vt.KurumsalMail,
                                       vt.Kisiselmail,
-                                      //dt.DilAdi,
-                                      //DilSeviye = ds.ToString(),
                                       DoğumTarihi = vt.DogumTarihi.ToString("MMM/dd/yyy"),
                                       vt.DogumYeri,
                                       vt.Ozgecmis,
                                       vt.Aciklama,
                                       vt.Aktif,
+                                      Il=il.IlAdi,
+                                      p.PartiAdi,
+                                      pg.PartiGrupAdi,
+                                      d.DonemAdi,
+                                      dg.DostlukGrupAdi,
+                                      mg.MeclisGorevAdi,
+                                      gm.GenelMerkezGorevAdi,
+                                      mt.MeslekAdi,
+                                      mt.UzmanlikAlani,
                                       vt.Foto
                                   }
                                  ).ToList();
-            dgListe.Columns[14].Visible = false;
+            dgListe.Columns[22].Visible = false;
 
 
             //for (int i = 0; i < dgListe.Columns.Count; i++)
@@ -265,9 +297,16 @@ namespace Meclis.SabitTanimlar
                 txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
                 txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
                 chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[13].Value);
-                pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[14].Value);
-
-
+                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
+                cbil.Text = dgListe.CurrentRow.Cells[14].Value.ToString();
+                cbParti.Text = dgListe.CurrentRow.Cells[15].Value.ToString();
+                cbPartiGrup.Text = dgListe.CurrentRow.Cells[16].Value.ToString();
+                cbDostlukGrup.Text = dgListe.CurrentRow.Cells[17].Value.ToString();
+                cbMeclisGorev.Text = dgListe.CurrentRow.Cells[18].Value.ToString();
+                cbGenelMerkezGorev.Text = dgListe.CurrentRow.Cells[19].Value.ToString();
+                cbMeslek.Text = dgListe.CurrentRow.Cells[20].Value.ToString();
+                txtMeslekUzmanlikAlani.Text = dgListe.CurrentRow.Cells[21].Value.ToString();
+                pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[22].Value);
             }
             catch (DaoException ex)
             {
@@ -280,14 +319,69 @@ namespace Meclis.SabitTanimlar
 
 
         }
+        private async void cbMeslekDoldur()
+        {
+            cbMeslek.DataSource = _meslekTanimService.ListeGetir();
+            cbMeslek.DisplayMember = "MeslekAdi";
+            cbMeslek.ValueMember = "Id";
 
+        }
+        private async void cbGenelMerkezGorevDoldur()
+        {
+            cbGenelMerkezGorev.Text=("Seçiniz");
+            cbGenelMerkezGorev.DataSource = _genelMerkezGorevService.ListeGetir();
+            cbGenelMerkezGorev.DisplayMember = "GenelMerkezGorevAdi";
+            cbGenelMerkezGorev.ValueMember = "Id";
 
-        private async  Task cbDogumYeriDoldur()
+        }
+        private async void cbMeclisGorevDoldur()
+        {
+            cbMeclisGorev.DataSource = _meclisGorevTanimService.ListeGetir();
+            cbMeclisGorev.DisplayMember = "MeclisGorevAdi";
+            cbMeclisGorev.ValueMember = "Id";
+
+        }
+        private async void cbDostlukGrupDoldur()
+        {
+            cbDostlukGrup.DataSource = _dostlukGrupTanimService.ListeGetir();
+            cbDostlukGrup.DisplayMember = "DostlukGrupAdi";
+            cbDostlukGrup.ValueMember = "Id";
+
+        }
+        private async void cbDonemDoldur()
+        {
+            cbDonem.DataSource = _donemTanimService.ListeGetir();
+            cbDonem.DisplayMember = "DonemAdi";
+            cbDonem.ValueMember = "Id";
+
+        }
+        private async void cbPartiGrupDoldur()
+        {
+            cbPartiGrup.DataSource = _partiGrupTanimService.ListeGetir();
+            cbPartiGrup.DisplayMember = "PartiGrupAdi";
+            cbPartiGrup.ValueMember = "Id";
+
+        }
+        private async void cbPartiDoldur()
+        {
+            cbParti.DataSource = _partiTanimService.ListeGetir();
+            cbParti.DisplayMember = "PartiAdi";
+            cbParti.ValueMember = "Id";
+
+        }
+        private async void cbilDoldur()
+        {
+            cbil.DataSource = _ilTanimService.ListeGetir();
+            cbil.DisplayMember = "IlAdi";
+            cbil.ValueMember = "Id";
+
+        }
+        private async Task cbDogumYeriDoldur()
         {
             cbDogumYeri.DataSource = _ilTanimService.ListeGetir();
             cbDogumYeri.DisplayMember = "IlAdi";
             cbDogumYeri.ValueMember = "Id";
-            
+
         }
         private async  Task CinsiyetDoldur()
         {
