@@ -97,15 +97,17 @@ namespace Meclis.Yoklama
                 var soyad = dtGridYoklama.Rows[i].Cells[1].Value ?? "";
                 var ad = dtGridYoklama.Rows[i].Cells[2].Value ?? "";
                 var parti = dtGridYoklama.Rows[i].Cells[3].Value ?? "";
-                var katildiStr = dtGridYoklama.Rows[i].Cells[6].Value;
+                var katildiStr = dtGridYoklama.Rows[i].Cells[4].Value;
                 bool katildi = false;
                 if (katildiStr != null)
                 {
                     katildiStr = katildiStr.ToString().ToLower();
-                    if (katildiStr.Equals("anwesend"))
+                    if (katildiStr.Equals("kabul"))
                         katildi = true;
+                    //if (katildiStr.Equals("anwesend"))
+                    //    katildi = true;
                 }
-                  var pusulali = dtGridYoklama.Rows[i].Cells[9].Value ?.Equals("1");
+                var pusulali = dtGridYoklama.Rows[i].Cells[5].Value ?.Equals("1");
                 if (parti.Equals("Adalet ve Kalkınma Partisi"))
                 {
                     // query = @"Insert into Yoklama(OturumId,Il,AdSoyad,Katildi,Pusulali)values(@OturumId,@Il,@AdSoyad,@Katildi,@Pusulali);";
@@ -113,14 +115,15 @@ namespace Meclis.Yoklama
                         OturumId=oturumid,
                     AdSoyad=ad+" "+soyad,
                     Il= (string)il,
-                    Katildi=katildi=(pusulali??false) ||katildi,
+                    Katildi=katildi,
                     Pusulali= (bool)pusulali,
                     });
                 }
-                oturumVekilDoldur();
-                YoklamaGridDoldur();
-                MesajGoster.Basarili("Excel Aktarım Başarılı!");
+            
             }
+            oturumVekilDoldur();
+            YoklamaGridDoldur();
+            MesajGoster.Basarili("Excel Aktarım Başarılı!");
         }
         private void YoklamaGridDoldur()
         {
@@ -157,67 +160,88 @@ namespace Meclis.Yoklama
         private void btnSonuc_Click(object sender, EventArgs e)
         {
             var data=dgGridVekilList.DataSource;
-           
+            //  string oturumid =cbOturumVekil;
             if (cbDurumVekil.Text.Equals("Katılanlar"))
             {
-                 data = (from y in _yoklamaService.ListeGetir()
-                             join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
-                             join m in _mazeretService.ListeGetir() on y.AdSoyad equals m.AdSoyad
-                             //join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad+" "+vt.Soyad
+                data = (from y in _yoklamaService.ListeGetir()
+                        join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
+                        join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad + " " + vt.Soyad
+                        where y.Katildi == true && o.Id == Convert.ToInt32(cbOturumVekil.SelectedValue)
+                        select new
+                        {
 
-                             where y.Katildi.Equals(true)
-                             select new {
-                             y.Il,
-                             y.AdSoyad,
-                            // vt.KisiselTelNo,
-                             m.MazeretNedeni,
-                             y.Katildi,
-                                 Katılım = (
-                             y.Katildi.Equals(true) ? "Katıldı" :
-                             y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
-                                 ),
-                                y.Pusulali,
-                                 Pusulalı = (
-                                 y.Pusulali.Equals(true) ? "Evet" :
-                                 y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
-                                 )
-                             }
-                             ).ToList();
-                
+                            y.Id,
+                            y.AdSoyad,
+                            vt.KisiselTelNo,
+                            y.Katildi,
+                            Katılım = (
+                           y.Katildi.Equals(true) ? "Katıldı" :
+                           y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
+                           ),
+                            y.Pusulali,
+                            Pusulalı = (
+                                            y.Pusulali.Equals(true) ? "Evet" :
+                                            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                                            )
+
+
+                        }).ToList();
+
+
             }
             else if (cbDurumVekil.Text.Equals("Katılmayanlar"))
             {
                 data = (from y in _yoklamaService.ListeGetir()
                         join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
-                        join m in _mazeretService.ListeGetir() on y.AdSoyad equals m.AdSoyad
-                        where (y.Il == m.Il && y.Katildi.Equals(false))
-                        //join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad + " " + vt.Soyad
-                        // where (y.Il == m.Il)
-                        //where y.OturumId.Equals(cbOturumVekil.SelectedValue) && y.Katildi.Equals(false) &&
-                        //!(_mazeretService.ListeGetir().Any((from m1 in _mazeretService.ListeGetir()
-                        //                                    where m1.AdSoyad == y.AdSoyad && y.Il == m1.Il 
-                        //                                    select y.OturumId).Contains(y.OturumId))))
+                        join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad + " " + vt.Soyad
+                        where y.Katildi == false && o.Id == Convert.ToInt32(cbOturumVekil.SelectedValue)
                         select new
                         {
-                            y.Il,
+
+                            y.Id,
                             y.AdSoyad,
-                            //vt.KisiselTelNo,
-                            m.MazeretNedeni,
+                            vt.KisiselTelNo,
                             y.Katildi,
                             Katılım = (
-                        y.Katildi.Equals(true) ? "Katıldı" :
-                        y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
-                            ),
+                           y.Katildi.Equals(true) ? "Katıldı" :
+                           y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
+                           ),
                             y.Pusulali,
                             Pusulalı = (
-                            y.Pusulali.Equals(true) ? "Evet" :
-                            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
-                            ),
+                                            y.Pusulali.Equals(true) ? "Evet" :
+                                            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                                            )
 
-                        }
 
-                 ).ToList();
+                        }).ToList();
             }
+            else if (cbDurumVekil.Text.Equals("Tümü"))
+            {
+                data = (from y in _yoklamaService.ListeGetir()
+                        join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
+                        join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad + " " + vt.Soyad
+                        where o.Id == Convert.ToInt32(cbOturumVekil.SelectedValue)
+                        select new
+                        {
+
+                            y.Id,
+                            y.AdSoyad,
+                            vt.KisiselTelNo,
+                            y.Katildi,
+                            Katılım = (
+                           y.Katildi.Equals(true) ? "Katıldı" :
+                           y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
+                           ),
+                            y.Pusulali,
+                            Pusulalı = (
+                                            y.Pusulali.Equals(true) ? "Evet" :
+                                            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                                            )
+
+
+                        }).ToList();
+            }
+
             else if (cbDurumVekil.Text.Equals("Mazeretli"))
             {
                 //data = (from y in _yoklamaService.ListeGetir()
@@ -247,8 +271,8 @@ namespace Meclis.Yoklama
             }
 
             dgGridVekilList.DataSource = data;
-            dgGridVekilList.Columns[3].Visible = false;
-            dgGridVekilList.Columns[5].Visible = false;
+            //dgGridVekilList.Columns[3].Visible = false;
+            //dgGridVekilList.Columns[5].Visible = false;
 
             //var query = "";
             //if (cmbDurum.Text.Equals("Katılanlar"))

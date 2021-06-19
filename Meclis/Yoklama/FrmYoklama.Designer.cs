@@ -147,6 +147,7 @@ namespace Meclis.Yoklama
             // 
             this.cbDurumVekil.FormattingEnabled = true;
             this.cbDurumVekil.Items.AddRange(new object[] {
+            "Tümü",
             "Katılanlar",
             "Katılmayanlar",
             "Mazeretli"});
