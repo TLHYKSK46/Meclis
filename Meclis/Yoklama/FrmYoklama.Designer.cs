@@ -34,10 +34,10 @@ namespace Meclis.Yoklama
             this.label6 = new System.Windows.Forms.Label();
             this.BtnExcel = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbOturum = new System.Windows.Forms.ComboBox();
+            this.cbOturumVekil = new System.Windows.Forms.ComboBox();
             this.btnSonuc = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbDurum = new System.Windows.Forms.ComboBox();
+            this.cbDurumVekil = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.btnIndir = new System.Windows.Forms.Button();
             this.fdMazeret = new System.Windows.Forms.OpenFileDialog();
@@ -115,13 +115,13 @@ namespace Meclis.Yoklama
             this.label5.TabIndex = 65;
             this.label5.Text = "Oturum";
             // 
-            // cmbOturum
+            // cbOturumVekil
             // 
-            this.cmbOturum.FormattingEnabled = true;
-            this.cmbOturum.Location = new System.Drawing.Point(716, 461);
-            this.cmbOturum.Name = "cmbOturum";
-            this.cmbOturum.Size = new System.Drawing.Size(173, 21);
-            this.cmbOturum.TabIndex = 64;
+            this.cbOturumVekil.FormattingEnabled = true;
+            this.cbOturumVekil.Location = new System.Drawing.Point(716, 461);
+            this.cbOturumVekil.Name = "cbOturumVekil";
+            this.cbOturumVekil.Size = new System.Drawing.Size(173, 21);
+            this.cbOturumVekil.TabIndex = 64;
             // 
             // btnSonuc
             // 
@@ -131,6 +131,7 @@ namespace Meclis.Yoklama
             this.btnSonuc.TabIndex = 63;
             this.btnSonuc.Text = "Listele";
             this.btnSonuc.UseVisualStyleBackColor = true;
+            this.btnSonuc.Click += new System.EventHandler(this.btnSonuc_Click);
             // 
             // label4
             // 
@@ -141,17 +142,17 @@ namespace Meclis.Yoklama
             this.label4.TabIndex = 62;
             this.label4.Text = "Durum";
             // 
-            // cmbDurum
+            // cbDurumVekil
             // 
-            this.cmbDurum.FormattingEnabled = true;
-            this.cmbDurum.Items.AddRange(new object[] {
+            this.cbDurumVekil.FormattingEnabled = true;
+            this.cbDurumVekil.Items.AddRange(new object[] {
             "Katılanlar",
             "Katılmayanlar",
             "Mazeretli"});
-            this.cmbDurum.Location = new System.Drawing.Point(932, 461);
-            this.cmbDurum.Name = "cmbDurum";
-            this.cmbDurum.Size = new System.Drawing.Size(162, 21);
-            this.cmbDurum.TabIndex = 61;
+            this.cbDurumVekil.Location = new System.Drawing.Point(932, 461);
+            this.cbDurumVekil.Name = "cbDurumVekil";
+            this.cbDurumVekil.Size = new System.Drawing.Size(162, 21);
+            this.cbDurumVekil.TabIndex = 61;
             // 
             // dataGridView4
             // 
@@ -352,10 +353,10 @@ namespace Meclis.Yoklama
             this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnExcel);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbOturum);
+            this.Controls.Add(this.cbOturumVekil);
             this.Controls.Add(this.btnSonuc);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbDurum);
+            this.Controls.Add(this.cbDurumVekil);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.btnIndir);
             this.Controls.Add(this.label8);
@@ -397,10 +398,10 @@ namespace Meclis.Yoklama
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BtnExcel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbOturum;
+        private System.Windows.Forms.ComboBox cbOturumVekil;
         private System.Windows.Forms.Button btnSonuc;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbDurum;
+        private System.Windows.Forms.ComboBox cbDurumVekil;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button btnIndir;
         private System.Windows.Forms.OpenFileDialog fdMazeret;

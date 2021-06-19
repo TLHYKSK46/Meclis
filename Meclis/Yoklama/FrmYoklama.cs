@@ -26,7 +26,7 @@ namespace Meclis.Yoklama
 
         private void FrmYoklamaEski_Load(object sender, EventArgs e)
         {
-
+            oturumVekilDoldur();
         }
 
 
@@ -99,7 +99,12 @@ namespace Meclis.Yoklama
                 }
             }
         }
-
+        private void oturumVekilDoldur() {
+            cbOturumVekil.DataSource = _oturumService.ListeGetir();
+            cbOturumVekil.DisplayMember = "OturumAdi";
+            cbOturumVekil.ValueMember = "Id";
+        
+        }
         private void BtnYoklamaSec_Click(object sender, EventArgs e)
         {
             var file = OpenFileSvc.OpenFileToExcel(txtDosya.Text);
@@ -110,6 +115,55 @@ namespace Meclis.Yoklama
            // dtGridYoklama.DataSource=file;
         }
 
+        private void btnSonuc_Click(object sender, EventArgs e)
+        {
+            if (cbDurumVekil.Text.Equals("Katılanlar"))
+            {
+                var query = (from );
+            }
+            else if (cbDurumVekil.Text.Equals("Katılmayanlar"))
+            {
+
+            }
+            else if (cbDurumVekil.Text.Equals("Mazeretli"))
+            {
+
+            }
        
+
+            //var query = "";
+            //if (cmbDurum.Text.Equals("Katılanlar"))
+            //{
+            //    query = "select s1.Il,s1.AdSoyad,v.CepNo,m.Mazaret Mazeret,(case when s1.Katildi=1 then 'Katıldı' else 'Katılmadı' end) Katılım,(case when s1.Pusulali=1 then 'Evet' else 'Hayır' end) Pusulalı from Yoklama s1 "
+            //              + "  join Oturum o on s1.OturumId = o.Id "
+            //              + "  left join Vekil v on s1.AdSoyad = v.AdSoyad and s1.Il = v.Il "
+            //              + "  left join Mazeret m on s1.AdSoyad = m.AdSoyad and s1.Il = m.Il   and o.OturumZamani = m.Tarih "
+            //              + "  where s1.OturumId = " + cmbOturum.SelectedValue + " and s1.Katildi = 1 ";
+            //}
+            //else if (cmbDurum.Text.Equals("Katılmayanlar"))
+            //{
+            //    query = "select s1.Il,s1.AdSoyad,v.CepNo,m.Mazaret Mazeret,(case when s1.Katildi=1 then 'Katıldı' else 'Katılmadı' end) Katılım from Yoklama s1 "
+            //            + "  join Oturum o on s1.OturumId = o.Id "
+            //            + "  left join Vekil v on s1.AdSoyad = v.AdSoyad and s1.Il = v.Il "
+            //            + "  left join Mazeret m on s1.AdSoyad = m.AdSoyad and s1.Il = m.Il   and o.OturumZamani = m.Tarih "
+            //            + "  where s1.OturumId = " + cmbOturum.SelectedValue + " and s1.Katildi = 0 and not exists(select * from Mazeret m1 where m1.AdSoyad=s1.AdSoyad and s1.Il = m1.Il   and o.OturumZamani = m1.Tarih ) ";
+            //}
+            //else if (cmbDurum.Text.Equals("Mazeretli"))
+            //{
+            //    query = "select s1.Il,s1.AdSoyad,v.CepNo,m.Mazaret Mazeret,(case when s1.Katildi=1 then 'Katıldı' else 'Katılmadı' end) Katılım from Yoklama s1 "
+            //            + "  join Oturum o on s1.OturumId = o.Id "
+            //            + "  left join Vekil v on s1.AdSoyad = v.AdSoyad and s1.Il = v.Il "
+            //            + "  left join Mazeret m on s1.AdSoyad = m.AdSoyad and s1.Il = m.Il   and o.OturumZamani = m.Tarih "
+            //            + "  where s1.OturumId = " + cmbOturum.SelectedValue + " and s1.Katildi = 0 and exists(select * from Mazeret m1 where m1.AdSoyad=s1.AdSoyad and s1.Il = m1.Il   and o.OturumZamani = m1.Tarih ) ";
+            //}
+
+            //var dataAdapter = new SqlDataAdapter(query, con);
+
+            //var commandBuilder = new SqlCommandBuilder(dataAdapter);
+            //var ds = new DataSet();
+            //dataAdapter.Fill(ds);
+            //dataGridView4.ReadOnly = true;
+            //dataGridView4.DataSource = ds.Tables[0];
+        }
     }
 }

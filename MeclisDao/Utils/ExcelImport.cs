@@ -17,10 +17,10 @@ namespace MeclisDao.Utils
             var extension= Path.GetExtension(dosyaYolu);
             switch (extension)
             {
-                case "xls":
+                case ".xls":
                     theConnection = new OleDbConnection(@"provider=Microsoft.Jet.OLEDB.4.0;data source='" + dosyaYolu + "';Extended Properties=\"Excel 8.0;HDR=NO;IMEX=1;\"");
                     break;
-                case "xlsx":
+                case ".xlsx":
                     theConnection = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + dosyaYolu + ";Extended Properties='Excel 12.0 XML;HDR=YES;';");
                     break;
                 default:
