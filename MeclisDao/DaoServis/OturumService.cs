@@ -32,9 +32,15 @@ namespace MeclisDao.DaoServis
             _oturumDal.Add(data);
         }
 
+        public List<Oturum> FiltreleGetir(DateTime tarih)
+        {
+            return _oturumDal.GetAll(p=>p.OturumZamani==tarih);
+
+        }
+
         public Oturum Getir(int id)
         {
-            throw new NotImplementedException();
+            return _oturumDal.Get(p => p.Id == id);
         }
 
         public void Guncelle(Oturum data)

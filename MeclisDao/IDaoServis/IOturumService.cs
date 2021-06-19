@@ -13,7 +13,7 @@ namespace MeclisDao.IDaoServis
         List<Oturum> ListeGetir();
         Oturum Getir(int id);
         //List<BelgeNo> AdGoreGetir(string data);
-        //List<BelgeNo> FiltreleGetir(string tur, string value);
+        List<Oturum> FiltreleGetir(DateTime tarih);
         void Ekle(Oturum data);
         void Guncelle(Oturum data);
         void Sil(int id);

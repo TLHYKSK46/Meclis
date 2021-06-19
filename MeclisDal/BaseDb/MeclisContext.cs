@@ -18,6 +18,8 @@ namespace MeclisDal.BaseDb
             Database.SetInitializer<MeclisContext>(null);//Bu satır Kodlar ile veritabanındaki tabloları oluşturulmasını engeller kapatırsan kendisi otomatik olarak tabloları oluşturur..
         }
         #region DbSet
+        public DbSet<Mazeret> Mazerets { get; set; }
+
         public DbSet<VekilTanim> VekilTanims { get; set; }
        
         public DbSet<DilTanim> DilTanims { get; set; }
@@ -82,6 +84,8 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new BelgeNoMap());
             modelBuilder.Configurations.Add(new OturumMap());
             modelBuilder.Configurations.Add(new YoklamaMap());
+            modelBuilder.Configurations.Add(new MazeretMap());
+
 
 
 

@@ -19,11 +19,13 @@ namespace MeclisDao.DaoServis
         IYoklamaDal _yoklamaDal;
         MeclisContext _context;
         IVekilTanimDal _vekilTanimDal;
-        public YoklamaService(IYoklamaDal yoklamaDal, MeclisContext context, IVekilTanimDal vekilTanimDal)
+        IOturumDal _oturumDal;
+        public YoklamaService(IYoklamaDal yoklamaDal, MeclisContext context, IVekilTanimDal vekilTanimDal, IOturumDal oturumDal)
         {
             _yoklamaDal = yoklamaDal;
             _context = context;
             _vekilTanimDal = vekilTanimDal;
+            _oturumDal = oturumDal;
         }
 
         public int BugunListele()
@@ -34,6 +36,28 @@ namespace MeclisDao.DaoServis
         public void Ekle(Yoklama data)
         {
             _yoklamaDal.Add(data);
+        }
+
+        public List<Yoklama> FiltreleGetir(int id)
+        {
+          //  //var vekildetay = _yoklamaDal.GetAll();
+          //var data=  (from dt in _yoklamaDal.GetAll()
+          //  // join o in _oturumDal.GetAll() on dt.OturumId equals o.Id
+          //   select new
+          //   {
+          //       dt.Id,
+          //       dt.AdSoyad,
+          //       dt.Il,
+          //       dt.Katildi,
+          //       dt.Mazeret,
+          //       dt.Pusulali,
+          //       //o.OturumAdi,
+          //       dt.OturumId
+          //   }
+
+          //   ).ToList().Where(p => p.OturumId == id);
+            return _yoklamaDal.GetAll().Where(p=>p.OturumId==id && p.Silindi==0).ToList();
+           
         }
 
         public Yoklama Getir(int id)
@@ -48,7 +72,7 @@ namespace MeclisDao.DaoServis
 
         public List<Yoklama> ListeGetir()
         {
-            throw new NotImplementedException();
+           return _yoklamaDal.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

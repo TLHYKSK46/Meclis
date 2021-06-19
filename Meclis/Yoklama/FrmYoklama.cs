@@ -1,12 +1,13 @@
 ﻿using MeclisDao.IDaoServis;
 using MeclisDao.Instances;
+using MeclisDao.MessageDialogs;
 using MeclisDao.Utils;
 using MeclisEntities.Entities;
 using System;
 
 using System.Data;
 using System.Data.OleDb;
-
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Meclis.Yoklama
@@ -16,17 +17,23 @@ namespace Meclis.Yoklama
         IOturumService _oturumService;
         IYoklamaService _yoklamaService;
         IMazeretTanimService _mazeretTanimService;
+        IMazeretService _mazeretService;
+        IVekilTanimService _vekilTanimService;
         public FrmYoklama()
         {
             InitializeComponent();
             _oturumService = InstanceFactory.GetInstance<IOturumService>();
             _yoklamaService = InstanceFactory.GetInstance<IYoklamaService>();
             _mazeretTanimService = InstanceFactory.GetInstance<IMazeretTanimService>();
+            _mazeretService = InstanceFactory.GetInstance<IMazeretService>();
+            _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
+
         }
 
         private void FrmYoklamaEski_Load(object sender, EventArgs e)
         {
             oturumVekilDoldur();
+            YoklamaGridDoldur();
         }
 
 
@@ -39,26 +46,39 @@ namespace Meclis.Yoklama
         }
         private void btnMazeretSec_Click(object sender, EventArgs e)
         {
+            var file = OpenFileSvc.OpenFileToExcel(txtMazeret.Text);
+            txtMazeret.Text = file.FileName;
+           
+        }
+        private void btnMazeretKaydet_Click(object sender, EventArgs e)
+        {
             dtGridMazeret.DataSource = ExcelImport.ExcelYukle(txtMazeret.Text).DataSource;
 
-            //for (int i = 1; i < dtGridMazeret.Rows.Count; i++)
-            //{
-            //    var il = dtGridMazeret.Rows[i].Cells[0].Value ?? "";
-            //    var soyad = dtGridMazeret.Rows[i].Cells[1].Value ?? "";
-            //    var ad = dtGridMazeret.Rows[i].Cells[2].Value ?? "";
-            //    var mazeret = dtGridMazeret.Rows[i].Cells[3].Value ?? "";
+            for (int i = 1; i < dtGridMazeret.Rows.Count; i++)
+            {
+                var il = dtGridMazeret.Rows[i].Cells[0].Value ?? "";
+                var soyad = dtGridMazeret.Rows[i].Cells[1].Value ?? "";
+                var ad = dtGridMazeret.Rows[i].Cells[2].Value ?? "";
+                var mazeret = dtGridMazeret.Rows[i].Cells[3].Value ?? "";
 
 
-            //    var query = @"Insert into Mazeret(Il,AdSoyad,Mazaret,Tarih)values(@Il,@AdSoyad,@Mazaret,@Tarih);";
-            //    using (var cmd = new SqlCommand(query, con))
-            //    {
-            //        cmd.Parameters.Add("@Il", SqlDbType.NVarChar).Value = il;
-            //        cmd.Parameters.Add("@AdSoyad", SqlDbType.NVarChar).Value = ad + " " + soyad;
-            //        cmd.Parameters.Add("@Tarih", SqlDbType.Date).Value = dtOturum.Value.Date;
-            //        cmd.Parameters.Add("@Mazaret", SqlDbType.NVarChar).Value = mazeret;
-            //        cmd.ExecuteNonQuery();
-            //    }
-            //}
+                _mazeretService.Ekle(new Mazeret
+                {
+                    AdSoyad = ad + " " + soyad,
+                    Il = (string)il,
+                    MazeretNedeni = (string)mazeret,
+                });
+
+                //var query = @"Insert into Mazeret(Il,AdSoyad,Mazaret,Tarih)values(@Il,@AdSoyad,@Mazaret,@Tarih);";
+                //using (var cmd = new SqlCommand(query, con))
+                //{
+                //    cmd.Parameters.Add("@Il", SqlDbType.NVarChar).Value = il;
+                //    cmd.Parameters.Add("@AdSoyad", SqlDbType.NVarChar).Value = ad + " " + soyad;
+                //    cmd.Parameters.Add("@Tarih", SqlDbType.Date).Value = dtOturum.Value.Date;
+                //    cmd.Parameters.Add("@Mazaret", SqlDbType.NVarChar).Value = mazeret;
+                //    cmd.ExecuteNonQuery();
+                //}
+            }
         }
         private void BtnYoklamaKaydet_Click(object sender, EventArgs e)
         {
@@ -97,7 +117,26 @@ namespace Meclis.Yoklama
                     Pusulali= (bool)pusulali,
                     });
                 }
+                oturumVekilDoldur();
+                YoklamaGridDoldur();
+                MesajGoster.Basarili("Excel Aktarım Başarılı!");
             }
+        }
+        private void YoklamaGridDoldur()
+        {
+            var oturumid = _oturumService.SonKayitId();
+            var oturum = _oturumService.Getir(oturumid);
+            dtGridYoklama.DataSource = _yoklamaService.FiltreleGetir(oturumid).Select(p=> new {
+            p.Id,
+            Oturum=oturum.OturumAdi,
+            p.AdSoyad,
+            p.Il,
+            p.Katildi,
+            p.Pusulali,
+            p.Mazeret,
+            }).ToList();
+    
+
         }
         private void oturumVekilDoldur() {
             cbOturumVekil.DataSource = _oturumService.ListeGetir();
@@ -117,24 +156,106 @@ namespace Meclis.Yoklama
 
         private void btnSonuc_Click(object sender, EventArgs e)
         {
+            var data=dgGridVekilList.DataSource;
+           
             if (cbDurumVekil.Text.Equals("Katılanlar"))
             {
-                var query = (from );
+                 data = (from y in _yoklamaService.ListeGetir()
+                             join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
+                             join m in _mazeretService.ListeGetir() on y.AdSoyad equals m.AdSoyad
+                             //join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad+" "+vt.Soyad
+
+                             where y.Katildi.Equals(true)
+                             select new {
+                             y.Il,
+                             y.AdSoyad,
+                            // vt.KisiselTelNo,
+                             m.MazeretNedeni,
+                             y.Katildi,
+                                 Katılım = (
+                             y.Katildi.Equals(true) ? "Katıldı" :
+                             y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
+                                 ),
+                                y.Pusulali,
+                                 Pusulalı = (
+                                 y.Pusulali.Equals(true) ? "Evet" :
+                                 y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                                 )
+                             }
+                             ).ToList();
+                
             }
             else if (cbDurumVekil.Text.Equals("Katılmayanlar"))
             {
+                data = (from y in _yoklamaService.ListeGetir()
+                        join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
+                        join m in _mazeretService.ListeGetir() on y.AdSoyad equals m.AdSoyad
+                        where (y.Il == m.Il && y.Katildi.Equals(false))
+                        //join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad + " " + vt.Soyad
+                        // where (y.Il == m.Il)
+                        //where y.OturumId.Equals(cbOturumVekil.SelectedValue) && y.Katildi.Equals(false) &&
+                        //!(_mazeretService.ListeGetir().Any((from m1 in _mazeretService.ListeGetir()
+                        //                                    where m1.AdSoyad == y.AdSoyad && y.Il == m1.Il 
+                        //                                    select y.OturumId).Contains(y.OturumId))))
+                        select new
+                        {
+                            y.Il,
+                            y.AdSoyad,
+                            //vt.KisiselTelNo,
+                            m.MazeretNedeni,
+                            y.Katildi,
+                            Katılım = (
+                        y.Katildi.Equals(true) ? "Katıldı" :
+                        y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
+                            ),
+                            y.Pusulali,
+                            Pusulalı = (
+                            y.Pusulali.Equals(true) ? "Evet" :
+                            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                            ),
 
+                        }
+
+                 ).ToList();
             }
             else if (cbDurumVekil.Text.Equals("Mazeretli"))
             {
-
+                //data = (from y in _yoklamaService.ListeGetir()
+                //        join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
+                //        join m in _mazeretService.ListeGetir() on y.AdSoyad equals m.AdSoyad 
+                //        //join vt in _vekilTanimService.ListeGetir() on y.AdSoyad equals vt.Ad+" "+vt.Soyad
+                //        where y.OturumId.Equals(cbOturumVekil.SelectedValue) && y.Katildi.Equals(false) && 
+                //        (from m1 in _mazeretService.ListeGetir() where m1.AdSoyad==y.AdSoyad && y.Il==m1.Il && o.OturumZamani==m1.EklenmeTarihi ).ToList()
+                //        select new
+                //        {
+                //            y.Il,
+                //            y.AdSoyad,
+                //            // vt.KisiselTelNo,
+                //            m.MazeretNedeni,
+                //            y.Katildi,
+                //            Katılım = (
+                //        y.Katildi.Equals(true) ? "Katıldı" :
+                //        y.Katildi.Equals(false) ? "Katılmadı" : "Hatalı"
+                //            ),
+                //            y.Pusulali,
+                //            Pusulalı = (
+                //            y.Pusulali.Equals(true) ? "Evet" :
+                //            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                //            )
+                //        }
+                //           ).ToList();
             }
-       
+
+            dgGridVekilList.DataSource = data;
+            dgGridVekilList.Columns[3].Visible = false;
+            dgGridVekilList.Columns[5].Visible = false;
 
             //var query = "";
             //if (cmbDurum.Text.Equals("Katılanlar"))
             //{
-            //    query = "select s1.Il,s1.AdSoyad,v.CepNo,m.Mazaret Mazeret,(case when s1.Katildi=1 then 'Katıldı' else 'Katılmadı' end) Katılım,(case when s1.Pusulali=1 then 'Evet' else 'Hayır' end) Pusulalı from Yoklama s1 "
+            //    query = "select s1.Il,s1.AdSoyad,v.CepNo,m.Mazaret Mazeret,(case when s1.Katildi=1 then 'Katıldı' else 'Katılmadı' end) Katılım,
+            //    (case when s1.Pusulali=1 then 'Evet' else 'Hayır' end) Pusulalı
+            //    from Yoklama s1 "
             //              + "  join Oturum o on s1.OturumId = o.Id "
             //              + "  left join Vekil v on s1.AdSoyad = v.AdSoyad and s1.Il = v.Il "
             //              + "  left join Mazeret m on s1.AdSoyad = m.AdSoyad and s1.Il = m.Il   and o.OturumZamani = m.Tarih "
@@ -164,6 +285,11 @@ namespace Meclis.Yoklama
             //dataAdapter.Fill(ds);
             //dataGridView4.ReadOnly = true;
             //dataGridView4.DataSource = ds.Tables[0];
+        }
+
+        private void BtnExcel_Click(object sender, EventArgs e)
+        {
+            ExcelExport.ExcelAktar(dgGridVekilList);
         }
     }
 }

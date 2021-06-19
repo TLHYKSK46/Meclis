@@ -38,7 +38,7 @@ namespace Meclis.Yoklama
             this.btnSonuc = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbDurumVekil = new System.Windows.Forms.ComboBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dgGridVekilList = new System.Windows.Forms.DataGridView();
             this.btnIndir = new System.Windows.Forms.Button();
             this.fdMazeret = new System.Windows.Forms.OpenFileDialog();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@ namespace Meclis.Yoklama
             this.label2 = new System.Windows.Forms.Label();
             this.txtOturum = new System.Windows.Forms.TextBox();
             this.btnSistemdenIsle = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGridVekilList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridMazeret)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridYoklama)).BeginInit();
@@ -105,6 +105,7 @@ namespace Meclis.Yoklama
             this.BtnExcel.TabIndex = 66;
             this.BtnExcel.Text = "Excel";
             this.BtnExcel.UseVisualStyleBackColor = true;
+            this.BtnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
             // 
             // label5
             // 
@@ -154,13 +155,13 @@ namespace Meclis.Yoklama
             this.cbDurumVekil.Size = new System.Drawing.Size(162, 21);
             this.cbDurumVekil.TabIndex = 61;
             // 
-            // dataGridView4
+            // dgGridVekilList
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(666, 488);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(645, 312);
-            this.dataGridView4.TabIndex = 60;
+            this.dgGridVekilList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgGridVekilList.Location = new System.Drawing.Point(666, 488);
+            this.dgGridVekilList.Name = "dgGridVekilList";
+            this.dgGridVekilList.Size = new System.Drawing.Size(749, 312);
+            this.dgGridVekilList.TabIndex = 60;
             // 
             // btnIndir
             // 
@@ -190,7 +191,7 @@ namespace Meclis.Yoklama
             this.dtGridMazeret.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridMazeret.Location = new System.Drawing.Point(663, 106);
             this.dtGridMazeret.Name = "dtGridMazeret";
-            this.dtGridMazeret.Size = new System.Drawing.Size(645, 312);
+            this.dtGridMazeret.Size = new System.Drawing.Size(752, 312);
             this.dtGridMazeret.TabIndex = 58;
             // 
             // btnMazeretKaydet
@@ -201,6 +202,7 @@ namespace Meclis.Yoklama
             this.btnMazeretKaydet.TabIndex = 57;
             this.btnMazeretKaydet.Text = "Kaydet";
             this.btnMazeretKaydet.UseVisualStyleBackColor = true;
+            this.btnMazeretKaydet.Click += new System.EventHandler(this.btnMazeretKaydet_Click);
             // 
             // btnMazeretSec
             // 
@@ -357,7 +359,7 @@ namespace Meclis.Yoklama
             this.Controls.Add(this.btnSonuc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbDurumVekil);
-            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dgGridVekilList);
             this.Controls.Add(this.btnIndir);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtGridMazeret);
@@ -382,7 +384,7 @@ namespace Meclis.Yoklama
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YoklamaEski";
             this.Load += new System.EventHandler(this.FrmYoklamaEski_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGridVekilList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridMazeret)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridYoklama)).EndInit();
@@ -402,7 +404,7 @@ namespace Meclis.Yoklama
         private System.Windows.Forms.Button btnSonuc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbDurumVekil;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dgGridVekilList;
         private System.Windows.Forms.Button btnIndir;
         private System.Windows.Forms.OpenFileDialog fdMazeret;
         private System.Windows.Forms.Label label8;

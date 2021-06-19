@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaoServis\MazeretService.cs" />
     <Compile Include="DaoServis\OturumService.cs" />
     <Compile Include="DaoServis\YoklamaService.cs" />
     <Compile Include="DaoServis\BelgeNoService.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Enums\KomisyonUyeTuru.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="Exceptions\Try.cs" />
+    <Compile Include="IDaoServis\IMazeretService.cs" />
     <Compile Include="IDaoServis\IYoklamaService.cs" />
     <Compile Include="IDaoServis\IOturumService.cs" />
     <Compile Include="IDaoServis\IBelgeNoService.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="MessageDialogs\MesajGoster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Entity\EntYoklamaExcel.cs" />
+    <Compile Include="Utils\ExcelExport.cs" />
     <Compile Include="Utils\ExcelImport.cs" />
     <Compile Include="Utils\OpenFileSvc.cs" />
   </ItemGroup>
