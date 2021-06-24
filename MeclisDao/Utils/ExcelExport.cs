@@ -41,7 +41,7 @@ namespace MeclisDao.Utils
                         }
                     }
                     workbook.SaveAs(save.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                   // app.Quit();
+                    app.Quit();
                 }
             }
             catch (DaoException ex)
