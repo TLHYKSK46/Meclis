@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Dal\MazeretDal.cs" />
     <Compile Include="Dal\OturumDal.cs" />
+    <Compile Include="Dal\VekilYoklamaDal.cs" />
     <Compile Include="Dal\YoklamaDal.cs" />
     <Compile Include="Dal\BelgeNoDal.cs" />
     <Compile Include="Dal\DanismanTanimDal.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Dal\PartiGrupTanimDal.cs" />
     <Compile Include="IDal\IMazeretDal.cs" />
     <Compile Include="IDal\IOturumDal.cs" />
+    <Compile Include="IDal\IVekilYoklamaDal.cs" />
     <Compile Include="IDal\IYoklamaDal.cs" />
     <Compile Include="IDal\IBelgeNoDal.cs" />
     <Compile Include="IDal\IGrupYonetimKurulUyesiDal.cs" />

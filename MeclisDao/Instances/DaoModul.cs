@@ -102,6 +102,9 @@ namespace MeclisDao.Instances
             Bind<IBelgeNoService>().To<BelgeNoService>().InSingletonScope();
             Bind<IBelgeNo>().To<BelgeNoDal>().InSingletonScope();
 
+            Bind<IVekilYoklamaService>().To<VekilYoklamaService>().InSingletonScope();
+            Bind<IVekilYoklamaDal>().To<VekilYoklamaDal>().InSingletonScope();
+
         }
     }
 }

@@ -32,25 +32,25 @@ namespace Meclis.Yoklama
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.BtnExcel = new System.Windows.Forms.Button();
+            this.btnVekilExcelAktar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cbOturumVekil = new System.Windows.Forms.ComboBox();
-            this.btnSonuc = new System.Windows.Forms.Button();
+            this.btnVekilSonucListe = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbDurumVekil = new System.Windows.Forms.ComboBox();
             this.dgGridVekilList = new System.Windows.Forms.DataGridView();
-            this.btnIndir = new System.Windows.Forms.Button();
+            this.btn2OturumArasiKarsilastirExceleAktar = new System.Windows.Forms.Button();
             this.fdMazeret = new System.Windows.Forms.OpenFileDialog();
             this.label8 = new System.Windows.Forms.Label();
             this.dtGridMazeret = new System.Windows.Forms.DataGridView();
             this.btnMazeretKaydet = new System.Windows.Forms.Button();
             this.btnMazeretSec = new System.Windows.Forms.Button();
             this.txtMazeret = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.BtnListele = new System.Windows.Forms.Button();
+            this.dg2OturumKarsilastir = new System.Windows.Forms.DataGridView();
+            this.btn2OturumKarsilastirListele = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbOturum2 = new System.Windows.Forms.ComboBox();
-            this.cmbOturum1 = new System.Windows.Forms.ComboBox();
+            this.cbOturum2 = new System.Windows.Forms.ComboBox();
+            this.cbOturum1 = new System.Windows.Forms.ComboBox();
             this.dtOturum = new System.Windows.Forms.DateTimePicker();
             this.txtDosya = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,9 +61,10 @@ namespace Meclis.Yoklama
             this.label2 = new System.Windows.Forms.Label();
             this.txtOturum = new System.Windows.Forms.TextBox();
             this.btnSistemdenIsle = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgGridVekilList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridMazeret)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg2OturumKarsilastir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridYoklama)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,15 +98,15 @@ namespace Meclis.Yoklama
             this.label6.TabIndex = 67;
             this.label6.Text = "YOKLAMA AKTARIM İŞLEMİ";
             // 
-            // BtnExcel
+            // btnVekilExcelAktar
             // 
-            this.BtnExcel.Location = new System.Drawing.Point(1199, 459);
-            this.BtnExcel.Name = "BtnExcel";
-            this.BtnExcel.Size = new System.Drawing.Size(75, 23);
-            this.BtnExcel.TabIndex = 66;
-            this.BtnExcel.Text = "Excel";
-            this.BtnExcel.UseVisualStyleBackColor = true;
-            this.BtnExcel.Click += new System.EventHandler(this.BtnExcel_Click);
+            this.btnVekilExcelAktar.Location = new System.Drawing.Point(1199, 447);
+            this.btnVekilExcelAktar.Name = "btnVekilExcelAktar";
+            this.btnVekilExcelAktar.Size = new System.Drawing.Size(75, 35);
+            this.btnVekilExcelAktar.TabIndex = 66;
+            this.btnVekilExcelAktar.Text = "Excel\'e Aktar";
+            this.btnVekilExcelAktar.UseVisualStyleBackColor = true;
+            this.btnVekilExcelAktar.Click += new System.EventHandler(this.btnVekilExcelAktar_Click);
             // 
             // label5
             // 
@@ -124,15 +125,15 @@ namespace Meclis.Yoklama
             this.cbOturumVekil.Size = new System.Drawing.Size(173, 21);
             this.cbOturumVekil.TabIndex = 64;
             // 
-            // btnSonuc
+            // btnVekilSonucListe
             // 
-            this.btnSonuc.Location = new System.Drawing.Point(1118, 459);
-            this.btnSonuc.Name = "btnSonuc";
-            this.btnSonuc.Size = new System.Drawing.Size(75, 23);
-            this.btnSonuc.TabIndex = 63;
-            this.btnSonuc.Text = "Listele";
-            this.btnSonuc.UseVisualStyleBackColor = true;
-            this.btnSonuc.Click += new System.EventHandler(this.btnSonuc_Click);
+            this.btnVekilSonucListe.Location = new System.Drawing.Point(1118, 447);
+            this.btnVekilSonucListe.Name = "btnVekilSonucListe";
+            this.btnVekilSonucListe.Size = new System.Drawing.Size(75, 35);
+            this.btnVekilSonucListe.TabIndex = 63;
+            this.btnVekilSonucListe.Text = "Listele";
+            this.btnVekilSonucListe.UseVisualStyleBackColor = true;
+            this.btnVekilSonucListe.Click += new System.EventHandler(this.btnVekilSonucListe_Click);
             // 
             // label4
             // 
@@ -163,14 +164,15 @@ namespace Meclis.Yoklama
             this.dgGridVekilList.Size = new System.Drawing.Size(749, 312);
             this.dgGridVekilList.TabIndex = 60;
             // 
-            // btnIndir
+            // btn2OturumArasiKarsilastirExceleAktar
             // 
-            this.btnIndir.Location = new System.Drawing.Point(585, 461);
-            this.btnIndir.Name = "btnIndir";
-            this.btnIndir.Size = new System.Drawing.Size(75, 23);
-            this.btnIndir.TabIndex = 59;
-            this.btnIndir.Text = "Excel";
-            this.btnIndir.UseVisualStyleBackColor = true;
+            this.btn2OturumArasiKarsilastirExceleAktar.Location = new System.Drawing.Point(585, 447);
+            this.btn2OturumArasiKarsilastirExceleAktar.Name = "btn2OturumArasiKarsilastirExceleAktar";
+            this.btn2OturumArasiKarsilastirExceleAktar.Size = new System.Drawing.Size(75, 37);
+            this.btn2OturumArasiKarsilastirExceleAktar.TabIndex = 59;
+            this.btn2OturumArasiKarsilastirExceleAktar.Text = "Excel\' e Aktar";
+            this.btn2OturumArasiKarsilastirExceleAktar.UseVisualStyleBackColor = true;
+            this.btn2OturumArasiKarsilastirExceleAktar.Click += new System.EventHandler(this.btn2OturumArasiKarsilastirExceleAktar_Click);
             // 
             // fdMazeret
             // 
@@ -179,10 +181,10 @@ namespace Meclis.Yoklama
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(14, 434);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(11, 434);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(627, 24);
+            this.label8.Size = new System.Drawing.Size(559, 20);
             this.label8.TabIndex = 69;
             this.label8.Text = "SEÇİLİ İKİ OTURUMUN İLKİNDE OLMAYIP İKİNCİSİNDE OLANLAR";
             // 
@@ -221,22 +223,23 @@ namespace Meclis.Yoklama
             this.txtMazeret.Size = new System.Drawing.Size(446, 20);
             this.txtMazeret.TabIndex = 55;
             // 
-            // dataGridView2
+            // dg2OturumKarsilastir
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 488);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(645, 312);
-            this.dataGridView2.TabIndex = 54;
+            this.dg2OturumKarsilastir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg2OturumKarsilastir.Location = new System.Drawing.Point(15, 488);
+            this.dg2OturumKarsilastir.Name = "dg2OturumKarsilastir";
+            this.dg2OturumKarsilastir.Size = new System.Drawing.Size(645, 312);
+            this.dg2OturumKarsilastir.TabIndex = 54;
             // 
-            // BtnListele
+            // btn2OturumKarsilastirListele
             // 
-            this.BtnListele.Location = new System.Drawing.Point(504, 461);
-            this.BtnListele.Name = "BtnListele";
-            this.BtnListele.Size = new System.Drawing.Size(75, 23);
-            this.BtnListele.TabIndex = 53;
-            this.BtnListele.Text = "Listele";
-            this.BtnListele.UseVisualStyleBackColor = true;
+            this.btn2OturumKarsilastirListele.Location = new System.Drawing.Point(504, 457);
+            this.btn2OturumKarsilastirListele.Name = "btn2OturumKarsilastirListele";
+            this.btn2OturumKarsilastirListele.Size = new System.Drawing.Size(75, 27);
+            this.btn2OturumKarsilastirListele.TabIndex = 53;
+            this.btn2OturumKarsilastirListele.Text = "Listele";
+            this.btn2OturumKarsilastirListele.UseVisualStyleBackColor = true;
+            this.btn2OturumKarsilastirListele.Click += new System.EventHandler(this.btn2OturumKarsilastirListele_Click);
             // 
             // label3
             // 
@@ -247,21 +250,23 @@ namespace Meclis.Yoklama
             this.label3.TabIndex = 52;
             this.label3.Text = "Oturum";
             // 
-            // cmbOturum2
+            // cbOturum2
             // 
-            this.cmbOturum2.FormattingEnabled = true;
-            this.cmbOturum2.Location = new System.Drawing.Point(281, 461);
-            this.cmbOturum2.Name = "cmbOturum2";
-            this.cmbOturum2.Size = new System.Drawing.Size(217, 21);
-            this.cmbOturum2.TabIndex = 51;
+            this.cbOturum2.FormattingEnabled = true;
+            this.cbOturum2.Location = new System.Drawing.Point(281, 461);
+            this.cbOturum2.Name = "cbOturum2";
+            this.cbOturum2.Size = new System.Drawing.Size(217, 21);
+            this.cbOturum2.TabIndex = 51;
             // 
-            // cmbOturum1
+            // cbOturum1
             // 
-            this.cmbOturum1.FormattingEnabled = true;
-            this.cmbOturum1.Location = new System.Drawing.Point(62, 461);
-            this.cmbOturum1.Name = "cmbOturum1";
-            this.cmbOturum1.Size = new System.Drawing.Size(213, 21);
-            this.cmbOturum1.TabIndex = 50;
+            this.cbOturum1.FormattingEnabled = true;
+            this.cbOturum1.Location = new System.Drawing.Point(62, 461);
+            this.cbOturum1.Name = "cbOturum1";
+            this.cbOturum1.Size = new System.Drawing.Size(213, 21);
+            this.cbOturum1.TabIndex = 50;
+            this.cbOturum1.SelectedIndexChanged += new System.EventHandler(this.cbOturum1_SelectedIndexChanged);
+            this.cbOturum1.SelectedValueChanged += new System.EventHandler(this.cbOturum1_SelectedValueChanged);
             // 
             // dtOturum
             // 
@@ -344,6 +349,10 @@ namespace Meclis.Yoklama
             this.btnSistemdenIsle.UseVisualStyleBackColor = true;
             this.btnSistemdenIsle.Click += new System.EventHandler(this.btnSistemdenIsle_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // FrmYoklama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,24 +362,24 @@ namespace Meclis.Yoklama
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.BtnExcel);
+            this.Controls.Add(this.btnVekilExcelAktar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbOturumVekil);
-            this.Controls.Add(this.btnSonuc);
+            this.Controls.Add(this.btnVekilSonucListe);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbDurumVekil);
             this.Controls.Add(this.dgGridVekilList);
-            this.Controls.Add(this.btnIndir);
+            this.Controls.Add(this.btn2OturumArasiKarsilastirExceleAktar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtGridMazeret);
             this.Controls.Add(this.btnMazeretKaydet);
             this.Controls.Add(this.btnMazeretSec);
             this.Controls.Add(this.txtMazeret);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.BtnListele);
+            this.Controls.Add(this.dg2OturumKarsilastir);
+            this.Controls.Add(this.btn2OturumKarsilastirListele);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbOturum2);
-            this.Controls.Add(this.cmbOturum1);
+            this.Controls.Add(this.cbOturum2);
+            this.Controls.Add(this.cbOturum1);
             this.Controls.Add(this.dtOturum);
             this.Controls.Add(this.txtDosya);
             this.Controls.Add(this.label1);
@@ -383,10 +392,10 @@ namespace Meclis.Yoklama
             this.Name = "FrmYoklama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YoklamaEski";
-            this.Load += new System.EventHandler(this.FrmYoklamaEski_Load);
+            this.Load += new System.EventHandler(this.FrmYoklama_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgGridVekilList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridMazeret)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg2OturumKarsilastir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridYoklama)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -398,24 +407,24 @@ namespace Meclis.Yoklama
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button BtnExcel;
+        private System.Windows.Forms.Button btnVekilExcelAktar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbOturumVekil;
-        private System.Windows.Forms.Button btnSonuc;
+        private System.Windows.Forms.Button btnVekilSonucListe;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbDurumVekil;
         private System.Windows.Forms.DataGridView dgGridVekilList;
-        private System.Windows.Forms.Button btnIndir;
+        private System.Windows.Forms.Button btn2OturumArasiKarsilastirExceleAktar;
         private System.Windows.Forms.OpenFileDialog fdMazeret;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dtGridMazeret;
         private System.Windows.Forms.Button btnMazeretKaydet;
         private System.Windows.Forms.Button btnMazeretSec;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button BtnListele;
+        private System.Windows.Forms.DataGridView dg2OturumKarsilastir;
+        private System.Windows.Forms.Button btn2OturumKarsilastirListele;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbOturum2;
-        private System.Windows.Forms.ComboBox cmbOturum1;
+        private System.Windows.Forms.ComboBox cbOturum2;
+        private System.Windows.Forms.ComboBox cbOturum1;
         private System.Windows.Forms.DateTimePicker dtOturum;
         private System.Windows.Forms.TextBox txtDosya;
         private System.Windows.Forms.Label label1;
@@ -427,5 +436,6 @@ namespace Meclis.Yoklama
         private System.Windows.Forms.TextBox txtOturum;
         private System.Windows.Forms.Button btnSistemdenIsle;
         public System.Windows.Forms.TextBox txtMazeret;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

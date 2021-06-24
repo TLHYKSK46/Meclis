@@ -36,6 +36,13 @@ namespace MeclisDao.DaoServis
             if(aData!=null)
               throw new DaoException(dilTanim.DilAdi+"Dil Sistemde Kayıtlıdır,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
 
+            var liste = _context.DilTanims.AsQueryable();
+
+            liste = liste.Where(x => x.Id == 2);
+            liste = liste.Where(x => x.Silindi == 1);
+
+            liste.ToList();
+
             _dilTanimDal.Add(dilTanim);
         }
 

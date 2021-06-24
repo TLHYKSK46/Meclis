@@ -48,6 +48,7 @@ namespace MeclisDal.BaseDb
         public DbSet<BelgeNo> BelgeNos { get; set; }
         public DbSet<Oturum> Oturums { get; set; }
         public DbSet<Yoklama> Yoklamas { get; set; }
+        public DbSet<VekilYoklama> VekilYoklamas { get; set; }
 
 
 
@@ -74,7 +75,6 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new PartiTanimMap());
             modelBuilder.Configurations.Add(new IlTanimMap());
             modelBuilder.Configurations.Add(new VekilDanismanMap());
-
             modelBuilder.Configurations.Add(new MeslekTanimMap());
             modelBuilder.Configurations.Add(new VekilDilTanimMap());
             modelBuilder.Configurations.Add(new KomisyonUyeMap());
@@ -85,6 +85,8 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new OturumMap());
             modelBuilder.Configurations.Add(new YoklamaMap());
             modelBuilder.Configurations.Add(new MazeretMap());
+            modelBuilder.Configurations.Add(new VekilYoklamaMap());
+
 
 
 
