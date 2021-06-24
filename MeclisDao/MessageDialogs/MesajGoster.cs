@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace MeclisDao.MessageDialogs
 {
-    [Serializable]
+   
    public static class MesajGoster
     {
         public static DialogResult Hata(string mesaj,string hataMetni) {

@@ -23,6 +23,10 @@ namespace MeclisDao.DaoServis
             _meclisContext = meclisContext;
         }
 
+        public VekilTanim AdveSoyadGoreGetir(string vekilAdi, string soyad)
+        {
+            return _vekilTanim.Get(p=>p.Ad==vekilAdi && p.Soyad==soyad);
+        }
         public List<VekilTanim> AdGoreGetir(string vekilAdi)
         {
             return _vekilTanim.GetAll(p => p.Ad == vekilAdi.ToLower() || p.Soyad==vekilAdi.ToLower());
@@ -86,7 +90,7 @@ namespace MeclisDao.DaoServis
            // _vekilTanim.Delete(new VekilTanim { Id = id });
         }
 
-        public List<VekilTanim> TcNoyeGöreGetir(int tcNo)
+        public List<VekilTanim> TcNoyeGoreGetir(int tcNo)
         {
             return _vekilTanim.GetAll();
         }
@@ -113,5 +117,9 @@ namespace MeclisDao.DaoServis
             }
             return data;
         }
+
+     
+
+        
     }
 }
