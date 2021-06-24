@@ -31,10 +31,12 @@ namespace MeclisDao.DaoServis
         {
             try
             {
-                var aData = _meclisContext.MazeretTanims.FirstOrDefault(p => p.BaslamaTarihi == mazeretTanim.BaslamaTarihi
-                && p.BitisTarihi == mazeretTanim.BitisTarihi && p.Silindi == 0);
-                if (aData != null)
-                    throw new DaoException("Zaten "+mazeretTanim.BaslamaTarihi+"ve "+mazeretTanim.BitisTarihi+" arasına Tanım Oluşturulmuş! ,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
+//                var aData = _meclisContext.MazeretTanims.FirstOrDefault(p => p.BaslamaTarihi == mazeretTanim.BaslamaTarihi && p.BitisTarihi == mazeretTanim.BitisTarihi && p.Silindi == 0);
+              
+                var aData = _meclisContext.MazeretTanims.FirstOrDefault(p => p.Silindi == 0);
+
+                //if (aData != null)
+                //    throw new DaoException("Zaten "+mazeretTanim.BaslamaTarihi+"ve "+mazeretTanim.BitisTarihi+" arasına Tanım Oluşturulmuş! ,Lütfen Kontrol Ederek Tekrar Deneyiniz..");
                
                 _mazeretTanimService.Add(mazeretTanim);
             }

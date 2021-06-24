@@ -91,17 +91,20 @@ namespace Meclis.Yoklama
                 if (parti.Equals("Adalet ve Kalkınma Partisi"))
                 {
                     var vekil = _vekilTanimService.AdveSoyadGoreGetir(ad.ToString(), soyad.ToString());
-                    var ildata = _ilTanimService.Getir(vekil.IlTanimId);
-                    string iladi = ildata.IlAdi.ToUpper();
-                    var kontrolil = ildata.IlAdi.ToUpper() == il.ToString() && !(vekil.Id <= 0) ? true : throw new DaoException(ad + " " + soyad + " Vekil Bulunamadı!");
-
-                    _vekilYoklama.Ekle(new VekilYoklama
+                    //var ildata = _ilTanimService.Getir(vekil.IlTanimId);
+                    //string iladi = ildata.IlAdi.ToUpper();
+                    //var kontrolil = ildata.IlAdi.ToUpper() == il.ToString() && !(vekil.Id <= 0) ? true : throw new DaoException(ad + " " + soyad + " Vekil Bulunamadı!");
+                    if (vekil!=null)
                     {
-                        VekilTanimId = vekil.Id,
-                        OturumId = oturumid,
-                        Katildimi = katildi = (pusulali ?? false) || katildi,
-                        Pusulali = (bool)pusulali
-                    });
+                        _vekilYoklama.Ekle(new VekilYoklama
+                        {
+                            VekilTanimId = vekil.Id,
+                            OturumId = oturumid,
+                            Katildimi = katildi = (pusulali ?? false) || katildi,
+                            Pusulali = (bool)pusulali
+                        });
+                    }
+                
 
                     //_yoklamaService.Ekle(new MeclisEntities.Entities.Yoklama { 
                     //    OturumId=oturumid,
@@ -121,6 +124,10 @@ namespace Meclis.Yoklama
         {
             var oturumid = _oturumService.SonKayitId();
             var oturum = _oturumService.Getir(oturumid);
+            //var a = _vekilYoklama.ListeGetir();
+            //var b = _vekilTanimService.ListeGetir();
+            //var ss = _oturumService.ListeGetir();
+            //var tt = _ilTanimService.ListeGetir();
             dtGridYoklama.DataSource = (from vy in _vekilYoklama.ListeGetir()
                                         join vt in _vekilTanimService.ListeGetir() on vy.VekilTanimId equals vt.Id
                                         join o in _oturumService.ListeGetir() on vy.OturumId equals o.Id
@@ -182,7 +189,7 @@ namespace Meclis.Yoklama
                 {
                     if (j != metin.Length - 1)
                     {
-                        ad += metin[j];
+                        ad += metin[j]+" ";
                     }
                     else
                     {
@@ -392,7 +399,27 @@ namespace Meclis.Yoklama
                         }).ToList();
             }
             else {
-                MesajGoster.Uyari("Giriş biçimleri doğru şekilde değildi!");
+                data = (from y in _vekilYoklama.ListeGetir()
+                        join o in _oturumService.ListeGetir() on y.OturumId equals o.Id
+                        join vt in _vekilTanimService.ListeGetir() on y.VekilTanimId equals vt.Id
+                        join m in _mazeretTanimService.ListeGetir() on y.VekilTanimId equals m.VekilTanimId
+                      //  where y.Katildimi.Equals(false) && m.MazeretNedeni != null
+                        select new
+                        {
+                            AdSoyad = vt.Ad + " " + vt.Soyad,
+                            vt.KisiselTelNo,
+                            m.MazeretNedeni,
+                            y.Katildimi,
+                            Katılım = (
+                        y.Katildimi.Equals(true) ? "Katıldı" :
+                        y.Katildimi.Equals(false) ? "Katılmadı" : "Hatalı"
+                            ),
+                            y.Pusulali,
+                            Pusulalı = (
+                            y.Pusulali.Equals(true) ? "Evet" :
+                            y.Pusulali.Equals(false) ? "Hayır" : "Hatalı"
+                            )
+                        }).ToList();
             }
             dgGridVekilList.ReadOnly = true;
             dgGridVekilList.DataSource = data;
