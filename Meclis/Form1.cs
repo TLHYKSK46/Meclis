@@ -29,7 +29,7 @@ namespace Meclis
         }
         void LoadProduct()
         {
-            dataGridView1.DataSource=_vekilTanimService.ListeGetir();
+           // dataGridView1.DataSource=_vekilTanimService.ListeGetir();
            // dataGridView1.DataSource = _productService.ListeGetir();
         }
     }
