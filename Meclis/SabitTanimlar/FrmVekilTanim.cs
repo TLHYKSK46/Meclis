@@ -287,7 +287,6 @@ namespace Meclis.SabitTanimlar
                 txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString() ?? "";
                 txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString() ?? "";
                 cbCinsiyet.Text = dgListe.CurrentRow.Cells[4].Value.ToString() ?? "";
-
                 txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString() ?? "";
                 txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[6].Value.ToString() ?? "";
                 txtKurumsalMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString() ?? "";
@@ -297,7 +296,6 @@ namespace Meclis.SabitTanimlar
                 txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString() ?? "";
                 txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString() ?? "";
                 chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[13].Value);
-                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString() ?? "";
                 cbil.Text = dgListe.CurrentRow.Cells[14].Value.ToString() ?? "";
                 cbParti.Text = dgListe.CurrentRow.Cells[15].Value.ToString() ?? "";
                 cbPartiGrup.Text = dgListe.CurrentRow.Cells[16].Value.ToString() ?? "";
@@ -306,7 +304,11 @@ namespace Meclis.SabitTanimlar
                 cbGenelMerkezGorev.Text = dgListe.CurrentRow.Cells[19].Value.ToString() ?? "";
                 cbMeslek.Text = dgListe.CurrentRow.Cells[20].Value.ToString() ?? "";
                 txtMeslekUzmanlikAlani.Text = dgListe.CurrentRow.Cells[21].Value.ToString() ?? "";
-                pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[22].Value);
+                if (dgListe.CurrentRow.Cells[22].Value==null || dgListe.CurrentRow.Cells[22].Value==" ")
+                {
+                    pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[22].Value);
+
+                }
             }
             catch (DaoException ex)
             {
