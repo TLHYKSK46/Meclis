@@ -12,7 +12,7 @@ namespace MeclisEntities.IEntities
     {
          int Silindi { get; set; }
          DateTime? SilinmeTarihi { get; set; }
-         DateTime EklenmeTarihi { get; set; }
+         DateTime? EklenmeTarihi { get; set; }
          DateTime? GuncellemeTarihi { get; set; }
          int? SilenPersonelId { get; set; }
          int? GuncelleyenPersonelId { get; set; }
