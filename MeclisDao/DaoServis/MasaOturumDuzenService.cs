@@ -14,38 +14,36 @@ using System.Windows.Forms;
 
 namespace MeclisDao.DaoServis
 {
-    public class MazeretService : IMazeretService
+    public class MasaOturumDuzenService : IMasaOturumDuzenService
     {
-        IMazeretDal _mazeretDal;
-
-        public MazeretService(IMazeretDal mazeretDal, MeclisContext context, IVekilTanimDal vekilTanimDal)
+        IMasaOturmaDuzenDal _masaduzen;
+        MeclisContext _context;
+        IVekilTanimDal _vekilTanimDal;
+        public MasaOturumDuzenService(MeclisContext context, IVekilTanimDal vekilTanimDal, IMasaOturmaDuzenDal masaduzen)
         {
-            _mazeretDal = mazeretDal;
+            _masaduzen = masaduzen;
             _context = context;
             _vekilTanimDal = vekilTanimDal;
         }
 
-        MeclisContext _context;
-        IVekilTanimDal _vekilTanimDal;
-
-        public void Ekle(Mazeret data)
+        public void Ekle(MasaOturmaDuzen data)
         {
-            _mazeretDal.Add(data);
+            _masaduzen.Add(data);
         }
 
-        public Mazeret Getir(int id)
+        public MasaOturmaDuzen Getir(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Guncelle(Mazeret data)
+        public void Guncelle(MasaOturmaDuzen data)
         {
             throw new NotImplementedException();
         }
 
-        public List<Mazeret> ListeGetir()
+        public List<MasaOturmaDuzen> ListeGetir()
         {
-            return _mazeretDal.GetAll(p=>p.Silindi==0);
+           return _masaduzen.GetAll(x => x.Silindi == 0).ToList();
         }
 
         public void Sil(int id)

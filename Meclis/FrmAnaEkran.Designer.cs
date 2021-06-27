@@ -40,6 +40,7 @@ namespace Meclis
             this.grupPersonelTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hatırlatmaTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.komisyonTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.masaTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mazeretTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meclisGörevTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meslekTanımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +60,7 @@ namespace Meclis
             this.yoklamaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgwVekilDetay = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.masaOturmaDüzeniListeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAnaEkran.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwVekilDetay)).BeginInit();
             this.SuspendLayout();
@@ -92,6 +94,7 @@ namespace Meclis
             this.grupPersonelTanımToolStripMenuItem,
             this.hatırlatmaTanımToolStripMenuItem,
             this.komisyonTanımToolStripMenuItem,
+            this.masaTanımToolStripMenuItem,
             this.mazeretTanımToolStripMenuItem,
             this.meclisGörevTanımToolStripMenuItem,
             this.meslekTanımToolStripMenuItem,
@@ -166,6 +169,13 @@ namespace Meclis
             this.komisyonTanımToolStripMenuItem.Text = "Komisyon Tanım";
             this.komisyonTanımToolStripMenuItem.Click += new System.EventHandler(this.komisyonTanımToolStripMenuItem_Click);
             // 
+            // masaTanımToolStripMenuItem
+            // 
+            this.masaTanımToolStripMenuItem.Name = "masaTanımToolStripMenuItem";
+            this.masaTanımToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.masaTanımToolStripMenuItem.Text = "MasaTanım";
+            this.masaTanımToolStripMenuItem.Click += new System.EventHandler(this.masaTanımToolStripMenuItem_Click);
+            // 
             // mazeretTanımToolStripMenuItem
             // 
             this.mazeretTanımToolStripMenuItem.Name = "mazeretTanımToolStripMenuItem";
@@ -224,6 +234,7 @@ namespace Meclis
             this.grupPersonelListeToolStripMenuItem,
             this.komisyonListeToolStripMenuItem,
             this.meclisGörevListeToolStripMenuItem,
+            this.masaOturmaDüzeniListeToolStripMenuItem,
             this.mazeretListeToolStripMenuItem,
             this.meslekToolStripMenuItem});
             this.listelerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -234,56 +245,56 @@ namespace Meclis
             // danismanListeToolStripMenuItem
             // 
             this.danismanListeToolStripMenuItem.Name = "danismanListeToolStripMenuItem";
-            this.danismanListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.danismanListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.danismanListeToolStripMenuItem.Text = "Danisman Liste";
             this.danismanListeToolStripMenuItem.Click += new System.EventHandler(this.danismanListeToolStripMenuItem_Click);
             // 
             // dilListeToolStripMenuItem
             // 
             this.dilListeToolStripMenuItem.Name = "dilListeToolStripMenuItem";
-            this.dilListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.dilListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.dilListeToolStripMenuItem.Text = "Dil Liste";
             this.dilListeToolStripMenuItem.Click += new System.EventHandler(this.dilListeToolStripMenuItem_Click);
             // 
             // genelMerkezGörevListeToolStripMenuItem
             // 
             this.genelMerkezGörevListeToolStripMenuItem.Name = "genelMerkezGörevListeToolStripMenuItem";
-            this.genelMerkezGörevListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.genelMerkezGörevListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.genelMerkezGörevListeToolStripMenuItem.Text = "Genel Merkez Görev Liste";
             this.genelMerkezGörevListeToolStripMenuItem.Click += new System.EventHandler(this.genelMerkezGörevListeToolStripMenuItem_Click);
             // 
             // grupPersonelListeToolStripMenuItem
             // 
             this.grupPersonelListeToolStripMenuItem.Name = "grupPersonelListeToolStripMenuItem";
-            this.grupPersonelListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.grupPersonelListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.grupPersonelListeToolStripMenuItem.Text = "Grup Personel Liste";
             this.grupPersonelListeToolStripMenuItem.Click += new System.EventHandler(this.grupPersonelListeToolStripMenuItem_Click);
             // 
             // komisyonListeToolStripMenuItem
             // 
             this.komisyonListeToolStripMenuItem.Name = "komisyonListeToolStripMenuItem";
-            this.komisyonListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.komisyonListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.komisyonListeToolStripMenuItem.Text = "Komisyon Liste";
             this.komisyonListeToolStripMenuItem.Click += new System.EventHandler(this.komisyonListeToolStripMenuItem_Click);
             // 
             // meclisGörevListeToolStripMenuItem
             // 
             this.meclisGörevListeToolStripMenuItem.Name = "meclisGörevListeToolStripMenuItem";
-            this.meclisGörevListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.meclisGörevListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.meclisGörevListeToolStripMenuItem.Text = "Meclis Görev Liste";
             this.meclisGörevListeToolStripMenuItem.Click += new System.EventHandler(this.meclisGörevListeToolStripMenuItem_Click);
             // 
             // mazeretListeToolStripMenuItem
             // 
             this.mazeretListeToolStripMenuItem.Name = "mazeretListeToolStripMenuItem";
-            this.mazeretListeToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.mazeretListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.mazeretListeToolStripMenuItem.Text = "Mazeret Liste";
             this.mazeretListeToolStripMenuItem.Click += new System.EventHandler(this.mazeretListeToolStripMenuItem_Click);
             // 
             // meslekToolStripMenuItem
             // 
             this.meslekToolStripMenuItem.Name = "meslekToolStripMenuItem";
-            this.meslekToolStripMenuItem.Size = new System.Drawing.Size(274, 24);
+            this.meslekToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
             this.meslekToolStripMenuItem.Text = "Meslek Liste";
             this.meslekToolStripMenuItem.Click += new System.EventHandler(this.meslekToolStripMenuItem_Click);
             // 
@@ -305,6 +316,13 @@ namespace Meclis
             this.dgwVekilDetay.Size = new System.Drawing.Size(1263, 752);
             this.dgwVekilDetay.TabIndex = 1;
             this.dgwVekilDetay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // masaOturmaDüzeniListeToolStripMenuItem
+            // 
+            this.masaOturmaDüzeniListeToolStripMenuItem.Name = "masaOturmaDüzeniListeToolStripMenuItem";
+            this.masaOturmaDüzeniListeToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
+            this.masaOturmaDüzeniListeToolStripMenuItem.Text = "Masa Oturma Düzeni Liste";
+            this.masaOturmaDüzeniListeToolStripMenuItem.Click += new System.EventHandler(this.masaOturmaDüzeniListeToolStripMenuItem_Click);
             // 
             // FrmAnaEkran
             // 
@@ -364,5 +382,7 @@ namespace Meclis
         private System.Windows.Forms.ToolStripMenuItem grupBaşkanTanımToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem yoklamaİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem masaTanımToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem masaOturmaDüzeniListeToolStripMenuItem;
     }
 }

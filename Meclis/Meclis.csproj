@@ -213,6 +213,12 @@
     <Compile Include="Listeler\FrmKomisyonListe.Designer.cs">
       <DependentUpon>FrmKomisyonListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listeler\FrmMasaOturmaDuzen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listeler\FrmMasaOturmaDuzen.Designer.cs">
+      <DependentUpon>FrmMasaOturmaDuzen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listeler\FrmMazeretListe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,7 +239,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportDesigner\FastReport.cs" />
     <Compile Include="SabitTanimlar\FrmDanismanTanim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +256,12 @@
     </Compile>
     <Compile Include="SabitTanimlar\FrmKomisyonUye.Designer.cs">
       <DependentUpon>FrmKomisyonUye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SabitTanimlar\FrmMasaTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SabitTanimlar\FrmMasaTanim.Designer.cs">
+      <DependentUpon>FrmMasaTanim.cs</DependentUpon>
     </Compile>
     <Compile Include="SabitTanimlar\FrmVekilDilTanim.cs">
       <SubType>Form</SubType>
@@ -363,6 +374,9 @@
     <EmbeddedResource Include="Listeler\FrmKomisyonListe.resx">
       <DependentUpon>FrmKomisyonListe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listeler\FrmMasaOturmaDuzen.resx">
+      <DependentUpon>FrmMasaOturmaDuzen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listeler\FrmMazeretListe.resx">
       <DependentUpon>FrmMazeretListe.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmKomisyonUye.resx">
       <DependentUpon>FrmKomisyonUye.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SabitTanimlar\FrmMasaTanim.resx">
+      <DependentUpon>FrmMasaTanim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SabitTanimlar\FrmVekilDilTanim.resx">
       <DependentUpon>FrmVekilDilTanim.cs</DependentUpon>

@@ -124,7 +124,7 @@ namespace Meclis
             frmDilTanim.Show();
         }
 
-        private async  void vekilTanımToolStripMenuItem_Click(object sender, EventArgs e)
+        private   void vekilTanımToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmVekilTanim = new FrmVekilTanim();
             frmVekilTanim.Show();
@@ -268,6 +268,18 @@ namespace Meclis
         private void yoklamaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new FrmYoklama();
+            frm.Show();
+        }
+
+        private void masaTanımToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmMasaTanim();
+            frm.Show();
+        }
+
+        private void masaOturmaDüzeniListeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmMasaOturmaDuzen();
             frm.Show();
         }
     }

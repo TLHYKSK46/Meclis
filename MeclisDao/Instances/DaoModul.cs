@@ -16,11 +16,12 @@ namespace MeclisDao.Instances
         public override void Load()
         {
             //Classların İnstance larını oluşturmak için yazmak zorundasın...
+            Bind<IMasaOturumDuzenService>().To<MasaOturumDuzenService>().InSingletonScope();
+            Bind<IMasaOturmaDuzenDal>().To<MasaOturmaDuzenDal>().InSingletonScope();
 
+            Bind<IMasaTanimService>().To<MasaTanimService>().InSingletonScope();
+            Bind<IMasaTanimDal>().To<MasaTanimDal>().InSingletonScope();
 
-
-            Bind<IMazeretService>().To<MazeretService>().InSingletonScope();
-            Bind<IMazeretDal>().To<MazeretDal>().InSingletonScope();
 
             Bind<IDanismanTanimService>().To<DanismanTanimService>().InSingletonScope();
             Bind<IDanismanTanimDal>().To<DanismanTanimDal>().InSingletonScope();
@@ -92,8 +93,6 @@ namespace MeclisDao.Instances
             Bind<IGrupYonetimKurulUyesiService>().To<GrupYonetimKurulUyesiService>().InSingletonScope();
             Bind<IGrupYonetimKurulUyesiDal>().To<GrupYonetimKuruluUyesiDal>().InSingletonScope();
 
-            Bind<IYoklamaService>().To<YoklamaService>().InSingletonScope();
-            Bind<IYoklamaDal>().To<YoklamaDal>().InSingletonScope();
 
             Bind<IOturumService>().To<OturumService>().InSingletonScope();
             Bind<IOturumDal>().To<OturumDal>().InSingletonScope();

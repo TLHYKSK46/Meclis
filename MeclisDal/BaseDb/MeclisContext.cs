@@ -18,10 +18,9 @@ namespace MeclisDal.BaseDb
             Database.SetInitializer<MeclisContext>(null);//Bu satır Kodlar ile veritabanındaki tabloları oluşturulmasını engeller kapatırsan kendisi otomatik olarak tabloları oluşturur..
         }
         #region DbSet
-        public DbSet<Mazeret> Mazerets { get; set; }
-
+        public DbSet<MasaOturmaDuzen> MasaOturmaDuzens { get; set; }
+        public DbSet<MasaTanim> MasaTanims { get; set; }
         public DbSet<VekilTanim> VekilTanims { get; set; }
-       
         public DbSet<DilTanim> DilTanims { get; set; }
         public DbSet<DanismanTanim> DanismanTanims { get; set; }
         public DbSet<DonemTanim> DonemTanims { get; set; }
@@ -47,7 +46,6 @@ namespace MeclisDal.BaseDb
         public DbSet<GrupYonetimKurulUyesi> GrupYonetimKurulUyesis { get; set; }
         public DbSet<BelgeNo> BelgeNos { get; set; }
         public DbSet<Oturum> Oturums { get; set; }
-        public DbSet<Yoklama> Yoklamas { get; set; }
         public DbSet<VekilYoklama> VekilYoklamas { get; set; }
 
 
@@ -58,6 +56,7 @@ namespace MeclisDal.BaseDb
         #region Mapping
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new MasaOturmaDuzenMap());
             modelBuilder.Configurations.Add(new VekilTanimMap());
             modelBuilder.Configurations.Add(new DanismanTanimMap());
             modelBuilder.Configurations.Add(new DilTanimMap());
@@ -83,10 +82,8 @@ namespace MeclisDal.BaseDb
             modelBuilder.Configurations.Add(new GrupYonetimKurulUyesiMap());
             modelBuilder.Configurations.Add(new BelgeNoMap());
             modelBuilder.Configurations.Add(new OturumMap());
-            modelBuilder.Configurations.Add(new YoklamaMap());
-            modelBuilder.Configurations.Add(new MazeretMap());
             modelBuilder.Configurations.Add(new VekilYoklamaMap());
-
+            modelBuilder.Configurations.Add(new MasaTanimMap());
 
 
 

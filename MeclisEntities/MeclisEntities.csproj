@@ -53,9 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\EntBase.cs" />
-    <Compile Include="Entities\Mazeret.cs" />
+    <Compile Include="Entities\MasaOturmaDuzen.cs" />
+    <Compile Include="Entities\MasaTanim.cs" />
     <Compile Include="Entities\VekilYoklama.cs" />
-    <Compile Include="Entities\Yoklama.cs" />
     <Compile Include="Entities\Oturum.cs" />
     <Compile Include="Entities\BelgeNo.cs" />
     <Compile Include="Entities\GrupYonetimKurulUyesi.cs" />
@@ -85,10 +85,10 @@
     <Compile Include="Base\EntBaseId.cs" />
     <Compile Include="Mappings\BaseMap\BaseIdMap.cs" />
     <Compile Include="Mappings\BaseMap\BaseMap.cs" />
-    <Compile Include="Mappings\MazeretMap.cs" />
+    <Compile Include="Mappings\MasaOturmaDuzenMap.cs" />
+    <Compile Include="Mappings\MasaTanimMap.cs" />
     <Compile Include="Mappings\OturumMap.cs" />
     <Compile Include="Mappings\VekilYoklamaMap.cs" />
-    <Compile Include="Mappings\YoklamaMap.cs" />
     <Compile Include="Mappings\BelgeNoMap.cs" />
     <Compile Include="Mappings\GrupYonetimKurulUyesiMap.cs" />
     <Compile Include="Mappings\GrupBaskanVekilTanimMap.cs" />

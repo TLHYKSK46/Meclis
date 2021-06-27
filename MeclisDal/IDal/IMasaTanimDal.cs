@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MeclisDal.BaseDb.Interfaces;
 namespace MeclisDal.IDal
 {
-    public interface IMazeretDal : IEntityRepository<Mazeret>
+    public interface IMasaTanimDal : IEntityRepository<MasaTanim>
     {
 
 

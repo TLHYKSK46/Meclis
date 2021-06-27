@@ -52,10 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dal\MazeretDal.cs" />
+    <Compile Include="Dal\MasaOturmaDuzenDal.cs" />
+    <Compile Include="Dal\MasaTanimDal.cs" />
     <Compile Include="Dal\OturumDal.cs" />
     <Compile Include="Dal\VekilYoklamaDal.cs" />
-    <Compile Include="Dal\YoklamaDal.cs" />
     <Compile Include="Dal\BelgeNoDal.cs" />
     <Compile Include="Dal\DanismanTanimDal.cs" />
     <Compile Include="Dal\GrupYonetimKuruluUyesiDal.cs" />
@@ -74,10 +74,10 @@
     <Compile Include="Dal\HatirlatmaTanimDal.cs" />
     <Compile Include="Dal\IlTanimDal.cs" />
     <Compile Include="Dal\PartiGrupTanimDal.cs" />
-    <Compile Include="IDal\IMazeretDal.cs" />
+    <Compile Include="IDal\IMasaOturmaDuzenDal.cs" />
+    <Compile Include="IDal\IMasaTanimDal.cs" />
     <Compile Include="IDal\IOturumDal.cs" />
     <Compile Include="IDal\IVekilYoklamaDal.cs" />
-    <Compile Include="IDal\IYoklamaDal.cs" />
     <Compile Include="IDal\IBelgeNoDal.cs" />
     <Compile Include="IDal\IGrupYonetimKurulUyesiDal.cs" />
     <Compile Include="IDal\IGrupBaskanVekilTanimDal.cs" />

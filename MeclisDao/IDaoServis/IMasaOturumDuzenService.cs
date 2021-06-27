@@ -8,16 +8,15 @@ using System.Windows.Forms;
 
 namespace MeclisDao.IDaoServis
 {
-   public interface IYoklamaService
+   public interface IMasaOturumDuzenService
     {
-        List<Yoklama> ListeGetir();
-        Yoklama Getir(int id);
+        List<MasaOturmaDuzen> ListeGetir();
+        MasaOturmaDuzen Getir(int id);
         //List<BelgeNo> AdGoreGetir(string data);
-        List<Yoklama> FiltreleGetir(int id);
-        void Ekle(Yoklama data);
-        void Guncelle(Yoklama data);
+        //List<BelgeNo> FiltreleGetir(string tur, string value);
+        void Ekle(MasaOturmaDuzen data);
+        void Guncelle(MasaOturmaDuzen data);
         void Sil(int id);
-        int BugunListele();
         //void ExceleAktar(DataGridView dataGridView);
     }
 }

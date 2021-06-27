@@ -283,29 +283,29 @@ namespace Meclis.SabitTanimlar
         {
             try
             {
-                txtTcKimlikNo.Text = dgListe.CurrentRow.Cells[1].Value.ToString();
-                txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString();
-                txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString();
-                cbCinsiyet.Text = dgListe.CurrentRow.Cells[4].Value.ToString();
+                txtTcKimlikNo.Text = dgListe.CurrentRow.Cells[1].Value.ToString()?? "";
+                txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString() ?? "";
+                txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString() ?? "";
+                cbCinsiyet.Text = dgListe.CurrentRow.Cells[4].Value.ToString() ?? "";
 
-                txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString();
-                txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[6].Value.ToString();
-                txtKurumsalMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString();
-                txtKisiselMail.Text = dgListe.CurrentRow.Cells[8].Value.ToString();
+                txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString() ?? "";
+                txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[6].Value.ToString() ?? "";
+                txtKurumsalMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString() ?? "";
+                txtKisiselMail.Text = dgListe.CurrentRow.Cells[8].Value.ToString() ?? "";
                 dtDogumTarihi.Value = Convert.ToDateTime(dgListe.CurrentRow.Cells[9].Value);
-                cbDogumYeri.Text = dgListe.CurrentRow.Cells[10].Value.ToString();
-                txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString();
-                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
+                cbDogumYeri.Text = dgListe.CurrentRow.Cells[10].Value.ToString() ?? "";
+                txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString() ?? "";
+                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString() ?? "";
                 chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[13].Value);
-                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString();
-                cbil.Text = dgListe.CurrentRow.Cells[14].Value.ToString();
-                cbParti.Text = dgListe.CurrentRow.Cells[15].Value.ToString();
-                cbPartiGrup.Text = dgListe.CurrentRow.Cells[16].Value.ToString();
-                cbDostlukGrup.Text = dgListe.CurrentRow.Cells[17].Value.ToString();
-                cbMeclisGorev.Text = dgListe.CurrentRow.Cells[18].Value.ToString();
-                cbGenelMerkezGorev.Text = dgListe.CurrentRow.Cells[19].Value.ToString();
-                cbMeslek.Text = dgListe.CurrentRow.Cells[20].Value.ToString();
-                txtMeslekUzmanlikAlani.Text = dgListe.CurrentRow.Cells[21].Value.ToString();
+                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString() ?? "";
+                cbil.Text = dgListe.CurrentRow.Cells[14].Value.ToString() ?? "";
+                cbParti.Text = dgListe.CurrentRow.Cells[15].Value.ToString() ?? "";
+                cbPartiGrup.Text = dgListe.CurrentRow.Cells[16].Value.ToString() ?? "";
+                cbDostlukGrup.Text = dgListe.CurrentRow.Cells[17].Value.ToString() ?? "";
+                cbMeclisGorev.Text = dgListe.CurrentRow.Cells[18].Value.ToString() ?? "";
+                cbGenelMerkezGorev.Text = dgListe.CurrentRow.Cells[19].Value.ToString() ?? "";
+                cbMeslek.Text = dgListe.CurrentRow.Cells[20].Value.ToString() ?? "";
+                txtMeslekUzmanlikAlani.Text = dgListe.CurrentRow.Cells[21].Value.ToString() ?? "";
                 pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[22].Value);
             }
             catch (DaoException ex)
@@ -319,14 +319,14 @@ namespace Meclis.SabitTanimlar
 
 
         }
-        private async void cbMeslekDoldur()
+        private  void cbMeslekDoldur()
         {
             cbMeslek.DataSource = _meslekTanimService.ListeGetir();
             cbMeslek.DisplayMember = "MeslekAdi";
             cbMeslek.ValueMember = "Id";
 
         }
-        private async void cbGenelMerkezGorevDoldur()
+        private  void cbGenelMerkezGorevDoldur()
         {
             cbGenelMerkezGorev.Text=("Seçiniz");
             cbGenelMerkezGorev.DataSource = _genelMerkezGorevService.ListeGetir();
@@ -334,56 +334,56 @@ namespace Meclis.SabitTanimlar
             cbGenelMerkezGorev.ValueMember = "Id";
 
         }
-        private async void cbMeclisGorevDoldur()
+        private  void cbMeclisGorevDoldur()
         {
             cbMeclisGorev.DataSource = _meclisGorevTanimService.ListeGetir();
             cbMeclisGorev.DisplayMember = "MeclisGorevAdi";
             cbMeclisGorev.ValueMember = "Id";
 
         }
-        private async void cbDostlukGrupDoldur()
+        private  void cbDostlukGrupDoldur()
         {
             cbDostlukGrup.DataSource = _dostlukGrupTanimService.ListeGetir();
             cbDostlukGrup.DisplayMember = "DostlukGrupAdi";
             cbDostlukGrup.ValueMember = "Id";
 
         }
-        private async void cbDonemDoldur()
+        private  void cbDonemDoldur()
         {
             cbDonem.DataSource = _donemTanimService.ListeGetir();
             cbDonem.DisplayMember = "DonemAdi";
             cbDonem.ValueMember = "Id";
 
         }
-        private async void cbPartiGrupDoldur()
+        private  void cbPartiGrupDoldur()
         {
             cbPartiGrup.DataSource = _partiGrupTanimService.ListeGetir();
             cbPartiGrup.DisplayMember = "PartiGrupAdi";
             cbPartiGrup.ValueMember = "Id";
 
         }
-        private async void cbPartiDoldur()
+        private  void cbPartiDoldur()
         {
             cbParti.DataSource = _partiTanimService.ListeGetir();
             cbParti.DisplayMember = "PartiAdi";
             cbParti.ValueMember = "Id";
 
         }
-        private async void cbilDoldur()
+        private  void cbilDoldur()
         {
             cbil.DataSource = _ilTanimService.ListeGetir();
             cbil.DisplayMember = "IlAdi";
             cbil.ValueMember = "Id";
 
         }
-        private async Task cbDogumYeriDoldur()
+        private  void cbDogumYeriDoldur()
         {
             cbDogumYeri.DataSource = _ilTanimService.ListeGetir();
             cbDogumYeri.DisplayMember = "IlAdi";
             cbDogumYeri.ValueMember = "Id";
 
         }
-        private async  Task CinsiyetDoldur()
+        private void CinsiyetDoldur()
         {
 
             cbCinsiyet.DataSource = Enum.GetValues(typeof(Cinsiyet));
@@ -426,7 +426,7 @@ namespace Meclis.SabitTanimlar
 
         }
 
-        private async void btnFotoYukle_Click(object sender, EventArgs e)
+        private  void btnFotoYukle_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Image files(*.jpg;*.jpeg)|*.jpg;*.jpeg", Multiselect = false })
             {

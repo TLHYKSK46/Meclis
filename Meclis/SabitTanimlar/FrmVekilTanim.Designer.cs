@@ -51,6 +51,26 @@ namespace Meclis.SabitTanimlar
             this.label9 = new System.Windows.Forms.Label();
             this.chkAktif = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbil = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cbParti = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbMeslek = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cbGenelMerkezGorev = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbMeclisGorev = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbDostlukGrup = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbDonem = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbPartiGrup = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtMeslekUzmanlikAlani = new System.Windows.Forms.TextBox();
             this.btnFotoYukle = new System.Windows.Forms.Button();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.cbCinsiyet = new System.Windows.Forms.ComboBox();
@@ -66,26 +86,6 @@ namespace Meclis.SabitTanimlar
             this.btnListele = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtMeslekUzmanlikAlani = new System.Windows.Forms.TextBox();
-            this.cbPartiGrup = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cbDonem = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cbDostlukGrup = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cbMeclisGorev = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cbGenelMerkezGorev = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.cbMeslek = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cbParti = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cbil = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgListe)).BeginInit();
@@ -356,6 +356,206 @@ namespace Meclis.SabitTanimlar
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.Location = new System.Drawing.Point(724, 51);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(71, 20);
+            this.label24.TabIndex = 91;
+            this.label24.Text = "Oda No:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox2.Location = new System.Drawing.Point(861, 51);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(287, 27);
+            this.textBox2.TabIndex = 90;
+            // 
+            // cbil
+            // 
+            this.cbil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbil.FormattingEnabled = true;
+            this.cbil.Location = new System.Drawing.Point(861, 18);
+            this.cbil.Name = "cbil";
+            this.cbil.Size = new System.Drawing.Size(287, 28);
+            this.cbil.TabIndex = 89;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.Location = new System.Drawing.Point(724, 18);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(22, 20);
+            this.label23.TabIndex = 88;
+            this.label23.Text = "İl:";
+            // 
+            // cbParti
+            // 
+            this.cbParti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbParti.FormattingEnabled = true;
+            this.cbParti.Location = new System.Drawing.Point(861, 82);
+            this.cbParti.Name = "cbParti";
+            this.cbParti.Size = new System.Drawing.Size(287, 28);
+            this.cbParti.TabIndex = 83;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.Location = new System.Drawing.Point(724, 299);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(125, 40);
+            this.label20.TabIndex = 82;
+            this.label20.Text = "Meslek\r\nUzmanlık Alanı:";
+            // 
+            // cbMeslek
+            // 
+            this.cbMeslek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbMeslek.FormattingEnabled = true;
+            this.cbMeslek.Location = new System.Drawing.Point(861, 278);
+            this.cbMeslek.Name = "cbMeslek";
+            this.cbMeslek.Size = new System.Drawing.Size(287, 28);
+            this.cbMeslek.TabIndex = 81;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.Location = new System.Drawing.Point(724, 278);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 20);
+            this.label19.TabIndex = 80;
+            this.label19.Text = "Meslek:";
+            // 
+            // cbGenelMerkezGorev
+            // 
+            this.cbGenelMerkezGorev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbGenelMerkezGorev.FormattingEnabled = true;
+            this.cbGenelMerkezGorev.Location = new System.Drawing.Point(861, 244);
+            this.cbGenelMerkezGorev.Name = "cbGenelMerkezGorev";
+            this.cbGenelMerkezGorev.Size = new System.Drawing.Size(287, 28);
+            this.cbGenelMerkezGorev.TabIndex = 79;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.Location = new System.Drawing.Point(724, 236);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(118, 40);
+            this.label18.TabIndex = 78;
+            this.label18.Text = "Genel Merkez \r\nGörev:";
+            // 
+            // cbMeclisGorev
+            // 
+            this.cbMeclisGorev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbMeclisGorev.FormattingEnabled = true;
+            this.cbMeclisGorev.Location = new System.Drawing.Point(861, 210);
+            this.cbMeclisGorev.Name = "cbMeclisGorev";
+            this.cbMeclisGorev.Size = new System.Drawing.Size(287, 28);
+            this.cbMeclisGorev.TabIndex = 77;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.Location = new System.Drawing.Point(724, 210);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(113, 20);
+            this.label17.TabIndex = 76;
+            this.label17.Text = "Meclis Görev:";
+            // 
+            // cbDostlukGrup
+            // 
+            this.cbDostlukGrup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbDostlukGrup.FormattingEnabled = true;
+            this.cbDostlukGrup.Location = new System.Drawing.Point(861, 176);
+            this.cbDostlukGrup.Name = "cbDostlukGrup";
+            this.cbDostlukGrup.Size = new System.Drawing.Size(287, 28);
+            this.cbDostlukGrup.TabIndex = 75;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Location = new System.Drawing.Point(724, 176);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 20);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "Dostluk Grup:";
+            // 
+            // cbDonem
+            // 
+            this.cbDonem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbDonem.FormattingEnabled = true;
+            this.cbDonem.Location = new System.Drawing.Point(861, 144);
+            this.cbDonem.Name = "cbDonem";
+            this.cbDonem.Size = new System.Drawing.Size(287, 28);
+            this.cbDonem.TabIndex = 73;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(724, 144);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 20);
+            this.label15.TabIndex = 72;
+            this.label15.Text = "Dönem:";
+            // 
+            // cbPartiGrup
+            // 
+            this.cbPartiGrup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbPartiGrup.FormattingEnabled = true;
+            this.cbPartiGrup.Location = new System.Drawing.Point(861, 113);
+            this.cbPartiGrup.Name = "cbPartiGrup";
+            this.cbPartiGrup.Size = new System.Drawing.Size(287, 28);
+            this.cbPartiGrup.TabIndex = 71;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(724, 113);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(91, 20);
+            this.label14.TabIndex = 70;
+            this.label14.Text = "Parti Grup:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(724, 82);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 20);
+            this.label11.TabIndex = 69;
+            this.label11.Text = "Parti:";
+            // 
+            // txtMeslekUzmanlikAlani
+            // 
+            this.txtMeslekUzmanlikAlani.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMeslekUzmanlikAlani.Location = new System.Drawing.Point(861, 311);
+            this.txtMeslekUzmanlikAlani.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMeslekUzmanlikAlani.Name = "txtMeslekUzmanlikAlani";
+            this.txtMeslekUzmanlikAlani.Size = new System.Drawing.Size(287, 27);
+            this.txtMeslekUzmanlikAlani.TabIndex = 68;
+            // 
             // btnFotoYukle
             // 
             this.btnFotoYukle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -497,206 +697,6 @@ namespace Meclis.SabitTanimlar
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(724, 82);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 20);
-            this.label11.TabIndex = 69;
-            this.label11.Text = "Parti:";
-            // 
-            // txtMeslekUzmanlikAlani
-            // 
-            this.txtMeslekUzmanlikAlani.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMeslekUzmanlikAlani.Location = new System.Drawing.Point(861, 311);
-            this.txtMeslekUzmanlikAlani.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMeslekUzmanlikAlani.Name = "txtMeslekUzmanlikAlani";
-            this.txtMeslekUzmanlikAlani.Size = new System.Drawing.Size(287, 27);
-            this.txtMeslekUzmanlikAlani.TabIndex = 68;
-            // 
-            // cbPartiGrup
-            // 
-            this.cbPartiGrup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbPartiGrup.FormattingEnabled = true;
-            this.cbPartiGrup.Location = new System.Drawing.Point(861, 113);
-            this.cbPartiGrup.Name = "cbPartiGrup";
-            this.cbPartiGrup.Size = new System.Drawing.Size(287, 28);
-            this.cbPartiGrup.TabIndex = 71;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(724, 113);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 20);
-            this.label14.TabIndex = 70;
-            this.label14.Text = "Parti Grup:";
-            // 
-            // cbDonem
-            // 
-            this.cbDonem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbDonem.FormattingEnabled = true;
-            this.cbDonem.Location = new System.Drawing.Point(861, 144);
-            this.cbDonem.Name = "cbDonem";
-            this.cbDonem.Size = new System.Drawing.Size(287, 28);
-            this.cbDonem.TabIndex = 73;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(724, 144);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 20);
-            this.label15.TabIndex = 72;
-            this.label15.Text = "Dönem:";
-            // 
-            // cbDostlukGrup
-            // 
-            this.cbDostlukGrup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbDostlukGrup.FormattingEnabled = true;
-            this.cbDostlukGrup.Location = new System.Drawing.Point(861, 176);
-            this.cbDostlukGrup.Name = "cbDostlukGrup";
-            this.cbDostlukGrup.Size = new System.Drawing.Size(287, 28);
-            this.cbDostlukGrup.TabIndex = 75;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.Location = new System.Drawing.Point(724, 176);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 20);
-            this.label16.TabIndex = 74;
-            this.label16.Text = "Dostluk Grup:";
-            // 
-            // cbMeclisGorev
-            // 
-            this.cbMeclisGorev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbMeclisGorev.FormattingEnabled = true;
-            this.cbMeclisGorev.Location = new System.Drawing.Point(861, 210);
-            this.cbMeclisGorev.Name = "cbMeclisGorev";
-            this.cbMeclisGorev.Size = new System.Drawing.Size(287, 28);
-            this.cbMeclisGorev.TabIndex = 77;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label17.Location = new System.Drawing.Point(724, 210);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 20);
-            this.label17.TabIndex = 76;
-            this.label17.Text = "Meclis Görev:";
-            // 
-            // cbGenelMerkezGorev
-            // 
-            this.cbGenelMerkezGorev.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbGenelMerkezGorev.FormattingEnabled = true;
-            this.cbGenelMerkezGorev.Location = new System.Drawing.Point(861, 244);
-            this.cbGenelMerkezGorev.Name = "cbGenelMerkezGorev";
-            this.cbGenelMerkezGorev.Size = new System.Drawing.Size(287, 28);
-            this.cbGenelMerkezGorev.TabIndex = 79;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label18.Location = new System.Drawing.Point(724, 236);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(118, 40);
-            this.label18.TabIndex = 78;
-            this.label18.Text = "Genel Merkez \r\nGörev:";
-            // 
-            // cbMeslek
-            // 
-            this.cbMeslek.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbMeslek.FormattingEnabled = true;
-            this.cbMeslek.Location = new System.Drawing.Point(861, 278);
-            this.cbMeslek.Name = "cbMeslek";
-            this.cbMeslek.Size = new System.Drawing.Size(287, 28);
-            this.cbMeslek.TabIndex = 81;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label19.Location = new System.Drawing.Point(724, 278);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 20);
-            this.label19.TabIndex = 80;
-            this.label19.Text = "Meslek:";
-            // 
-            // cbParti
-            // 
-            this.cbParti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbParti.FormattingEnabled = true;
-            this.cbParti.Location = new System.Drawing.Point(861, 82);
-            this.cbParti.Name = "cbParti";
-            this.cbParti.Size = new System.Drawing.Size(287, 28);
-            this.cbParti.TabIndex = 83;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label20.Location = new System.Drawing.Point(724, 299);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(125, 40);
-            this.label20.TabIndex = 82;
-            this.label20.Text = "Meslek\r\nUzmanlık Alanı:";
-            // 
-            // cbil
-            // 
-            this.cbil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cbil.FormattingEnabled = true;
-            this.cbil.Location = new System.Drawing.Point(861, 18);
-            this.cbil.Name = "cbil";
-            this.cbil.Size = new System.Drawing.Size(287, 28);
-            this.cbil.TabIndex = 89;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label23.Location = new System.Drawing.Point(724, 18);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(22, 20);
-            this.label23.TabIndex = 88;
-            this.label23.Text = "İl:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label24.Location = new System.Drawing.Point(724, 51);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(71, 20);
-            this.label24.TabIndex = 91;
-            this.label24.Text = "Oda No:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(861, 51);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 27);
-            this.textBox2.TabIndex = 90;
             // 
             // FrmVekilTanim
             // 

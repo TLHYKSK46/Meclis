@@ -9,13 +9,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MeclisEntities.Entities
 {
-    public class Mazeret:EntBase
+    public class MasaOturmaDuzen : EntBase
      
     {
-
-        public string Il { get; set; }
-        public string AdSoyad { get; set; }
-        public string MazeretNedeni { get; set; }
+   
+       
+        public DateTime Tarih { get; set; }
+        public int VekilTanimId { get; set; }
+        public int MasaTanimId { get; set; }
 
 
     }

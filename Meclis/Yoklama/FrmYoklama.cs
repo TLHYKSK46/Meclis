@@ -16,9 +16,7 @@ namespace Meclis.Yoklama
     public partial class FrmYoklama : Form
     {
         IOturumService _oturumService;
-        IYoklamaService _yoklamaService;
         IMazeretTanimService _mazeretTanimService;
-        IMazeretService _mazeretService;
         IVekilTanimService _vekilTanimService;
         IVekilYoklamaService _vekilYoklama;
         IIlTanimService _ilTanimService;
@@ -28,9 +26,7 @@ namespace Meclis.Yoklama
 
             InitializeComponent();
             _oturumService = InstanceFactory.GetInstance<IOturumService>();
-            _yoklamaService = InstanceFactory.GetInstance<IYoklamaService>();
             _mazeretTanimService = InstanceFactory.GetInstance<IMazeretTanimService>();
-            _mazeretService = InstanceFactory.GetInstance<IMazeretService>();
             _vekilTanimService = InstanceFactory.GetInstance<IVekilTanimService>();
             _vekilYoklama = InstanceFactory.GetInstance<IVekilYoklamaService>();
             _ilTanimService = InstanceFactory.GetInstance<IIlTanimService>();

@@ -59,10 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DaoServis\MazeretService.cs" />
+    <Compile Include="DaoServis\MasaOturumDuzenService.cs" />
+    <Compile Include="DaoServis\MasaTanimService.cs" />
     <Compile Include="DaoServis\OturumService.cs" />
     <Compile Include="DaoServis\VekilYoklamaService.cs" />
-    <Compile Include="DaoServis\YoklamaService.cs" />
     <Compile Include="DaoServis\BelgeNoService.cs" />
     <Compile Include="DaoServis\GrupYonetimKurulUyesiService.cs" />
     <Compile Include="DaoServis\GrupBaskanVekilTanimService.cs" />
@@ -94,9 +94,9 @@
     <Compile Include="Enums\KomisyonUyeTuru.cs" />
     <Compile Include="Exceptions\DaoException.cs" />
     <Compile Include="Exceptions\Try.cs" />
-    <Compile Include="IDaoServis\IMazeretService.cs" />
+    <Compile Include="IDaoServis\IMasaOturumDuzenService.cs" />
+    <Compile Include="IDaoServis\IMasaTanimService.cs" />
     <Compile Include="IDaoServis\IVekilYoklamaService.cs" />
-    <Compile Include="IDaoServis\IYoklamaService.cs" />
     <Compile Include="IDaoServis\IOturumService.cs" />
     <Compile Include="IDaoServis\IBelgeNoService.cs" />
     <Compile Include="IDaoServis\IGrupYonetimKurulUyesiService.cs" />

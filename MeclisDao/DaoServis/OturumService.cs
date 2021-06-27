@@ -17,7 +17,7 @@ namespace MeclisDao.DaoServis
     public class OturumService : IOturumService
     {
         IOturumDal _oturumDal;
-        MeclisContext _context;
+        readonly MeclisContext _context;
         IVekilTanimDal _vekilTanimDal;
 
         public OturumService(IVekilTanimDal vekilTanimDal, IOturumDal oturumDal)

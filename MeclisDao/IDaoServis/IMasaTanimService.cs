@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace MeclisDao.IDaoServis
 {
-   public interface IMazeretService
+   public interface IMasaTanimService
     {
-        List<Mazeret> ListeGetir();
-        Mazeret Getir(int id);
+        List<MasaTanim> ListeGetir();
+        MasaTanim Getir(int id);
         //List<BelgeNo> AdGoreGetir(string data);
         //List<BelgeNo> FiltreleGetir(string tur, string value);
-        void Ekle(Mazeret data);
-        void Guncelle(Mazeret data);
+        void Ekle(MasaTanim data);
+        void Guncelle(MasaTanim data);
         void Sil(int id);
         //void ExceleAktar(DataGridView dataGridView);
     }
