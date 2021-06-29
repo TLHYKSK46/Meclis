@@ -52,7 +52,7 @@ namespace MeclisDao.DaoServis
 
         public List<PartiGrupTanim> ListeGetir()
         {
-            return _partiGrupTanimDal.GetAll();
+            return _partiGrupTanimDal.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

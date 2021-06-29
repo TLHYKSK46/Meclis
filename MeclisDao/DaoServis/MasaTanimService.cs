@@ -43,7 +43,7 @@ namespace MeclisDao.DaoServis
 
         public List<MasaTanim> ListeGetir()
         {
-           return _masaTanim.GetAll(p=>p.Silindi==0) ;
+           return _masaTanim.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

@@ -66,7 +66,7 @@ namespace MeclisDao.DaoServis
 
         public List<IlTanim> ListeGetir()
         {
-            return _ilTanimDal.GetAll();
+            return _ilTanimDal.GetAll(p=>p.Silindi==0);
         }
 
         public void Sil(int id)

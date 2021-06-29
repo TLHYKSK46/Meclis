@@ -143,12 +143,10 @@ namespace Meclis.SabitTanimlar
             }
 
         }
-
-
-    
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
+            bool msg = MesajGoster.Uyari("Güncellemek İstediğinizden Eminmisiniz?");
+
             string tcKimlikNo = txtTcKimlikNo.Text;
             string ad = txtAd.Text;
             string soyad = txtSoyad.Text;
@@ -163,48 +161,46 @@ namespace Meclis.SabitTanimlar
             string dogumyeri = cbDogumYeri.SelectedText;
             dogumtarihi.ToString("MMM/dd/yyy");
             bool aktif = chkAktif.Checked;
-            if (tcKimlikNo != null && ad != null && soyad != null && Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value)>0)
+            if (msg == true)
             {
-                try
+                if (tcKimlikNo != null && ad != null && soyad != null && Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value) > 0)
                 {
-                    _vekilTanimService.Guncelle(new VekilTanim
+                    try
                     {
-                        Id = Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
-                        Foto= ConvertImageToBaytes(pbFoto.Image),
-                        TcKimlikNo = tcKimlikNo,
-                        Ad = ad,
-                        Soyad = soyad,
-                        CinsiyetTanimId=cinsiyet,
-                        KurumsalTelNo = kurumsalTel,
-                        KurumsalMail = kurumsalMail,
-                        Kisiselmail = kisiselMail,
-                        KisiselTelNo = kisiselTel,
-                        Aciklama = aciklama,
-                        Aktif = aktif,
-                        Ozgecmis = ozgecmis,
-                        DogumTarihi = dogumtarihi,
-                        DogumYeri = dogumyeri,
+                        _vekilTanimService.Guncelle(new VekilTanim
+                        {
+                            Id = Convert.ToInt32(dgListe.CurrentRow.Cells[0].Value),
+                            Foto = ConvertImageToBaytes(pbFoto.Image),
+                            TcKimlikNo = tcKimlikNo,
+                            Ad = ad,
+                            Soyad = soyad,
+                            CinsiyetTanimId = cinsiyet,
+                            KurumsalTelNo = kurumsalTel,
+                            KurumsalMail = kurumsalMail,
+                            Kisiselmail = kisiselMail,
+                            KisiselTelNo = kisiselTel,
+                            Aciklama = aciklama,
+                            Aktif = aktif,
+                            Ozgecmis = ozgecmis,
+                            DogumTarihi = dogumtarihi,
+                            DogumYeri = dogumyeri,
 
-                    });
-                    MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");
-
-                    TumunuListele();
-                    txtTemizle();
-
+                        });
+                        MessageBox.Show("Kayıt Güncelleme İşlemi Başarılı.", "Sistem");
+                        TumunuListele();
+                        txtTemizle();
+                    }
+                    catch (DaoException ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), "Program");
+                    }
                 }
-                catch (DaoException ex)
+                else
                 {
-
-                    MessageBox.Show(ex.Message.ToString(), "Program");
+                    MessageBox.Show("Lütfen zorunlu alanları doldurunuz veya bir kayıt seçiniz !", "Sistem");
                 }
-
             }
-            else
-            {
-                MessageBox.Show("Lütfen zorunlu alanları doldurunuz veya bir kayıt seçiniz !", "Sistem");
-            }
-
-
+           
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -230,7 +226,7 @@ namespace Meclis.SabitTanimlar
         #region Listeler
         private void TumunuListele()
         {
-            dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
+           dgListe.DataSource = (from vt in _vekilTanimService.ListeGetir()
                                    join il in _ilTanimService.ListeGetir() on vt.IlTanimId equals il.Id
                                    join p in _partiTanimService.ListeGetir() on vt.PartiTanimId equals p.Id
                                    join pg in _partiGrupTanimService.ListeGetir() on  vt.PartiGrupTanimId equals pg.Id
@@ -239,7 +235,7 @@ namespace Meclis.SabitTanimlar
                                    join mg in _meclisGorevTanimService.ListeGetir() on vt.MeclisGorevId equals mg.Id
                                    join gm in _genelMerkezGorevService.ListeGetir() on vt.GenelMerkezGorevId equals gm.Id
                                    join mt in _meslekTanimService.ListeGetir() on  vt.MeslekTanimId equals mt.Id
-                                  join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on vt.CinsiyetTanimId equals c.GetHashCode()
+                                   join c in Enum.GetValues(typeof(Cinsiyet)).Cast<Cinsiyet>() on vt.CinsiyetTanimId equals c.GetHashCode()
                                   select new
                                   {
                                       vt.Id,
@@ -271,39 +267,39 @@ namespace Meclis.SabitTanimlar
             dgListe.Columns[22].Visible = false;
 
 
-            //for (int i = 0; i < dgListe.Columns.Count; i++)
-            //    if (dgListe.Columns[i] is DataGridViewImageColumn)
-            //    {
-            //        ((DataGridViewImageColumn)dgListe.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
-            //        break;
-            //    }
+            for (int i = 0; i < dgListe.Columns.Count; i++)
+                if (dgListe.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgListe.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Stretch;
+                    break;
+                }
         }
 
         private void dgListe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                txtTcKimlikNo.Text = dgListe.CurrentRow.Cells[1].Value.ToString()?? "";
-                txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString() ?? "";
-                txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString() ?? "";
-                cbCinsiyet.Text = dgListe.CurrentRow.Cells[4].Value.ToString() ?? "";
-                txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString() ?? "";
-                txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[6].Value.ToString() ?? "";
-                txtKurumsalMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString() ?? "";
-                txtKisiselMail.Text = dgListe.CurrentRow.Cells[8].Value.ToString() ?? "";
+                txtTcKimlikNo.Text = dgListe.CurrentRow.Cells[1].Value.ToString()?? " ";
+                txtAd.Text = dgListe.CurrentRow.Cells[2].Value.ToString() ?? " ";
+                txtSoyad.Text = dgListe.CurrentRow.Cells[3].Value.ToString() ?? " ";
+                cbCinsiyet.Text = dgListe.CurrentRow.Cells[4].Value.ToString() ?? " ";
+                txtKurumsalTelNo.Text = dgListe.CurrentRow.Cells[5].Value.ToString() ??  "  ";
+                txtKisiselTelNo.Text = dgListe.CurrentRow.Cells[6].Value.ToString() ?? " ";
+                txtKurumsalMail.Text = dgListe.CurrentRow.Cells[7].Value.ToString() ?? " ";
+                txtKisiselMail.Text = dgListe.CurrentRow.Cells[8].Value.ToString() ?? " ";
                 dtDogumTarihi.Value = Convert.ToDateTime(dgListe.CurrentRow.Cells[9].Value);
-                cbDogumYeri.Text = dgListe.CurrentRow.Cells[10].Value.ToString() ?? "";
-                txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString() ?? "";
-                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString() ?? "";
+                cbDogumYeri.Text = dgListe.CurrentRow.Cells[10].Value.ToString() ?? " ";
+                txtOzGecmis.Text = dgListe.CurrentRow.Cells[11].Value.ToString() ?? " ";
+                txtAciklama.Text = dgListe.CurrentRow.Cells[12].Value.ToString() ?? " ";
                 chkAktif.Checked = Convert.ToBoolean(dgListe.CurrentRow.Cells[13].Value);
-                cbil.Text = dgListe.CurrentRow.Cells[14].Value.ToString() ?? "";
-                cbParti.Text = dgListe.CurrentRow.Cells[15].Value.ToString() ?? "";
-                cbPartiGrup.Text = dgListe.CurrentRow.Cells[16].Value.ToString() ?? "";
-                cbDostlukGrup.Text = dgListe.CurrentRow.Cells[17].Value.ToString() ?? "";
-                cbMeclisGorev.Text = dgListe.CurrentRow.Cells[18].Value.ToString() ?? "";
-                cbGenelMerkezGorev.Text = dgListe.CurrentRow.Cells[19].Value.ToString() ?? "";
+                cbil.Text = dgListe.CurrentRow.Cells[14].Value.ToString() ?? " ";
+                cbParti.Text = dgListe.CurrentRow.Cells[15].Value.ToString() ?? " ";
+                cbPartiGrup.Text = dgListe.CurrentRow.Cells[16].Value.ToString() ?? " ";
+                cbDostlukGrup.Text = dgListe.CurrentRow.Cells[17].Value.ToString() ?? " ";
+                cbMeclisGorev.Text = dgListe.CurrentRow.Cells[18].Value.ToString() ?? " ";
+                cbGenelMerkezGorev.Text = dgListe.CurrentRow.Cells[19].Value.ToString() ?? " ";
                 cbMeslek.Text = dgListe.CurrentRow.Cells[20].Value.ToString() ?? "";
-                txtMeslekUzmanlikAlani.Text = dgListe.CurrentRow.Cells[21].Value.ToString() ?? "";
+                txtMeslekUzmanlikAlani.Text = dgListe.CurrentRow.Cells[21].Value.ToString() ?? " ";
                 if (dgListe.CurrentRow.Cells[22].Value==null || dgListe.CurrentRow.Cells[22].Value==" ")
                 {
                     pbFoto.Image = ConvertByteArrayImage((byte[])dgListe.CurrentRow.Cells[22].Value);
@@ -419,7 +415,6 @@ namespace Meclis.SabitTanimlar
         
         }
         public  Image ConvertByteArrayImage(byte[] data) {
-
 
             using (MemoryStream ms = new MemoryStream(data))
             {
